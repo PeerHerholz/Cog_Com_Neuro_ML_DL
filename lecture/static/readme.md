@@ -1,1 +1,1 @@
-# Home of GORELLA related graphics
+# Home of course related graphics

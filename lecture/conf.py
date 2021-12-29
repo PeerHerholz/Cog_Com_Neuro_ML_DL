@@ -16,9 +16,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'gorella_base'
-copyright = '2020, G0RELLA'
-author = 'Peer Herholz, José C. García Alanis, Christoph Vogelbacher'
+project = 'Cog_Com_Neuro_ML_DL'
+copyright = '2021, Peer Herholz'
+author = 'Peer Herholz'
 
 master_doc = "index"
 
@@ -52,11 +52,11 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
 #
 html_title = ""
 html_theme = "sphinx_book_theme"
-html_logo = "_static/gorella_logo.png"
+html_logo = "_static/cog_com_neuro_ml_dl.png"
 html_theme_options = {
-    "github_url": "https://github.com/G0RELLA/gorella_base",
-    "repository_url": "https://github.com/G0RELLA/gorella_base",
-    "repository_branch": "master",
+    "github_url": "https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL",
+    "repository_url": "https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL",
+    "repository_branch": "main",
     "use_edit_page_button": True,
     "path_to_docs": "docs/",
     "expand_sections": ["use/index", "examples/index"],
