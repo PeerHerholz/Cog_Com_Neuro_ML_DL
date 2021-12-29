@@ -1,11 +1,21 @@
-- file: index
+root: index
+format: jb-book
+chapters:
+- file: dei
 - file: overview
-- file: procedure
 - file: outline
-- file: introduction_theory_building
-- file: data_analyses
-- file: results_communication
-- file: symposium
+- file: setup
+- file: introduction/pages/introduction.md
+  sections:
+    - file: introduction/introduction_1.md
+    - file: introduction/introduction_2.md
+    - file: introduction/introduction_3.md
+    - file: introduction/introduction_4.md
+    - file: introduction/introduction_5.md
+    - file: introduction/introduction_6.md
+- file: experimentation/experimentation.md
+- file: finalization/finalization.md
 - file: projects
+- file: break
 - file: questionnaires
 - file: CoC
