@@ -31,7 +31,7 @@ Within these pages, we provide all the information important to follow and condu
 
 ## Cognitive & computational neuroscience: an introduction to machine/deep learning and neuro-data-science
 
-No matter the scientific field: obtaining a solid understanding of and gaining substantial hands-on experience with research processes and workflows is crucial, with the intersection of neuroscience & artificial intelligence being no exception to that. Obviously, not everyone participating in this course will continue in a research setting after their studies but developing a respective skill set will be beneficial independent of what folks might end up doing. Importantly, critical thinking & evaluation, research project management, quantitative & qualitative analyses, etc. enable a holistic approach to the exploration of this fascinating research field. But how should folks learn these things?
+No matter the scientific field: obtaining a solid understanding of and gaining substantial hands-on experience with research processes and workflows is crucial, with the intersection of neuroscience & artificial intelligence being no exception to that.  Importantly, critical thinking & evaluation, research project management, quantitative & qualitative analyses, etc. enable a holistic approach to the exploration of this fascinating research field. But how should folks learn these things?
 
 <p align="center"><iframe src="https://giphy.com/embed/sgZdwNkOH43wZOEUJ2" width="240" height="240" frameBorder="0" vspace="0" class="giphy-embed" allowFullScreen></iframe></p><p align="center"><a href="https://giphy.com/gifs/parksandrec-episode-9-parks-and-recreation-rec-sgZdwNkOH43wZOEUJ2"><small>via GIPHY</small></a></p></p>
 
