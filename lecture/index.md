@@ -7,7 +7,7 @@ titlesonly: true
 ---
 ```
 
-<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/Cog_Com_Neuro_ML_DL/main/lecture/static/cog_com_neuro_ml_dl.png" alt="logo" title="logo" width="600" height="300" />
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/Cog_Com_Neuro_ML_DL/main/lecture/static/cog_com_neuro_ml_dl_logo.png" alt="logo" title="logo" width="400" height="300" />
 
 # Welcome!
 
