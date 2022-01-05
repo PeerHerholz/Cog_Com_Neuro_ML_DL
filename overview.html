@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -206,7 +206,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -242,7 +242,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -354,7 +354,263 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Course overview & procedure</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tl-dr">
+   TL;DR
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-reach-the-person-in-the-front">
+   How to reach the person in the front
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gimme-the-details">
+   Gimme the details
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#when-and-where">
+     When and where
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-about-the-pandemic">
+     What about the pandemic?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-i-use-my-calculator">
+     Can I use my calculator?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">
+     How do I get all the software and do I have to apply for a loan to get it?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-is-everything">
+     Where is everything?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syllabus-and-text">
+     Syllabus and Text
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-get-those-credits">
+     How to get those credits?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exams-and-assignments">
+       Exams and Assignments
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grading">
+       Grading
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#late-homework-extension-policy">
+       Late Homework &amp; Extension Policy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#academic-honor-code">
+       Academic Honor Code
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notice-about-missed-work-due-to-religious-holy-days">
+       Notice about missed work due to religious holy days
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-accommodations">
+   Student Accommodations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-of-conduct">
+   Code of conduct
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-get-your-question-s-answered-and-or-provide-feedback">
+   How to Get Your Question(s) Answered and/or Provide Feedback
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="course-overview-procedure">
+<h1>Course overview &amp; procedure<a class="headerlink" href="#course-overview-procedure" title="Permalink to this headline">¶</a></h1>
+<p align="center"><iframe src="https://giphy.com/embed/sgZdwNkOH43wZOEUJ2" width="240" height="240" frameBorder="0" vspace="0" class="giphy-embed" allowFullScreen></iframe></p><p align="center"><a href="https://giphy.com/gifs/parksandrec-episode-9-parks-and-recreation-rec-sgZdwNkOH43wZOEUJ2"><small>via GIPHY</small></a></p></p>
+<p>Traditionally, one way of achieving this is to familiarize students with all parts of the respective processes early on in their studies with an application to real-world problems and questions. More precisely, folks conduct several experiments, provided and self-chosen, within which they perform all or most of the necessary steps of the corresponding research workflow themselves, both in a guided and independent manner. Importantly, all of this will be conducted based on <a class="reference external" href="https://en.wikipedia.org/wiki/Open_science">open science principles</a>. This has several important reasons: addressing the faulty direction science and academia in via changing incentive structures (<a class="reference external" href="https://en.wikipedia.org/wiki/Open-notebook_science">open methodology</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Open_data">open data</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Open_access">open access</a>,<a class="reference external" href="https://en.wikipedia.org/wiki/Open_peer_review">open peer review</a>), enable students to become active and self-sufficient parts of the research and scientific community via the sole utilization of <a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">open-source software</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Open_educational_resources">open educational resources</a>, as well as increasing the <a class="reference external" href="https://www.psychologicalscience.org/observer/words-to-action">diversity and inclusivity of science and academia</a> via the diminution of hurdles and barriers: science by everyone for everyone in an open and welcoming manner.</p>
+<p align="center"><iframe src="https://giphy.com/embed/1oIlL0oaAXUJz2xR4o" width="440" height="140" frameBorder="0" vspace="0" class="giphy-embed" allowFullScreen></iframe></p><p align="center"><a href="https://giphy.com/gifs/mostexpensivest-viceland-most-expensivest-1oIlL0oaAXUJz2xR4o"><small>via GIPHY</small></a></p></p>
+<div class="section" id="tl-dr">
+<h2>TL;DR<a class="headerlink" href="#tl-dr" title="Permalink to this headline">¶</a></h2>
+<p>Within this course we will explore basics of the intersection between neuroscience &amp; artificial intelligence, specifically focusing on their respective fundamentals regarding theory, implementation and analyzes, as well as adjacent topics concerning neuro-data-science. To do so, we will follow a “learning by doing” approach in a tripartite manner. Starting from a basic introduction  (Block I), we will run actual experiments (Block II) planned and conducted by you, as well as analyze the resulting data and communicate/present the obtained results (Block III). Thus, we actively seek out realistic examples and workflows that mimic the lifecycle of real-world projects, trying to present you with both a respective overview and hands-on experience. All of this following <a class="reference external" href="https://en.wikipedia.org/wiki/Open_science">open science principles</a> as outlined in the <a class="reference external" href="https://zenodo.org/record/1147025#.YWbeymYzblw">rainbow of open science practices</a> below and the aim to enable you to critically evaluate scientific research. Along this way we will also talk about important topics such as <a class="reference external" href="https://twitter.com/hashtag/DEI?src=hashtag_click">#DEI</a> and systematic biases. For a rather precise outline of the course, please consult the respective section.</p>
+<p><img alt="rainbow os" src="_images/rainbow_os.png" /></p>
+</div>
+<div class="section" id="how-to-reach-the-person-in-the-front">
+<h2>How to reach the person in the front<a class="headerlink" href="#how-to-reach-the-person-in-the-front" title="Permalink to this headline">¶</a></h2>
+<p>The contact information of the instructors are as follows:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://peerherholz.github.io/">Peer Herholz (he/him)</a></p></li>
+<li><p>Office hours: <a class="reference external" href="https://peerherholz.github.io/contact/">by arrangement via this webpage</a></p></li>
+<li><p>E-mail: Herholz at psych dot <a class="reference external" href="http://uni-frankfurt.de">uni-frankfurt.de</a></p></li>
+<li><p>preferred mode of contact: usually online to save time and effort for everyone</p></li>
+</ul>
+<iframe src="https://giphy.com/embed/U6GunJi6B1o7ecMfKc" width="240" height="136" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justviralnet-funny-mistake-spelling-U6GunJi6B1o7ecMfKc">via GIPHY</a></p>
+</div>
+<div class="section" id="gimme-the-details">
+<h2>Gimme the details<a class="headerlink" href="#gimme-the-details" title="Permalink to this headline">¶</a></h2>
+<p>Below you will find important details regarding the course summarized in a compact form. Please consult and familiarize yourself with the information presented there prior to and/or within the first few days of the course.</p>
+<div class="section" id="when-and-where">
+<h3>When and where<a class="headerlink" href="#when-and-where" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="what-about-the-pandemic">
+<h3>What about the pandemic?<a class="headerlink" href="#what-about-the-pandemic" title="Permalink to this headline">¶</a></h3>
+<p>Until further notice, it is assumed that the course will take place in person. This is of course very likely to change given everything we experienced and learned in the last 2 years. Thus, the course is setup in a way that would allow both in person and virtual meetings. If you want to attend in person, please note that the <a class="reference external" href="https://www.bundesregierung.de/breg-en/news/federal-regional-consultation-coronavirus-1949666">2G rule</a> applies, meaning that you either have to show <em>proof</em> of <em>full vaccination</em> or that you have <em>recovered from COVID-19</em> . Without any of these things you won’t be allowed within the University buildings and room where we will meet. Please note that might not be asked when you enter the building but definitely before you enter the room. If you feel uncomfortable doing a busy commute to sit in a room with several other people, please let me know and I’ll give my best to come up with a hybrid format. However, based on current regulations there won’t be any recordings. Just in case: yes, everyone should wear a mask at all times!</p>
+<iframe src="https://giphy.com/embed/opPuISKbzCXAFHhZFJ" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/opPuISKbzCXAFHhZFJ">via GIPHY</a></p>
+</div>
+<div class="section" id="can-i-use-my-calculator">
+<h3>Can I use my calculator?<a class="headerlink" href="#can-i-use-my-calculator" title="Permalink to this headline">¶</a></h3>
+<p>For this class you will need frequent access to a computer. None of the analyses that we will be doing will be very intensive, so this does not need to be a modern or “fast” computer. Still, it will need to be running a standard operating system like Windows, Mac OS X, or Linux. Unfortunately, tablets running mobile operating systems (iOS, Android) probably won’t work for this purpose. If this is an issue for you, please get in touch with the instructor as soon as possible so that we can try to figure out a solution. Regarding software and installation thereof, please check the next section.</p>
+<iframe src="https://giphy.com/embed/DHqth0hVQoIzS" width="240" height="103" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/maths-DHqth0hVQoIzS">via GIPHY</a></p>
+</div>
+<div class="section" id="how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">
+<h3>How do I get all the software and do I have to apply for a loan to get it?<a class="headerlink" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it" title="Permalink to this headline">¶</a></h3>
+<p>Don’t worry at all. First, in order to help you get all the software required for the course, a <span class="xref myst">comprehensive installation instruction</span> was compiled. In a step-by-step manner it guides you through the installation process, covering several <code class="docutils literal notranslate"><span class="pre">OS</span></code>: <code class="docutils literal notranslate"><span class="pre">windows</span></code>, <code class="docutils literal notranslate"><span class="pre">macos</span></code> and <code class="docutils literal notranslate"><span class="pre">linux</span></code>. Second, everything will be completely free of charge as we will only use publicly available <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_software">open-source software</a>. Why? Because teaching students via <a class="reference external" href="https://en.wikipedia.org/wiki/Proprietary_software">proprietary software</a> is just not fair and won’t help anyone: students have to obtain licenses or use those from the university (which usually doesn’t have enough for everyone), leading to tremendous problems regarding inequity now and in the future. Additionally, <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_software">opens-source software</a> can do everything, if not more, what <a class="reference external" href="https://en.wikipedia.org/wiki/Proprietary_software">proprietary software</a> can and is furthermore usually better supported, tested and documented, creating a fantastic sense of community.</p>
+<iframe src="https://giphy.com/embed/CTX0ivSQbI78A" width="240" height="177" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/internet-computer-technology-CTX0ivSQbI78A">via GIPHY</a></p>
+</div>
+<div class="section" id="where-is-everything">
+<h3>Where is everything?<a class="headerlink" href="#where-is-everything" title="Permalink to this headline">¶</a></h3>
+<p>All course materials (lecture slides, lecture demo notebooks, lab notebooks, homework assignments, etc.) will be available on the <a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/index.html">course website</a>, i.e. the one you’re looking at right now. Everything will be completely open and free to use, thus constituting an <a class="reference external" href="https://en.wikipedia.org/wiki/Open_educational_resources">open educational resource</a> you are free to explore, enhance and share. Thus, this website and all materials will also remain up for the entire duration of the course and beyond, ideally to the end of the internet. The usage of this resource and the materials therein will be explained at the beginning and throughout the course.</p>
+<iframe src="https://giphy.com/embed/c20UV66B7zCWA" width="240" height="155" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/superman-phone-looking-c20UV66B7zCWA">via GIPHY</a></p>
+</div>
+<div class="section" id="syllabus-and-text">
+<h3>Syllabus and Text<a class="headerlink" href="#syllabus-and-text" title="Permalink to this headline">¶</a></h3>
+<p>As noted above, this page serves as the syllabus for this course, with the precise outline indicated in the <a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/outline.html">respective section</a>. This syllabus is subject to change; students who miss class are responsible for learning about any changes to the syllabus.</p>
+<p>The course has several textbooks, all of which are online and free:</p>
+<p>Additional reading material might be added but will always be open &amp; free with students being informed about any addition.</p>
+<iframe src="https://giphy.com/embed/9dFvgd4ID6ne0" width="240" height="135" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/community-nbc-ken-jeong-9dFvgd4ID6ne0">via GIPHY</a></p>
+</div>
+<div class="section" id="how-to-get-those-credits">
+<h3>How to get those credits?<a class="headerlink" href="#how-to-get-those-credits" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exams-and-assignments">
+<h4>Exams and Assignments<a class="headerlink" href="#exams-and-assignments" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="grading">
+<h4>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h4>
+<iframe src="https://giphy.com/embed/yFHkrrbfITemc" width="240" height="173" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/exams-yFHkrrbfITemc">via GIPHY</a></p>
+</div>
+<div class="section" id="late-homework-extension-policy">
+<h4>Late Homework &amp; Extension Policy<a class="headerlink" href="#late-homework-extension-policy" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Homework</span> <span class="pre">assignments</span></code> are due <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">days</span></code> after a given class. <code class="docutils literal notranslate"><span class="pre">Homework</span> <span class="pre">assignments</span></code> must be turned in on the due date in order to receive full credit. <code class="docutils literal notranslate"><span class="pre">Homework</span> <span class="pre">assignment</span></code> turned in less than 1 week late will be accepted but the score will be penalized by <code class="docutils literal notranslate"><span class="pre">10%</span></code>. <code class="docutils literal notranslate"><span class="pre">Homework</span> <span class="pre">assignments</span></code> later than 1 week will <em>not</em> be accepted.</p>
+<p>Late <code class="docutils literal notranslate"><span class="pre">homework</span> <span class="pre">assignments</span></code> will also be accepted under <em>exceptional circumstances</em> (e.g., medical or family emergency) and at the discretion of the instructor (e.g. exceptional denotes a rare event) with no penalty. This policy allowing for exceptional circumstances is definitely a right, but courtesy to be used when needed and not abused. Should you encounter such circumstances, simply email assignment to instructor and note “late submission due to exceptional circumstances”. You do not need to provide any further justification or personally revealing information regarding the details.</p>
+</div>
+<div class="section" id="academic-honor-code">
+<h4>Academic Honor Code<a class="headerlink" href="#academic-honor-code" title="Permalink to this headline">¶</a></h4>
+<p>You are encouraged to discuss problem sets with classmates and work on them together, but certain written submissions must reflect your own, original work. If you worked with other students on a problem set, please include their names in a statement like “I worked on this homework with XX and YY” on the assignment. If in doubt, ask the instructor.</p>
+</div>
+<div class="section" id="notice-about-missed-work-due-to-religious-holy-days">
+<h4>Notice about missed work due to religious holy days<a class="headerlink" href="#notice-about-missed-work-due-to-religious-holy-days" title="Permalink to this headline">¶</a></h4>
+<p>Please notify the instructor of your pending absence at least fourteen days prior to the date of observance of a religious holy day. If you must miss a class, an examination, a work assignment, or a project in order to observe a religious holy day, I will give you an opportunity to complete the missed work within a reasonable time after the absence.</p>
+</div>
+</div>
+</div>
+<div class="section" id="student-accommodations">
+<h2>Student Accommodations<a class="headerlink" href="#student-accommodations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Please request a meeting as soon as possible to discuss any accommodations.</p></li>
+<li><p>Please notify me as soon as possible if the material being presented in class is not accessible.</p></li>
+<li><p>Please notify me if any of the physical space is difficult for you.</p></li>
+</ul>
+</div>
+<div class="section" id="code-of-conduct">
+<h2>Code of conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this headline">¶</a></h2>
+<p>This course has a <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">of</span> <span class="pre">conduct</span></code>. Please inform yourself about the specifics by carefully reading through the <a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/CoC.html">respective section</a>.</p>
+<iframe src="https://giphy.com/embed/l5s71uAp3CzKwxwkoZ" width="240" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/theoffice-nbc-the-office-tv-l5s71uAp3CzKwxwkoZ">via GIPHY</a></p>
+</div>
+<div class="section" id="how-to-get-your-question-s-answered-and-or-provide-feedback">
+<h2>How to Get Your Question(s) Answered and/or Provide Feedback<a class="headerlink" href="#how-to-get-your-question-s-answered-and-or-provide-feedback" title="Permalink to this headline">¶</a></h2>
+<p>It’s great that we have so many ways to communicate, but it can get tricky to figure out who to contact or where your question belongs or when to expect a response. These guidelines are to help you get your question answered as quickly as possible and to ensure that we’re able to get to everyone’s questions.</p>
+<p>That said, to ensure that we’re respecting everyone’s time and thus will mainly answer questions between normal working hours (M-F 9AM-5PM). The instructors are also going to do their best to stick to these working hours. However, they know that’s not when you may be doing your work. So, please feel free to post messages whenever is best for you while knowing that if you post late at night or on a weekend, you may not get a response until the next weekday. As such, do your best not to wait until the last minute to ask a question.</p>
+<p>If you have:</p>
+<ul class="simple">
+<li><p>questions about course content - these are awesome! We want everyone to see them and have their questions answered too, so either use the <a class="reference external" href="https://web.hypothes.is/">hypothes.is</a> plugin, the <code class="docutils literal notranslate"><span class="pre">discord</span></code> channel, the <code class="docutils literal notranslate"><span class="pre">e-mail</span></code> list or the <a class="reference external" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues">GitHub repository</a>.</p></li>
+<li><p>a technical assignment question - come to office hours (or post to <code class="docutils literal notranslate"><span class="pre">discord</span></code>). Answering technical questions is often best accomplished ‘in person’ where we can discuss the question and talk through ideas. However, if that is not possible, post your question to <code class="docutils literal notranslate"><span class="pre">discord</span></code>. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.</p></li>
+<li><p>been stuck on something for a while (&gt;30min) and aren’t even really sure where to start - Programming can be frustrating and it may not always be obvious what is going wrong or why something isn’t working. That’s OK - we’ve all been there! IF you are stuck, you can and should reach out for help, even if you aren’t exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem. If you are still completely stuck, stop and contact us (office hours, post on <code class="docutils literal notranslate"><span class="pre">discord</span></code>). If you don’t have a specific question, include the information you have (what you’re stuck on, the code you’ve been trying that hasn’t been happening, and/or the error messages you’ve been getting).</p></li>
+<li><p>questions about course logistics - first, check the <a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/setup.html">overview</a> &amp; <a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/outline.html">syllabus</a>. If you can’t find the answer there, first ask a classmate. If still unsure, post on <code class="docutils literal notranslate"><span class="pre">discord</span></code>.</p></li>
+<li><p>something super cool to share related to class or want to talk about a topic in further depth - feel free to post on <code class="docutils literal notranslate"><span class="pre">discord</span></code>, contact the instructors or come to office hours.</p></li>
+<li><p>some feedback about the course you want to share anonymously - If you’ve been offended by an example in class, really liked or disliked a lesson, or wish there were something covered in class that wasn’t but would rather not share this publicly, etc., please fill out the anonymous Google Form*</p></li>
+</ul>
+<p>*This form can be taken down at any time if it’s not being used for its intended purpose; however, you all will be notified should that happen.</p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>Several parts of this section are directly taken or adapted from <a class="reference external" href="https://github.com/alexhuth/ndap-fa2020">Alexander Huth’s Neuro Data Analysis in Python syllabus</a> licensed under a <a class="reference external" href="https://github.com/alexhuth/ndap-fa2020/blob/master/LICENSE">BSD-3-Clause License</a> and <a class="reference external" href="https://cogs18.github.io/assets/intro/syllabus.html">Shannon Ellis’ COGS 18: Introduction to Python</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -515,15 +771,13 @@
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Peer Herholz<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -205,7 +205,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -241,7 +241,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -303,7 +303,160 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Code of Conduct</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#microaggressions">
+   <em>
+    Microaggressions
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#respecting-differences">
+   <em>
+    Respecting differences
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-treat-each-other">
+   <em>
+    How to treat each other
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enforcement">
+   <strong>
+    Enforcement
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reporting">
+   <strong>
+    Reporting
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reporting-issues">
+     <em>
+      Reporting Issues
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attribution">
+   Attribution
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="code-of-conduct">
+<h1>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this headline">¶</a></h1>
+<p>Hello 👋,</p>
+<p>this course is dedicated to providing an environment where people are kind and respectful to each other, a harassment-free learning experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion. We do not tolerate harassment of event participants in any form. Sexual language and imagery is not appropriate for any event venue, including talks. Participants violating these rules may be sanctioned or expelled from the lecture at the discretion of the organizers.</p>
+<p>This could really be the end of that code of conduct, but some forms of harassment and negative behavior are fairly hard to identify at first. Please read carefully through the rest of the document to make sure you avoid them. There is also a section to know what to do and expect if you experience behavior that deviates from this code of conduct.</p>
+<p>Harassment includes, but <em>is not limited to</em>:<br />
+⛔ Verbal comments that reinforce social structures of domination related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age or religion.<br />
+⛔ Sexual images in public spaces<br />
+⛔ Deliberate intimidation, stalking, or following<br />
+⛔ Harassing photography or recording<br />
+⛔ Sustained disruption of talks or other events<br />
+⛔ Inappropriate physical contact<br />
+⛔ Advocating for, or encouraging, any of the above behaviour<br />
+⛔ Unwelcome sexual attention</p>
+<div class="section" id="microaggressions">
+<h2><em>Microaggressions</em><a class="headerlink" href="#microaggressions" title="Permalink to this headline">¶</a></h2>
+<p>Incidents can take the form of “microaggressions,” which is a damaging form of harassment. Microaggressions are the everyday slights or insults which communicate negative messages to target individuals, often based upon their marginalized group membership. Over time, microaggressions can take a great toll on mental and emotional health, and the target’s feeling of belonging in science and academia. The following examples can all be labeled micro-aggressions:<br />
+⛔ Commenting on a woman’s appearance rather than her work;<br />
+⛔ Only directing questions at male colleagues when there are female experts in the room;<br />
+⛔ Telling someone of colour that they “speak such good English”;<br />
+⛔ Forcefully praising meat to an individual with a vegetarian diet;<br />
+⛔ Praising alcoholic drinks to an individual who do not consume them.<br />
+⛔ Exclusion from a group can be a common nonverbal form of microaggression.<br />
+⛔ Microaggressions can be couched in the form of a “compliment,” (e.g. “you’re too attractive to be a scientist”).</p>
+</div>
+<div class="section" id="respecting-differences">
+<h2><em>Respecting differences</em><a class="headerlink" href="#respecting-differences" title="Permalink to this headline">¶</a></h2>
+<p>Participants come from many cultures and backgrounds. We therefore expect everyone to be very respectful of different cultural practices, attitudes, and beliefs. This includes being aware of preferred titles and pronouns, as well as using a respectful tone of voice.
+While we do not assume participants know the cultural practices of every ethnic and cultural group, we expect members to recognize and respect differences within our community. This means being open to learning from and educating others, as well as educating yourself.</p>
+</div>
+<div class="section" id="how-to-treat-each-other">
+<h2><em>How to treat each other</em><a class="headerlink" href="#how-to-treat-each-other" title="Permalink to this headline">¶</a></h2>
+<p>👍 Be respectful and value each other’s ideas, styles and viewpoints.<br />
+👍 Be direct but professional; we cannot withhold hard truths.<br />
+👍 Be inclusive and help new perspectives be heard.<br />
+👍 Appreciate and accommodate our many cultural practices, attitudes and beliefs.<br />
+👍 Be open to learning from others.<br />
+👍 Lead by example and match your actions with your words.</p>
+</div>
+<div class="section" id="enforcement">
+<h2><strong>Enforcement</strong><a class="headerlink" href="#enforcement" title="Permalink to this headline">¶</a></h2>
+<p>Participants asked to stop any harassing behavior are expected to comply immediately. Organizers and presenters are also subject to the anti-harassment policy. In particular, they should not use sexualized images, activities, or other material. Event organisers may take action to redress anything designed to, or with the clear impact of, disrupting the event or making the environment hostile for any participants.</p>
+</div>
+<div class="section" id="reporting">
+<h2><strong>Reporting</strong><a class="headerlink" href="#reporting" title="Permalink to this headline">¶</a></h2>
+<p>If someone makes you or anyone else feel unsafe or unwelcome, please report it as soon as possible to the organizers either in person or by email.</p>
+<div class="section" id="reporting-issues">
+<h3><em>Reporting Issues</em><a class="headerlink" href="#reporting-issues" title="Permalink to this headline">¶</a></h3>
+<p>Any incident of unacceptable behavior hurts the learning environment for everyone. We are therefore committed to supporting students to access corresponding reporting resources and ensure a supportive environment.</p>
+<p>When necessary, an organizer will assist students to file a report at the appropriate university office. Complaints can be filed, without limitation periods, for any incident of harassment that has occurred in the course of university activities, whether on or off-campus.</p>
+<p>Also, if you need moral support, feel welcome to ping the organizers in person or by email.</p>
+</div>
+</div>
+<div class="section" id="attribution">
+<h2>Attribution<a class="headerlink" href="#attribution" title="Permalink to this headline">¶</a></h2>
+<p>Thanks and credits go the <span class="xref myst">Montreal Brainhack School</span> for providing the CoC, this CoC is based on.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -404,15 +557,13 @@ While we do not assume participants know the cultural practices of every ethnic 
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Peer Herholz<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

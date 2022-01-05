@@ -42,7 +42,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -204,7 +204,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -257,7 +257,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -428,7 +428,490 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>General introduction & organization</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-s-of-this-section">
+   Aim(s) of this section
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outline-for-this-section">
+   Outline for this section
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-happening">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#your-role">
+     Your role
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#schedule">
+     Schedule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Your role
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Schedule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Schedule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Schedule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   What is happening?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Schedule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#who-are-you">
+   Who are you?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#who-are-we">
+   Who are we?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   Who are we?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-framework-and-setup">
+   The framework and setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   The framework and setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-questions">
+   General Questions
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="general-introduction-organization">
+<h1>General introduction &amp; organization<a class="headerlink" href="#general-introduction-organization" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://peerherholz.github.io/">Peer Herholz (he/him)</a><br />
+Postdoctoral researcher - <a class="reference external" href="https://neurodatascience.github.io/">NeuroDataScience lab</a> at <a class="reference external" href="https://www.mcgill.ca/neuro/">MNI</a>/<a class="reference external" href="https://www.mcgill.ca/">McGill</a>, <a class="reference external" href="https://sites.google.com/view/unique-neuro-ai">UNIQUE</a><br />
+Member - <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/">BIDS</a>, <a class="reference external" href="https://www.repronim.org/">ReproNim</a>, <a class="reference external" href="https://brainhack.org/">Brainhack</a>, <a class="reference external" href="https://www.cneuromod.ca/">Neuromod</a>, <a class="reference external" href="https://ohbm-environment.org/">OHBM SEA-SIG</a></p>
+<p><img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/Twitter%20social%20icons%20-%20circle%20-%20blue.png" alt="logo" title="Twitter" width="30" height="30" /> <img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/GitHub-Mark-120px-plus.png" alt="logo" title="Github" width="30" height="30" />     &#64;peerherholz</p>
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ml-dl_workshop.png" alt="logo" title="Github" width="400" height="280" />
+<div class="section" id="aim-s-of-this-section">
+<h2>Aim(s) of this section<a class="headerlink" href="#aim-s-of-this-section" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>get a basic idea of what will happen</p></li>
+<li><p>answer questions</p></li>
+<li><p>address setup problems</p></li>
+</ul>
+</div>
+<div class="section" id="outline-for-this-section">
+<h2>Outline for this section<a class="headerlink" href="#outline-for-this-section" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>What is happening?</p></li>
+<li><p>Who are you?</p></li>
+<li><p>Who are we?</p></li>
+<li><p>The framework and setup</p></li>
+<li><p>General questions</p></li>
+</ol>
+</div>
+<div class="section" id="what-is-happening">
+<h2>What is happening?<a class="headerlink" href="#what-is-happening" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="objectives">
+<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="your-role">
+<h3>Your role<a class="headerlink" href="#your-role" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="schedule">
+<h3>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>What is happening?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Objectives<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Gain skills</p>
+<ul>
+<li><p>Learn about machine and deep learning methods and how to apply
+them with a focus on neuroscientific data</p></li>
+<li><p>Familiarize yourself with different model types &amp; analysis pipelines so that you can critically evaluate them</p></li>
+<li><p>Know important limitations &amp; biases present in these methods</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>What is happening?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Objectives<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Share</p>
+<ul>
+<li><p>Bring everything you’ve learning to your home institution and/or lab and beyond</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>What is happening?<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Objectives<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Get involved</p>
+<ul>
+<li><p>Get to know what’s going on in the open science/source-python-machine/deep learning-neuroscience-world</p></li>
+<li><p>Become an active part of this cool community &amp; support it going further</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>What is happening?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>Your role<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>ask questions</strong></p></li>
+<li><p>think quick and towards the “bigger picture”</p></li>
+<li><p>further familiarize yourself with the machine/deep learning-python-world</p></li>
+<li><p>start thinking about how you could apply/integrate the techniques introduced here into your own research workflow</p></li>
+<li><p>have a great time (that’s actually more on us than you)</p></li>
+<li><p>give us feedback and help improve the materials</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>What is happening?<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Schedule<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><strong>Welcome (9 AM - 9:30 AM)</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time slot</p></th>
+<th class="text-align:center head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9 AM - 9:15 AM</p></td>
+<td class="text-align:center"><p><span class="xref myst">General hello, introduction round and organization (9 AM - 9:15 AM)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>9:15 AM - 9:30 AM</p></td>
+<td class="text-align:center"><p><span class="xref myst">Models, AI and all other buzz words (9:15 AM - 9:30 AM)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>What is happening?<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>Schedule<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p><strong>The content I - theoretical background (9:30 AM - 12 PM)</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time slot</p></th>
+<th class="text-align:center head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9:30 AM - 10 AM</p></td>
+<td class="text-align:center"><p><span class="xref myst">“Classic” machine learning - supervised or unsupervised, model types</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>10 AM - 10:15 AM</p></td>
+<td class="text-align:center"><p><span class="xref myst">yoga/dance break</span></p></td>
+</tr>
+<tr class="row-even"><td><p>10:15 AM - 10:45 AM</p></td>
+<td class="text-align:center"><p><span class="xref myst">“Classic” machine learning - model evaluation &amp; cross-validation</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>10:45 AM - 11:15 AM</p></td>
+<td class="text-align:center"><p><span class="xref myst">“Classic” machine learning - model tuning &amp; biases</span></p></td>
+</tr>
+<tr class="row-even"><td><p>11:15 AM - 11:30 AM</p></td>
+<td class="text-align:center"><p><span class="xref myst">yoga/dance break</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>11:30 AM - 12 PM</p></td>
+<td class="text-align:center"><p><span class="xref myst">Deep learning - basics &amp; architectures</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>What is happening?<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Schedule<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p><strong>The content I - theoretical background (1 PM - 2:15 PM)</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time slot</p></th>
+<th class="text-align:center head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 PM - 1:30 PM</p></td>
+<td class="text-align:center"><p><span class="xref myst">Deep learning - how to build &amp; train a neural network</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1:30 PM - 2 PM</p></td>
+<td class="text-align:center"><p><span class="xref myst">Deep learning - model tuning &amp; biases</span></p></td>
+</tr>
+<tr class="row-even"><td><p>2 PM - 2:15 PM</p></td>
+<td class="text-align:center"><p><span class="xref myst">yoga/dance break</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>What is happening?<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h3>Schedule<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p><strong>The content II - hands-on (2:15 PM - 4 PM)</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time slot</p></th>
+<th class="text-align:center head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2:15 PM - 2:45 PM</p></td>
+<td class="text-align:center"><p><span class="xref myst">Dataset blitz</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2:45 PM - 3:45 PM</p></td>
+<td class="text-align:center"><p><span class="xref myst">Free hacking</span></p></td>
+</tr>
+<tr class="row-even"><td><p>3:45 PM - 4 PM</p></td>
+<td class="text-align:center"><p><span class="xref myst">Lessons learned, Q&amp;A</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="who-are-you">
+<h2>Who are you?<a class="headerlink" href="#who-are-you" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>your name</p></li>
+<li><p>your background</p></li>
+<li><p>your programming/ML/DL experience</p></li>
+<li><p>your favorite band/artist</p></li>
+<li><p>if you could be any type of vacation: which one?</p></li>
+</ul>
+<p>(point 2-4 are not intended to “put you on the spot”, but to get a better idea of your previous training/experience so that we have the chance to tailor the workshop contents better to your needs)</p>
+</div>
+<div class="section" id="who-are-we">
+<h2>Who are we?<a class="headerlink" href="#who-are-we" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>a little something about us…</p></li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h2>Who are we?<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Characteristic/Person</p></th>
+<th class="head"><p>José C. García Alanis</p></th>
+<th class="text-align:center head"><p>Peer Herholz</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Picture</p></td>
+<td><p><img align="right" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=JwA7oqgAAAAJ&citpid=3" alt="logo" title="Jose" width="200" height="200" /></p></td>
+<td class="text-align:center"><p><img align="left" src="https://avatars.githubusercontent.com/u/20129524?v=4" alt="logo" title="Peer" width="200" height="200" /></p></td>
+</tr>
+<tr class="row-odd"><td><p>Affiliation</p></td>
+<td><p>Child and Adolescent Psychology, Philipps-Universität Marburg</p></td>
+<td class="text-align:center"><p>Research affiliate MNI/McGill &amp; McGovern Institute/MIT, </br>  cand. habilitation Goethe-University Frankfurt</p></td>
+</tr>
+<tr class="row-even"><td><p>Background</p></td>
+<td><p>Psychology</p></td>
+<td class="text-align:center"><p>Neuropsychology/Neuroscience</p></td>
+</tr>
+<tr class="row-odd"><td><p>Research</p></td>
+<td><p>Human decision making, stistical modelling, EEG</p></td>
+<td class="text-align:center"><p>Cognitive &amp; computational auditory neuroscience</p></td>
+</tr>
+<tr class="row-even"><td><p>Likes</p></td>
+<td><p>Peer</p></td>
+<td class="text-align:center"><p>José</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dislikes</p></td>
+<td><p>Peer</p></td>
+<td class="text-align:center"><p>José</p></td>
+</tr>
+<tr class="row-even"><td><p>Contact</p></td>
+<td><p><img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/Twitter%20social%20icons%20-%20circle%20-%20blue.png" alt="logo" title="Twitter" width="30" height="30" /> <img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/GitHub-Mark-120px-plus.png" alt="logo" title="Github" width="30" height="30" />       &#64;JoiAlhaniz</p></td>
+<td class="text-align:center"><p><img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/Twitter%20social%20icons%20-%20circle%20-%20blue.png" alt="logo" title="Twitter" width="30" height="30" /> <img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/GitHub-Mark-120px-plus.png" alt="logo" title="Github" width="30" height="30" />     &#64;peerherholz</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="the-framework-and-setup">
+<h2>The framework and setup<a class="headerlink" href="#the-framework-and-setup" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>all materials are provided through a(n interactive) <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a></p></li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/workshop_framework.png" alt="logo" title="Github" width="1000" height="350" /></center>
+<p><a class="reference external" href="https://peerherholz.github.io/ML-DL_workshop_SynAGE/">https://peerherholz.github.io/ML-DL_workshop_SynAGE/</a></p>
+</div>
+<div class="section" id="id18">
+<h2>The framework and setup<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>there are 4 different ways to participate in this workshop and utilize the materials</p></li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/workshop_setup.png" alt="logo" title="Github" width="1000" height="400" /></center>
+<p><a class="reference external" href="https://peerherholz.github.io/ML-DL_workshop_SynAGE/setup.html">https://peerherholz.github.io/ML-DL_workshop_SynAGE/setup.html</a></p>
+</div>
+<div class="section" id="general-questions">
+<h2>General Questions<a class="headerlink" href="#general-questions" title="Permalink to this headline">¶</a></h2>
+<center><img src="https://media3.giphy.com/media/xT5LMB2WiOdjpB7K4o/giphy.gif?cid=ecf05e47q3v9fd9aorxcgpwj289r4sxlrc9mhabqc6uhhqrc&rid=giphy.gif&ct=g" alt="logo" title="Github" width="600" height="400" /></center>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -743,15 +1226,13 @@ them with a focus on neuroscientific data</p></li>
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Peer Herholz<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

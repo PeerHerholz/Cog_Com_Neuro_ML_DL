@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -205,7 +205,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -241,7 +241,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -269,7 +269,142 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Welcome!</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cognitive-computational-neuroscience-an-introduction-to-machine-deep-learning-and-neuro-data-science">
+   Cognitive &amp; computational neuroscience: an introduction to machine/deep learning and neuro-data-science
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-ve-got-a-question">
+   I’ve got a question!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="toctree-wrapper compound">
+</div>
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/Cog_Com_Neuro_ML_DL/main/lecture/static/cog_com_neuro_ml_dl_logo.png" alt="logo" title="logo" width="400" height="300" />
+<div class="section" id="welcome">
+<h1>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These pages are currently under construction and will be updated continuously.
+Please visit these pages again in the next few weeks for further information.</p>
+</div>
+</div>
+<br/>
+<p>Hello everyone and welcome to the course page for “Cognitive &amp; computational neuroscience: an introduction to machine/deep learning and neuro-data-science”, taught within the <a class="reference external" href="https://www.goethe-university-frankfurt.de/51789866/Institute_of_Psychology">Psychology Master programme</a> of the <a class="reference external" href="https://www.goethe-university-frankfurt.de/en">Goethe-University Frankfurt</a> during the spring term 2022. We’re glad to see you here!</p>
+<br/>
+<div style="text-align: justify"> 
+<p>Within these pages, we provide all the information important to follow and conduct the course, including formal aspects, requirements, lecture materials, practicals and so on.  This <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter book</a> will include the used slides and code in a way that they can be explored in an interactive manner. You can navigate through the respective sections via the TOC on the left side and within sections via the TOC on the right side. The three symbols in the top allow to enable full screen mode, link to the underlying <span class="xref myst">Github repository</span> and allow you to download the contents as a pdf or <span class="xref myst">jupyter notebook</span> respectively. Some sections will additionally have a little rocket in that row which will allow you to interactively rerun certain parts of the practicals via cloud computing. Additionally, we support public reviews and comments through an <span class="xref myst">hypothes.is</span> plugin with which you can interact on the right side. All of this awesomeness (talking about the infrastructure and resource) is possible through the dedicated and second to none work of the <a class="reference external" href="https://jupyter.org/">Jupyter community</a>, specifically, the <a class="reference external" href="https://executablebooks.org/en/latest/">Executable/Jupyter Book</a> and <a class="reference external" href="https://mybinder.org/">mybinder project</a>.</p>
+ </div>
+<div class="section" id="cognitive-computational-neuroscience-an-introduction-to-machine-deep-learning-and-neuro-data-science">
+<h2>Cognitive &amp; computational neuroscience: an introduction to machine/deep learning and neuro-data-science<a class="headerlink" href="#cognitive-computational-neuroscience-an-introduction-to-machine-deep-learning-and-neuro-data-science" title="Permalink to this headline">¶</a></h2>
+<p>No matter the scientific field: obtaining a solid understanding of and gaining substantial hands-on experience with research processes and workflows is crucial, with the intersection of neuroscience &amp; artificial intelligence being no exception to that.  Importantly, critical thinking &amp; evaluation, research project management, quantitative &amp; qualitative analyses, etc. enable a holistic approach to the exploration of this fascinating research field. But how should folks learn these things?</p>
+<p align="center"><iframe src="https://giphy.com/embed/sgZdwNkOH43wZOEUJ2" width="240" height="240" frameBorder="0" vspace="0" class="giphy-embed" allowFullScreen></iframe></p><p align="center"><a href="https://giphy.com/gifs/parksandrec-episode-9-parks-and-recreation-rec-sgZdwNkOH43wZOEUJ2"><small>via GIPHY</small></a></p></p>
+<p>Traditionally, one way of achieving this is to familiarize students with all parts of the respective processes early on in their studies with an application to real-world problems and questions. More precisely, folks conduct several experiments, provided and self-chosen, within which they perform all or most of the necessary steps of the corresponding research workflow themselves, both in a guided and independent manner. Importantly, all of this will be conducted based on <a class="reference external" href="https://en.wikipedia.org/wiki/Open_science">open science principles</a>. This has several important reasons: addressing the faulty direction science and academia in via changing incentive structures (<a class="reference external" href="https://en.wikipedia.org/wiki/Open-notebook_science">open methodology</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Open_data">open data</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Open_access">open access</a>,<a class="reference external" href="https://en.wikipedia.org/wiki/Open_peer_review">open peer review</a>), enable students to become active and self-sufficient parts of the research and scientific community via the sole utilization of <a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">open-source software</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Open_educational_resources">open educational resources</a>, as well as increasing the <a class="reference external" href="https://www.psychologicalscience.org/observer/words-to-action">diversity and inclusivity of science and academia</a> via the diminution of hurdles and barriers: science by everyone for everyone in an open and welcoming manner.</p>
+<p align="center"><iframe src="https://giphy.com/embed/1oIlL0oaAXUJz2xR4o" width="440" height="140" frameBorder="0" vspace="0" class="giphy-embed" allowFullScreen></iframe></p><p align="center"><a href="https://giphy.com/gifs/mostexpensivest-viceland-most-expensivest-1oIlL0oaAXUJz2xR4o"><small>via GIPHY</small></a></p></p>
+<p>As you can see in the <code class="docutils literal notranslate"><span class="pre">TOC</span></code> on the left sidebar, there’s quite a bunch going on here. You may ask: “Oh my, is all of this really necessary?”. Well, it might depend on who you ask but this course and the people conducting it think so and here’s why: creating a structured and holistic way to empirically train students via a complex framework needs time, effort, details, and dedication. Additionally, to increase openness and sustainability, and thus ultimately the success rate of projects, these things need to be prepared and supplied in a way that is findable, accessible, interoperable and re-usable (<a class="reference external" href="https://en.wikipedia.org/wiki/FAIR_data">FAIR</a>) for as many people as possible.
+This course is therefore designed to provide only <code class="docutils literal notranslate"><span class="pre">FAIR</span></code> content and materials.</p>
+<p>You can use the following sections to navigate through the content of the lecture:</p>
+<ul>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/overview.html">Overview &amp; procedure </a></p>
+<p>What’s this course all about? How are things implemented and supposed to work?</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/outline.html">General outline</a></p>
+<p>What are the specific topics and aspects taught?</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/setup.html">Course setup</a></p>
+<p>What do I need to follow and participate in the course?</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/introduction/introduction.html">An introduction to the intersection of neuroscience &amp; artificial intelligence</a></p>
+<p>All things gotta start somewhere and working in this research field is no exception to
+that, but how?</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/experimentation/experimentation.html">Experimentation</a></p>
+<p>How to set up and conduct experiments to acquire data and subsequently analyze it?</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/finalization/finalization.html">Project finalization</a></p>
+<p>How can you successfully generate insights from your obtained results and communicate those sufficiently?</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/projects.html">Student projects</a></p>
+<p>Making sure the work and progress of the participants is transparent and
+documented.</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/questionnaires.html">Questionnaires</a></p>
+<p>Was it worth it and how can this be evaluated?</p>
+</li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/CoC.html">Code of Conduct</a></p>
+<p>Necessities for creating an open, fair, safe and inclusive learning
+experience.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="i-ve-got-a-question">
+<h2>I’ve got a question!<a class="headerlink" href="#i-ve-got-a-question" title="Permalink to this headline">¶</a></h2>
+<p>In case you have any questions or difficulties with the lecture and its materials, please don’t hesitate a single second to get in touch. A great way to do this is to <a class="reference external" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues">open an issue</a> on the
+GitHub site of the course. Every feedback or idea or you might have is also highly appreciated and valued.</p>
+<p align="center"><iframe src="https://giphy.com/embed/ATt7p8OO4mvvO" width="440" height="140" frameBorder="0" vspace="0" class="giphy-embed" allowFullScreen></iframe></p><p align="center"><a href="https://giphy.com/gifs/photos-street-sesame-ATt7p8OO4mvvO"><small>via GIPHY</small></a></p></p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>Peer Herholz’ work on and ability to compile this course was enabled through training received at the <a class="reference external" href="https://www.mcgill.ca/neuro/">Montreal Neurological Institute</a>, specifically the <a class="reference external" href="https://neurodatascience.github.io/">NeuroDataScience - ORIGAMI lab</a> supported by funding from the Canada First Research Excellence Fund, awarded to McGill University for the <a class="reference external" href="https://www.mcgill.ca/hbhl/">Healthy Brains for Healthy Lives initiative</a>, the <a class="reference external" href="https://www.nih.gov/">National Institutes of Health (NIH)</a> <a class="reference external" href="https://www.repronim.org/">NIH-NIBIB P41 EB019936 (ReproNim)</a>, the <a class="reference external" href="https://www.nimh.nih.gov/">National Institute Of Mental Health</a> of the NIH under Award  Number <a class="reference external" href="https://www.neurosynth.org/">R01MH096906 (Neurosynth)</a>, a <a class="reference external" href="https://conp.ca/">research scholar award from Brain Canada, in partnership with Health Canada, for the Canadian Open Neuroscience Platform initiative</a>, as well as an <a class="reference external" href="https://sites.google.com/view/unique-neuro-ai">Excellence Scholarship from Unifying Neuroscience and Artificial Intelligence - Québec</a>.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -386,15 +521,13 @@ GitHub site of the course. Every feedback or idea or you might have is also high
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Peer Herholz<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

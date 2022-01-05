@@ -49,7 +49,15 @@ There is an increasing amount of journal articles that address [#DEI](https://tw
 
 [The Citation Diversity Statement: A Practice of Transparency, A Way of Life](https://www.sciencedirect.com/science/article/pii/S1364661320301649?casa_token=PVTfHFUVDzUAAAAA:8OqlKsrlBRVTPcA-wk71rBVYbyM5OSPGRXhuJSVyLxHIF_Wh5KDTxytmllK0-ecEhFGPHN0KnZo)  
 
+### Interactive materials
 
+More and more information concerning this important topic is also provided via interactive materials, i.e. shiny apps, that allow a more in-depth exploration. Sometimes add-ons to journal publications, sometimes independent work or repositories, sometimes based on other resources, these materials present interesting means to examine the corresponding complex interactions further. Below, you'll find a few respective examples:
+
+#### The Intersection of Race and Gender in Science Stratification
+
+A very informative resource that allows to explore "intersectional inequalities" across fields and topics, as well as including data and methods descriptions. 
+
+<iframe width="560" height="315" src="https://sciencebias.uni.lu/app/ " title="sciencebias" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 

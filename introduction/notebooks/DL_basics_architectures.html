@@ -42,7 +42,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -206,7 +206,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -259,7 +259,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -366,7 +366,941 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Deep learning basics</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-brief-recap-first-overview">
+   A brief recap &amp; first overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-s-of-this-section">
+   Aim(s) of this section
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outline-for-this-section">
+   Outline for this section
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning-basics-reasoning">
+   Deep learning - basics &amp; reasoning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-problems">
+     Learning problems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-problem-of-variance-how-representations-can-help">
+     The problem of variance &amp; how representations can help
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-biological-to-artificial-neural-neurons-and-networks">
+   From biological to artificial neural neurons and networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#universal-function-approximation-theorem">
+     Universal function approximation theorem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#components-of-anns">
+     Components of
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ANN
+      </span>
+     </code>
+     s
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#building-blocks-of-anns">
+       Building blocks of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ANN
+        </span>
+       </code>
+       s
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#learning-in-anns">
+       Learning in
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ANN
+        </span>
+       </code>
+       s
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example-linear-regression">
+     An example: linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ann-architectures">
+   ANN architectures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-moral-of-the-story">
+   The moral of the story
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="deep-learning-basics">
+<h1>Deep learning basics<a class="headerlink" href="#deep-learning-basics" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://peerherholz.github.io/">Peer Herholz (he/him)</a><br />
+Postdoctoral researcher - <a class="reference external" href="https://neurodatascience.github.io/">NeuroDataScience lab</a> at <a class="reference external" href="https://www.mcgill.ca/neuro/">MNI</a>/<a class="reference external" href="https://www.mcgill.ca/">McGill</a>, <a class="reference external" href="https://sites.google.com/view/unique-neuro-ai">UNIQUE</a><br />
+Member - <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/">BIDS</a>, <a class="reference external" href="https://www.repronim.org/">ReproNim</a>, <a class="reference external" href="https://brainhack.org/">Brainhack</a>, <a class="reference external" href="https://www.cneuromod.ca/">Neuromod</a>, <a class="reference external" href="https://ohbm-environment.org/">OHBM SEA-SIG</a></p>
+<p><img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/Twitter%20social%20icons%20-%20circle%20-%20blue.png" alt="logo" title="Twitter" width="32" height="20" /> <img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/GitHub-Mark-120px-plus.png" alt="logo" title="Github" width="30" height="20" />     &#64;peerherholz</p>
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ml-dl_workshop.png" alt="logo" title="Github" width="400" height="280" />
+<div class="section" id="a-brief-recap-first-overview">
+<h2>A brief recap &amp; first overview<a class="headerlink" href="#a-brief-recap-first-overview" title="Permalink to this headline">¶</a></h2>
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/AI.png" alt="logo" title="Github" width="320" height="120" />
+<p><strong>Artificial intelligence (AI)</strong> is <a class="reference external" href="https://en.wikipedia.org/wiki/Intelligence">intelligence</a> demonstrated by <a class="reference external" href="https://en.wikipedia.org/wiki/Machine">machines</a>, as opposed to the natural intelligence <a class="reference external" href="https://en.wikipedia.org/wiki/Human_intelligence">displayed by humans</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Animal_cognition">animals</a>. Leading AI textbooks define the field as the study of <a class="reference external" href="https://en.wikipedia.org/wiki/Intelligent_agent">“intelligent agents”</a>: any system that perceives its environment and takes actions that maximize its chance of achieving its goals. Some popular accounts use the term “artificial intelligence” to describe machines that mimic “cognitive” functions that humans associate with the <a class="reference external" href="https://en.wikipedia.org/wiki/Human_mind">human mind</a>, such as “learning” and “problem solving”, however this definition is rejected by major AI researchers.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Artificial_intelligence">https://en.wikipedia.org/wiki/Artificial_intelligence</a></p>
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/AI_ML.png" alt="logo" title="Github" width="320" height="120" />
+<p><strong>Machine learning (ML)</strong> is the study of computer <a class="reference external" href="https://en.wikipedia.org/wiki/Algorithm">algorithms</a> that can improve automatically through experience and by the use of data. It is seen as a part of <a class="reference external" href="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</a>. Machine learning algorithms build a model based on sample data, known as <a class="reference external" href="https://en.wikipedia.org/wiki/Training_data">“training data”</a>, in order to make predictions or decisions without being explicitly programmed to do so. A subset of machine learning is closely related to <a class="reference external" href="https://en.wikipedia.org/wiki/Computational_statistics">computational statistics</a>, which focuses on making predictions using computers; but not all machine learning is statistical learning. The study of <a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_optimization">mathematical optimization</a> delivers methods, theory and application domains to the field of machine learning. <a class="reference external" href="https://en.wikipedia.org/wiki/Data_mining">Data mining</a> is a related field of study, focusing on <a class="reference external" href="https://en.wikipedia.org/wiki/Exploratory_data_analysis">exploratory data analysis</a> through <a class="reference external" href="https://en.wikipedia.org/wiki/Unsupervised_learning">unsupervised learning</a>. Some implementations of machine learning use data and <a class="reference external" href="https://en.wikipedia.org/wiki/Neural_networks">neural networks</a> in a way that mimics the working of a biological brain.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">https://en.wikipedia.org/wiki/Machine_learning</a></p>
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/AI_ML_DL.png" alt="logo" title="Github" width="320" height="120" />
+<p><strong>Deep learning</strong> (also known as deep structured learning) is part of a broader family of <a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">machine learning</a> methods based on <a class="reference external" href="https://en.wikipedia.org/wiki/Artificial_neural_networks">artificial neural networks</a> with <a class="reference external" href="https://en.wikipedia.org/wiki/Representation_learning">representation learning</a>. Learning can be <a class="reference external" href="https://en.wikipedia.org/wiki/Supervised_learning">supervised</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Semi-supervised_learning">semi-supervised</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Unsupervised_learning">unsupervised</a>. <a class="reference external" href="https://en.wikipedia.org/wiki/Artificial_neural_network">Artificial neural networks (ANNs)</a> were inspired by information processing and distributed communication nodes in <a class="reference external" href="https://en.wikipedia.org/wiki/Biological_system">biological systems</a>. ANNs have various differences from biological <a class="reference external" href="https://en.wikipedia.org/wiki/Brain">brains</a>. Specifically, neural networks tend to be static and symbolic, while the biological brain of most living organisms is dynamic (plastic) and analogue. The adjective “deep” in deep learning refers to the use of multiple layers in the network. Early work showed that a linear <a class="reference external" href="https://en.wikipedia.org/wiki/Perceptron">perceptron</a> cannot be a universal classifier, but that a network with a nonpolynomial activation function with one hidden layer of unbounded width can.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Deep_learning">https://en.wikipedia.org/wiki/Deep_learning</a></p>
+<ul class="simple">
+<li><p>very important: <strong>deep learning is machine learning</strong></p>
+<ul>
+<li><p>DL is a specific subset of ML</p></li>
+<li><p>structured vs. unstructured input</p></li>
+<li><p>linearity</p></li>
+<li><p>model architectures</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>you and “the machine”</p>
+<ul>
+<li><p>ML models can become better at a specific task, however they need some form of guidance</p></li>
+<li><p>DL models in contrast require less human intervention</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Why the buzz?</p>
+<ul>
+<li><p>works amazing on structured input</p></li>
+<li><p>highly flexible → universal function approximator</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>What are the challenges?</p>
+<ul>
+<li><p>large number of parameters → data hungry</p></li>
+<li><p>large number of hyper-parameters → difficult to train</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>When do I use it?</p>
+<ul>
+<li><p>if you have highly-structured input, eg. medical images.</p></li>
+<li><p>you have a lot of data and computational resources.</p></li>
+</ul>
+</li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/core_aspects_examples.png" alt="logo" title="Github" width="500" height="280" /><p>Why go <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> in <code class="docutils literal notranslate"><span class="pre">neuroscience</span></code>? (all highly discussed)</p>
+<ul class="simple">
+<li><p>complexity of biological systems</p>
+<ul>
+<li><p>integrate knowledge of biological systems in computational systems
+(excitation vs. inhibition, normalization, LIF)</p></li>
+<li><p>linear-nonlinear processing</p></li>
+<li><p>utilize computational systems as <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">systems</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Why go <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> in <code class="docutils literal notranslate"><span class="pre">neuroscience</span></code>? (all highly discussed)</p>
+<ul class="simple">
+<li><p>limitations of “simple models”</p>
+<ul>
+<li><p>fail to capture diversity of biological systems
+(response heterogeneity, sensitivity vs. specificity, etc.)</p></li>
+<li><p>fail to perform as good as biological systems</p></li>
+</ul>
+</li>
+</ul>
+<p>Why go <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> in <code class="docutils literal notranslate"><span class="pre">neuroscience</span></code>? (all highly discussed)</p>
+<ul class="simple">
+<li><p>addressing the “why question”</p>
+<ul>
+<li><p>why do biological systems work in the way they do</p></li>
+<li><p>insights into objectives and constraints defined by evolutionary pressure</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="aim-s-of-this-section">
+<h2>Aim(s) of this section<a class="headerlink" href="#aim-s-of-this-section" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>learn about basics behind deep learning, specifically artificial neural networks</p></li>
+<li><p>become aware of central building blocks and aspects of artificial neural networks</p></li>
+<li><p>get to know different model types and architectures</p></li>
+</ul>
+</div>
+<div class="section" id="outline-for-this-section">
+<h2>Outline for this section<a class="headerlink" href="#outline-for-this-section" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Deep learning - basics &amp; reasoning</p>
+<ul class="simple">
+<li><p>learning problems</p></li>
+<li><p>representations</p></li>
+</ul>
+</li>
+<li><p>From biological to artificial neural networks</p>
+<ul class="simple">
+<li><p>neurons</p></li>
+<li><p>universal function approximation</p></li>
+</ul>
+</li>
+<li><p>components of ANNs</p>
+<ul class="simple">
+<li><p>building parts</p></li>
+<li><p>learning</p></li>
+</ul>
+</li>
+<li><p>ANN architectures</p>
+<ul class="simple">
+<li><p>Multilayer perceptrons</p></li>
+<li><p>Convolutional neural networks</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="deep-learning-basics-reasoning">
+<h2>Deep learning - basics &amp; reasoning<a class="headerlink" href="#deep-learning-basics-reasoning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>as said before: <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> is (a subset of) <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">learning</span></code></p></li>
+<li><p>it thus includes the core aspects we talked about in the <span class="xref myst">previous section</span> and builds upon them:</p>
+<ul>
+<li><p>different learning problems and resulting models/architectures</p></li>
+<li><p>loss function &amp; optimization</p></li>
+<li><p>training, evaluation, validation</p></li>
+<li><p>biases &amp; problems</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>this furthermore transfers to the key components you as a user has to think about</p>
+<ul>
+<li><p>objective function (What is the goal?)</p></li>
+<li><p>learning rule (How should weights be updated to improve the objective function?)</p></li>
+<li><p>network architecture (What are the network parts and how are they connected?)</p></li>
+<li><p>initialisation (How are weights initially defined?)</p></li>
+<li><p>environment (What kind of data is provided for/during the learning?)</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="learning-problems">
+<h3>Learning problems<a class="headerlink" href="#learning-problems" title="Permalink to this headline">¶</a></h3>
+<p>As in <span class="xref myst">machine learning</span> in general, we have <code class="docutils literal notranslate"><span class="pre">supervised</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">unsupervised</span> <span class="pre">learning</span> <span class="pre">problems</span></code> again:</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/supervised_unsupervised.png" alt="logo" title="Github" width="1200" height="350" /><p>However, within the world of <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code>, we have three more <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problems</span></code>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Reinforcement_learning">reinforcement learning</a></p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/RL.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Semi-supervised_learning">semi-supervised learning</a></p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/semisupervised.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Self-supervised_learning">self-supervised learning</a></p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/self-supervised.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p>depending on the data and task, these <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problems</span></code> can be employed within a diverse set of <a class="reference external" href="https://en.wikipedia.org/wiki/Artificial_neural_network">artificial neural network</a> architectures (most commonly):</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Multilayer_perceptron">Multilayer perceptrons</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Convolutional neural networks</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Recurrent_neural_network">Recurrent neural networks</a></p></li>
+</ul>
+</li>
+</ul>
+<p>But why employ <a class="reference external" href="https://en.wikipedia.org/wiki/Artificial_neural_network">artificial neural networks</a> at all?</p>
+</div>
+<div class="section" id="the-problem-of-variance-how-representations-can-help">
+<h3>The problem of variance &amp; how representations can help<a class="headerlink" href="#the-problem-of-variance-how-representations-can-help" title="Permalink to this headline">¶</a></h3>
+<p>Think about all the things you as an <code class="docutils literal notranslate"><span class="pre">biological</span> <span class="pre">agent</span></code> do on a typical day … Everything (most things) you do appear very easy to you. Then why is so hard for <code class="docutils literal notranslate"><span class="pre">artificial</span> <span class="pre">agents</span></code> to achieve a comparable <code class="docutils literal notranslate"><span class="pre">behavior</span></code> and/or <code class="docutils literal notranslate"><span class="pre">performance</span></code>?</p>
+<p>One major problem is the <code class="docutils literal notranslate"><span class="pre">variance</span></code> of the input we encounter which subsequently makes it very hard to find appropriate <code class="docutils literal notranslate"><span class="pre">transformations</span></code> that can lead to/help to achieve <code class="docutils literal notranslate"><span class="pre">generalizable</span> <span class="pre">behavior</span></code>.</p>
+<p>How about an example? We’ll keep it very simple and focus on <code class="docutils literal notranslate"><span class="pre">recognizing</span></code> a certain <code class="docutils literal notranslate"><span class="pre">category</span></code> of the natural world.</p>
+<p>You all waited for it and now it’s finally happening: cute cats!</p>
+<ul class="simple">
+<li><p>let’s assume we want to learn to recognize, label and predict “cats” based on a set of images that look like this</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_prototype.png" alt="logo" title="Github" width="150" height="250" /><ul class="simple">
+<li><p>utilizing the <code class="docutils literal notranslate"><span class="pre">models</span></code> and <code class="docutils literal notranslate"><span class="pre">approaches</span></code> we talked about so far, we would use <code class="docutils literal notranslate"><span class="pre">predetermined</span> <span class="pre">transformations</span></code> (<code class="docutils literal notranslate"><span class="pre">features</span></code>) of our data <code class="docutils literal notranslate"><span class="pre">X</span></code>:</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_ml.png" alt="logo" title="Github" width="600" height="280" /><ul class="simple">
+<li><p>this constitutes a form of <a class="reference external" href="https://en.wikipedia.org/wiki/Inductive_bias">inductive bias</a>, i.e. <code class="docutils literal notranslate"><span class="pre">assumptions</span></code> we include in the <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problem</span></code> and thus back into the respective <code class="docutils literal notranslate"><span class="pre">models</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p>however, this is by far not the only way we could encounter a cat … there are a lots of sources of variation of our data <code class="docutils literal notranslate"><span class="pre">X</span></code>, including:</p></li>
+</ul>
+<ul class="simple">
+<li><p>illumination</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_illumination.png" alt="logo" title="Github" width="400" height="250" /><ul class="simple">
+<li><p>deformation</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_deformation.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p>occlusion</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_occlusion.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p>background clutter</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_background.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p>and intraclass variation</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_variation.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p>these variations (and many more) are usually not accounted for and our mapping from <code class="docutils literal notranslate"><span class="pre">X</span></code> to <code class="docutils literal notranslate"><span class="pre">Y</span></code> would fail</p></li>
+</ul>
+<ul class="simple">
+<li><p>what we want to learn to prevent this are <code class="docutils literal notranslate"><span class="pre">invariant</span> <span class="pre">representations</span></code> that capture <code class="docutils literal notranslate"><span class="pre">latent</span> <span class="pre">variables</span></code> which are variables you (most likely) cannot directly observe, but that affect the variables you can observe</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/cat_dl.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p>the “simple models” we talked about so far work with <code class="docutils literal notranslate"><span class="pre">predetermined</span> <span class="pre">transformations</span></code> and thus perform <code class="docutils literal notranslate"><span class="pre">shallow</span> <span class="pre">learning</span></code>, more “complex models” perform <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> in their <code class="docutils literal notranslate"><span class="pre">hidden</span> <span class="pre">layers</span></code> to learn <code class="docutils literal notranslate"><span class="pre">representations</span></code></p></li>
+</ul>
+<img align="center" src="https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif?cid=ecf05e47wv88pqvnas5utdrw2qap9xn9lmjvwv4kn3qenjr9&rid=giphy.gif&ct=g" alt="logo" title="Github" width="300" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif?cid=ecf05e47wv88pqvnas5utdrw2qap9xn9lmjvwv4kn3qenjr9&amp;rid=giphy.gif&amp;ct=g">https://media1.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif?cid=ecf05e47wv88pqvnas5utdrw2qap9xn9lmjvwv4kn3qenjr9&amp;rid=giphy.gif&amp;ct=g</a>
+</sup></sup></sub></sup></sub></p>
+<p>But how?</p>
+<p>One important aspect to discuss here is another <code class="docutils literal notranslate"><span class="pre">inductive</span> <span class="pre">bias</span></code> we put into <code class="docutils literal notranslate"><span class="pre">models</span></code> (think about the <code class="docutils literal notranslate"><span class="pre">AI</span></code> set again) : the <code class="docutils literal notranslate"><span class="pre">hierarchical</span> <span class="pre">perception</span></code> of the <code class="docutils literal notranslate"><span class="pre">natural</span> <span class="pre">world</span></code>. In other words: the world around is <code class="docutils literal notranslate"><span class="pre">compositional</span></code> which means that the things we perceive are composed of smaller pieces, which themselves are composed of smaller pieces and so on … .</p>
+<p>As something we can also observe as an <code class="docutils literal notranslate"><span class="pre">organizational</span> <span class="pre">principle</span></code> in <code class="docutils literal notranslate"><span class="pre">biological</span> <span class="pre">brains</span></code> (the <code class="docutils literal notranslate"><span class="pre">hierarchical</span> <span class="pre">organization</span></code> of the <code class="docutils literal notranslate"><span class="pre">visual</span></code> and <code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">cortex</span></code> for example) this is something that tremendously informed <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code>, especially certain <code class="docutils literal notranslate"><span class="pre">architectures</span></code>.</p>
+<img align="center" src="https://slideplayer.com/slide/10202369/34/images/36/The+Mammalian+Visual+Cortex+Inspires+CNN.jpg" alt="logo" title="Github" width="600" height="400" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://slideplayer.com/slide/10202369/34/images/36/The+Mammalian+Visual+Cortex+Inspires+CNN.jpg">https://slideplayer.com/slide/10202369/34/images/36/The+Mammalian+Visual+Cortex+Inspires+CNN.jpg</a>
+</sup></sup></sub></sup></sub></p>
+<img align="center" src="https://neurdiness.files.wordpress.com/2018/05/screenshot-from-2018-05-17-20-24-45.png" alt="logo" title="Github" width="600" height="400" />
+<p><sup><sup>Grace Lindsay, <a class="reference external" href="https://neurdiness.files.wordpress.com/2018/05/screenshot-from-2018-05-17-20-24-45.png">https://neurdiness.files.wordpress.com/2018/05/screenshot-from-2018-05-17-20-24-45.png</a>
+</sup></sub></p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/eickenberg_2016.png" alt="logo" title="Github" width="400" height="400" />
+<p><sup><sup>Eickenberg et al. 2016, <a class="reference external" href="https://hal.inria.fr/hal-01389809/document">https://hal.inria.fr/hal-01389809/document</a>
+</sup></sub></p>
+<img align="center" src="https://ars.els-cdn.com/content/image/1-s2.0-S0896627318302502-gr4.jpg" alt="logo" title="Github" width="400" height="700" />
+<p><sup><sup>Kell et al. 2018, <a class="reference external" href="https://doi.org/10.1016/j.neuron.2018.03.044">https://doi.org/10.1016/j.neuron.2018.03.044</a>
+</sup></sub></p>
+<p>The question is still: how do <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s do that?</p>
+</div>
+</div>
+<div class="section" id="from-biological-to-artificial-neural-neurons-and-networks">
+<h2>From biological to artificial neural neurons and networks<a class="headerlink" href="#from-biological-to-artificial-neural-neurons-and-networks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>decades ago researchers started to create artificial neurons to tackle tasks “conventional algorithms” couldn’t handle</p></li>
+<li><p>inspired by the learning and performance of biological neurons and networks</p></li>
+<li><p>mimic defining aspects of biological neurons and networks</p></li>
+<li><p>examples are: <a class="reference external" href="https://en.wikipedia.org/wiki/Biological_neuron_model#Leaky_integrate-and-fire">integrate and fire neurons</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">rectified linear rate neuron</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Perceptron">perceptrons</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Multilayer_perceptron">multilayer perceptrons</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Convolutional_neural_network">convolutional neural networks</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Recurrent_neural_network">recurrent neural networks</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Autoencoder">autoencoders</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Generative_adversarial_network">generative adversarial networks</a></p></li>
+</ul>
+<img align="center" src="https://upload.wikimedia.org/wikipedia/en/5/52/Mark_I_perceptron.jpeg" alt="logo" title="Github" width="300" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://upload.wikimedia.org/wikipedia/en/5/52/Mark_I_perceptron.jpeg">https://upload.wikimedia.org/wikipedia/en/5/52/Mark_I_perceptron.jpeg</a>
+</sup></sup></sub></sup></sub></p>
+<ul class="simple">
+<li><p>using biological neurons and networks as the basis for artificial neurons and networks might therefore also help to learn <code class="docutils literal notranslate"><span class="pre">invariant</span> <span class="pre">representations</span></code> that capture <code class="docutils literal notranslate"><span class="pre">latent</span> <span class="pre">variables</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> = <code class="docutils literal notranslate"><span class="pre">representation</span> <span class="pre">learning</span></code></p></li>
+<li><p>our minds (most likely) contains <code class="docutils literal notranslate"><span class="pre">(invariant)</span> <span class="pre">representations</span></code> about the world that allow us to interact with it</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">task</span> <span class="pre">optimization</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generalizability</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Back to biology…</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">neurons</span></code> receive one or more inputs</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Excitatory_postsynaptic_potential">excitatory postsynaptic potentials</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Inhibitory_postsynaptic_potential">inhibitory postsynaptic potentials</a></p></li>
+</ul>
+</li>
+<li><p>inputs are summed up to produce an output</p>
+<ul>
+<li><p>an activation</p></li>
+</ul>
+</li>
+<li><p>inputs are separably <a class="reference external" href="https://en.wikipedia.org/wiki/Weighting">weighted</a> and sum passed through a <a class="reference external" href="https://en.wikipedia.org/wiki/Non-linear_function">non-linear function</a></p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Activation_function">activation</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Transfer_function">transfer function</a></p></li>
+</ul>
+</li>
+</ul>
+<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Neuron3.svg/2560px-Neuron3.svg.png" alt="logo" title="Github" width="300" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Neuron3.svg/2560px-Neuron3.svg.png">https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Neuron3.svg/2560px-Neuron3.svg.png</a>
+</sup></sup></sub></sup></sub></p>
+<ul class="simple">
+<li><p>these processes can be translated into mathematical problems including the input <code class="docutils literal notranslate"><span class="pre">X</span></code>, its weights <code class="docutils literal notranslate"><span class="pre">W</span></code> and the activation function <code class="docutils literal notranslate"><span class="pre">f</span></code></p></li>
+</ul>
+<img align="center" src="https://miro.medium.com/max/1400/1*BMSfafFNEpqGFCNU4smPkg.png" alt="logo" title="Github" width="600" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://miro.medium.com/max/1400/1*BMSfafFNEpqGFCNU4smPkg.png">https://miro.medium.com/max/1400/1*BMSfafFNEpqGFCNU4smPkg.png</a>
+</sup></sup></sub></sup></sub></p>
+<ul class="simple">
+<li><p>the thing about <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">function</span></code>s…</p>
+<ul>
+<li><p>they define the resulting type of an <code class="docutils literal notranslate"><span class="pre">artificial</span> <span class="pre">neuron</span></code></p></li>
+<li><p>thus they also define its capabilities</p></li>
+<li><p>require non-linearity</p>
+<ul>
+<li><p>because otherwise only linear functions and decision probabilities</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>the thing about <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">function</span></code>s…</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l}
+\text { Non-linear transfer functions}\\
+\begin{array}{llc}
+\hline \text { Name } &amp; \text { Formula } &amp; \text { Year } \\
+\hline \text { none } &amp; \mathrm{y}=\mathrm{x} &amp; - \\
+\text { sigmoid } &amp; \mathrm{y}=\frac{1}{1+e^{-x}} &amp; 1986 \\
+\tanh &amp; \mathrm{y}=\frac{e^{2 x}-1}{e^{2 x}+1} &amp; 1986 \\
+\text { ReLU } &amp; \mathrm{y}=\max (\mathrm{x}, 0) &amp; 2010 \\
+\text { (centered) SoftPlus } &amp; \mathrm{y}=\ln \left(e^{x}+1\right)-\ln 2 &amp; 2011 \\
+\text { LReLU } &amp; \mathrm{y}=\max (\mathrm{x}, \alpha \mathrm{x}), \alpha \approx 0.01 &amp; 2011 \\
+\text { maxout } &amp; \mathrm{y}=\max \left(W_{1} \mathrm{x}+b_{1}, W_{2} \mathrm{x}+b_{2}\right) &amp; 2013 \\
+\text { APL } &amp; \mathrm{y}=\max (\mathrm{x}, 0)+\sum_{s=1}^{S} a_{i}^{s} \max \left(0,-x+b_{i}^{s}\right) &amp; 2014 \\
+\text { VLReLU } &amp; \mathrm{y}=\max (\mathrm{x}, \alpha \mathrm{x}), \alpha \in 0.1,0.5 &amp; 2014 \\
+\text { RReLU } &amp; \mathrm{y}=\max (\mathrm{x}, \alpha \mathrm{x}), \alpha=\operatorname{random}(0.1,0.5) &amp; 2015 \\
+\text { PReLU } &amp; \mathrm{y}=\max (\mathrm{x}, \alpha \mathrm{x}), \alpha \text { is learnable } &amp; 2015 \\
+\text { ELU } &amp; \mathrm{y}=\mathrm{x}, \text { if } \mathrm{x} \geq 0, \text { else } \alpha\left(e^{x}-1\right) &amp; 2015 \\
+\hline
+\end{array}
+\end{array}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;https://polarisation.github.io/tfjs-activation-functions/&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://polarisation.github.io/tfjs-activation-functions/"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>historically either <a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_function">sigmoid</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hyperbolic_function#Hyperbolic_tangent">tanh</a> utilized</p></li>
+<li><p>even though they are <span class="xref myst">non-linear functions</span> their properties make them insufficient for most problems, especially <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code></p>
+<ul>
+<li><p>rather simple <code class="docutils literal notranslate"><span class="pre">polynomials</span></code></p></li>
+<li><p>mainly work for <code class="docutils literal notranslate"><span class="pre">binary</span> <span class="pre">problems</span></code></p></li>
+<li><p>computationally expensive</p></li>
+<li><p>they saturate causing the neuron and thus network to “die”, i.e. stop <code class="docutils literal notranslate"><span class="pre">learning</span></code></p></li>
+</ul>
+</li>
+<li><p>modern <code class="docutils literal notranslate"><span class="pre">ANN</span></code> frequently use <code class="docutils literal notranslate"><span class="pre">continuous</span> <span class="pre">activation</span> <span class="pre">functions</span></code> like <a class="reference external" href="https://deepai.org/machine-learning-glossary-and-terms/rectified-linear-units">Rectified Linear Unit</a></p>
+<ul>
+<li><p>doesn’t saturate</p></li>
+<li><p>faster training and convergence</p></li>
+<li><p>introduce network sparsity</p></li>
+</ul>
+</li>
+</ul>
+<p>Still, the question is: how does this help us?</p>
+<p>Let’s imagine the following situation:</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/UAT_problem.png" alt="logo" title="Github" width="600" height="350" />
+<ul class="simple">
+<li><p>we could try to iterate over all possible <code class="docutils literal notranslate"><span class="pre">transformations</span></code>/<code class="docutils literal notranslate"><span class="pre">functions</span></code> necessary to enable and/or optimize the <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+</ul>
+<p>However, we could also introduce a <span class="xref myst">hidden layer</span> that learns or more precisely <code class="docutils literal notranslate"><span class="pre">approximates</span></code> what those <code class="docutils literal notranslate"><span class="pre">transformations</span></code>/<code class="docutils literal notranslate"><span class="pre">functions</span></code> are on its own:</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/UAT_hiddenlayer.png" alt="logo" title="Github" width="600" height="350" />
+<p>The idea: there is a <code class="docutils literal notranslate"><span class="pre">neural</span> <span class="pre">network</span></code> so that for every possible input <code class="docutils literal notranslate"><span class="pre">X</span></code>, the outcome is <code class="docutils literal notranslate"><span class="pre">f(X)</span></code>.</p>
+<p>Importantly, the <span class="xref myst">hidden layer</span> consists of <span class="xref myst">artificial neurons</span> that perceive <code class="docutils literal notranslate"><span class="pre">weighted</span> <span class="pre">inputs</span></code> <code class="docutils literal notranslate"><span class="pre">w</span></code> and perform <span class="xref myst">non-linear</span> (<span class="xref myst">non-saturating</span>) <span class="xref myst">activation functions</span> <code class="docutils literal notranslate"><span class="pre">v</span></code> which <code class="docutils literal notranslate"><span class="pre">output</span></code> will be used for the <code class="docutils literal notranslate"><span class="pre">task</span></code> at hand</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/UAT_hiddenlayer_function.png" alt="logo" title="Github" width="600" height="350" />
+<p>It gets even better: this holds true even if there are multiple <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">outputs</span></code>:</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/UAT_generalizability.png" alt="logo" title="Github" width="600" height="350" />
+<ul class="simple">
+<li><p>this is referred to as <code class="docutils literal notranslate"><span class="pre">universality</span></code> and finally brings us to one core aspect of <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code></p></li>
+</ul>
+<div class="section" id="universal-function-approximation-theorem">
+<h3>Universal function approximation theorem<a class="headerlink" href="#universal-function-approximation-theorem" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">artificial</span> <span class="pre">neural</span> <span class="pre">networks</span></code> are considered <code class="docutils literal notranslate"><span class="pre">universal</span> <span class="pre">function</span> <span class="pre">approximators</span></code></p>
+<ul>
+<li><p>the possibility of <code class="docutils literal notranslate"><span class="pre">approximating</span></code> a(ny) <code class="docutils literal notranslate"><span class="pre">function</span></code> to some accuracy with<br />
+(a set of) <span class="xref myst">artificial neurons</span> in <span class="xref myst">hidden layer</span></p></li>
+<li><p>instead of providing a predetermined set of <code class="docutils literal notranslate"><span class="pre">transformations</span></code> or <code class="docutils literal notranslate"><span class="pre">functions</span></code>,
+the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> learns/approximates them by itself</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>two problems:</p>
+<ul>
+<li><p>the theorem doesn’t tell us how many <span class="xref myst">artificial neurons we need</span></p></li>
+<li><p>either arbitrary number of artificial neurons (“arbitrary width” case) or
+arbitrary number of hidden layers, each containing a limited number of artificial neurons (“arbitrary depth”
+case)</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>going back to “shallow learning”: we provide pre-extracted/pre-computed <code class="docutils literal notranslate"><span class="pre">features</span></code> of our <code class="docutils literal notranslate"><span class="pre">data</span></code> <code class="docutils literal notranslate"><span class="pre">X</span></code> and maybe apply further <code class="docutils literal notranslate"><span class="pre">preprocessing</span></code> before letting our model <code class="docutils literal notranslate"><span class="pre">M</span></code> <code class="docutils literal notranslate"><span class="pre">learns</span></code> the mapping to our outcome <code class="docutils literal notranslate"><span class="pre">Y</span></code> via <code class="docutils literal notranslate"><span class="pre">optimization</span></code> (minimizing the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code>)</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/core_aspects_preprocessing.png" alt="logo" title="Github" width="500" height="280" /><ul class="simple">
+<li><p>as it’s very cumbersome to nearly impossible to iterate over all possible <code class="docutils literal notranslate"><span class="pre">features</span></code>, <code class="docutils literal notranslate"><span class="pre">functions</span></code> and <code class="docutils literal notranslate"><span class="pre">parameters</span></code> what <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> does instead is to <code class="docutils literal notranslate"><span class="pre">learn</span></code> <code class="docutils literal notranslate"><span class="pre">features</span></code> by itself, namely those that are most useful for the <code class="docutils literal notranslate"><span class="pre">objective</span> <span class="pre">function</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">minimize</span> <span class="pre">loss</span></code> for a given <code class="docutils literal notranslate"><span class="pre">task</span></code> as defined by <code class="docutils literal notranslate"><span class="pre">optimization</span></code></p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/dl_features.png" alt="logo" title="Github" width="500" height="280" /><p>To bring the things we talked about so far together, we will focus on <code class="docutils literal notranslate"><span class="pre">ANN</span></code> components and how <code class="docutils literal notranslate"><span class="pre">learning</span></code> takes place next…but at first, let’s take a breather.</p>
+<img align="center" src="https://media4.giphy.com/media/1LmBFphV4XNSw/giphy.gif?cid=ecf05e47og07li3vrdt89rgz8uux1qjicb3ykg2z5qdgigu7&rid=giphy.gif&ct=g" alt="logo" title="Github" width="300" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://media4.giphy.com/media/1LmBFphV4XNSw/giphy.gif?cid=ecf05e47og07li3vrdt89rgz8uux1qjicb3ykg2z5qdgigu7&amp;rid=giphy.gif&amp;ct=g">https://media4.giphy.com/media/1LmBFphV4XNSw/giphy.gif?cid=ecf05e47og07li3vrdt89rgz8uux1qjicb3ykg2z5qdgigu7&amp;rid=giphy.gif&amp;ct=g</a>
+</sup></sup></sub></sup></sub></p>
+</div>
+<div class="section" id="components-of-anns">
+<h3>Components of <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s<a class="headerlink" href="#components-of-anns" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>now that we’ve spent quite some time on the <code class="docutils literal notranslate"><span class="pre">neurobiological</span> <span class="pre">informed</span></code> underpinnings it’s time to put the respective pieces together and see how they are actually employed within <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s</p></li>
+<li><p>for this we will talk about two aspects:</p>
+<ul>
+<li><p>building blocks of <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s</p></li>
+<li><p>learning in <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="building-blocks-of-anns">
+<h4>Building blocks of <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s<a class="headerlink" href="#building-blocks-of-anns" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>we’ve actually already seen quite a few important building blocks before but didn’t defined them appropriately</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/UAT_generalizability.png" alt="logo" title="Github" width="600" height="350" />
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_layer.png" alt="logo" title="Github" width="600" height="350" />
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="text-align:center head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Layer</p></td>
+<td class="text-align:center"><p>Structure or network topology in the architecture of the model that consists of <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and is connected to other layers, receiving and passing information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Input layer</p></td>
+<td class="text-align:center"><p>The layer that receives the external input data.</p></td>
+</tr>
+<tr class="row-even"><td><p>Hidden layer(s)</p></td>
+<td class="text-align:center"><p>The layer(s) between <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code> which performs <code class="docutils literal notranslate"><span class="pre">transformations</span></code> via <code class="docutils literal notranslate"><span class="pre">non-linear</span> <span class="pre">activation</span> <span class="pre">functions</span></code> .</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output layer</p></td>
+<td class="text-align:center"><p>The layer that produces the final output/task.</p></td>
+</tr>
+</tbody>
+</table>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_subparts.png" alt="logo" title="Github" width="600" height="350" />
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="text-align:center head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Node</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">Artificial</span> <span class="pre">neurons</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Connection</p></td>
+<td class="text-align:center"><p>Connection between <code class="docutils literal notranslate"><span class="pre">nodes</span></code>, providing <code class="docutils literal notranslate"><span class="pre">output</span></code> of one <code class="docutils literal notranslate"><span class="pre">node</span></code>/<code class="docutils literal notranslate"><span class="pre">neuron</span></code> as <code class="docutils literal notranslate"><span class="pre">input</span></code> to the next <code class="docutils literal notranslate"><span class="pre">node</span></code>/<code class="docutils literal notranslate"><span class="pre">neuron</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Weight</p></td>
+<td class="text-align:center"><p>The relative importance of the <code class="docutils literal notranslate"><span class="pre">connection</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bias</p></td>
+<td class="text-align:center"><p>The bias term that can be added to the <code class="docutils literal notranslate"><span class="pre">propagation</span> <span class="pre">function</span></code>, i.e. input to a neuron computed from the outputs of its predecessor neurons and their connections as a weighted sum.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ANN</span></code>s can be described based on their amount of <code class="docutils literal notranslate"><span class="pre">hidden</span> <span class="pre">layers</span></code> (<code class="docutils literal notranslate"><span class="pre">depth</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>)</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_multilayer.png" alt="logo" title="Github" width="600" height="350" /><ul class="simple">
+<li><p>having talked about <code class="docutils literal notranslate"><span class="pre">overt</span> <span class="pre">building</span> <span class="pre">blocks</span></code> of <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s we need to talk about <code class="docutils literal notranslate"><span class="pre">building</span> <span class="pre">blocks</span></code> that are rather <code class="docutils literal notranslate"><span class="pre">covert</span></code>, that is the aspects that define how <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s learn…</p></li>
+</ul>
+</div>
+<div class="section" id="learning-in-anns">
+<h4>Learning in <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s<a class="headerlink" href="#learning-in-anns" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>let’s go back a few hours and talk about <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">fitting</span></code> again</p></li>
+</ul>
+<ul class="simple">
+<li><p>when talking about <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">fitting</span></code>, we need to talk about three central aspects:</p>
+<ul>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">model</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">optimization</span></code></p></li>
+</ul>
+</li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="text-align:center head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Model</p></td>
+<td class="text-align:center"><p>A set of parameters that makes a prediction based on a given input. The parameter values are fitted to available data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Loss function</p></td>
+<td class="text-align:center"><p>A function that evaluates how well your algorithm models your dataset</p></td>
+</tr>
+<tr class="row-even"><td><p>Optimization</p></td>
+<td class="text-align:center"><p>A function that tries to minimize the loss via updating model parameters.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="an-example-linear-regression">
+<h3>An example: linear regression<a class="headerlink" href="#an-example-linear-regression" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Model:  $<span class="math notranslate nohighlight">\(y=\beta_{0}+\beta_{1} x_{1}^{2}+\beta_{2} x_{2}^{2}\)</span>$</p></li>
+<li><p>Loss function: $<span class="math notranslate nohighlight">\( M S E=\frac{1}{n} \sum_{i=1}^{n}\left(y_{i}-\hat{y}_{i}\right)^{2}\)</span>$</p></li>
+<li><p>optimization: <span class="xref myst">Gradient descent</span></p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Gradient</span> <span class="pre">descent</span></code> with a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">input</span> <span class="pre">variable</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">samples</span></code></p>
+<ul>
+<li><p>Start with random weights (<code class="docutils literal notranslate"><span class="pre">β0</span></code> and <code class="docutils literal notranslate"><span class="pre">β1</span></code>) $<span class="math notranslate nohighlight">\(\hat{y}_{i}=\beta_{0}+\beta_{1} X_{i}\)</span>$</p></li>
+<li><p>Compute loss (i.e. <code class="docutils literal notranslate"><span class="pre">MSE</span></code>) $<span class="math notranslate nohighlight">\(M S E=\frac{1}{n} \sum_{i=1}^{n}\left(y_{i}-\hat{y}_{i}\right)^{2}\)</span>$</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">weights</span></code> based on the <code class="docutils literal notranslate"><span class="pre">gradient</span></code></p></li>
+</ul>
+</li>
+</ul>
+<img align="center" src="https://cdn.hackernoon.com/hn-images/0*D7zG46WrdKx54pbU.gif" alt="logo" title="Github" width="550" height="280" />
+<sub><sup><sub><sup><sup>https://cdn.hackernoon.com/hn-images/0*D7zG46WrdKx54pbU.gif
+</sup></sup></sub></sup></sub>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Gradient</span> <span class="pre">descent</span></code> for complex models with <code class="docutils literal notranslate"><span class="pre">non-convex</span> <span class="pre">loss</span> <span class="pre">functions</span></code></p>
+<ul>
+<li><p>Start with random weights (<code class="docutils literal notranslate"><span class="pre">β0</span></code> and <code class="docutils literal notranslate"><span class="pre">β1</span></code>) $<span class="math notranslate nohighlight">\(\hat{y}_{i}=\beta_{0}+\beta_{1} X_{i}\)</span>$</p></li>
+<li><p>Compute loss (i.e. <code class="docutils literal notranslate"><span class="pre">MSE</span></code>) $<span class="math notranslate nohighlight">\(M S E=\frac{1}{n} \sum_{i=1}^{n}\left(y_{i}-\hat{y}_{i}\right)^{2}\)</span>$</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">weights</span></code> based on the <code class="docutils literal notranslate"><span class="pre">gradient</span></code></p></li>
+</ul>
+</li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/gradient_descent_complex_models.png" alt="logo" title="Github" width="500" height="280" /><ul class="simple">
+<li><p>to sufficiently talk about <code class="docutils literal notranslate"><span class="pre">learning</span></code> in <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s we need to add a few things, however we heard some of them already</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">metric</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">function</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weights</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">backpropagation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">epoch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regularization</span></code></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>as you can see, this is going to be something else but we will be trying to bring everything together for a holistic overview</p></li>
+</ul>
+<p>Remember how we talked about the different <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problems</span></code>? As noted before, the initial idea of <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code>/<code class="docutils literal notranslate"><span class="pre">AI</span></code> was rather centered around <code class="docutils literal notranslate"><span class="pre">unsupervised</span></code> or <code class="docutils literal notranslate"><span class="pre">self-supervised</span> <span class="pre">learning</span> <span class="pre">problems</span></code>. However, based on the limited success of corresponding <code class="docutils literal notranslate"><span class="pre">models</span></code> and the outstanding performance of <code class="docutils literal notranslate"><span class="pre">supervised</span> <span class="pre">models</span></code>, the latter where way more heavily applied and focused on. Unfortunately, this workshop won’t be an exception to that. First of all given time and computational resources and second because we though it might be easier to go through the above mentioned things based on a <code class="docutils literal notranslate"><span class="pre">supervised</span> <span class="pre">learning</span> <span class="pre">problem</span></code>. If you disagree, please let us know! We will however go through some other <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problems</span></code> later, e.g. when checking out different <code class="docutils literal notranslate"><span class="pre">architectures</span></code> and (hopefully) during the practical session where we’ll evaluate what’s possible with your <code class="docutils literal notranslate"><span class="pre">datasets</span></code>!</p>
+<p>For now, we will keep it rather simple and bring back our <code class="docutils literal notranslate"><span class="pre">cats</span></code>, assuming we want to <code class="docutils literal notranslate"><span class="pre">train</span></code> the example <code class="docutils literal notranslate"><span class="pre">ANN</span></code> of the <code class="docutils literal notranslate"><span class="pre">building</span> <span class="pre">blocks</span> <span class="pre">part</span></code> to recognize and distinguish them from other animals. To keep it neuroscience related in our minds we could also assume it’s about different <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">tissue</span> <span class="pre">classes</span></code>, <code class="docutils literal notranslate"><span class="pre">cell</span> <span class="pre">types</span></code>, etc. .</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat.png" alt="logo" title="Github" width="600" height="350" />
+<p>Our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> receives an input, here an <code class="docutils literal notranslate"><span class="pre">image</span></code>, and should conduct a certain task, here recognizing/predicting the <code class="docutils literal notranslate"><span class="pre">animal</span></code> that is shown.</p>
+<p><strong>Initialization of <code class="docutils literal notranslate"><span class="pre">weights</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">biases</span></code></strong></p>
+<p>Upon <code class="docutils literal notranslate"><span class="pre">building</span></code> our network we also need to <code class="docutils literal notranslate"><span class="pre">initialize</span></code> the <code class="docutils literal notranslate"><span class="pre">weights</span></code> and <code class="docutils literal notranslate"><span class="pre">biases</span></code>. Both are important <code class="docutils literal notranslate"><span class="pre">hyper-parameters</span></code> for our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> and the way it <code class="docutils literal notranslate"><span class="pre">learns</span></code> as they can help preventing <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">function</span> <span class="pre">outputs</span></code> from <code class="docutils literal notranslate"><span class="pre">exploding</span></code> or <code class="docutils literal notranslate"><span class="pre">vanishing</span></code> when moving through the <code class="docutils literal notranslate"><span class="pre">ANN</span></code>. This relates directly to the <code class="docutils literal notranslate"><span class="pre">optimization</span></code> as the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">gradient</span></code> might become too large or too small, prolonging the time the network needs to converge or even prevents it completely. Importantly, certain <code class="docutils literal notranslate"><span class="pre">initializers</span></code> work better with certain <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">functions</span></code>. For example: <a class="reference external" href="https://en.wikipedia.org/wiki/Hyperbolic_functions#Hyperbolic_tangent">tanh</a> likes <code class="docutils literal notranslate"><span class="pre">Glorot/Xavier</span> <span class="pre">initialization</span></code> while <a class="reference external" href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">ReLu</a> likes <code class="docutils literal notranslate"><span class="pre">He</span> <span class="pre">initialization</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_Cat_biases.png" alt="logo" title="Github" width="600" height="350" /><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;https://www.deeplearning.ai/ai-notes/initialization/&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="1000"
+    height="400"
+    src="https://www.deeplearning.ai/ai-notes/initialization/"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p><strong>The input layer &amp; the <a class="reference external" href="https://en.wikipedia.org/wiki/Semantic_gap">semantic gap</a></strong></p>
+<p>One thing we need to talk about is what the <code class="docutils literal notranslate"><span class="pre">ANN</span></code>, or more precisely the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">layer</span></code>, actually receives…
+The same thing, that is the picture of the cat, is very different for us than for a computer. This is referred to as the <a class="reference external" href="https://en.wikipedia.org/wiki/Semantic_gap">semantic gap</a>: the <code class="docutils literal notranslate"><span class="pre">transformation</span></code> of human actions &amp; percepts into <code class="docutils literal notranslate"><span class="pre">computational</span> <span class="pre">representations</span></code>. This picture of a majestic cat is nothing but a huge <code class="docutils literal notranslate"><span class="pre">array</span></code> for the computer and also what will be submitted to the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">layer</span></code> of the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> (note: this also holds true for basically any other type of data).</p>
+<p>It thus important to synchronize the <code class="docutils literal notranslate"><span class="pre">dimensions</span></code> of the input and the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">shape/size</span></code> of the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">layer</span></code>. This will also define the <code class="docutils literal notranslate"><span class="pre">datasets</span></code> you can <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code> an <code class="docutils literal notranslate"><span class="pre">ANN</span></code> on. For example, if you want to work with <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">volumes</span></code> that have the dimensions <code class="docutils literal notranslate"><span class="pre">[40,</span> <span class="pre">56,</span> <span class="pre">50]</span></code> or <code class="docutils literal notranslate"><span class="pre">microscopy</span> <span class="pre">images</span></code> with <code class="docutils literal notranslate"><span class="pre">[300,</span> <span class="pre">200,</span> <span class="pre">3]</span></code>, your <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">layer</span></code> should have the same <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">shape/size</span></code>. The same holds true for all other data you want to <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code> your <code class="docutils literal notranslate"><span class="pre">ANN</span></code> on. Otherwise you would need to redefine the <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">layer</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_input.png" alt="logo" title="Github" width="700" height="450" />
+<p>Please note that our example is therefore <code class="docutils literal notranslate"><span class="pre">drastically</span> <span class="pre">over-simplified</span></code> as we would need waaaay more <code class="docutils literal notranslate"><span class="pre">nodes</span></code> or could just <code class="docutils literal notranslate"><span class="pre">input</span></code> 2 values.</p>
+<p><strong>A journey through the <code class="docutils literal notranslate"><span class="pre">ANN</span></code></strong></p>
+<p>The input is then processed by the <code class="docutils literal notranslate"><span class="pre">layers</span></code>, their <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and respective <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">functions</span></code>, being passed through the <code class="docutils literal notranslate"><span class="pre">ANN</span></code>. Each <code class="docutils literal notranslate"><span class="pre">layer</span></code> and <code class="docutils literal notranslate"><span class="pre">node</span></code> will compute a certain <code class="docutils literal notranslate"><span class="pre">transformation</span></code> of the <code class="docutils literal notranslate"><span class="pre">input</span></code> it receives from the previous <code class="docutils literal notranslate"><span class="pre">layer</span></code> based on its <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">function</span></code> and <code class="docutils literal notranslate"><span class="pre">weights</span></code>/<code class="docutils literal notranslate"><span class="pre">biases</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_connections.png" alt="logo" title="Github" width="700" height="450" /><p><strong>The <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code></strong></p>
+<p>After a while, we will reach the end of our <code class="docutils literal notranslate"><span class="pre">ANN</span></code>, the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code>. As the last part of our <code class="docutils literal notranslate"><span class="pre">ANN</span></code>, it will produce the results we’re interested in. Its number of <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">function</span></code> will depend on the <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problem</span></code> at hand. For a <code class="docutils literal notranslate"><span class="pre">binary</span> <span class="pre">classification</span> <span class="pre">task</span></code> it will have <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">nodes</span></code> corresponding to the both <code class="docutils literal notranslate"><span class="pre">classes</span></code> and might use <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code> or <a class="reference external" href="https://en.wikipedia.org/wiki/Softmax_function">softmax activation function</a>. For <code class="docutils literal notranslate"><span class="pre">multiclass</span> <span class="pre">classification</span> <span class="pre">tasks</span></code> it will have as many <code class="docutils literal notranslate"><span class="pre">nodes</span></code> as there are <code class="docutils literal notranslate"><span class="pre">classes</span></code> and utilize the <a class="reference external" href="https://en.wikipedia.org/wiki/Softmax_function">softmax activation function</a>. Both <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code> and <code class="docutils literal notranslate"><span class="pre">softmax</span></code> are related to <code class="docutils literal notranslate"><span class="pre">logistic</span> <span class="pre">regression</span></code>, with the latter being a generalized form of it. Why does this matter? Our <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code> will produce <code class="docutils literal notranslate"><span class="pre">real-valued</span> <span class="pre">scores</span></code> for each of the <code class="docutils literal notranslate"><span class="pre">classes</span></code> that are however not <code class="docutils literal notranslate"><span class="pre">scaled</span></code> and straightforward to interpret. Using for example the <code class="docutils literal notranslate"><span class="pre">softmax</span> <span class="pre">function</span></code> we can transform these values into <code class="docutils literal notranslate"><span class="pre">scaled</span> <span class="pre">probability</span> <span class="pre">distributions</span></code> between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> which values add up to <code class="docutils literal notranslate"><span class="pre">1</span></code> and can be submitted to other analysis pipelines or directly evaluated.</p>
+<p>Lets assume our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> is <code class="docutils literal notranslate"><span class="pre">trained</span></code> to recognize and distinguish <code class="docutils literal notranslate"><span class="pre">cats</span></code> and <code class="docutils literal notranslate"><span class="pre">capybaras</span></code>, meaning we have a <code class="docutils literal notranslate"><span class="pre">binary</span> <span class="pre">classification</span> <span class="pre">task</span></code>.  Defining <code class="docutils literal notranslate"><span class="pre">cats</span></code> as <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">capybaras</span></code> as <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">2</span></code> (not my opinion, just an example), the corresponding <code class="docutils literal notranslate"><span class="pre">vectors</span></code> we would like to obtain from the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code> would be <code class="docutils literal notranslate"><span class="pre">[1,0]</span></code> and <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code> respectively. However, what we would get from the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code> in absence of e.g. <code class="docutils literal notranslate"><span class="pre">softmax</span></code>, would rather look like <code class="docutils literal notranslate"><span class="pre">[1.6,</span> <span class="pre">0.2]</span></code> and <code class="docutils literal notranslate"><span class="pre">[0.4,</span> <span class="pre">1.2]</span></code>. This is identical to what the penultimate <code class="docutils literal notranslate"><span class="pre">layer</span></code> would provide as <code class="docutils literal notranslate"><span class="pre">input</span></code> the <code class="docutils literal notranslate"><span class="pre">output</span></code> i.e. <code class="docutils literal notranslate"><span class="pre">softmax</span> <span class="pre">layer</span></code> if we had an additional layer just for that and not the respective <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">function</span></code>.</p>
+<p>After passing through the <code class="docutils literal notranslate"><span class="pre">softmax</span> <span class="pre">layer</span></code> or our <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code> with <code class="docutils literal notranslate"><span class="pre">softmax</span> <span class="pre">activation</span> <span class="pre">function</span></code> the <code class="docutils literal notranslate"><span class="pre">real-valued</span> <span class="pre">scores</span></code> <code class="docutils literal notranslate"><span class="pre">[1.6,</span> <span class="pre">0.2]</span></code> and <code class="docutils literal notranslate"><span class="pre">[0.4,</span> <span class="pre">1.2]</span></code> would be (for example) <code class="docutils literal notranslate"><span class="pre">[0.802,</span> <span class="pre">0.198]</span></code> and <code class="docutils literal notranslate"><span class="pre">[0.310,</span> <span class="pre">0.699]</span></code>. Knowing it’s now a <code class="docutils literal notranslate"><span class="pre">scaled</span> <span class="pre">probabilistic</span> <span class="pre">distribution</span></code> that can range between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> and sums up to <code class="docutils literal notranslate"><span class="pre">1</span></code>, it’s much easier to interpret.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_labels.png" alt="logo" title="Github" width="700" height="450" /><img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_softmax.png" alt="logo" title="Github" width="700" height="450" /><p><strong>The <code class="docutils literal notranslate"><span class="pre">metric</span></code></strong></p>
+<p>The index of the vector provided by the <code class="docutils literal notranslate"><span class="pre">softmax</span> <span class="pre">output</span> <span class="pre">layer</span></code> with the largest value will be treated as the <code class="docutils literal notranslate"><span class="pre">class</span></code> predicted by the <code class="docutils literal notranslate"><span class="pre">ANN</span></code>, which in our example would be “cat”. The <code class="docutils literal notranslate"><span class="pre">ANN</span></code> will then use the <code class="docutils literal notranslate"><span class="pre">predicted</span> <span class="pre">class</span></code> and compare it to the <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">class</span></code>, computing a <code class="docutils literal notranslate"><span class="pre">metric</span></code> to assess its performance. Remember folks: <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> is <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">learning</span></code> and computing a <code class="docutils literal notranslate"><span class="pre">metric</span></code> is no exception to that. Thus, depending on your data and <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problem</span></code> you can indicate a variety of <code class="docutils literal notranslate"><span class="pre">metrics</span></code> your <code class="docutils literal notranslate"><span class="pre">ANN</span></code> should utilize, including <code class="docutils literal notranslate"><span class="pre">accuracy</span></code>,  <code class="docutils literal notranslate"><span class="pre">F1</span></code>, <code class="docutils literal notranslate"><span class="pre">AUC</span></code>, etc. . Note: in <code class="docutils literal notranslate"><span class="pre">binary</span> <span class="pre">tasks</span></code> usually only the largest value is treated as a <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">prediction</span></code>, this is called <code class="docutils literal notranslate"><span class="pre">Top-1</span> <span class="pre">accuracy</span></code>. On the contrary, in <code class="docutils literal notranslate"><span class="pre">multiclass</span> <span class="pre">tasks</span></code> with many <code class="docutils literal notranslate"><span class="pre">classes</span></code> (animals, cell components, disease propagation types, etc.) quite often the largest <code class="docutils literal notranslate"><span class="pre">5</span></code> values are treated as <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">predictions</span></code> and utilized within the <code class="docutils literal notranslate"><span class="pre">metric</span></code>, which is called <code class="docutils literal notranslate"><span class="pre">Top-5</span> <span class="pre">accuracy</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_accuracy.png" alt="logo" title="Github" width="700" height="450" /><p><strong>The <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code></strong></p>
+<p>Besides the <code class="docutils literal notranslate"><span class="pre">metric</span></code>, our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> will also a compute a <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> that will quantify how far the <code class="docutils literal notranslate"><span class="pre">probabilities</span></code>, computed by the <code class="docutils literal notranslate"><span class="pre">softmax</span> <span class="pre">function</span></code> of the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code>, are away from the <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">values</span></code> we want to achieve, i.e. the <code class="docutils literal notranslate"><span class="pre">classes</span></code>. As mentioned in the <span class="xref myst">introduction</span> and comparable to the <code class="docutils literal notranslate"><span class="pre">metric</span></code>, the choice of <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> depends on the data you have and the <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">problem</span></code> you want to solve. If you want to <code class="docutils literal notranslate"><span class="pre">predict</span></code> <code class="docutils literal notranslate"><span class="pre">numerical</span> <span class="pre">values</span></code> you might want to employ a <code class="docutils literal notranslate"><span class="pre">regression</span></code> based approach and use <code class="docutils literal notranslate"><span class="pre">MSE</span></code> as the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code>. If you want to <code class="docutils literal notranslate"><span class="pre">predict</span></code> <code class="docutils literal notranslate"><span class="pre">classes</span></code> you might to employ a <code class="docutils literal notranslate"><span class="pre">classification</span></code> based approach and use a form of <code class="docutils literal notranslate"><span class="pre">cross-entropy</span></code> as the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_loss.png" alt="logo" title="Github" width="700" height="450" /><p>A cool thing about <code class="docutils literal notranslate"><span class="pre">softmax</span></code> with regard to the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code>: it is a <code class="docutils literal notranslate"><span class="pre">continuously</span> <span class="pre">differentiable</span> <span class="pre">function</span></code> and thus the <code class="docutils literal notranslate"><span class="pre">derivative</span></code> of the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> can be computed for every <code class="docutils literal notranslate"><span class="pre">weight</span></code> and every <code class="docutils literal notranslate"><span class="pre">input</span></code> in the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code>. Based on that the <code class="docutils literal notranslate"><span class="pre">weights</span></code> of the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> can be adapted to reduce the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code>, making the <code class="docutils literal notranslate"><span class="pre">predicted</span> <span class="pre">values</span></code> provided by the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code> closer to the <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">values</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">classes</span></code>) and therefore improving the <code class="docutils literal notranslate"><span class="pre">metric</span></code> and performance of the <code class="docutils literal notranslate"><span class="pre">ANN</span></code>. This reducing of the <code class="docutils literal notranslate"><span class="pre">error</span></code> (assessed through the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code>) is called the <code class="docutils literal notranslate"><span class="pre">objective</span> <span class="pre">function</span></code> of an <code class="docutils literal notranslate"><span class="pre">ANN</span></code>, while the adaptation of <code class="docutils literal notranslate"><span class="pre">weights</span></code> to improve the performance of an <code class="docutils literal notranslate"><span class="pre">ANN</span></code> is the <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">process</span></code>. But how does this work now? We know it has something to do with <code class="docutils literal notranslate"><span class="pre">optimization</span></code>…Let’s have a look when and how this factors in.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Batch</span> <span class="pre">size</span></code></strong></p>
+<p>As with other <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">learning</span></code> approaches, we will ideally have a <code class="docutils literal notranslate"><span class="pre">training</span></code>, <code class="docutils literal notranslate"><span class="pre">validation</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">set</span></code>. One <code class="docutils literal notranslate"><span class="pre">hyperparameter</span></code> that is involved in this process and also can define our entire <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">process</span></code> is <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code>. It defines the number of <code class="docutils literal notranslate"><span class="pre">samples</span></code> in the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code> our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> processes before <code class="docutils literal notranslate"><span class="pre">optimization</span></code> is used to update the <code class="docutils literal notranslate"><span class="pre">weights</span></code> based on the result of the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code>. For example, if our <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code> has <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">samples</span></code> and we set a <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code> of <code class="docutils literal notranslate"><span class="pre">5</span></code>, we would divide the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code> into <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">batches</span></code> of <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">samples</span></code> each. In turn this would mean that our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> goes through <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">samples</span></code> before using <code class="docutils literal notranslate"><span class="pre">optimization</span></code> to update the <code class="docutils literal notranslate"><span class="pre">weights</span></code> and thus our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> would update its <code class="docutils literal notranslate"><span class="pre">weights</span></code> <code class="docutils literal notranslate"><span class="pre">20</span></code> times during <code class="docutils literal notranslate"><span class="pre">training</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_batch.png" alt="logo" title="Github" width="700" height="450" />
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">optimization</span></code></strong></p>
+<p>Once a <code class="docutils literal notranslate"><span class="pre">batch</span></code> has been processed by the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> the <code class="docutils literal notranslate"><span class="pre">optimization</span> <span class="pre">algorithm</span></code> will get to work. As mentioned before, most <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">learning</span> <span class="pre">problems</span></code> utilize <a class="reference external" href="https://en.wikipedia.org/wiki/Gradient_descent">gradient descent</a> as the <code class="docutils literal notranslate"><span class="pre">optimization</span> <span class="pre">algorithm</span></code>. As mentioned during the <span class="xref myst">introduction</span> and a few slides above, we have an <code class="docutils literal notranslate"><span class="pre">objective</span> <span class="pre">function</span></code> we want to <code class="docutils literal notranslate"><span class="pre">optimize</span></code>, for example <code class="docutils literal notranslate"><span class="pre">minimizing</span></code> the <code class="docutils literal notranslate"><span class="pre">error</span></code> computed by our <code class="docutils literal notranslate"><span class="pre">cross-entropy</span> <span class="pre">loss</span> <span class="pre">function</span></code>.  So what happens is the following. At first, an entire <code class="docutils literal notranslate"><span class="pre">batch</span></code> is processed by the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> and <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> as well as <code class="docutils literal notranslate"><span class="pre">loss</span></code> are computed.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_gd.png" alt="logo" title="Github" width="700" height="450" />
+<p>Subsequently, the <code class="docutils literal notranslate"><span class="pre">error</span></code> computed via the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> will be minimized through <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code>. Let’s imagine the following: we span a valley-looking like <code class="docutils literal notranslate"><span class="pre">gradient</span></code> that is defined by our <code class="docutils literal notranslate"><span class="pre">weights</span></code> and <code class="docutils literal notranslate"><span class="pre">biases</span></code> on the <code class="docutils literal notranslate"><span class="pre">horizontal</span></code> or <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> axes and the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> on the <code class="docutils literal notranslate"><span class="pre">vertical</span></code> or <code class="docutils literal notranslate"><span class="pre">z</span></code> axis. This is where our <code class="docutils literal notranslate"><span class="pre">weight</span></code> and <code class="docutils literal notranslate"><span class="pre">bias</span> <span class="pre">initializers</span></code> come back: we <code class="docutils literal notranslate"><span class="pre">initialized</span></code> <code class="docutils literal notranslate"><span class="pre">weights</span></code> and <code class="docutils literal notranslate"><span class="pre">biases</span></code> at a certain point on the <code class="docutils literal notranslate"><span class="pre">gradient</span></code>, usually on the top or quite high. Now our <code class="docutils literal notranslate"><span class="pre">optimization</span> <span class="pre">algorithm</span></code> takes one step after another (after each <code class="docutils literal notranslate"><span class="pre">batch</span></code>) in the steepest downwards direction along the <code class="docutils literal notranslate"><span class="pre">gradient</span></code> via finding <code class="docutils literal notranslate"><span class="pre">weights</span></code> and <code class="docutils literal notranslate"><span class="pre">biases</span></code> that reduce the <code class="docutils literal notranslate"><span class="pre">loss</span></code> until it reaches the point where the <code class="docutils literal notranslate"><span class="pre">error</span></code> computed by the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> is as small as possible. It is <code class="docutils literal notranslate"><span class="pre">descending</span></code> through the <code class="docutils literal notranslate"><span class="pre">gradient</span></code>. When it reaches this point, i.e. the <code class="docutils literal notranslate"><span class="pre">error</span></code> can’t be reduced anymore and remains stable, it has <code class="docutils literal notranslate"><span class="pre">converged</span></code>.</p>
+<img align="center" src="https://miro.medium.com/max/1024/1*G1v2WBigWmNzoMuKOYQV_g.png" alt="logo" title="Github" width="600" height="500" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://miro.medium.com/max/1024/1*G1v2WBigWmNzoMuKOYQV_g.png">https://miro.medium.com/max/1024/1*G1v2WBigWmNzoMuKOYQV_g.png</a>
+</sup></sup></sub></sup></sub></p>
+<p>Let’s have a look at a few more <code class="docutils literal notranslate"><span class="pre">graphics</span></code>:</p>
+<img align="center" src="https://miro.medium.com/max/600/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg" alt="logo" title="Github" width="600" height="500" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://miro.medium.com/max/600/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg">https://miro.medium.com/max/600/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg</a>
+</sup></sup></sub></sup></sub></p>
+<img align="center" src="https://cdn.builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/national/gradient-descent-convex-function.png" alt="logo" title="Github" width="600" height="500" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://cdn.builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/national/gradient-descent-convex-function.png">https://cdn.builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/national/gradient-descent-convex-function.png</a>
+</sup></sup></sub></sup></sub></p>
+<img align="center" src="https://blog.paperspace.com/content/images/2018/05/fastlr.png" alt="logo" title="Github" width="500" height="500" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://blog.paperspace.com/content/images/2018/05/fastlr.png">https://blog.paperspace.com/content/images/2018/05/fastlr.png</a>
+</sup></sup></sub></sup></sub></p>
+<p>Check this cool project, called <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">landscape</span></code> by Javier Ideami:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+
+<span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;https://losslandscape.com/explorer&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://losslandscape.com/explorer"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p>What this shows nicely is one aspect we briefly discussed during the <code class="docutils literal notranslate"><span class="pre">introduction</span></code>: <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s are complex <code class="docutils literal notranslate"><span class="pre">models</span></code> and result in <code class="docutils literal notranslate"><span class="pre">non-convex</span> <span class="pre">loss</span> <span class="pre">functions</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">gradients</span></code> with a <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">minimum/maximum</span></code> and various <code class="docutils literal notranslate"><span class="pre">local</span></code> ones.</p>
+<img align="center" src="https://blog.paperspace.com/content/images/size/w1050/2018/05/convex_cost_function.jpg" alt="logo" title="Github" width="600" height="400" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://blog.paperspace.com/content/images/size/w1050/2018/05/convex_cost_function.jpg">https://blog.paperspace.com/content/images/size/w1050/2018/05/convex_cost_function.jpg</a>
+</sup></sup></sub></sup></sub></p>
+<p>So chances are, our <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> will get stuck in a <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">minimum</span></code> and won’t find the <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">minimum</span></code>. At least that’s what people thought in the beginning….</p>
+<p>As it turned out, <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">desecent</span></code> rather gets stuck in what is called <code class="docutils literal notranslate"><span class="pre">saddle</span> <span class="pre">points</span></code></p>
+<img align="center" src="https://www.offconvex.org/assets/saddle/minmaxsaddle.png" alt="logo" title="Github" width="600" height="400" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://www.offconvex.org/assets/saddle/minmaxsaddle.png">https://www.offconvex.org/assets/saddle/minmaxsaddle.png</a>
+</sup></sup></sub></sup></sub></p>
+<p>The thing is: in order to find a <code class="docutils literal notranslate"><span class="pre">local</span></code> or <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">minimum</span></code> all the <code class="docutils literal notranslate"><span class="pre">dimensions</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">parameters</span></code>(<code class="docutils literal notranslate"><span class="pre">weights</span></code>/<code class="docutils literal notranslate"><span class="pre">biases</span></code>) must agree to this point. However, what happens mostly in <code class="docutils literal notranslate"><span class="pre">complex</span> <span class="pre">models</span></code> with millions of <code class="docutils literal notranslate"><span class="pre">parameters</span></code> is that only a subset of <code class="docutils literal notranslate"><span class="pre">dimensions</span></code> agree which creates <code class="docutils literal notranslate"><span class="pre">saddle</span> <span class="pre">points</span></code>.</p>
+<p>There are however newer algorithms that help <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> getting out of <code class="docutils literal notranslate"><span class="pre">saddle</span> <span class="pre">points</span></code>, for example <a class="reference external" href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam">adam</a>.</p>
+<p>This brings us to some other important aspects of <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code>:</p>
+<ul class="simple">
+<li><p>types</p></li>
+<li><p>learning rate</p></li>
+</ul>
+<p>In general, <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> is divided into three <code class="docutils literal notranslate"><span class="pre">types</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">gradient</span> <span class="pre">descent</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stochastic</span> <span class="pre">gradient</span> <span class="pre">descent</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mini</span> <span class="pre">batch</span> <span class="pre">gradient</span> <span class="pre">descent</span></code></p></li>
+</ul>
+<p>In <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">gradient</span> <span class="pre">descent</span></code> the <code class="docutils literal notranslate"><span class="pre">error</span></code> is computed for each <code class="docutils literal notranslate"><span class="pre">sample</span></code> of the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code>, but <code class="docutils literal notranslate"><span class="pre">model</span></code> will only be updated once the entire <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code> was processed.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_gd_batch.png" alt="logo" title="Github" width="700" height="450" />
+<p>In <code class="docutils literal notranslate"><span class="pre">stochastic</span> <span class="pre">gradient</span> <span class="pre">descent</span></code> the <code class="docutils literal notranslate"><span class="pre">error</span></code> is computed for each <code class="docutils literal notranslate"><span class="pre">sample</span></code>of the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code> and <code class="docutils literal notranslate"><span class="pre">model</span></code> immediately updated.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_gd_sgd.png" alt="logo" title="Github" width="700" height="450" />
+<p>In <code class="docutils literal notranslate"><span class="pre">mini-batch</span> <span class="pre">gradient</span> <span class="pre">descent</span></code> the <code class="docutils literal notranslate"><span class="pre">error</span></code> is computed for a <code class="docutils literal notranslate"><span class="pre">subset</span></code> of the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code> and the <code class="docutils literal notranslate"><span class="pre">model</span></code> updated after each of those <code class="docutils literal notranslate"><span class="pre">batches</span></code>. It is commonly used, as it combines the <code class="docutils literal notranslate"><span class="pre">robustness</span></code> of <code class="docutils literal notranslate"><span class="pre">stochastic</span> <span class="pre">gradient</span> <span class="pre">descent</span></code> and the <code class="docutils literal notranslate"><span class="pre">efficiency</span></code> of <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">gradient</span> <span class="pre">descent</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_gd_minibatch.png" alt="logo" title="Github" width="700" height="450" />
+<p>Another important aspect of <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> is the <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">rate</span></code> which describes how big the <code class="docutils literal notranslate"><span class="pre">steps</span></code> are the <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> takes towards the <code class="docutils literal notranslate"><span class="pre">minimum</span></code>. If the <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">rate</span></code> is too high, i.e. the <code class="docutils literal notranslate"><span class="pre">steps</span></code> too big it might bounce back and forth without being able to find the <code class="docutils literal notranslate"><span class="pre">minimum</span></code>. If the <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">rate</span></code> is too small, i.e. the <code class="docutils literal notranslate"><span class="pre">steps</span></code> too small it might take a very long time to find the <code class="docutils literal notranslate"><span class="pre">minimum</span></code>.</p>
+<img align="center" src="https://www.jeremyjordan.me/content/images/2018/02/Screen-Shot-2018-02-24-at-11.47.09-AM.png" alt="logo" title="Github" width="600" height="400" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://www.jeremyjordan.me/content/images/2018/02/Screen-Shot-2018-02-24-at-11.47.09-AM.png">https://www.jeremyjordan.me/content/images/2018/02/Screen-Shot-2018-02-24-at-11.47.09-AM.png</a>
+</sup></sup></sub></sup></sub></p>
+<p>Now that we spend some time on <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> as an <code class="docutils literal notranslate"><span class="pre">optimization</span> <span class="pre">algorithm</span></code>, there’s still the question how the <code class="docutils literal notranslate"><span class="pre">parameters</span></code>, <code class="docutils literal notranslate"><span class="pre">weights</span></code> and <code class="docutils literal notranslate"><span class="pre">biases</span></code>, of our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> are actually updated.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Backpropagation</span></code></strong></p>
+<p>Actually, <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> is part of something bigger called <a class="reference external" href="https://en.wikipedia.org/wiki/Backpropagation">backpropagation</a>. Once we did a <code class="docutils literal notranslate"><span class="pre">forward</span> <span class="pre">pass</span></code> through the <code class="docutils literal notranslate"><span class="pre">ANN</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">data</span></code> goes from <code class="docutils literal notranslate"><span class="pre">input</span></code> to <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code>, the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> will use <code class="docutils literal notranslate"><span class="pre">backpropagation</span></code> to update the <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">parameters</span></code>. It does so by utilizing <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a> to <code class="docutils literal notranslate"><span class="pre">propagate</span></code> the <code class="docutils literal notranslate"><span class="pre">error</span></code> <code class="docutils literal notranslate"><span class="pre">backwards</span></code>. Simply put: starting at the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">layer</span></code> <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">descent</span></code> is applied to <code class="docutils literal notranslate"><span class="pre">update</span></code> its <code class="docutils literal notranslate"><span class="pre">parameters</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">weights</span></code> and <code class="docutils literal notranslate"><span class="pre">biases</span></code>, the <code class="docutils literal notranslate"><span class="pre">error</span></code> is re-computed through the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> and <code class="docutils literal notranslate"><span class="pre">propagated</span> <span class="pre">backwards</span></code> to the previous <code class="docutils literal notranslate"><span class="pre">layer</span></code>, where <code class="docutils literal notranslate"><span class="pre">parameters</span></code> will be <code class="docutils literal notranslate"><span class="pre">updated</span></code>, the <code class="docutils literal notranslate"><span class="pre">error</span></code> re-computed through the <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> and so forth. As <code class="docutils literal notranslate"><span class="pre">parameters</span></code> interact with each other, the application of the <code class="docutils literal notranslate"><span class="pre">chain</span> <span class="pre">rule</span></code> is important as it can decompose the <code class="docutils literal notranslate"><span class="pre">composition</span></code> of two <code class="docutils literal notranslate"><span class="pre">differentiable</span> <span class="pre">functions</span></code> into their <code class="docutils literal notranslate"><span class="pre">derivatives</span></code>.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_bp.png" alt="logo" title="Github" width="700" height="450" />
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_bp_2.png" alt="logo" title="Github" width="700" height="450" />
+<p>We almost have everything together…almost. One thing we still haven’t talked about is how long this entire composition of processes will run.</p>
+<p><strong>The number of <code class="docutils literal notranslate"><span class="pre">epochs</span></code></strong></p>
+<p>The duration of the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> <code class="docutils literal notranslate"><span class="pre">training</span></code> is usually determined by the interplay between <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">sizes</span></code> and another <code class="docutils literal notranslate"><span class="pre">hyperparameter</span></code> called <code class="docutils literal notranslate"><span class="pre">epochs</span></code>. Whereas the <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code> defines the number of <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span> <span class="pre">samples</span></code> to process before updating the <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">parameters</span></code>, the number of <code class="docutils literal notranslate"><span class="pre">epochs</span></code> specifies how often the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> should process the entire <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code>. Thus, once all <code class="docutils literal notranslate"><span class="pre">batches</span></code> have been processed, one <code class="docutils literal notranslate"><span class="pre">epoch</span></code> is over. The number of <code class="docutils literal notranslate"><span class="pre">epochs</span></code> is something you set when start the <code class="docutils literal notranslate"><span class="pre">training</span></code>, just like the <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code>. Both are therefore <code class="docutils literal notranslate"><span class="pre">parameters</span></code> for the <code class="docutils literal notranslate"><span class="pre">training</span></code> and not <code class="docutils literal notranslate"><span class="pre">parameters</span></code> that are learned by the <code class="docutils literal notranslate"><span class="pre">training</span></code>. For example, if you have <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">samples</span></code>, a <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code> of <code class="docutils literal notranslate"><span class="pre">10</span></code> and set the number of <code class="docutils literal notranslate"><span class="pre">epochs</span></code> to <code class="docutils literal notranslate"><span class="pre">500</span></code> your <code class="docutils literal notranslate"><span class="pre">ANN</span></code> will go through the entire <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code> <code class="docutils literal notranslate"><span class="pre">500</span></code> times, that is <code class="docutils literal notranslate"><span class="pre">5000</span> <span class="pre">batches</span></code> and thus <code class="docutils literal notranslate"><span class="pre">5000</span> <span class="pre">updates</span></code> to your <code class="docutils literal notranslate"><span class="pre">model</span></code>. While this sounds already like a lot, these numbers are more than small compared to that what “real-life” <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s go through. There, these numbers are in the millions and beyond.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_epoch.png" alt="logo" title="Github" width="700" height="450" />
+<p>Please note: this is of course only the theoretical duration in terms of <code class="docutils literal notranslate"><span class="pre">iterations</span></code> and not the actual duration it takes to <code class="docutils literal notranslate"><span class="pre">train</span></code> your <code class="docutils literal notranslate"><span class="pre">ANN</span></code>. This is quite often hard to <code class="docutils literal notranslate"><span class="pre">predict</span></code> (hehe, got it?) as it depends on the <code class="docutils literal notranslate"><span class="pre">computational</span> <span class="pre">setup</span></code> you’re working with, the <code class="docutils literal notranslate"><span class="pre">data</span></code> and obviously the <code class="docutils literal notranslate"><span class="pre">model</span></code> and its <code class="docutils literal notranslate"><span class="pre">hyperparameters</span></code>.</p>
+<p>Stop y’all, we forgot something!</p>
+<img align="center" src="https://c.tenor.com/420FjCVLWbMAAAAM/dog-cachorro.gif" alt="logo" title="Github" width="300" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://c.tenor.com/420FjCVLWbMAAAAM/dog-cachorro.gif">https://c.tenor.com/420FjCVLWbMAAAAM/dog-cachorro.gif</a>
+</sup></sup></sub></sup></sub></p>
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">regularitzation</span></code></strong></p>
+<p>Does this ring a bell? That’s right: it’s still <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">learning</span></code> and thus, as with every model, we need to address <code class="docutils literal notranslate"><span class="pre">overfitting</span></code> and <code class="docutils literal notranslate"><span class="pre">underfitting</span></code>, especially with this amount of <code class="docutils literal notranslate"><span class="pre">parameters</span></code>.</p>
+<img align="center" src="https://miro.medium.com/max/1396/1*lARssDbZVTvk4S-Dk1g-eA.png" alt="logo" title="Github" width="300" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://miro.medium.com/max/1396/1*lARssDbZVTvk4S-Dk1g-eA.png">https://miro.medium.com/max/1396/1*lARssDbZVTvk4S-Dk1g-eA.png</a>
+</sup></sup></sub></sup></sub></p>
+<img align="center" src="https://miro.medium.com/max/1380/1*rPStEZrcv5rwu4ulACcwYA.png" alt="logo" title="Github" width="400" height="350" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://miro.medium.com/max/1380/1*rPStEZrcv5rwu4ulACcwYA.png">https://miro.medium.com/max/1380/1*rPStEZrcv5rwu4ulACcwYA.png</a>
+</sup></sup></sub></sup></sub></p>
+<p>There are actually multiple types of <code class="docutils literal notranslate"><span class="pre">regularization</span></code> we can apply to help our <code class="docutils literal notranslate"><span class="pre">ANN</span></code> to generalize better (other than increasing the size of the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code>):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Regularization_%28mathematics%29">L1/L2 regularization</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dilution_(neural_networks)">dropout</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Data_augmentation">data augmentation</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Early_stopping">early stopping</a></p></li>
+</ul>
+<p>Using <code class="docutils literal notranslate"><span class="pre">L1/L2</span> <span class="pre">regularization</span></code> (the most common type of <code class="docutils literal notranslate"><span class="pre">regularization</span></code>), we add a <code class="docutils literal notranslate"><span class="pre">regularization</span> <span class="pre">term</span></code> (<code class="docutils literal notranslate"><span class="pre">L1</span></code> or <code class="docutils literal notranslate"><span class="pre">L2</span></code>) to our <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> that will decrease the <code class="docutils literal notranslate"><span class="pre">weights</span></code> assuming that <code class="docutils literal notranslate"><span class="pre">models</span></code> with <code class="docutils literal notranslate"><span class="pre">smaller</span> <span class="pre">weights</span></code> will lead to less complex <code class="docutils literal notranslate"><span class="pre">models</span></code> that in turn <code class="docutils literal notranslate"><span class="pre">generalize</span></code> better.</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_regularization.png" alt="logo" title="Github" width="700" height="450" /><p>Using <code class="docutils literal notranslate"><span class="pre">dropout</span></code>, we <code class="docutils literal notranslate"><span class="pre">regularize</span></code> by <code class="docutils literal notranslate"><span class="pre">randomly</span></code> and <code class="docutils literal notranslate"><span class="pre">temporally</span></code> dropping <code class="docutils literal notranslate"><span class="pre">nodes</span></code> and their corresponding <code class="docutils literal notranslate"><span class="pre">connections</span></code>, thus efficiently changing the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> <code class="docutils literal notranslate"><span class="pre">architecture</span></code> and introducing a certain amount of <code class="docutils literal notranslate"><span class="pre">randomness</span></code>. (Does this <code class="docutils literal notranslate"><span class="pre">regularization</span> <span class="pre">approach</span></code> remind you of one of the <code class="docutils literal notranslate"><span class="pre">models</span></code> we saw during the “classic” <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">learning</span></code> part?).</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_dropout.png" alt="logo" title="Github" width="700" height="450" /><p>Using <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">augmentation</span></code>, we <code class="docutils literal notranslate"><span class="pre">regularize</span></code> without directly changing parts of the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> but changing the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code>. To be more precise, not really “changing the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code>” but adding “changed” versions of the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span> <span class="pre">samples</span></code>, i.e. the same <code class="docutils literal notranslate"><span class="pre">samples</span></code> but in an altered form. For example, if we work with <code class="docutils literal notranslate"><span class="pre">images</span></code> (<code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">volumes</span></code>, <code class="docutils literal notranslate"><span class="pre">microscopy</span></code>, etc.) we could shear, shift, scale and rotate the <code class="docutils literal notranslate"><span class="pre">images</span></code>, as well as adding <code class="docutils literal notranslate"><span class="pre">noise</span></code>, etc. . (Think about <code class="docutils literal notranslate"><span class="pre">invariant</span> <span class="pre">representations</span></code> again.)</p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ANN_cat_augmentation.png" alt="logo" title="Github" width="700" height="450" /><p>When using <code class="docutils literal notranslate"><span class="pre">early</span> <span class="pre">stopping</span></code> we <code class="docutils literal notranslate"><span class="pre">regularize</span></code> by stopping the <code class="docutils literal notranslate"><span class="pre">training</span></code> before the <code class="docutils literal notranslate"><span class="pre">ANN</span></code> can start to <code class="docutils literal notranslate"><span class="pre">overfit</span></code> on the <code class="docutils literal notranslate"><span class="pre">training</span> <span class="pre">set</span></code>, for example if the <code class="docutils literal notranslate"><span class="pre">validation</span> <span class="pre">error</span></code> stops decreasing.</p>
+<img align="center" src="https://miro.medium.com/max/567/1*2BvEinjHM4SXt2ge0MOi4w.png" alt="logo" title="Github" width="400" height="350" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://miro.medium.com/max/567/1*2BvEinjHM4SXt2ge0MOi4w.png">https://miro.medium.com/max/567/1*2BvEinjHM4SXt2ge0MOi4w.png</a>
+</sup></sup></sub></sup></sub></p>
+<p>Talking about stopping…this concludes our adventure into <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">in</span> <span class="pre">ANN</span></code>s.</p>
+<img align="center" src="https://c.tenor.com/87__ss7n4fsAAAAC/stop-cut-it-off.gif" alt="logo" title="Github" width="300" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://c.tenor.com/87__ss7n4fsAAAAC/stop-cut-it-off.gif">https://c.tenor.com/87__ss7n4fsAAAAC/stop-cut-it-off.gif</a>
+</sup></sup></sub></sup></sub></p>
+</div>
+</div>
+<div class="section" id="ann-architectures">
+<h2>ANN architectures<a class="headerlink" href="#ann-architectures" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>now that we’ve gone through the underlying basics and important building blocks of <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s, we will check out a few of the most commonly used architectures</p></li>
+<li><p>in general we can <a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks">group <code class="docutils literal notranslate"><span class="pre">ANN</span></code>s based on their <code class="docutils literal notranslate"><span class="pre">architecture</span></code></a>, that is how their building blocks are defined and integrated</p></li>
+</ul>
+<ul class="simple">
+<li><p>possible <code class="docutils literal notranslate"><span class="pre">architectures</span></code> include (only a very tiny subset listed):</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Feedforward">feedforward</a> (information moves in a forward fashion through the ANN, without cycles and/or loops)</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Multilayer_perceptron">Multilayer perceptrons</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Convolutional neural networks</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Autoencoder">autoencoders</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Recurrent_neural_network">recurrent</a> (information moves in a forward and a backward fashion through the ANN)</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Fully_recurrent">fully recurrent</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Long_short-term_memory">Long short-term memory</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Radial_basis_function_(RBF)">radial basis function</a> (networks that use radial basis functions as activation function)</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#General_regression_neural_network">General regression network</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Deep_belief_network">Deep belief networks</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>we will spend a closer look at <code class="docutils literal notranslate"><span class="pre">feedforward</span></code> and <code class="docutils literal notranslate"><span class="pre">recurrent</span> <span class="pre">architectures</span></code> as they will (most likely) be the ones you see frequently utilized within <code class="docutils literal notranslate"><span class="pre">neuroscience</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p>however, to see how well we explained things to you (and because we’re lazy): we would like to ask y’all to form <code class="docutils literal notranslate"><span class="pre">5</span></code> groups and each group will get <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">min</span></code> to find something out about <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">ANN</span> <span class="pre">architecture</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p>after that, we will of course also add respective slides to this section!</p></li>
+</ul>
+</div>
+<div class="section" id="the-moral-of-the-story">
+<h2>The moral of the story<a class="headerlink" href="#the-moral-of-the-story" title="Permalink to this headline">¶</a></h2>
+<p>We heard, saw and learned that <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> can be and already is <em>very</em> powerful but …</p>
+<img align="center" src="https://thinkingmeme.com/wp-content/uploads/2018/07/Top-24-Jeff-Goldblum-memes21.jpg" alt="logo" title="Github" width="600" height="300" />
+<p><sub><sup><sub><sup><sup><a class="reference external" href="https://thinkingmeme.com/wp-content/uploads/2018/07/Top-24-Jeff-Goldblum-memes21.jpg">https://thinkingmeme.com/wp-content/uploads/2018/07/Top-24-Jeff-Goldblum-memes21.jpg</a>
+</sup></sup></sub></sup></sub></p>
+<p>Yes it’s super cool. Yes, it’s basically THE BUZZWORD. However, before applying <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> you should ask yourself:</p>
+<ul class="simple">
+<li><p>does my <code class="docutils literal notranslate"><span class="pre">task</span></code> involve a <code class="docutils literal notranslate"><span class="pre">hierarchy</span></code>?</p></li>
+<li><p>what <code class="docutils literal notranslate"><span class="pre">computational</span></code> and <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">resources</span></code> do I have?</p></li>
+<li><p>is there enough <code class="docutils literal notranslate"><span class="pre">data</span></code>?</p></li>
+<li><p>are there <code class="docutils literal notranslate"><span class="pre">pre-trained</span> <span class="pre">models</span></code>?</p></li>
+<li><p>are there <code class="docutils literal notranslate"><span class="pre">datasets</span></code> I could <code class="docutils literal notranslate"><span class="pre">pre-train</span></code> my <code class="docutils literal notranslate"><span class="pre">model</span></code> on?</p></li>
+</ul>
+<p>(This slide and all that follow stolen from Blake Richards)</p>
+<p>Quite often, <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code> won’t be the answer…!</p>
+<ul class="simple">
+<li><p>a highly recommended read:</p></li>
+</ul>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/dl_answer_question.png" alt="logo" title="Github" width="700" height="450" /><p><a class="reference external" href="https://www.nature.com/articles/s41467-020-18037-z">Schulz et al. 2020</a></p>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/schulz_2020.png" alt="logo" title="Github" width="700" height="450" /><p>But sometimes it can be…</p>
+<img align="center" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41593-018-0209-y/MediaObjects/41593_2018_209_Fig1_HTML.png?as=webp" alt="logo" title="Github" width="600" height="300" />
+<p><sup><a class="reference external" href="https://www.nature.com/articles/s41593-018-0209-y">DeepLabCut by Mathis et al. 2018</a></sub></p>
+<p>When to use <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code>:</p>
+<ul class="simple">
+<li><p>it is powerful but intended for the <code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">tasks</span></code> humans and animals are good at</p></li>
+<li><p>it uses an <code class="docutils literal notranslate"><span class="pre">inductive</span> <span class="pre">bias</span> <span class="pre">of</span> <span class="pre">hierarchy</span></code>, which can be really useful or not at all</p></li>
+<li><p>effective when you have a huge <code class="docutils literal notranslate"><span class="pre">model</span></code> and a huge amount of <code class="docutils literal notranslate"><span class="pre">data</span></code></p></li>
+</ul>
+<p>When <em>not</em> to use <code class="docutils literal notranslate"><span class="pre">deep</span> <span class="pre">learning</span></code>:</p>
+<ul class="simple">
+<li><p>no reason to assume the <code class="docutils literal notranslate"><span class="pre">problem</span></code> contains a <code class="docutils literal notranslate"><span class="pre">hierarchical</span> <span class="pre">solution</span></code></p></li>
+<li><p>limited <code class="docutils literal notranslate"><span class="pre">time</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">computational</span> <span class="pre">resources</span></code></p></li>
+<li><p>you only have a small amount of <code class="docutils literal notranslate"><span class="pre">data</span></code> and no related <code class="docutils literal notranslate"><span class="pre">dataset</span></code> to <code class="docutils literal notranslate"><span class="pre">pre-train</span></code></p></li>
+</ul>
+<p>If you don’t really know or can’t really estimate, it’s usually a good idea to stick with other, simpler <code class="docutils literal notranslate"><span class="pre">models</span></code> as it’s better to stay as <code class="docutils literal notranslate"><span class="pre">general</span> <span class="pre">purpose</span></code> as possible in these cases.</p>
+<img align="center" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*rdVotAISnffB6aTzeiETHQ.png" alt="logo" title="Github" width="600" height="300" />
+<p><sup><a class="reference external" href="https://cdn-images-1.medium.com/fit/t/1600/480/1*rdVotAISnffB6aTzeiETHQ.png">https://cdn-images-1.medium.com/fit/t/1600/480/1*rdVotAISnffB6aTzeiETHQ.png</a></sub></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -1196,15 +2130,13 @@ The same thing, that is the picture of the cat, is very different for us than fo
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Peer Herholz<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 

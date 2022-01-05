@@ -42,7 +42,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -204,7 +204,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -257,7 +257,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -305,7 +305,604 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Model evaluation & cross-validation</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aim-s-of-this-section">
+   Aim(s) of this section
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-data-for-model">
+   Prepare data for model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-fit">
+   Model fit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-diagnostics">
+   Model diagnostics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-test-stratification">
+   Train/test stratification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cross-validation">
+   Cross-validation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="model-evaluation-cross-validation">
+<h1>Model evaluation &amp; cross-validation<a class="headerlink" href="#model-evaluation-cross-validation" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/JoseAlanis">José C. García Alanis (he/him)</a><br />
+Research Fellow - Child and Adolescent Psychology at <a class="reference external" href="https://www.uni-marburg.de/de">Uni Marburg</a><br />
+Member - <a class="reference external" href="https://www.uni-marburg.de/en/fb04/rtg-2271">RTG 2271 | Breaking Expectations</a>, <a class="reference external" href="https://brainhack.org/">Brainhack</a></p>
+<p><img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/Twitter%20social%20icons%20-%20circle%20-%20blue.png" alt="logo" title="Twitter" width="30" height="30" /> <img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/GitHub-Mark-120px-plus.png" alt="logo" title="Github" width="30" height="30" />     &#64;JoiAlhaniz</p>
+<img align="right" src="https://raw.githubusercontent.com/PeerHerholz/ML-DL_workshop_SynAGE/master/lecture/static/ml-dl_workshop.png" alt="logo" title="Github" width="400" height="280" />
+<div class="section" id="aim-s-of-this-section">
+<h2>Aim(s) of this section<a class="headerlink" href="#aim-s-of-this-section" title="Permalink to this headline">¶</a></h2>
+<p>As mention in the previous section, it is not sufficient to apply these methods to learn somthing about the nature of our data. It is always necessary to assess the quality of the implemented model. The goal of these section is to look at ways to estimate the generalization accuracy of a model on future (e.g.,unseen, out-of-sample) data.</p>
+<p>In other words, at the end of these sections you should know:</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>different techniques to evaluate a given model</p></li>
+</ol>
+</li>
+<li><ol class="simple">
+<li><p>understand the basic idea of cross-validation and different kinds of the same</p></li>
+</ol>
+</li>
+<li><ol class="simple">
+<li><p>get an idea how to assess the significance (e.g., via permutation tests)</p></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="prepare-data-for-model">
+<h2>Prepare data for model<a class="headerlink" href="#prepare-data-for-model" title="Permalink to this headline">¶</a></h2>
+<p>Lets bring back our example data set (you know the song …)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># get the data set</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;MAIN2019_BASC064_subsamp_features.npz&#39;</span><span class="p">)[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+
+<span class="c1"># get the labels</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;participants.csv&#39;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> samples and </span><span class="si">%s</span><span class="s1"> features&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 155 samples and 2016 features
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s look at the labels</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>participant_id</th>
+      <th>Age</th>
+      <th>AgeGroup</th>
+      <th>Child_Adult</th>
+      <th>Gender</th>
+      <th>Handedness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>sub-pixar123</td>
+      <td>27.06</td>
+      <td>Adult</td>
+      <td>adult</td>
+      <td>F</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>sub-pixar124</td>
+      <td>33.44</td>
+      <td>Adult</td>
+      <td>adult</td>
+      <td>M</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sub-pixar125</td>
+      <td>31.00</td>
+      <td>Adult</td>
+      <td>adult</td>
+      <td>M</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>sub-pixar126</td>
+      <td>19.00</td>
+      <td>Adult</td>
+      <td>adult</td>
+      <td>F</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>sub-pixar127</td>
+      <td>23.00</td>
+      <td>Adult</td>
+      <td>adult</td>
+      <td>F</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We’ll set <code class="docutils literal notranslate"><span class="pre">Age</span></code> as target</p>
+<ul class="simple">
+<li><p>i.e., well look at these from the <code class="docutils literal notranslate"><span class="pre">regression</span></code> perspective</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set age as target</span>
+<span class="n">Y_con</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">Y_con</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    155.000000
+mean      10.555189
+std        8.071957
+min        3.518138
+25%        5.300000
+50%        7.680000
+75%       10.975000
+max       39.000000
+Name: Age, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next:</p>
+<ul class="simple">
+<li><p>we need to divide our input data <code class="docutils literal notranslate"><span class="pre">X</span></code> into <code class="docutils literal notranslate"><span class="pre">training</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code> sets</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import necessary python modules</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># split the data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Y_con</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now lets look at the size of the data sets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the size of our training and test groups</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;N used for training:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span>
+      <span class="s1">&#39; |  N used for testing:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N used for training: 116  |  N used for testing: 39
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question:</strong> Is that a good distribution? Does it look ok?</p>
+<ul class="simple">
+<li><p>Why might this be problematic (hint: what do you know about groups (e.g., <code class="docutils literal notranslate"><span class="pre">Child_Adult</span></code>) in the data.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd36fa08400&gt;
+</pre></div>
+</div>
+<img alt="../../_images/ML_eval_cv_13_1.png" src="../../_images/ML_eval_cv_13_1.png" />
+<img alt="../../_images/ML_eval_cv_13_2.png" src="../../_images/ML_eval_cv_13_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="model-fit">
+<h2>Model fit<a class="headerlink" href="#model-fit" title="Permalink to this headline">¶</a></h2>
+<p>Now lets go ahead and fit the model</p>
+<ul class="simple">
+<li><p>we will use a fairly standard regression model called a Support Vector Regressor (SVR)</p>
+<ul>
+<li><p>similar to the one we used in the previous section</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
+
+<span class="c1"># define the model</span>
+<span class="n">lin_svr</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+
+<span class="c1"># fit the model</span>
+<span class="n">lin_svr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVR(kernel=&#39;linear&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model-diagnostics">
+<h2>Model diagnostics<a class="headerlink" href="#model-diagnostics" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s look at how the model performs in predicting the data</p>
+<ul class="simple">
+<li><p>we can use the <code class="docutils literal notranslate"><span class="pre">score</span></code> method to calculate the coefficient of determination (or <a class="reference external" href="https://en.wikipedia.org/wiki/Coefficient_of_determination">R-squared</a>) of the prediction.</p>
+<ul>
+<li><p>for this we compare the observed data to the predicted data</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predict the training data based on the model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lin_svr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span> 
+
+<span class="c1"># caluclate the model accuracy</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">lin_svr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;accuracy (R2)&#39;</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (R2) 0.9998468951478122
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now lets plot the predicted values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted Age&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Predicted Age&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/ML_eval_cv_21_1.png" src="../../_images/ML_eval_cv_21_1.png" />
+</div>
+</div>
+<p>Now thats really cool, eh? <strong>Almost a perfect fit</strong></p>
+<p>… which means something is wrong</p>
+<ul class="simple">
+<li><p>what are we missing here?</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>recall</strong>: We are still using the test data sets.</p></li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/neurodatascience/course-materials-2020/master/lectures/14-may/03-intro-to-machine-learning/Imgs/regr.jpg" alt="logo" title="Github" width="800" height="500" /><center>
+<br></div>
+<div class="section" id="train-test-stratification">
+<h2>Train/test stratification<a class="headerlink" href="#train-test-stratification" title="Permalink to this headline">¶</a></h2>
+<p>Now lets do this again but we’ll add some constraints to the predriction</p>
+<ul class="simple">
+<li><p>Well keey the 75/25 ratio between test and train data sets</p></li>
+<li><p>But now we will try to keep the characteristics of the data set consistent accross training and test datasets</p></li>
+<li><p>For this we will use something called <a class="reference external" href="https://en.wikipedia.org/wiki/Stratified_sampling">stratification</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use `AgeGroup` for stratification</span>
+<span class="n">age_class2</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">y_train</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">]</span>
+
+<span class="c1"># split the data</span>
+<span class="n">X_train2</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train2</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="c1"># x</span>
+    <span class="n">y_train</span><span class="p">,</span> <span class="c1"># y</span>
+    <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="c1"># 75%/25% split  </span>
+    <span class="n">shuffle</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># shuffle dataset before splitting</span>
+    <span class="n">stratify</span> <span class="o">=</span> <span class="n">age_class2</span><span class="p">,</span>  <span class="c1"># keep distribution of age class consistent</span>
+                            <span class="c1"># betw. train &amp; test sets.</span>
+    <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># same shuffle each time</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s re-fit the model on the newly computed (and stratified) train data and evaluate it’ performace on an (also stratified) test data</p>
+<ul class="simple">
+<li><p>We’ll compute again the model accuracy (R-squared) to evalueate the models performance,</p></li>
+<li><p>but we’ll also have a look at the <a class="reference external" href="https://en.wikipedia.org/wiki/Mean_absolute_error">mean-absolute-error</a> (MAE), it is measured as the average sum of the absolute diffrences between predictions and actual observations. Unlike other measures, MAE is more robust to outliers, since it doesn’t square the deviations (cf. <a class="reference external" href="https://en.wikipedia.org/wiki/Mean_squared_error">mean-squared-error</a>)</p>
+<ul>
+<li><p>it provides a way to asses “how far off” are our predictions from our actual data, while staying on it’s referential space</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+
+<span class="c1"># fit model just to training data</span>
+<span class="n">lin_svr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train2</span><span class="p">,</span> <span class="n">y_train2</span><span class="p">)</span>
+
+<span class="c1"># predict the *test* data based on the model trained on X_train2</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lin_svr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
+
+<span class="c1"># calculate the model accuracy</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">lin_svr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> 
+<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_true</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets check the results</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;accuracy (R2) = &#39;</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAE = &#39;</span><span class="p">,</span> <span class="n">mae</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy (R2) =  0.6593855081680796
+MAE =  3.2059201603105882
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot results</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted Age&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Predicted Age&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/ML_eval_cv_32_1.png" src="../../_images/ML_eval_cv_32_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="cross-validation">
+<h2><a class="reference external" href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">Cross-validation</a><a class="headerlink" href="#cross-validation" title="Permalink to this headline">¶</a></h2>
+<p>Not perfect, but its not bad, as far as predicting with unseen data goes. Especially with a training sample of “only” 69 subjects.</p>
+<ul class="simple">
+<li><p>But, can we do better?</p></li>
+<li><p>On thing we could do is increase the size our training set while simultaneously reducing bias by instead using 10-fold <strong>cross-validation</strong></p></li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/neurodatascience/course-materials-2020/master/lectures/14-may/03-intro-to-machine-learning/Imgs/KCV2.png" alt="logo" title="Github" width="600" height="500" /></center>
+<br><p>Cross-validation is a technique used to protect against biases in a predictive model</p>
+<ul class="simple">
+<li><p>particularly useful in cases where the amount of data may be limited.</p></li>
+<li><p>basic idea: you partition the data in a fixed number of folds, run the analysis on each fold, and then average out the overall error estimate</p></li>
+</ul>
+<p>Let’s look at the models performance across 10 folds</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import modules needed for cross-validation</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_predict</span><span class="p">,</span> <span class="n">cross_val_score</span>
+
+<span class="c1"># predict</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">lin_svr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># scores</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">lin_svr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mae</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">lin_svr</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+                      <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_absolute_error&#39;</span><span class="p">)</span>
+<span class="c1"># negative MAE is simply the negative of the </span>
+<span class="c1"># MAE (by definition a positive quantity),  </span>
+<span class="c1"># since MAE is an error metric, i.e. the lower the better, </span>
+<span class="c1"># negative MAE is the opposite</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the results for each fold</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s1">&#39;Fold </span><span class="si">{}</span><span class="s1"> -- Acc = </span><span class="si">{}</span><span class="s1">, MAE = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">acc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="o">-</span><span class="n">mae</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fold 0 -- Acc = 0.419, MAE = 5.271
+Fold 1 -- Acc = 0.11, MAE = 3.069
+Fold 2 -- Acc = 0.79, MAE = 2.275
+Fold 3 -- Acc = 0.809, MAE = 3.061
+Fold 4 -- Acc = 0.641, MAE = 3.906
+Fold 5 -- Acc = 0.195, MAE = 4.732
+Fold 6 -- Acc = 0.684, MAE = 3.974
+Fold 7 -- Acc = 0.815, MAE = 2.693
+Fold 8 -- Acc = 0.058, MAE = 5.525
+Fold 9 -- Acc = 0.698, MAE = 2.571
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the visually oriented among us</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;R-squared&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">mae</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;MAE&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">},</span> <span class="n">loc</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Folds [1 to 10]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Metric score [i.e., R-squared 0 to 1]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Metric score [i.e., R-squared 0 to 1]&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/ML_eval_cv_40_1.png" src="../../_images/ML_eval_cv_40_1.png" />
+</div>
+</div>
+<p>We can also look at the <strong>overall accuracy</strong> of the model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="n">overall_acc</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">overall_mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2:&#39;</span><span class="p">,</span> <span class="n">overall_acc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAE:&#39;</span><span class="p">,</span> <span class="n">overall_mae</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2: 0.5544107024745264
+MAE: 3.7082530497804926
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s look at the final overall model prediction</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted Age&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Predicted Age&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/ML_eval_cv_44_1.png" src="../../_images/ML_eval_cv_44_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Not bad, not bad at all.</p>
+<p>But <strong>most importantly</strong></p>
+<ul class="simple">
+<li><p>this is a more <strong>accurate estimation</strong> of our model’s predictive efficacy.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -857,15 +1454,13 @@ MAE: 3.7082530497804926
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Peer Herholz<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
