@@ -1,9 +1,12 @@
 ipykernel
 sphinx-book-theme
-myst-nb
+myst-nb==0.13.2
 ghp-import
-jupyter-book
-jupytext
-nilearn
+jupyter-book==0.12.2
+jupytext==1.11.5
+nilearn==0.8.0
 seaborn
 tensorflow
+mne
+mne-bids
+pybids
