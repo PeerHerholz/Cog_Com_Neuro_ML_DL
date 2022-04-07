@@ -19,7 +19,3 @@ Please see below for our current _optimistic_ schedule. Depending on our progres
 📖 - reading outside course hours  
 
 Please click on a given topic either within the table below or the `ToC` on the left to get to the respective materials.
-
-
-| Date (day/month/year) 🗓         | Topic 💡 👨🏻‍🏫   | Project related work 🥼🧑🏿‍🔬👩🏻‍🔬 | tasks for subsequent meeting 🖥️✍🏽📖 |
-|--------------|-----------|------------|------------|
