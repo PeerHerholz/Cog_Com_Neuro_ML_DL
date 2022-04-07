@@ -7,12 +7,17 @@ chapters:
 - file: setup
 - file: introduction/pages/introduction.md
   sections:
-    - file: introduction/introduction_1.md
-    - file: introduction/introduction_2.md
-    - file: introduction/introduction_3.md
-    - file: introduction/introduction_4.md
-    - file: introduction/introduction_5.md
-    - file: introduction/introduction_6.md
+  - file: introduction/pages/introduction_1.md
+  - file: introduction/pages/introduction_2.md
+    sections:
+    - file: introduction/notebooks/neuroscience/cortical_maps.ipynb
+    - file: introduction/notebooks/neuroscience/mri_intro.ipynb
+      sections:
+      - file: introduction/notebooks/neuroscience/image_manipulation_nibabel.ipynb
+  - file: introduction/pages/introduction_3.md
+  - file: introduction/pages/introduction_4.md
+  - file: introduction/pages/introduction_5.md
+  - file: introduction/pages/introduction_6.md
 - file: experimentation/experimentation.md
 - file: finalization/finalization.md
 - file: projects

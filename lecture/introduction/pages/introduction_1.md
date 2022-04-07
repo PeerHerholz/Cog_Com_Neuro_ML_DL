@@ -1,4 +1,4 @@
-# Introduction I
+# Introduction I - General introduction
 
 Within the first session we'll spend a fair amount of time on talking about the structure, content, goal and implementation of the course to hopefully answer most of your questions and set the stage for the subsequent meetings! 
 
