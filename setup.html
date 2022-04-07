@@ -127,18 +127,47 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="introduction/pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="introduction/pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="introduction/notebooks/neuroscience/cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="introduction/notebooks/neuroscience/mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="introduction/notebooks/neuroscience/image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="experimentation/experimentation.html">
-   Experimentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="finalization/finalization.html">
-   Finalization - communication, documentation &amp; outreach
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="projects.html">
@@ -307,19 +336,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Setup for the course</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Setup for the course</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-things">
    General things
@@ -374,7 +404,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -428,8 +460,8 @@ You <em>must</em> have <code class="docutils literal notranslate"><span class="p
 <h3>OS-specific installation instructions<a class="headerlink" href="#os-specific-installation-instructions" title="Permalink to this headline">¶</a></h3>
 <p>Select the tab that corresponds to your operating system and follow the instructions therein.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="6ca21a6f-3fbc-4ffb-bdde-29e8cfebda69" name="1d73d1ee-9568-4ce7-9210-e75750ae3ab9" type="radio">
-</input><label class="tabbed-label" for="6ca21a6f-3fbc-4ffb-bdde-29e8cfebda69">
+<input checked="checked" id="aa83f71a-3ea3-42fc-8d41-638ba1b7552e" name="585cfcd7-324f-4a7e-91fa-9419a9db630d" type="radio">
+</input><label class="tabbed-label" for="aa83f71a-3ea3-42fc-8d41-638ba1b7552e">
 Windows</label><div class="tabbed-content docutils">
 <p><strong>Windows Subsystem for Linux (WSL)</strong></p>
 <ol>
@@ -524,8 +556,8 @@ If your issue is still not resolved skip the following step and contact an instr
 </pre></div>
 </div>
 </div>
-<input id="17afabdf-187c-4f90-ba89-54f1f48c3721" name="1d73d1ee-9568-4ce7-9210-e75750ae3ab9" type="radio">
-</input><label class="tabbed-label" for="17afabdf-187c-4f90-ba89-54f1f48c3721">
+<input id="17ad3f5f-ec28-4958-83fd-049abd4e9c3e" name="585cfcd7-324f-4a7e-91fa-9419a9db630d" type="radio">
+</input><label class="tabbed-label" for="17ad3f5f-ec28-4958-83fd-049abd4e9c3e">
 Linux</label><div class="tabbed-content docutils">
 <p><strong>Bash shell</strong></p>
 <p>You already have it!
@@ -596,8 +628,8 @@ If your issue is still not resolved skip the following step and contact an instr
 </pre></div>
 </div>
 </div>
-<input id="ae13d484-031e-4a6c-b33b-7aebbe5a7807" name="1d73d1ee-9568-4ce7-9210-e75750ae3ab9" type="radio">
-</input><label class="tabbed-label" for="ae13d484-031e-4a6c-b33b-7aebbe5a7807">
+<input id="65f6f001-0208-49ec-9a07-74bfa47e99ce" name="585cfcd7-324f-4a7e-91fa-9419a9db630d" type="radio">
+</input><label class="tabbed-label" for="65f6f001-0208-49ec-9a07-74bfa47e99ce">
 MacOs</label><div class="tabbed-content docutils">
 <p><strong>Bash shell</strong></p>
 <p>You already have it!
@@ -717,8 +749,8 @@ If you followed these instructions step-by-step and cannot resolve the issue ple
 <h2>Getting the course content<a class="headerlink" href="#getting-the-course-content" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have installed the required software (or not) to follow the course, it’s time to gather the respective materials.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="5efe0e43-e260-4991-a7ad-716c3ecc5f86" name="71892fe6-b2c4-4d79-84df-949d02d6af0d" type="radio">
-</input><label class="tabbed-label" for="5efe0e43-e260-4991-a7ad-716c3ecc5f86">
+<input checked="checked" id="3fc5296c-3fcf-4078-ac2c-4760f287f72b" name="d6e2df7c-1501-47fa-a810-b9be9183a119" type="radio">
+</input><label class="tabbed-label" for="3fc5296c-3fcf-4078-ac2c-4760f287f72b">
 Local</label><div class="tabbed-content docutils">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg" alt="conda logo" width="300"/><br />
 <sub><sup><sub><sup><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg">https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg</a></sup></sub></sup></sub></p>
@@ -732,8 +764,8 @@ Local</label><div class="tabbed-content docutils">
 <li><p>Finally, via the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>, move to the folder where you’ve put all the unzipped content of this workshop, e.g. with the command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Desktop/Cog_Com_Neuro_ML_DL</span></code> and run the command <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. If the <code class="docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">server</span></code> isn’t automatically opened in a new browser window, please copy-paste either the <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8888/...</span></code> or the <code class="docutils literal notranslate"><span class="pre">http://localhost:8888/...</span></code> path into a new browser window and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. You should now see the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">server</span></code> (looking like a file browser and displaying the content of the directory).</p></li>
 </ol>
 </div>
-<input id="c0a22809-e576-40e7-81ab-f87d48e7828b" name="71892fe6-b2c4-4d79-84df-949d02d6af0d" type="radio">
-</input><label class="tabbed-label" for="c0a22809-e576-40e7-81ab-f87d48e7828b">
+<input id="80b50723-6e12-4c9a-88c7-cc94b318bddf" name="d6e2df7c-1501-47fa-a810-b9be9183a119" type="radio">
+</input><label class="tabbed-label" for="80b50723-6e12-4c9a-88c7-cc94b318bddf">
 Cloud via Mybinder</label><div class="tabbed-content docutils">
 <p><img src="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b" alt="binder logo" width="300"/><br />
 <sub><sup><sub><sup><a class="reference external" href="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b">https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b</a></sup></sub></sup></sub></p>
@@ -773,410 +805,8 @@ Cloud via Mybinder</label><div class="tabbed-content docutils">
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="section" id="setup-for-the-course">
-<h1>Setup for the course<a class="headerlink" href="#setup-for-the-course" title="Permalink to this headline">¶</a></h1>
-<p>There are a few things you need to get working on your machine in order to follow this course. However, don’t worry as it’s all gonna be <span class="xref myst">open source</span>, won’t require a lot of storage and will be explained in detail.</p>
-<p>While same parts and section will be do-able via <code class="docutils literal notranslate"><span class="pre">cloud</span> <span class="pre">computing</span></code>, which is nice and easy to follow in an interactive manner, it’s not recommended as getting <code class="docutils literal notranslate"><span class="pre">Python</span></code> &amp; friends to work reliably on your machine is going to be very beneficial. This holds true for the course and especially beyond. Via installing these tools, you will be equipped to basically continue right away and start using them in your everyday research workflow. This even applies if you won’t continue with <code class="docutils literal notranslate"><span class="pre">python</span></code> (I certainly hope you do.) and instead work with <code class="docutils literal notranslate"><span class="pre">R</span></code> (of course also cool), <code class="docutils literal notranslate"><span class="pre">matlab</span></code> (weeeeeeeell…) or what have you.  Having that in mind and integrating other tools/resources focusing open and reproducible (neuro-/data) science, you will find a rather comprehensive set of install instructions below. While not all of them might be totally necessary for the course, they all will help you a great deal going further and are especially useful/needed if we have to hold the course virtually due to the COVID-19 pandemic.</p>
-<p>Don’t worry, you got this!</p>
-<p><img alt="logo" src="https://media1.tenor.com/images/f72cb542d6b3e3c3421889e0a3d9628d/tenor.gif?itemid=4533805" /><br />
-<sub><sup><sub><sup><a class="reference external" href="https://media1.tenor.com/images/f72cb542d6b3e3c3421889e0a3d9628d/tenor.gif?itemid=4533805">https://media1.tenor.com/images/f72cb542d6b3e3c3421889e0a3d9628d/tenor.gif?itemid=4533805</a></sup></sub></sup></sub></p>
-<div class="section" id="general-things">
-<h2>General things<a class="headerlink" href="#general-things" title="Permalink to this headline">¶</a></h2>
-<p>There are a few computing requirements for the course that are absolutely necessary (beyond the few software packages you should install, described below):</p>
-<ol class="simple">
-<li><p>You must have administrator access to your computer (i.e., you must be able to install things yourself without requesting IT approval).</p></li>
-<li><p>You must have at least 20 GB of free disk space on your computer (but we would recommend more, to be safe).</p></li>
-<li><p>If you are using Windows you must be using Windows 10; Windows 7 and 8 will not be sufficient for this course.</p></li>
-</ol>
-<p>If you foresee any of these being a problem please reach out to one of the instructors for what steps you can take to ensure you are ready for the course start.</p>
-</div>
-<div class="section" id="required-software">
-<h2>Required software<a class="headerlink" href="#required-software" title="Permalink to this headline">¶</a></h2>
-<p>To get the most out of the course, we ask that you arrive with the following software already installed:</p>
-<ul class="simple">
-<li><p>A command-line shell: <code class="docutils literal notranslate"><span class="pre">Bash</span></code></p></li>
-<li><p>A version control system: <code class="docutils literal notranslate"><span class="pre">Git</span></code></p></li>
-<li><p>A remote-capable text editor: <code class="docutils literal notranslate"><span class="pre">VSCode</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> via <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code></p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> account</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Discord</span></code></p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">modern</span> <span class="pre">browser</span></code></p></li>
-</ul>
-<p>If you already have all of the above software tools/packages installed, or are confident you’ll be able to install them by the time the course starts, you can jump straight to <a class="reference external" href="#checking-your-install">checking your install</a>.
-The rest of this page provides more detail on installation procedures for each of the above elements, with separate instructions for each of the three major operating systems (<code class="docutils literal notranslate"><span class="pre">Windows</span></code>, <code class="docutils literal notranslate"><span class="pre">Mac</span> <span class="pre">OS</span></code>, and <code class="docutils literal notranslate"><span class="pre">Linux</span></code>).</p>
-<div class="section" id="some-quick-general-notes-on-instructions">
-<h3>Some quick general notes on instructions<a class="headerlink" href="#some-quick-general-notes-on-instructions" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>There is no difference between <code class="docutils literal notranslate"><span class="pre">Enter</span></code> and <code class="docutils literal notranslate"><span class="pre">Return</span></code> in these instructions, so just press whatever the equivalent on your keyboard is whenever one is stated</p></li>
-<li><p>If you already have some of these things installed on your computer already that should (theoretically) be okay.
-However, you need to make sure that you are able to complete the steps described in <a class="reference external" href="#checking-your-install">checking your install</a> without issue.</p>
-<ul>
-<li><p>For example, having multiple different <code class="docutils literal notranslate"><span class="pre">Python</span></code> installations on your computer can lead to incredibly frustrating issues that are very difficult to debug.
-As such, if you have already installed <code class="docutils literal notranslate"><span class="pre">Python</span></code> via some other application (not <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code>/<code class="docutils literal notranslate"><span class="pre">Anaconda</span></code>), it’s strongly encouraged to uninstall it before following the instructions below.
-You <em>must</em> have <code class="docutils literal notranslate"><span class="pre">Python</span></code> installed via <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> for this course.</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="os-specific-installation-instructions">
-<h3>OS-specific installation instructions<a class="headerlink" href="#os-specific-installation-instructions" title="Permalink to this headline">¶</a></h3>
-<p>Select the tab that corresponds to your operating system and follow the instructions therein.</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="6ca21a6f-3fbc-4ffb-bdde-29e8cfebda69" name="1d73d1ee-9568-4ce7-9210-e75750ae3ab9" type="radio">
-</input><label class="tabbed-label" for="6ca21a6f-3fbc-4ffb-bdde-29e8cfebda69">
-Windows</label><div class="tabbed-content docutils">
-<p><strong>Windows Subsystem for Linux (WSL)</strong></p>
-<ol>
-<li><p>Search for <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Powershell</span></code> in your applications; right click and select <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">as</span> <span class="pre">administrator</span></code>.
-Select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> on the prompt that appears asking if you want to allow the app to make changes to your device.</p></li>
-<li><p>Type the following into the Powershell and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-</pre></div>
-</div>
-</li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> again when prompted to reboot your computer.</p></li>
-<li><p>Once your computer has rebooted, open the Microsoft Store and search for “Ubuntu.”
-Install the program labelled “Ubuntu 18.04” (not “Ubuntu 16.04” or “Ubuntu”) by clicking the tile, pressing <code class="docutils literal notranslate"><span class="pre">Get</span></code>, and then <code class="docutils literal notranslate"><span class="pre">Install</span></code>.</p></li>
-<li><p>Search for and open Ubuntu from your applications.
-There will be a slight delay (of a few minutes) while it finishes installing.</p></li>
-<li><p>You will be prompted to <code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">new</span> <span class="pre">UNIX</span> <span class="pre">username</span></code>.
-You can use any combination of alphanumeric characters here for your username, but a good choice is <code class="docutils literal notranslate"><span class="pre">&lt;first_initial&gt;&lt;last_name&gt;</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">jsmith</span></code> for John Smith).
-You will then be prompted to enter a new password.
-(Choose something easy to remember as you will find yourself using it frequently.)</p></li>
-<li><p>Right click on the top bar of the Ubuntu application and select “Properties”.
-Under the “Options” tab, under the “Edit Options” heading, make sure the box reading “Use Ctrl+Shift+C/V as Copy/Paste” is checked.
-Under the “Terminal” tab, under the “Cursor Shape” heading, make sure the box reading “Vertical Bar” is checked.
-Press “Okay” to save these settings and then exit the application.</p></li>
-</ol>
-<p>(The above step-by-step WSL instructions are distilled from <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">here</a> and <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/initialize-distro">here</a>.
-If you have questions during the installation procedure those resources may have answers!)</p>
-<p>From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Ubuntu application.</p>
-<p><strong>Bash shell</strong></p>
-<p>You already have it, now that you’ve installed the WSL!</p>
-<p><strong>Git</strong></p>
-<p>You already have it, now that you’ve installed the WSL!</p>
-<p><strong>VSCode</strong></p>
-<ol class="simple">
-<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button, then run the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.</p></li>
-<li><p>Leave all the defaults during the installation with the following exception:</p>
-<ul class="simple">
-<li><p>Please make sure the box labelled “Register Code as an editor for supported file types” is selected</p></li>
-</ul>
-</li>
-</ol>
-<p><strong>VSCode extensions</strong></p>
-<ol class="simple">
-<li><p>Open the Ubuntu application.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code> into the terminal and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-You should see a message reading “Installing VS Code Server” and then a new windows will open up.</p></li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> in the new window that opens and type “Extensions: Install extensions” into the search bar that appears at the top of the screen.
-Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
-<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
-Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
-<ul class="simple">
-<li><p>Python (n.b., you will need to reload VSCode after installing this)</p></li>
-<li><p>Live Share (n.b., you may need to press “Ctrl/Cmd+Shift+P” and type “install extensions” again after installing this)</p></li>
-<li><p>Live Share Extension Pack</p></li>
-<li><p>Docker</p></li>
-<li><p>Remote - WSL</p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Python</strong></p>
-<ol>
-<li><p>Open a new terminal and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
- bash Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
-Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
-Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
-<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
-Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
-<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-Exit the terminal once the installation has finished.</p></li>
-<li><p>Re-open the Ubuntu application.
-Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
-<ul class="simple">
-<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
-If your issue is still not resolved skip the following step and contact an instructor on the #help-installation channel on the BHS Slack.</p></li>
-</ul>
-</li>
-<li><p>Type the following to remove the installation script that was downloaded:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Python packages</strong></p>
-<p>Open a terminal and type the following commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
-    conda config --set channel_priority strict
-    conda install -y flake8 ipython jupyter jupyterlab matplotlib numpy pandas scipy seaborn pingouin statsmodels plotly
-</pre></div>
-</div>
-</div>
-<input id="17afabdf-187c-4f90-ba89-54f1f48c3721" name="1d73d1ee-9568-4ce7-9210-e75750ae3ab9" type="radio">
-</input><label class="tabbed-label" for="17afabdf-187c-4f90-ba89-54f1f48c3721">
-Linux</label><div class="tabbed-content docutils">
-<p><strong>Bash shell</strong></p>
-<p>You already have it!
-Depending on which version of Linux you’re running you may need to type <code class="docutils literal notranslate"><span class="pre">bash</span></code> inside the terminal to access it.
-To check whether this is necessary, follow these steps:</p>
-<ol class="simple">
-<li><p>Open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.
-If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set!
-If not, whenever the instructions read “open a terminal,” please assume you are to open a terminal, type <code class="docutils literal notranslate"><span class="pre">bash</span></code>, and the proceed with the instructions as specified.</p></li>
-</ol>
-<p><strong>Git</strong></p>
-<p>You may already have it; try typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code> (Ubuntu, Debian) or <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">git</span></code> (Fedora) inside the terminal.
-If you are prompted to install it follow the instructions on-screen to do so.</p>
-<p><strong>VSCode</strong></p>
-<ol class="simple">
-<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.</p></li>
-<li><p>Double-click the downloaded file to install VSCode.
-(You may be prompted to type your administrator password during the install).</p></li>
-</ol>
-<p><strong>VSCode extensions</strong></p>
-<ol class="simple">
-<li><p>Open the Visual Studio Code application.</p></li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> in the new window that opens and type “Extensions: Install extensions” into the search bar that appears at the top of the screen.
-Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
-<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
-Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
-<ul class="simple">
-<li><p>Python (n.b., you will need to reload VSCode after installing this)</p></li>
-<li><p>Live Share (n.b., you may need to press “Ctrl/Cmd+Shift+P” and type “install extensions” again after installing this)</p></li>
-<li><p>Live Share Extension Pack</p></li>
-<li><p>Docker</p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Python</strong></p>
-<ol>
-<li><p>Open a new terminal and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
- bash Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
-Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
-Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
-<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
-Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
-<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-Exit the terminal once the installation has finished.</p></li>
-<li><p>Re-open a new terminal.
-Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
-<ul class="simple">
-<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
-If your issue is still not resolved skip the following step and contact an instructor on the #help-installation channel of the BHS Slack.</p></li>
-</ul>
-</li>
-<li><p>Type the following to remove the installation script that was downloaded:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-Linux-x86_64.sh
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Python packages</strong></p>
-<p>Open a terminal and type the following commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
-    conda config --set channel_priority strict
-    conda install -y flake8 ipython jupyter jupyterlab matplotlib numpy pandas scipy seaborn pingouin statsmodels plotly
-</pre></div>
-</div>
-</div>
-<input id="ae13d484-031e-4a6c-b33b-7aebbe5a7807" name="1d73d1ee-9568-4ce7-9210-e75750ae3ab9" type="radio">
-</input><label class="tabbed-label" for="ae13d484-031e-4a6c-b33b-7aebbe5a7807">
-MacOs</label><div class="tabbed-content docutils">
-<p><strong>Bash shell</strong></p>
-<p>You already have it!
-Depending on which version of Mac OS you’re running you may need to type <code class="docutils literal notranslate"><span class="pre">bash</span></code> inside the terminal to access it.
-To check whether this is necessary, follow these steps:</p>
-<ol class="simple">
-<li><p>Open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.
-If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set!</p></li>
-</ol>
-<p>Note: If you are using Mac Catalina (10.15.X) then it is possible your default shell is NOT CORRECT.
-To set the default to bash, type <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> in the terminal, enter your password when prompted, and then close + re-open the terminal.</p>
-<p><strong>Git</strong></p>
-<p>You may already have it!
-Try opening a terminal and typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>.
-If you do not see something like “git version X.XX.X” printed out, then follow these steps:</p>
-<ol class="simple">
-<li><p>Follow <a class="reference external" href="https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect">this link</a> to automatically download an installer.</p></li>
-<li><p>Double click the downloaded file (<code class="docutils literal notranslate"><span class="pre">git-2.23.0-intel-universal-mavericks.dmg</span></code>) and then double click the <code class="docutils literal notranslate"><span class="pre">git-2.23.0-intel-universal-mavericks.pkg</span></code> icon inside the dmg that is opened.</p></li>
-<li><p>Follow the on-screen instructions to install the package.</p></li>
-</ol>
-<p><strong>VSCode</strong></p>
-<ol class="simple">
-<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button.</p></li>
-<li><p>Unzip the downloaded file (e.g., <code class="docutils literal notranslate"><span class="pre">VSCode-darwin-stable.zip</span></code>) and moving the resulting <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> file to your Applications directory.</p></li>
-</ol>
-<p><strong>VSCode extensions</strong></p>
-<ol class="simple">
-<li><p>Open the Visual Studio Code application</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> and then enter “Shell command: Install ‘code’ command in PATH” into the search bar that appears at the top of the screen.
-Select the highlighted entry.
-A notification box should appear in the bottom-right corner indicating that the command was installed successfully.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> again and then enter “Extensions: Install extensions” into the search bar.
-Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
-<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
-Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
-<ul class="simple">
-<li><p>Python (n.b., you will need to reload VSCode after installing this)</p></li>
-<li><p>Live Share (n.b., you may need to press “Ctrl/Cmd+Shift+P” and type “install extensions” again after installing this)</p></li>
-<li><p>Live Share Extension Pack</p></li>
-<li><p>Docker</p></li>
-</ul>
-</li>
-</ol>
-<p><strong>Python</strong></p>
-<ol>
-<li><p>Open a new terminal and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
- bash Miniconda3-latest-MacOSX-x86_64.sh
-</pre></div>
-</div>
-</li>
-<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
-Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
-Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
-<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
-Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
-<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
-Exit the terminal once the installation has finished.</p></li>
-<li><p>Re-open a terminal.
-Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
-<ul class="simple">
-<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
-If your issue is still not resolved skip the following step and contact an instructor on the #help-installation channel of the BHS Slack.</p></li>
-</ul>
-</li>
-<li><p>Type the following to remove the installation script that was downloaded:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-MacOSX-x86_64.sh
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Python packages</strong></p>
-<p>Open a terminal and type the following commands:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
-    conda config --set channel_priority strict
-    conda install -y flake8 ipython jupyter jupyterlab matplotlib numpy pandas scipy seaborn pingouin statsmodels plotly
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Note</strong>: If the instructions aren’t working and you have spent more than 15-20 minutes troubleshooting on your own, reach out on the #help-installation channel on the Discord channel with the exact problems you’re having.
-One of the instructors will try and get back to you quickly to help resolve the situation.
-If they’re unable to help via <code class="docutils literal notranslate"><span class="pre">Discord</span></code>, you may be directed to attend one of the installation office hours.</p>
-</div>
-<div class="section" id="github-account">
-<h3>GitHub account<a class="headerlink" href="#github-account" title="Permalink to this headline">¶</a></h3>
-<p>Go to <a class="reference external" href="https://github.com/join/">https://github.com/join/</a> and follow the on-screen instructions to create an account.
-It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the <a class="reference external" href="https://education.github.com/pack">GitHub Student Developer Pack</a> which comes with some nice free bonuses.</p>
-</div>
-<div class="section" id="discord">
-<h3>Discord<a class="headerlink" href="#discord" title="Permalink to this headline">¶</a></h3>
-<p>Go to <a class="reference external" href="https://discord.com/">https://discord.com/</a> and download and install Discord. Please note, that you can also use Discord through your browser if you don’t want to download it.
-You will be invited to the course channel via e-mail.</p>
-</div>
-<div class="section" id="modern-web-browser">
-<h3>Modern web browser<a class="headerlink" href="#modern-web-browser" title="Permalink to this headline">¶</a></h3>
-<p>Install Firefox or Chrome.
-(Safari will also work.)
-Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
-</div>
-</div>
-<div class="section" id="checking-your-install">
-<h2>Checking your install<a class="headerlink" href="#checking-your-install" title="Permalink to this headline">¶</a></h2>
-<p>Now that you’ve installed everything it’s time to check that everything works as expected!
-Type the following into your terminal:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash &lt;( curl -s https://raw.githubusercontent.com/PeerHerholz/Cog_Com_Neuro_ML_DL/master/check_install.sh)
-</pre></div>
-</div>
-<p>If you installed everything correctly you should see a message informing you as such.
-If any problems were detected you should receive some brief instructions on what is wrong with potential suggestions on how to remedy it.
-If you followed these instructions step-by-step and cannot resolve the issue please contact one of the course instructors for more help.</p>
-<p>Yeah, you did! Great job!</p>
-<p><img alt="logo" src="https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158" /><br />
-<sub><sup><sub><sup><a class="reference external" href="https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158">https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158</a></sup></sub></sup></sub></p>
-</div>
-<div class="section" id="getting-the-course-content">
-<h2>Getting the course content<a class="headerlink" href="#getting-the-course-content" title="Permalink to this headline">¶</a></h2>
-<p>Now that you have installed the required software (or not) to follow the course, it’s time to gather the respective materials.</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="5efe0e43-e260-4991-a7ad-716c3ecc5f86" name="71892fe6-b2c4-4d79-84df-949d02d6af0d" type="radio">
-</input><label class="tabbed-label" for="5efe0e43-e260-4991-a7ad-716c3ecc5f86">
-Local</label><div class="tabbed-content docutils">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg" alt="conda logo" width="300"/><br />
-<sub><sup><sub><sup><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg">https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg</a></sup></sub></sup></sub></p>
-<p>By installing <code class="docutils literal notranslate"><span class="pre">Python</span></code> on your system (i.e. specifically <code class="docutils literal notranslate"><span class="pre">Conda</span></code>) and setting up the appropriate environment, you will be able to open all the <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code> and go through the whole content of the course locally.</p>
-<p>To get things up and running, please follow these steps:</p>
-<ol class="simple">
-<li><p>Download the <a class="reference external" href="https://raw.githubusercontent.com/peerherholz/Cog_Com_Neuro_ML_DL/master/environment.yml"><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></a> file (e.g. with right mouse click -&gt; Save As). Make sure that the file ends with <code class="docutils literal notranslate"><span class="pre">.yml</span></code> and not <code class="docutils literal notranslate"><span class="pre">.txt</span></code>.</p></li>
-<li><p>Open up a conda terminal (or any other terminal), and create a new conda environment with the following command: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">/path/to/file/environment.yml</span></code> - For example ``conda env create -f ~/Downloads/environment.yml`</p></li>
-<li><p>Download the notebooks in this repository via <a class="reference external" href="https://github.com/peerherholz/Cog_Com_Neuro_ML_DL/archive/master.zip">this link</a>) and unzip them to your preferred location, e.g. <code class="docutils literal notranslate"><span class="pre">Desktop/Cog_Com_Neuro_ML_DL</span></code>.</p></li>
-<li><p>Next, open up a <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">terminal</span></code> (or any other <code class="docutils literal notranslate"><span class="pre">terminal</span></code>), activate the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">neuro_ml</span></code> (or on older <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">neuro_ml</span></code> for <code class="docutils literal notranslate"><span class="pre">mac</span></code> and <code class="docutils literal notranslate"><span class="pre">linux</span></code> and <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">pfp_2021</span></code> for <code class="docutils literal notranslate"><span class="pre">windows</span></code>).</p></li>
-<li><p>Finally, via the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>, move to the folder where you’ve put all the unzipped content of this workshop, e.g. with the command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Desktop/Cog_Com_Neuro_ML_DL</span></code> and run the command <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. If the <code class="docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">server</span></code> isn’t automatically opened in a new browser window, please copy-paste either the <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8888/...</span></code> or the <code class="docutils literal notranslate"><span class="pre">http://localhost:8888/...</span></code> path into a new browser window and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. You should now see the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">server</span></code> (looking like a file browser and displaying the content of the directory).</p></li>
-</ol>
-</div>
-<input id="c0a22809-e576-40e7-81ab-f87d48e7828b" name="71892fe6-b2c4-4d79-84df-949d02d6af0d" type="radio">
-</input><label class="tabbed-label" for="c0a22809-e576-40e7-81ab-f87d48e7828b">
-Cloud via Mybinder</label><div class="tabbed-content docutils">
-<p><img src="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b" alt="binder logo" width="300"/><br />
-<sub><sup><sub><sup><a class="reference external" href="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b">https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b</a></sup></sub></sup></sub></p>
-<p><a class="reference external" href="https://mybinder.org/v2/gh/peerherholz/Python_for_Psychologists_Winter2021/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p><a class="reference external" href="https://mybinder.org/">MyBinder.org</a> is a great service that allows you to run Jupyter notebooks in a Docker or Python environment, directly online and for free. However, this service comes of course with a restricted computational environment (1-2GB of RAM). This means, many notebooks might be very slow and some might even crash, due to not enough memory.</p>
-<p>You can use this approach to run and test most of the notebooks and to explore the slides. To access the MyBinder instance, use <a class="reference external" href="https://mybinder.org/v2/gh/peerherholz/Python_for_Psychologists_Winter2021/HEAD">this link</a>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="enter-the-matrix">
-<h2>Enter the matrix<a class="headerlink" href="#enter-the-matrix" title="Permalink to this headline">¶</a></h2>
-<p>Once you reached this point, you should be ready the enter the matrix and follow the course in your preferred way. Congrats, fantastic work!</p>
-<p><img alt="logo" src="https://media1.tenor.com/images/e5c21d98f56c4af119b4e14b6a9df893/tenor.gif?itemid=4011236" /><br />
-<sub><sup><sub><sup><a class="reference external" href="https://media1.tenor.com/images/e5c21d98f56c4af119b4e14b6a9df893/tenor.gif?itemid=4011236">https://media1.tenor.com/images/e5c21d98f56c4af119b4e14b6a9df893/tenor.gif?itemid=4011236</a></sup></sub></sup></sub></p>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="outline.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1193,7 +823,7 @@ Cloud via Mybinder</label><div class="tabbed-content docutils">
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
@@ -1201,7 +831,7 @@ Cloud via Mybinder</label><div class="tabbed-content docutils">
     
       By Peer Herholz<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

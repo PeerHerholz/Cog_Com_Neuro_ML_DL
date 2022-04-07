@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cortical maps &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Magnetic Resonance Imaging (MRI)" href="mri_intro.html" />
+    <link rel="prev" title="Introduction II - Neuroscience" href="../../pages/introduction_2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/cortical_maps.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/cortical_maps.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/cortical_maps.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/cortical_maps.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives 📍
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structural-and-functional-imaging">
+   Structural and functional imaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatial-and-temporal-resolution">
+   Spatial and temporal resolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-resonance-imaging">
+   Magnetic resonance imaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structural-mri">
+   Structural MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-mri">
+   Functional MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neurovascular-coupling">
+   Neurovascular coupling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffusion-mri">
+   Diffusion MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optical-imaging">
+   Optical imaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#positron-emission-tomography">
+   Positron emission tomography
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-maps">
+   Statistical maps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cortical maps</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives 📍
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structural-and-functional-imaging">
+   Structural and functional imaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatial-and-temporal-resolution">
+   Spatial and temporal resolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-resonance-imaging">
+   Magnetic resonance imaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structural-mri">
+   Structural MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-mri">
+   Functional MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neurovascular-coupling">
+   Neurovascular coupling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffusion-mri">
+   Diffusion MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optical-imaging">
+   Optical imaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#positron-emission-tomography">
+   Positron emission tomography
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-maps">
+   Statistical maps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="cortical-maps">
+<h1>Cortical maps<a class="headerlink" href="#cortical-maps" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/cortical_maps.png"><img alt="../../../_images/cortical_maps.png" src="../../../_images/cortical_maps.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The neuroimaging tree. Each branch represents one of the techniques that will be briefly presented during this part of the course. Figure adapted by P. Bellec from a variety of non-copyright sources and inspired by the book <a href="#id1"><span class="problematic" id="id2">:cite:p:`wager2015`</span></a>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>This first chapter aims to give an overview of this part of the course as a whole. This is a condensed format, which covers all the <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">techniques</span></code> that we will briefly discuss during this part of the course. If you want to start your project by studying only one chapter, you’ve come to the right place. But this strategy is not recommended! If, on the contrary, you wish to work on the material of each chapter in depth, the essential information can be found elsewhere in the course notes with more details. Nevertheless, this chapter specifies elements of vocabulary, basic notions and will allow you to quickly make connections between the different techniques seen in this part of the course and beyond.</p>
+<div class="section" id="objectives">
+<h2>Objectives 📍<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p>All of the <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">techniques</span></code> that we will see have distinct strengths and weaknesses, which make them better suited to different types of application. The general objective of this part of the course is for you to understand if a <code class="docutils literal notranslate"><span class="pre">technique</span></code> is well suited to a research question. For each technique, we aim more specifically to understand four aspects:</p>
+<ul class="simple">
+<li><p>What is the <strong>physical principle</strong> that allows us to obtain a measurement?</p></li>
+<li><p>What is the <strong>physiological principle</strong>, ie what <code class="docutils literal notranslate"><span class="pre">biological</span> <span class="pre">aspect</span></code> of the brain do we measure?</p></li>
+<li><p>What <strong>methods of analysis</strong> are needed to be able to interpret the <code class="docutils literal notranslate"><span class="pre">data</span></code>?</p></li>
+<li><p>What <strong>research questions</strong> can be investigated with these <code class="docutils literal notranslate"><span class="pre">techniques</span></code>?</p></li>
+</ul>
+</div>
+<div class="section" id="structural-and-functional-imaging">
+<h2>Structural and functional imaging<a class="headerlink" href="#structural-and-functional-imaging" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="structure-function-fig">
+<a class="reference internal image-reference" href="introduction/notebooks/neuroscience/cartes_cerebrales/fig_structure_function.png"><img alt="introduction/notebooks/neuroscience/cartes_cerebrales/fig_structure_function.png" src="introduction/notebooks/neuroscience/cartes_cerebrales/fig_structure_function.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration of the structural and functional techniques briefly discussed in this part of the course, as well as some possible applications in cognitive neuroscience. Figure adapted by P. Bellec from a variety of non-copyright sources and inspired by the book<a href="#id4"><span class="problematic" id="id5">:cite:p:`wager2015`</span></a>.</span><a class="headerlink" href="#structure-function-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">techniques</span></code> studied in this part of the course have in common that they aim to generate <code class="docutils literal notranslate"><span class="pre">maps</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. They are also central tools in many <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">neuroscience</span></code> studies that use <code class="docutils literal notranslate"><span class="pre">neuroimaging</span></code>. These techniques include:
+*<strong>Structural Magnetic Resonance Imaging (MRI)</strong>. This is the best known <code class="docutils literal notranslate"><span class="pre">technique</span></code> in <code class="docutils literal notranslate"><span class="pre">MRI</span></code>. It is an <code class="docutils literal notranslate"><span class="pre">image</span></code> that captures the <code class="docutils literal notranslate"><span class="pre">shape</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. It also allows you to see different types of <code class="docutils literal notranslate"><span class="pre">tissue</span></code>, and in particular the <code class="docutils literal notranslate"><span class="pre">gray</span> <span class="pre">matter</span></code>, that entails the bodies of <code class="docutils literal notranslate"><span class="pre">neurons</span></code> that are in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p>
+<ul class="simple">
+<li><p><strong>Diffusion MRI (dMRI)</strong>. This is another type of <code class="docutils literal notranslate"><span class="pre">image</span></code> that can be acquired with the same <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">machine</span></code> as <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code>. This <code class="docutils literal notranslate"><span class="pre">technique</span></code> makes it possible to <code class="docutils literal notranslate"><span class="pre">reconstruct</span></code> the <code class="docutils literal notranslate"><span class="pre">large</span> <span class="pre">fiber</span> <span class="pre">bundles</span></code>, i.e. the <code class="docutils literal notranslate"><span class="pre">connections</span></code> between <code class="docutils literal notranslate"><span class="pre">neurons</span></code>.</p></li>
+<li><p><strong>Functional MRI (fMRI)</strong> is yet another type of <code class="docutils literal notranslate"><span class="pre">MRI</span></code>, specifically used to capture and investigate <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>. There are two main <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">techniques</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>. First, <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">maps</span></code> can be generated when the <code class="docutils literal notranslate"><span class="pre">participant</span></code> performs a <code class="docutils literal notranslate"><span class="pre">task</span></code> in the <code class="docutils literal notranslate"><span class="pre">MRI</span></code>. We will thus look for the <code class="docutils literal notranslate"><span class="pre">regions</span></code> that are engaged when the <code class="docutils literal notranslate"><span class="pre">participant</span></code> performs this <code class="docutils literal notranslate"><span class="pre">task</span></code>. Second, analyzes can also be performed when the <code class="docutils literal notranslate"><span class="pre">participants</span></code> are in a <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">state</span></code>. With that, we will look at the <code class="docutils literal notranslate"><span class="pre">consistency</span></code> of <code class="docutils literal notranslate"><span class="pre">activity</span></code> between <code class="docutils literal notranslate"><span class="pre">different</span> <span class="pre">regions</span></code>. These are <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">connectivity</span> <span class="pre">cards</span></code>.</p></li>
+<li><p><strong>Positron Emission Tomography (PET)</strong> is a <code class="docutils literal notranslate"><span class="pre">technique</span></code> that does not use <code class="docutils literal notranslate"><span class="pre">MRI</span></code> (finally!). This <code class="docutils literal notranslate"><span class="pre">technique</span></code> relies on <code class="docutils literal notranslate"><span class="pre">radioactive</span> <span class="pre">tracers</span></code> that generate <code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">rays</span></code> and <code class="docutils literal notranslate"><span class="pre">cameras</span></code> that <code class="docutils literal notranslate"><span class="pre">detect</span></code> these <code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">rays</span></code>. Certain <code class="docutils literal notranslate"><span class="pre">tracers</span></code>, such as <code class="docutils literal notranslate"><span class="pre">FDG</span></code>, make it possible to measure <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">metabolism</span></code> in relation to the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of <code class="docutils literal notranslate"><span class="pre">neurons</span></code>.</p></li>
+<li><p><strong>Optical imaging</strong> measures changes in the <code class="docutils literal notranslate"><span class="pre">color</span></code> of <code class="docutils literal notranslate"><span class="pre">blood</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, and therefore in its <code class="docutils literal notranslate"><span class="pre">level</span></code> of <code class="docutils literal notranslate"><span class="pre">oxygenation</span></code>, which is itself linked to the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of <code class="docutils literal notranslate"><span class="pre">neurons</span></code>.</p></li>
+</ul>
+<p>The first two <code class="docutils literal notranslate"><span class="pre">techniques</span></code>, <code class="docutils literal notranslate"><span class="pre">structural</span></code> and <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>, make it possible to study the <strong>structure</strong> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. The last three <code class="docutils literal notranslate"><span class="pre">techniques</span></code> (<code class="docutils literal notranslate"><span class="pre">fMRI</span></code>, <code class="docutils literal notranslate"><span class="pre">PET</span> <span class="pre">FDG</span></code> and <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code>) all measure <strong>functional phenomena</strong>. Note that, like <code class="docutils literal notranslate"><span class="pre">MRI</span></code>, <code class="docutils literal notranslate"><span class="pre">PET</span></code> can also be used to generate <code class="docutils literal notranslate"><span class="pre">maps</span></code> of <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">structure</span></code>.</p>
+</div>
+<div class="section" id="spatial-and-temporal-resolution">
+<h2>Spatial and temporal resolution<a class="headerlink" href="#spatial-and-temporal-resolution" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="markdown-fig">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://www.researchgate.net/profile/Fabian-Pedregosa/publication/278826818/figure/fig3/AS:614336141746177&#64;1523480558607/Spatial-and-temporal-resolutions-of-diierent-modalities-commonly-used-for-functional.png"><img alt="resolution" class="bg-primary mb-1" src="https://www.researchgate.net/profile/Fabian-Pedregosa/publication/278826818/figure/fig3/AS:614336141746177&#64;1523480558607/Spatial-and-temporal-resolutions-of-diierent-modalities-commonly-used-for-functional.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Illustration of the trade-off between <code class="docutils literal notranslate"><span class="pre">temporal</span></code> and <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> for the <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">techniques</span></code> briefly discussed in this part of the course. Figure adapted from</span><a class="headerlink" href="#markdown-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">techniques</span></code> seen in this part of the course have in common to have a good <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code>, but there are nevertheless significant variations between each of these techniques:</p>
+<ul class="simple">
+<li><p>The best from this point of view is the <strong>structural MRI</strong> whose <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> is excellent, with <code class="docutils literal notranslate"><span class="pre">voxels</span></code> of approximately 1 mm<span class="math notranslate nohighlight">\(^3\)</span>, that is a cube of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">1</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">1</span> <span class="pre">mm</span></code>. This allows the <code class="docutils literal notranslate"><span class="pre">structure</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> to be seen in great detail.</p></li>
+<li><p>The <strong>dMRI</strong> is a little worse, with a <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> closer to <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">2</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">2</span> <span class="pre">mm</span></code> (8 mm<span class="math notranslate nohighlight">\(^3\)</span>).</p></li>
+<li><p><strong>fMRI</strong>, on the other hand, commonly uses a <code class="docutils literal notranslate"><span class="pre">resolution</span></code> of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">mm</span></code> - or 27 mm<span class="math notranslate nohighlight">\(^3\)</span>, which is almost 30 times larger than the <code class="docutils literal notranslate"><span class="pre">voxel</span></code> of the <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code>!</p></li>
+<li><p>Finally, <strong>PET</strong> and <strong>optical imaging</strong> have a coarser <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code>, rather equivalent to <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">cm</span> <span class="pre">x</span> <span class="pre">1</span> <span class="pre">cm</span> <span class="pre">x</span> <span class="pre">1</span> <span class="pre">cm</span></code> (i.e. 1000 mm<span class="math notranslate nohighlight">\(^3\)</span>!!). Even if the <code class="docutils literal notranslate"><span class="pre">PET</span> <span class="pre">voxels</span></code> are smaller than 1 cm<span class="math notranslate nohighlight">\(^3\)</span>, the <code class="docutils literal notranslate"><span class="pre">image</span></code> is “blurred” and it is not possible to distinguish small structures.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">More on spatial resolution</p>
+<p>The notion of <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> generally refers to the <code class="docutils literal notranslate"><span class="pre">minimum</span> <span class="pre">size</span></code> of an <code class="docutils literal notranslate"><span class="pre">object</span></code> that can be distinguished in an <code class="docutils literal notranslate"><span class="pre">image</span></code>. If small <code class="docutils literal notranslate"><span class="pre">objects</span></code> can be distinguished, the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> is <code class="docutils literal notranslate"><span class="pre">high</span></code>. If you can only see <code class="docutils literal notranslate"><span class="pre">large</span> <span class="pre">objects</span></code>, the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> is <code class="docutils literal notranslate"><span class="pre">low</span></code>. If we are talking about digital photography, the smallest possible <code class="docutils literal notranslate"><span class="pre">object</span></code> is a <code class="docutils literal notranslate"><span class="pre">pixel</span></code>, or one of the small squares that make up the <code class="docutils literal notranslate"><span class="pre">image</span></code>. For <code class="docutils literal notranslate"><span class="pre">maps</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, we speak of a <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, or <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">volume</span></code> element.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Spatial</span> <span class="pre">resolution</span></code> is not simply the size of a <code class="docutils literal notranslate"><span class="pre">pixel</span></code>. Two <code class="docutils literal notranslate"><span class="pre">images</span></code> with the same <code class="docutils literal notranslate"><span class="pre">pixel</span></code> (or <code class="docutils literal notranslate"><span class="pre">voxel</span></code>) size can have a different effective <code class="docutils literal notranslate"><span class="pre">resolution</span></code> if one of the two <code class="docutils literal notranslate"><span class="pre">images</span></code> is blurry. On the sharp <code class="docutils literal notranslate"><span class="pre">image</span></code>, smaller <code class="docutils literal notranslate"><span class="pre">objects</span></code> can be seen than on the blurred <code class="docutils literal notranslate"><span class="pre">image</span></code>. The <strong>effective <code class="docutils literal notranslate"><span class="pre">resolution</span></code></strong> of the sharp <code class="docutils literal notranslate"><span class="pre">image</span></code> is therefore higher than that of the blurred <code class="docutils literal notranslate"><span class="pre">image</span></code>.</p>
+</div>
+<p>Regarding <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code>, <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code> may appear to be the best <code class="docutils literal notranslate"><span class="pre">technique</span></code>, but there are many other factors to consider when comparing <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">techniques</span></code>. Another important factor is the <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code>. <code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">modalities</span></code> capture changes that are slow to take place. The <code class="docutils literal notranslate"><span class="pre">shape</span></code> of the <code class="docutils literal notranslate"><span class="pre">cortex</span></code> and the <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code> fall into place throughout <code class="docutils literal notranslate"><span class="pre">development</span></code> and <code class="docutils literal notranslate"><span class="pre">aging</span></code>, and they are quite stable even on the scale of several years. In contrast, <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">MRI</span></code>, <code class="docutils literal notranslate"><span class="pre">PET</span></code> (using <code class="docutils literal notranslate"><span class="pre">FDG</span></code>), and <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code> examine <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>. They measure changes that can occur on the <code class="docutils literal notranslate"><span class="pre">scale</span></code> of <code class="docutils literal notranslate"><span class="pre">minutes</span></code>, <code class="docutils literal notranslate"><span class="pre">seconds</span></code> or even <code class="docutils literal notranslate"><span class="pre">milliseconds</span></code>.</p>
+<div class="dropdown admonition" id="temporal-resolution-tip">
+<p class="admonition-title">Temporal resolution</p>
+<p>The notion of <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code> generally refers to the <code class="docutils literal notranslate"><span class="pre">minimum</span> <span class="pre">duration</span></code> of an <code class="docutils literal notranslate"><span class="pre">event</span></code> that can be distinguished in a <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">signal</span></code>. The <code class="docutils literal notranslate"><span class="pre">signals</span></code> that we see in the course are composed of measurements repeated over time with an <code class="docutils literal notranslate"><span class="pre">interval</span></code> <span class="math notranslate nohighlight">\(\Delta_t\)</span>, generally measured in <code class="docutils literal notranslate"><span class="pre">seconds</span></code>. We sometimes talk about the <code class="docutils literal notranslate"><span class="pre">sampling</span> <span class="pre">frequency</span></code>, <span class="math notranslate nohighlight">\(f=1/\Delta_t\)</span>, measured in <code class="docutils literal notranslate"><span class="pre">Hz</span></code>. The <code class="docutils literal notranslate"><span class="pre">sampling</span> <span class="pre">frequency</span></code> (<code class="docutils literal notranslate"><span class="pre">Hz</span></code>) represents the number of measurement points per <code class="docutils literal notranslate"><span class="pre">second</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code> does not simply correspond to the time that elapses between <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">successive</span> <span class="pre">measurements</span></code> <span class="math notranslate nohighlight">\(\Delta_t\)</span>. This concept is more difficult to visualize than <code class="docutils literal notranslate"><span class="pre">effective</span> <span class="pre">spatial</span> <span class="pre">resolution</span></code>, but is important especially in the case of <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code>. <code class="docutils literal notranslate"><span class="pre">Optical</span> <span class="pre">imaging</span></code> captures a <code class="docutils literal notranslate"><span class="pre">slow</span> <span class="pre">vascular</span> <span class="pre">phenomenon</span></code>. So even if we have peaks of <code class="docutils literal notranslate"><span class="pre">activity</span></code> separated in time at the <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">level</span></code>, if the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">interval</span></code> between the peaks is too short we will only see a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">event</span></code> at the <code class="docutils literal notranslate"><span class="pre">vascular</span> <span class="pre">level</span></code>. It is the equivalent of a <code class="docutils literal notranslate"><span class="pre">blurred</span> <span class="pre">image</span></code>, but in the <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">dimension</span></code>.</p>
+</div>
+</div>
+<div class="section" id="magnetic-resonance-imaging">
+<h2>Magnetic resonance imaging<a class="headerlink" href="#magnetic-resonance-imaging" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="mri-fig">
+<a class="reference internal image-reference" href="../../../_images/mri.jpg"><img alt="../../../_images/mri.jpg" src="../../../_images/mri.jpg" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">A <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">magnetic</span> <span class="pre">resonance</span> <span class="pre">imaging</span> <span class="pre">machine</span></code>. Image <a class="reference external" href="https://www.shutterstock.com">shutterstock</a> ID <code class="docutils literal notranslate"><span class="pre">1866109303</span></code>.</span><a class="headerlink" href="#mri-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">machine</span></code> is an imposing machine that can weigh several tens of tons! The most obvious element in an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">system</span></code> is the relatively deep tunnel, which is a giant <code class="docutils literal notranslate"><span class="pre">magnet</span></code>. The <code class="docutils literal notranslate"><span class="pre">participant</span></code> is positioned on a table which can move to bring the <code class="docutils literal notranslate"><span class="pre">participant</span></code> to the <code class="docutils literal notranslate"><span class="pre">center</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnet</span></code>. The reason for placing the research <code class="docutils literal notranslate"><span class="pre">participant</span></code> there is that the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in the <code class="docutils literal notranslate"><span class="pre">center</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnet</span></code> is very <code class="docutils literal notranslate"><span class="pre">homogeneous</span></code> and <code class="docutils literal notranslate"><span class="pre">points</span></code> in a <code class="docutils literal notranslate"><span class="pre">constant</span> <span class="pre">direction</span></code>. This <code class="docutils literal notranslate"><span class="pre">homogeneous</span> <span class="pre">magnetic</span> <span class="pre">field</span></code>, called <code class="docutils literal notranslate"><span class="pre">B0</span></code>, is like a <code class="docutils literal notranslate"><span class="pre">blank</span> <span class="pre">canvas</span></code> for a painting. <code class="docutils literal notranslate"><span class="pre">Smaller</span> <span class="pre">magnets</span></code>, called <code class="docutils literal notranslate"><span class="pre">gradients</span></code>, will be turned on and then off quickly to modify the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in different parts of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. As different <code class="docutils literal notranslate"><span class="pre">biological</span> <span class="pre">tissues</span></code> react differently to these stimuli, the <code class="docutils literal notranslate"><span class="pre">gradients</span></code> allow us to “paint” a picture of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> on the “canvas” <code class="docutils literal notranslate"><span class="pre">B0</span></code>. We actually acquire a <code class="docutils literal notranslate"><span class="pre">series</span></code> of <code class="docutils literal notranslate"><span class="pre">images</span></code> that will form a <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">volume</span></code> covering the entire <code class="docutils literal notranslate"><span class="pre">brain</span></code>. We will discuss the <code class="docutils literal notranslate"><span class="pre">physical</span> <span class="pre">process</span></code> of generating an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">image</span></code> in more detail in chapter <span class="xref std std-ref">fMRI-chapter</span>.</p>
+</div>
+<div class="section" id="structural-mri">
+<h2>Structural MRI<a class="headerlink" href="#structural-mri" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code retrieves T1 MRI data</span>
+<span class="c1"># and generates an image in three planes of cuts</span>
+
+<span class="c1"># ignore warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download an anatomical scan (here the MNI152 template)</span>
+<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_icbm152_2009</span>
+<span class="n">mni</span> <span class="o">=</span> <span class="n">fetch_icbm152_2009</span><span class="p">()</span>
+
+<span class="c1"># Visualize the 3D brain volume</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">view_img</span> 
+
+<span class="c1">#fig = plt.figure(figsize=(12, 4))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">view_img</span><span class="p">(</span>
+  <span class="n">mni</span><span class="o">.</span><span class="n">t1</span><span class="p">,</span>
+  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bone&#39;</span><span class="p">,</span>
+  <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+  <span class="n">bg_img</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+  <span class="n">dim</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span>
+  <span class="n">symmetric_cmap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;T1 weighted MRI&#39;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">save_as_html</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/t1w.html&#39;</span><span class="p">)</span>
+<span class="n">fig</span>
+<span class="c1">#glue(&quot;t1-fig&quot;, fig, display=False)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="t1-fig" style="width: 800px">
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">An example of <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code> (here with a so-called <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">contrast</span></code>), on <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">slice</span> <span class="pre">planes</span></code>: <code class="docutils literal notranslate"><span class="pre">coronal</span></code> (left), <code class="docutils literal notranslate"><span class="pre">sagital</span></code> (middle) and <code class="docutils literal notranslate"><span class="pre">axial</span></code> (right). See the tip {ref} <code class="docutils literal notranslate"><span class="pre">Navigating</span> <span class="pre">Through</span> <span class="pre">Brain</span> <span class="pre">Slices&lt;slices-tip&gt;</span></code> for an explanation of these terms. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library from a public dataset called <code class="docutils literal notranslate"><span class="pre">template</span> <span class="pre">MNI152</span> <span class="pre">2009</span></code> <a href="#id6"><span class="problematic" id="id7">:cite:p:`Fonov2011 -xr`</span></a> (click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code).</span><a class="headerlink" href="#t1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The most common type of <code class="docutils literal notranslate"><span class="pre">image</span></code> acquired with an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">machine</span></code> aims to characterize the <code class="docutils literal notranslate"><span class="pre">morphology</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. As we can see in the figure <a class="reference internal" href="#t1-fig"><span class="std std-ref">above</span></a>, we easily distinguish some <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">elements</span></code>:</p>
+<ul class="simple">
+<li><p>The <strong>grey matter</strong>, in the <code class="docutils literal notranslate"><span class="pre">periphery</span></code> of the <code class="docutils literal notranslate"><span class="pre">cortex</span></code>, appears in <code class="docutils literal notranslate"><span class="pre">gray</span></code> in the <code class="docutils literal notranslate"><span class="pre">image</span></code>. This is where the <code class="docutils literal notranslate"><span class="pre">neuron</span> <span class="pre">bodies</span></code> are present.</p></li>
+<li><p>It is also possible to distinguish the <strong>white matter</strong> in <code class="docutils literal notranslate"><span class="pre">white</span></code> (or rather <code class="docutils literal notranslate"><span class="pre">light</span> <span class="pre">gray</span></code>) which contains <code class="docutils literal notranslate"><span class="pre">bundles</span> <span class="pre">of</span> <span class="pre">axons</span></code> - ie the <code class="docutils literal notranslate"><span class="pre">connections</span></code> between <code class="docutils literal notranslate"><span class="pre">neurons</span></code>.</p></li>
+<li><p>Finally, in <strong>black</strong>, we can see <code class="docutils literal notranslate"><span class="pre">structures</span></code> like the <code class="docutils literal notranslate"><span class="pre">ventricles</span></code>, which contain <code class="docutils literal notranslate"><span class="pre">water</span></code>, <code class="docutils literal notranslate"><span class="pre">nutrients</span></code>, as well as <code class="docutils literal notranslate"><span class="pre">metabolic</span> <span class="pre">waste</span></code>.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">size</span></code> and <code class="docutils literal notranslate"><span class="pre">shape</span></code> of these <code class="docutils literal notranslate"><span class="pre">structures</span></code> can vary depending on many <code class="docutils literal notranslate"><span class="pre">behavioral</span></code> or <code class="docutils literal notranslate"><span class="pre">demographic</span> <span class="pre">factors</span></code>. For example, the <code class="docutils literal notranslate"><span class="pre">amount</span></code> of <code class="docutils literal notranslate"><span class="pre">gray</span> <span class="pre">matter</span></code> decreases massively with <code class="docutils literal notranslate"><span class="pre">age</span></code>: this is known as <strong>cortical atrophy</strong>. Several <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">analysis</span> <span class="pre">techniques</span></code> have been developed to quantify these <code class="docutils literal notranslate"><span class="pre">morphological</span> <span class="pre">changes</span></code>, such as <strong>volumetry</strong>, “<strong>voxel-based morphometry</strong>”, or even <strong>surface analyses</strong>. These <code class="docutils literal notranslate"><span class="pre">techniques</span></code> will be presented in the <code class="docutils literal notranslate"><span class="pre">chapter</span></code> <span class="xref std std-ref">morphometry-chapter</span>.</p>
+<div class="tip admonition" id="coupes-tip">
+<p class="admonition-title">Navigating through brain slices</p>
+<p>There are <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">main</span> <span class="pre">axes</span></code> used in order to <code class="docutils literal notranslate"><span class="pre">slice</span></code> the <code class="docutils literal notranslate"><span class="pre">brain</span></code>: <code class="docutils literal notranslate"><span class="pre">coronal</span></code> (<code class="docutils literal notranslate"><span class="pre">C</span></code>), <code class="docutils literal notranslate"><span class="pre">sagital</span></code> (<code class="docutils literal notranslate"><span class="pre">S</span></code>), and <code class="docutils literal notranslate"><span class="pre">axial</span></code> (<code class="docutils literal notranslate"><span class="pre">A</span></code>), as shown in the <code class="docutils literal notranslate"><span class="pre">figure</span></code>. In addition, certain terms are commonly used to find their way around these cuts:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">l</span></code> (or <code class="docutils literal notranslate"><span class="pre">x</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> typically goes from <code class="docutils literal notranslate"><span class="pre">left</span></code> to <code class="docutils literal notranslate"><span class="pre">right</span></code>. When something is near the <code class="docutils literal notranslate"><span class="pre">middle</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, it is called a <code class="docutils literal notranslate"><span class="pre">&quot;medial&quot;</span> <span class="pre">structure</span></code>.</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">m</span></code> (or <code class="docutils literal notranslate"><span class="pre">y</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> goes from the <code class="docutils literal notranslate"><span class="pre">back</span></code> of the <code class="docutils literal notranslate"><span class="pre">skull</span></code> (<code class="docutils literal notranslate"><span class="pre">posterior</span></code>) to the <code class="docutils literal notranslate"><span class="pre">face</span></code> (<code class="docutils literal notranslate"><span class="pre">anterior</span></code>). With reference to the <code class="docutils literal notranslate"><span class="pre">mouse</span></code>, <code class="docutils literal notranslate"><span class="pre">anterior</span></code> is sometimes called <code class="docutils literal notranslate"><span class="pre">&quot;rostral&quot;</span></code> (towards the muzzle) and <code class="docutils literal notranslate"><span class="pre">posterior</span></code> is sometimes called <code class="docutils literal notranslate"><span class="pre">&quot;caudal&quot;</span></code> (towards the tail).</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">d</span></code> (or <code class="docutils literal notranslate"><span class="pre">z</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> goes from the feet to the head. The <code class="docutils literal notranslate"><span class="pre">direction</span></code> of the feet is called <code class="docutils literal notranslate"><span class="pre">&quot;ventral&quot;</span></code> and the <code class="docutils literal notranslate"><span class="pre">direction</span></code> of the head is called <code class="docutils literal notranslate"><span class="pre">&quot;dorsal&quot;</span></code>. This terminology makes sense when thinking of a mouse and illogical for humans - but we use it anyway!</p></li>
+</ul>
+<p><a class="reference external" href="https://atlases.ebrains.eu/viewer/#/a:juelich:iav:atlas:v1.0.0:1/t:minds:core:referencespace:v1.0.0:dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2/p:minds:core:parcellationatlas:v1.0.0:94c1125b-b87e-45e4-901c-00daee7f2579-290/&#64;:0.0.0.-W000">https://atlases.ebrains.eu/viewer/#/a:juelich:iav:atlas:v1.0.0:1/t:minds:core:referencespace:v1.0.0:dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2/p:minds:core:parcellationatlas:v1.0.0:94c1125b-b87e-45e4-901c-00daee7f2579-290/&#64;:0.0.0.-W000</a>..<em>eCwg.2-FUe3.</em>-s_W.2_evlu..7LIx..0.0.0..1LSm</p>
+</div>
+</div>
+<div class="section" id="functional-mri">
+<h2>Functional MRI<a class="headerlink" href="#functional-mri" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="volumes4d-fig">
+<a class="reference internal image-reference" href="../../../_images/fig_volumes4D.png"><img alt="../../../_images/fig_volumes4D.png" src="../../../_images/fig_volumes4D.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">data</span></code> consists of a <code class="docutils literal notranslate"><span class="pre">series</span></code> of <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">volumes</span></code>. Each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> is associated with a <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code>. <code class="docutils literal notranslate"><span class="pre">Figure</span></code> taken from <a class="reference external" href="https://nilearn.github.io/manipulating_images/masker_objects.html">Nilearn documentation</a> under a <code class="docutils literal notranslate"><span class="pre">BSD</span> <span class="pre">license</span></code>.</span><a class="headerlink" href="#volumes4d-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Functional</span> <span class="pre">MRI</span></code> is a <code class="docutils literal notranslate"><span class="pre">4D</span> <span class="pre">imaging</span> <span class="pre">modality</span></code>. That is to say that instead of acquiring a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">cerebral</span> <span class="pre">volume</span></code>, we acquire a <code class="docutils literal notranslate"><span class="pre">series</span></code> of them, separated by a <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">interval</span></code> called <code class="docutils literal notranslate"><span class="pre">repetition</span> <span class="pre">time</span></code> (<code class="docutils literal notranslate"><span class="pre">TR</span></code>) (also called <span class="math notranslate nohighlight">\(\Delta_t\)</span> in the {ref} <code class="docutils literal notranslate"><span class="pre">note</span> <span class="pre">on</span> <span class="pre">temporal</span> <span class="pre">resolution</span> <span class="pre">&lt;temporal-resolution-tip&gt;</span></code>). The <code class="docutils literal notranslate"><span class="pre">TR</span></code> varies from a few hundred <code class="docutils literal notranslate"><span class="pre">milliseconds</span></code> (uncommon) up to <code class="docutils literal notranslate"><span class="pre">2</span></code> or <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">seconds</span></code>. The number of <code class="docutils literal notranslate"><span class="pre">repetitions</span></code> is typically from a few <code class="docutils literal notranslate"><span class="pre">tens</span></code> to a few <code class="docutils literal notranslate"><span class="pre">hundreds</span></code>. For each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, we therefore have a <code class="docutils literal notranslate"><span class="pre">series</span></code> of measurement points, which can be represented as a <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code>. To be able to obtain <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">volumes</span></code> so quickly, one must use large <code class="docutils literal notranslate"><span class="pre">voxels</span></code>, which range from 2x2x2 mm<span class="math notranslate nohighlight">\(^3\)</span> (uncommon) up to 3x3x3 mm<span class="math notranslate nohighlight">\(^3\)</span> (more standard). With this <code class="docutils literal notranslate"><span class="pre">resolution</span></code>, we have about <code class="docutils literal notranslate"><span class="pre">50k</span> <span class="pre">voxels</span></code> in the <code class="docutils literal notranslate"><span class="pre">gray</span> <span class="pre">matter</span></code> (more than <code class="docutils literal notranslate"><span class="pre">100k</span></code> when the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> is close to 2x2x2 mm<span class="math notranslate nohighlight">\(^3\)</span>).</p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code retrieves data from fMRI</span>
+<span class="c1"># and generates an image of a volume in three section planes</span>
+
+<span class="c1"># ignore warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download a functional scan (ADHD200)</span>
+<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_adhd</span>
+<span class="n">adhd</span> <span class="o">=</span> <span class="n">fetch_adhd</span><span class="p">(</span><span class="n">n_subjects</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Visualize one of the 4D volumes</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">view_img</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">index_img</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">view_img</span><span class="p">(</span><span class="n">index_img</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span>
+              <span class="n">bg_img</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+              <span class="n">axes</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span>
+              <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="o">-</span><span class="mi">27</span><span class="p">,</span> <span class="mi">66</span><span class="p">),</span>
+              <span class="n">black_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s2">&quot;An fMRI volume&quot;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fmri-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="fmri-fig" style="width: 800px">
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Example of a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">volume</span></code> in an <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">series</span></code>. The <code class="docutils literal notranslate"><span class="pre">volume</span></code> is represented on <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">planes</span></code> of cuts: <code class="docutils literal notranslate"><span class="pre">coronal</span></code> (left), <code class="docutils literal notranslate"><span class="pre">sagital</span></code> (middle) and <code class="docutils literal notranslate"><span class="pre">axial</span></code> (right). See the tip {ref} <code class="docutils literal notranslate"><span class="pre">Navigating</span> <span class="pre">Through</span> <span class="pre">Brain</span> <span class="pre">Slices&lt;slices-tip&gt;</span></code> for an explanation of these terms. Note that the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> of the <code class="docutils literal notranslate"><span class="pre">volume</span></code> is much lower than for <a class="reference internal" href="#t1-fig"><span class="std std-ref">anatomical MRI</span></a>, and it is very difficult to see the details of the <code class="docutils literal notranslate"><span class="pre">anatomy</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. This <code class="docutils literal notranslate"><span class="pre">figure</span></code> is generated by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code</span></code> using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library from a public dataset called ADHD200 <a href="#id8"><span class="problematic" id="id9">:cite:p:`HD-200_Consortium2012 -uv, BELLEC2017275`</span></a> (click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code).</span><a class="headerlink" href="#fmri-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>These measurements do not directly reflect the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of the <code class="docutils literal notranslate"><span class="pre">neurons</span></code>, but rather the <code class="docutils literal notranslate"><span class="pre">oxygenation</span></code> of the <code class="docutils literal notranslate"><span class="pre">blood</span></code></strong>. We speak of a <code class="docutils literal notranslate"><span class="pre">signal</span></code> depending on the level of <code class="docutils literal notranslate"><span class="pre">oxygenation</span></code> in the <code class="docutils literal notranslate"><span class="pre">blood</span></code>, or <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> (for <em>Blood Oxygen Level Dependent</em>). As we will see in the <span class="xref std std-ref">coupling-neurovascular-section</span> section, this <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> nevertheless indirectly reflects the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of <code class="docutils literal notranslate"><span class="pre">neurons</span></code> and will allow us to make <code class="docutils literal notranslate"><span class="pre">maps</span></code> of <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>. There are two major types of <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">techniques</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>:</p>
+<ul class="simple">
+<li><p>the <strong>activation cards</strong>: with this approach, we will make the research <code class="docutils literal notranslate"><span class="pre">participant</span></code> perform certain <code class="docutils literal notranslate"><span class="pre">tasks</span></code>. For each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, we will then look at whether the level of <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">activity</span></code> is higher during a certain <code class="docutils literal notranslate"><span class="pre">task</span> <span class="pre">of</span> <span class="pre">interest</span></code> than during a <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">task</span></code>. We will talk about this type of <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">technique</span></code> in chapter <span class="xref std std-ref">fmri-chapter</span>.</p></li>
+<li><p><strong>connectivity maps</strong>: with this approach, the research <code class="docutils literal notranslate"><span class="pre">participant</span></code> is generally asked to remain at <code class="docutils literal notranslate"><span class="pre">rest</span></code>, without doing any particular <code class="docutils literal notranslate"><span class="pre">task</span></code>. We will then examine to what extent the <code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">activity</span></code> of different <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> is similar, or synchronous. A high level of synchrony suggests that these <code class="docutils literal notranslate"><span class="pre">regions</span></code> are engaged in a <code class="docutils literal notranslate"><span class="pre">similar</span> <span class="pre">spontaneous</span> <span class="pre">cognitive</span> <span class="pre">process</span></code> and therefore form a <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">network</span></code>. We will talk about this type of <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">technique</span></code> in the chapter <span class="xref std std-ref">connectivity-chapter</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="neurovascular-coupling">
+<h2>Neurovascular coupling<a class="headerlink" href="#neurovascular-coupling" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="cerveau-vasculaire-fig">
+<a class="reference internal image-reference" href="../../../_images/fig_cerveau_vasculaire.jpg"><img alt="../../../_images/fig_cerveau_vasculaire.jpg" src="../../../_images/fig_cerveau_vasculaire.jpg" style="height: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Realistic <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">rendering</span></code> of the <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">vasculature</span></code>. Picture <a class="reference external" href="https://www.shutterstock.com">shutterstock</a> ID <code class="docutils literal notranslate"><span class="pre">1571296897</span></code>.</span><a class="headerlink" href="#cerveau-vasculaire-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">brain</span></code> represents only <code class="docutils literal notranslate"><span class="pre">2%</span></code> of the body mass, but consumes <code class="docutils literal notranslate"><span class="pre">20%</span></code> of the <code class="docutils literal notranslate"><span class="pre">oxygen</span></code>! The <code class="docutils literal notranslate"><span class="pre">brain</span></code> therefore needs a regular and large supply of fresh blood which is finely regulated, both <code class="docutils literal notranslate"><span class="pre">spatially</span></code> (which <code class="docutils literal notranslate"><span class="pre">regions</span></code> receive a lot of blood) and <code class="docutils literal notranslate"><span class="pre">temporally</span></code> (the influx of fresh blood changes over time) . The local concentration of <code class="docutils literal notranslate"><span class="pre">oxygenated</span> <span class="pre">blood</span></code> varies according to the local level of <code class="docutils literal notranslate"><span class="pre">activity</span></code> of the <code class="docutils literal notranslate"><span class="pre">populations</span> <span class="pre">of</span> <span class="pre">neurons</span></code>. It is thanks to this <code class="docutils literal notranslate"><span class="pre">mechanism</span></code> of <strong>neurovascular coupling</strong> that we can measure the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> <strong>indirectly</strong> by means of the <code class="docutils literal notranslate"><span class="pre">vascularization</span></code>. <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> is based on this <code class="docutils literal notranslate"><span class="pre">coupling</span></code> phenomenon as well as <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code> or <code class="docutils literal notranslate"><span class="pre">PET</span></code> by <code class="docutils literal notranslate"><span class="pre">FDG</span></code>. All of these <code class="docutils literal notranslate"><span class="pre">techniques</span></code> are primarily <code class="docutils literal notranslate"><span class="pre">vascular</span> <span class="pre">imaging</span> <span class="pre">techniques</span></code> and are only <strong>indirectly</strong> related to <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code>. <code class="docutils literal notranslate"><span class="pre">Neurovascular</span> <span class="pre">coupling</span></code> is presented in more detail in chapter <span class="xref std std-ref">fmri-chapter</span>.</p>
+</div>
+<div class="section" id="diffusion-mri">
+<h2>Diffusion MRI<a class="headerlink" href="#diffusion-mri" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="dissection-virtuelle-fig">
+<a class="reference internal image-reference" href="../../../_images/fig_dissection_virtuelle.jpg"><img alt="../../../_images/fig_dissection_virtuelle.jpg" src="../../../_images/fig_dissection_virtuelle.jpg" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">On the left, a <code class="docutils literal notranslate"><span class="pre">post-mortem</span> <span class="pre">brain</span> <span class="pre">slice</span></code> prepared to highlight the <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fiber</span> <span class="pre">bundles</span></code>. On the right, a <code class="docutils literal notranslate"><span class="pre">virtual</span> <span class="pre">dissection</span></code> of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">bundles</span></code> generated using <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code> data. Picture <a class="reference external" href="https://www.shutterstock.com">shutterstock</a> ID <code class="docutils literal notranslate"><span class="pre">412065940</span></code>.</span><a class="headerlink" href="#dissection-virtuelle-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Diffusion</span> <span class="pre">MRI</span></code> is yet another variety of <code class="docutils literal notranslate"><span class="pre">image</span></code> that can be acquired, again using an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">machine</span></code>. This time, the way of exciting the <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">magnetic</span> <span class="pre">field</span></code> is specially designed to be sensitive to how <code class="docutils literal notranslate"><span class="pre">water</span> <span class="pre">molecules</span></code> <code class="docutils literal notranslate"><span class="pre">diffuse</span></code> through a <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. This type of measurement is repeated many times with different <code class="docutils literal notranslate"><span class="pre">directions</span></code> and it is thus possible to determine in which <code class="docutils literal notranslate"><span class="pre">direction</span></code> the <code class="docutils literal notranslate"><span class="pre">water</span> <span class="pre">molecules</span></code> mainly <code class="docutils literal notranslate"><span class="pre">diffuse</span></code>. This information tells us <strong>indirectly</strong> about the <code class="docutils literal notranslate"><span class="pre">micro-structure</span></code> of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code>, because the <code class="docutils literal notranslate"><span class="pre">bundles</span></code> of <code class="docutils literal notranslate"><span class="pre">fibers</span></code> made up of <code class="docutils literal notranslate"><span class="pre">axons</span></code> <code class="docutils literal notranslate"><span class="pre">connecting</span></code> the <code class="docutils literal notranslate"><span class="pre">neurons</span></code> to each other come to constrain the way in which <code class="docutils literal notranslate"><span class="pre">water</span></code> is <code class="docutils literal notranslate"><span class="pre">diffused</span></code>. Using sophisticated modeling techniques, it is possible to <code class="docutils literal notranslate"><span class="pre">reconstruct</span></code> in <code class="docutils literal notranslate"><span class="pre">3D</span></code> the <code class="docutils literal notranslate"><span class="pre">geometry</span></code> of the main <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> and to <code class="docutils literal notranslate"><span class="pre">quantify</span></code> their <code class="docutils literal notranslate"><span class="pre">integrity</span></code> using <code class="docutils literal notranslate"><span class="pre">different</span> <span class="pre">metrics</span></code>. These metrics can then be associated with different <code class="docutils literal notranslate"><span class="pre">behavioral</span></code>, <code class="docutils literal notranslate"><span class="pre">demographic</span></code> or <code class="docutils literal notranslate"><span class="pre">clinical</span> <span class="pre">measures</span></code>, such as, for example, a history of head trauma. This <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">technique</span></code> will be presented in more detail in the chapter <span class="xref std std-ref">diffusion-mri-chapter</span>.</p>
+</div>
+<div class="section" id="optical-imaging">
+<h2>Optical imaging<a class="headerlink" href="#optical-imaging" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="optique-fig">
+<a class="reference internal image-reference" href="../../../_images/fig_optique.png"><img alt="../../../_images/fig_optique.png" src="../../../_images/fig_optique.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Schematic illustration of the path of <code class="docutils literal notranslate"><span class="pre">near</span> <span class="pre">infrared</span> <span class="pre">light</span></code> through the <code class="docutils literal notranslate"><span class="pre">cranium</span></code> and the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. Image by Dr Julien Cohen-Adad and Dr Claudine Gauthier.</span><a class="headerlink" href="#optique-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Optical</span> <span class="pre">imaging</span></code> is our first <code class="docutils literal notranslate"><span class="pre">technique</span></code> that does not use <code class="docutils literal notranslate"><span class="pre">MRI</span></code>! But the <code class="docutils literal notranslate"><span class="pre">physiological</span> <span class="pre">phenomenon</span></code> captured by <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code> is identical to that which is at the origin of the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>. Specifically, this refers to <span class="xref std std-ref">neurovascular coupling</span>. This phenomenon makes it possible to exploit the fact that the <code class="docutils literal notranslate"><span class="pre">concentration</span></code> of <code class="docutils literal notranslate"><span class="pre">oxygenated</span> <span class="pre">hemoglobin</span></code> <strong>indirectly</strong> reflects <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code>. The big difference between <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code> and <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> is how <code class="docutils literal notranslate"><span class="pre">vascular</span> <span class="pre">changes</span></code> are measured. <code class="docutils literal notranslate"><span class="pre">Optical</span> <span class="pre">imaging</span></code>, also sometimes called <code class="docutils literal notranslate"><span class="pre">near-infrared</span> <span class="pre">spectroscopy</span></code> (or <em>near-infrared spectroscopy</em> (<code class="docutils literal notranslate"><span class="pre">NIRS</span></code>)), uses the fact that <code class="docutils literal notranslate"><span class="pre">near-infrared</span> <span class="pre">light</span></code> can pass through the <code class="docutils literal notranslate"><span class="pre">cranium</span></code> as well as <code class="docutils literal notranslate"><span class="pre">superficial</span> <span class="pre">brain</span> <span class="pre">tissue</span></code>. By a <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">phenomenon</span></code>, the light sent directly into the <code class="docutils literal notranslate"><span class="pre">cranial</span> <span class="pre">box</span></code> will come out not far from the source. By analyzing the <code class="docutils literal notranslate"><span class="pre">spectral</span> <span class="pre">content</span></code>, or in other words the <code class="docutils literal notranslate"><span class="pre">color</span></code>, of the light which has passed through the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, one can deduce the <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">concentration</span></code> of <code class="docutils literal notranslate"><span class="pre">oxygenated</span></code> and <code class="docutils literal notranslate"><span class="pre">de-oxygenated</span> <span class="pre">hemoglobin</span></code>. These <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">molecules</span></code> have indeed <code class="docutils literal notranslate"><span class="pre">different</span> <span class="pre">colors</span></code> and absorb <code class="docutils literal notranslate"><span class="pre">near</span> <span class="pre">infrared</span> <span class="pre">light</span></code> very differently. The <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> of <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code> is much more limited than that of <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> because the measurements are made at the level of the <code class="docutils literal notranslate"><span class="pre">scalp</span></code>, as in <code class="docutils literal notranslate"><span class="pre">EEG</span></code>, rather than thanks to a <code class="docutils literal notranslate"><span class="pre">whole</span> <span class="pre">brain</span> <span class="pre">image</span></code> with <code class="docutils literal notranslate"><span class="pre">cubic</span> <span class="pre">voxels</span></code> of controlled size. On the other hand, it is possible to take measurements on the scale of <code class="docutils literal notranslate"><span class="pre">milliseconds</span></code>. It is important to remember despite everything that the <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">phenomenon</span></code> studied remains the <code class="docutils literal notranslate"><span class="pre">neurovascular</span> <span class="pre">coupling</span></code> and that this phenomenon is slow (see the warning concerning the <span class="xref std std-ref">effective temporal resolution</span>). This <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">technique</span></code> will be presented in more detail in the chapter {ref} <code class="docutils literal notranslate"><span class="pre">optical-imaging-chapter</span></code>.</p>
+</div>
+<div class="section" id="positron-emission-tomography">
+<h2>Positron emission tomography<a class="headerlink" href="#positron-emission-tomography" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="tep-fig">
+<a class="reference internal image-reference" href="../../../_images/fig_tep.jpg"><img alt="../../../_images/fig_tep.jpg" src="../../../_images/fig_tep.jpg" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Montage of <code class="docutils literal notranslate"><span class="pre">axial</span> <span class="pre">sections</span></code> from a <code class="docutils literal notranslate"><span class="pre">PET</span> <span class="pre">scanner</span></code> with an <code class="docutils literal notranslate"><span class="pre">FDG</span> <span class="pre">radiotracer</span></code>, illustrating the level of <code class="docutils literal notranslate"><span class="pre">glucose</span> <span class="pre">metabolic</span> <span class="pre">activity</span></code> over the duration of the scan. Image <a class="reference external" href="https://www.shutterstock.com">shutterstock</a> ID <code class="docutils literal notranslate"><span class="pre">1342194254</span></code>.</span><a class="headerlink" href="#tep-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The last <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">modality</span></code> that this part of the course presents is <code class="docutils literal notranslate"><span class="pre">PET</span></code>. The functioning of the <code class="docutils literal notranslate"><span class="pre">PET</span> <span class="pre">scan</span></code> is based on the <code class="docutils literal notranslate"><span class="pre">injection</span></code> of a <code class="docutils literal notranslate"><span class="pre">radioactive</span> <span class="pre">product</span></code>, called a <code class="docutils literal notranslate"><span class="pre">radiotracer</span></code>, into the <code class="docutils literal notranslate"><span class="pre">blood</span></code> of the research <code class="docutils literal notranslate"><span class="pre">participant</span></code>. It may sound scary, but don’t worry. The <code class="docutils literal notranslate"><span class="pre">radioactive</span> <span class="pre">dose</span></code> to which the <code class="docutils literal notranslate"><span class="pre">participant</span></code> is exposed is low and harmless if the examination is not repeated too often. The <code class="docutils literal notranslate"><span class="pre">radiotracer</span></code> will <code class="docutils literal notranslate"><span class="pre">accumulate</span></code> in certain <code class="docutils literal notranslate"><span class="pre">tissues</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> and emit <code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">rays</span></code>. <code class="docutils literal notranslate"><span class="pre">Gamma</span> <span class="pre">rays</span></code> are actually a very high <code class="docutils literal notranslate"><span class="pre">energy</span> <span class="pre">form</span></code> of <code class="docutils literal notranslate"><span class="pre">light</span></code> (<code class="docutils literal notranslate"><span class="pre">photons</span></code>). It is possible to precisely detect the <code class="docutils literal notranslate"><span class="pre">origin</span></code> of these <code class="docutils literal notranslate"><span class="pre">gamma</span> <span class="pre">rays</span></code> using a <code class="docutils literal notranslate"><span class="pre">series</span> <span class="pre">of</span> <span class="pre">cameras</span></code> arranged around the <code class="docutils literal notranslate"><span class="pre">head</span></code> of the <code class="docutils literal notranslate"><span class="pre">participant</span></code> and then <code class="docutils literal notranslate"><span class="pre">reconstruct</span></code> a <code class="docutils literal notranslate"><span class="pre">map</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> which reflects the <code class="docutils literal notranslate"><span class="pre">concentration</span></code> of <code class="docutils literal notranslate"><span class="pre">radiotracer</span></code> at each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. The <code class="docutils literal notranslate"><span class="pre">radiotracer</span></code> to which we will mainly refer during this course is <code class="docutils literal notranslate"><span class="pre">fluorodeoxyglucose</span></code> (<code class="docutils literal notranslate"><span class="pre">FDG</span></code>). This is consumed as <code class="docutils literal notranslate"><span class="pre">fuel</span></code> <strong>indirectly</strong> by the <code class="docutils literal notranslate"><span class="pre">neurons</span></code>, just like <code class="docutils literal notranslate"><span class="pre">oxygen</span></code>. <code class="docutils literal notranslate"><span class="pre">FDG</span> <span class="pre">PET</span></code> therefore works through <span class="xref std std-ref">neurovascular coupling</span>, just like <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> and <code class="docutils literal notranslate"><span class="pre">optical</span> <span class="pre">imaging</span></code>. On the other hand, it takes several minutes to build a <code class="docutils literal notranslate"><span class="pre">map</span></code> of <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>, so the <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code> of <code class="docutils literal notranslate"><span class="pre">PET</span></code> is lower than that of <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> and <code class="docutils literal notranslate"><span class="pre">PET</span></code>. Furthermore, as you can observe on the images above, the <code class="docutils literal notranslate"><span class="pre">reconstructed</span> <span class="pre">PET</span> <span class="pre">maps</span></code> are <code class="docutils literal notranslate"><span class="pre">blurred</span></code> and the <span class="xref std std-ref">effective spatial resolution</span> of the <code class="docutils literal notranslate"><span class="pre">images</span></code> is less than the size of the <code class="docutils literal notranslate"><span class="pre">voxels</span></code>. Finally, it is important to know that many other <code class="docutils literal notranslate"><span class="pre">tracers</span></code> exist apart from <code class="docutils literal notranslate"><span class="pre">FDG</span></code>. In particular, there are <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">tracers</span></code>. Like <code class="docutils literal notranslate"><span class="pre">MRI</span></code>, <code class="docutils literal notranslate"><span class="pre">PET</span></code> can therefore be used to generate <code class="docutils literal notranslate"><span class="pre">structural</span></code> and <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">images</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. This <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">technique</span></code> will be presented in more detail in chapter <span class="xref std std-ref">PET-chapter</span>.</p>
+</div>
+<div class="section" id="statistical-maps">
+<h2>Statistical maps<a class="headerlink" href="#statistical-maps" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import visualization libraries</span>
+<span class="c1"># and prepare the layout of the figure</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># ignore warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download a motor activation contrast from NeuroVault</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">motor_images</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_neurovault_motor_task</span><span class="p">()</span>
+<span class="n">stat_img</span> <span class="o">=</span> <span class="n">motor_images</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Visualization of the 3D brain volume</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">view_img</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">view_img</span><span class="p">(</span><span class="n">stat_img</span><span class="p">,</span>
+              <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+              <span class="n">axes</span> <span class="o">=</span> <span class="n">ax_plot</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Statistical map related to movements&quot;</span><span class="p">,</span>
+              <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="o">-</span><span class="mi">27</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+              <span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;stat-map-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="stat-map-fig" style="width: 800px">
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">A <code class="docutils literal notranslate"><span class="pre">regression</span> <span class="pre">model</span></code> is applied to each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> to generate a <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">brain</span> <span class="pre">map</span></code>. Here, the <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">map</span></code> corresponds to changes in <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">activation</span></code> during <code class="docutils literal notranslate"><span class="pre">hand</span> <span class="pre">movements</span></code>. The <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">map</span></code> is visualized thanks to this <a class="reference external" href="https://nilearn.github.io/auto_examples/01_plotting/plot_demo_plotting.html#sphx-glr-auto-examples-01-plotting-plot-demo-plotting-py">nilearn tutorial</a> and a <code class="docutils literal notranslate"><span class="pre">motor</span> <span class="pre">activity</span> <span class="pre">map</span></code> distributed via <a class="reference external" href="https://neurovault.org/">NeuroVault</a>. Click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code.</span><a class="headerlink" href="#stat-map-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The last important aspect that will be covered in these lecture notes is a discussion of how to <code class="docutils literal notranslate"><span class="pre">analyze</span> <span class="pre">data</span></code>. This notably involves the <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">analysis</span> <span class="pre">steps</span></code> that are necessary to generate <code class="docutils literal notranslate"><span class="pre">interpretable</span> <span class="pre">measurements</span></code>. This also involves making <code class="docutils literal notranslate"><span class="pre">statistics</span></code> on the <code class="docutils literal notranslate"><span class="pre">images</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> that are generated. There are many ways to perform these <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">analyzes</span></code> and the field of cognitive neuroscience is increasingly using <code class="docutils literal notranslate"><span class="pre">multivariate</span> <span class="pre">machine</span> <span class="pre">learning</span> <span class="pre">techniques</span></code>. But the <code class="docutils literal notranslate"><span class="pre">reference</span> <span class="pre">technique</span></code> remains the <code class="docutils literal notranslate"><span class="pre">linear</span> <span class="pre">regression</span> <span class="pre">model</span></code> which is applied independently to each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, also called <code class="docutils literal notranslate"><span class="pre">mass-univariate</span> <span class="pre">statistics</span></code>. This is a very <code class="docutils literal notranslate"><span class="pre">flexible</span> <span class="pre">model</span></code> that can answer a large number of questions, both at <code class="docutils literal notranslate"><span class="pre">individual</span></code> and <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">level</span></code>. The <code class="docutils literal notranslate"><span class="pre">linear</span> <span class="pre">regression</span> <span class="pre">model</span></code> is used by all the <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">techniques</span></code> seen during this part of the course. The fact of repeating a <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">test</span></code> at each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, tens of thousands of times, also poses a problem when the time comes to establish the <code class="docutils literal notranslate"><span class="pre">significance</span> <span class="pre">threshold</span></code>. We will discuss <code class="docutils literal notranslate"><span class="pre">linear</span> <span class="pre">regression</span></code> and <code class="docutils literal notranslate"><span class="pre">thresholding</span></code> approaches in chapter <span class="xref std std-ref">maps-statistics-chapter</span>. Finally, it is possible to abuse this type of <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">model</span></code> in many ways and thus lead to the publication of <code class="docutils literal notranslate"><span class="pre">non-reproducible</span> <span class="pre">results</span></code>. We will discuss these challenges and possible solutions in the final chapter: <span class="xref std std-ref">reproducibility-controversies-chapter</span>.</p>
+</div>
+<div class="section" id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
+<p>This chapter has given you a quick overview of the different methods used in cognitive neuroscience that will be presented in this part of the course. We hope this inspires you to learn more and explore these lecture notes!</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+<p>In the following we created a few exercices that aim to recap core aspects of this part of the course and thus should allow you to assess if you understood the main points.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.1</p>
+<p>We perform a <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">stimulation</span></code> for <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">ms</span></code> and we want to study the <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">response</span></code> in the <code class="docutils literal notranslate"><span class="pre">occipital</span> <span class="pre">cortex</span></code>.</p>
+<ul class="simple">
+<li><p>Name a strength and a weakness of <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> and <code class="docutils literal notranslate"><span class="pre">EEG</span></code> to study this question.</p></li>
+<li><p>Explain why.</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.2</p>
+<p>Rank these <code class="docutils literal notranslate"><span class="pre">techniques</span></code> according to their <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> (starting with the most precise):</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fMRI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PET</span></code></p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.3</p>
+<p>Rank these <code class="docutils literal notranslate"><span class="pre">techniques</span></code> according to their <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code> (starting with the most precise):</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fMRI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Optical</span> <span class="pre">Imaging</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EEG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Diffusion</span> <span class="pre">MRI</span></code></p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.4</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">activation</span></code> of the <code class="docutils literal notranslate"><span class="pre">ipsilateral</span> <span class="pre">motor</span> <span class="pre">cortex</span></code> is observed in the context of a movement of the right hand, following a stroke. This observation is made using <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>.</p>
+<ol class="simple">
+<li><p>Name a possible limitation of this observation, in the specific context of this experiment.</p></li>
+<li><p>Propose an additional experience allowing to answer this limitation, and describe what it brings as a complement.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.5</p>
+<p>One study <code class="docutils literal notranslate"><span class="pre">participant</span></code> suffered from an accident that left metallic debris in his eye in the past.</p>
+<ol class="simple">
+<li><p>Name an <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">technique</span></code> for which it is a contraindication. Explain why.</p></li>
+<li><p>Name a <code class="docutils literal notranslate"><span class="pre">technique</span></code> for which this is not a problem. Explain why.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.6</p>
+<p>We wish to measure the response of the <code class="docutils literal notranslate"><span class="pre">motor</span> <span class="pre">cortex</span></code> to <code class="docutils literal notranslate"><span class="pre">motor</span> <span class="pre">activation</span></code> longitudinally in a <code class="docutils literal notranslate"><span class="pre">participant</span></code>. More specifically, a <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">imaging</span> <span class="pre">acquisition</span></code> is performed every two weeks for three months.</p>
+<ul class="simple">
+<li><p>In the specific context of this experience, name a problem and a strength of the <code class="docutils literal notranslate"><span class="pre">F18-FDG</span> <span class="pre">PET</span></code>.</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.7</p>
+<p>To answer this question, read the article by <code class="docutils literal notranslate"><span class="pre">Shukla</span> <span class="pre">et</span> <span class="pre">al</span></code>, “<em>Aberrant Frontostriatal Connectivity in Negative Symptoms of Schizophrenia</em>”, published in Schizophrenia Bulletin (2019, 45(5): 1051-59) and available open access at this <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6737477/"> address</a>. The following questions are short answers.</p>
+<ul class="simple">
+<li><p>What type(s) of <code class="docutils literal notranslate"><span class="pre">participant</span></code>(s) were recruited into this study?</p></li>
+<li><p>What is the main objective of the study?</p></li>
+<li><p>What are the inclusion and exclusion criteria?</p></li>
+<li><p>Which <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">technique(s)</span></code> is(are) used? Is it a <code class="docutils literal notranslate"><span class="pre">structural</span></code> or <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">technique</span></code>?</p></li>
+<li><p>Where are the <code class="docutils literal notranslate"><span class="pre">regions</span></code> of interest used in the study described? How are they defined?</p></li>
+<li><p>Where are the <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">parameters</span></code> used in the study described? List parameters used.</p></li>
+<li><p>Which figure meets the main objective of the study? What is the main conclusion?</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 1.8</p>
+<p>We want to compare different aspects of <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">architecture</span></code> between a <code class="docutils literal notranslate"><span class="pre">population</span></code> of <code class="docutils literal notranslate"><span class="pre">schizophrenic</span> <span class="pre">patients</span></code> and a <code class="docutils literal notranslate"><span class="pre">population</span></code> of <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">participants</span></code>.</p>
+<ul class="simple">
+<li><p>We are interested in the <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">processing</span></code> of <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">stimuli</span></code> composed of images with a strong emotional valence. What <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">modality</span></code> and <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">technique</span></code> would you use and why?</p></li>
+<li><p>We are interested in a possible <code class="docutils literal notranslate"><span class="pre">atrophy</span></code> of the <code class="docutils literal notranslate"><span class="pre">frontal</span> <span class="pre">cortex</span></code>. What <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">modality</span></code> and <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">technique</span></code> would you use and why?</p></li>
+<li><p>We want to study <code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">brain</span> <span class="pre">activity</span></code> and acquire as large a sample as possible with a fixed budget. What <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">modality</span></code> and <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">technique</span></code> would you use and why?</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-neuro_ai-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-neuro_ai-py",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-neuro_ai-py'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../pages/introduction_2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction II - Neuroscience</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mri_intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Magnetic Resonance Imaging (MRI)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

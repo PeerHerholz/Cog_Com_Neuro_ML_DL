@@ -53,7 +53,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Yoga and/or dance break" href="break.html" />
-    <link rel="prev" title="Finalization - communication, documentation &amp; outreach" href="finalization/finalization.html" />
+    <link rel="prev" title="Using Python for neuroimaging data - NiBabel" href="introduction/notebooks/neuroscience/image_manipulation_nibabel.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -127,18 +127,47 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="introduction/pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="introduction/pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="introduction/notebooks/neuroscience/cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="introduction/notebooks/neuroscience/mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="introduction/notebooks/neuroscience/image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="experimentation/experimentation.html">
-   Experimentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="finalization/finalization.html">
-   Finalization - communication, documentation &amp; outreach
-  </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -260,19 +289,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Student projects</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Student projects</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#research-project">
    Research project
@@ -280,7 +310,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -316,53 +348,14 @@
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="section" id="student-projects">
-<h1>Student projects<a class="headerlink" href="#student-projects" title="Permalink to this headline">¶</a></h1>
-<p>As mentioned on the <span class="xref myst">overview page</span>, the core of this class are research projects that will be conducted under guidance (potentially in groups), the <code class="docutils literal notranslate"><span class="pre">research</span> <span class="pre">experiment</span></code>s, by each participant. This is explained in a bit more detail below and generated materials for each (e.g. <code class="docutils literal notranslate"><span class="pre">pre-registration</span></code>, <code class="docutils literal notranslate"><span class="pre">DMP</span></code>, etc.) will be added throughout the semester.</p>
-<div class="section" id="research-project">
-<h2>Research project<a class="headerlink" href="#research-project" title="Permalink to this headline">¶</a></h2>
-<p>Building upon the work of the <span class="xref myst">Introduction block</span>, the aim of the <code class="docutils literal notranslate"><span class="pre">research</span> <span class="pre">project</span></code> is to allow you to conduct <code class="docutils literal notranslate"><span class="pre">research</span> <span class="pre">work</span></code> more independently. While everyone will use the same basic experimental setup, each group/participant will form their own <code class="docutils literal notranslate"><span class="pre">sub-projects</span></code> and respective <code class="docutils literal notranslate"><span class="pre">hypotheses</span></code>. In general the steps will the same as discussed in the <span class="xref myst">Introduction block</span>: setting up a project, finding literature, defining hypotheses, do a pre-registering, write a data management plan, set up the experiment, acquire data, analyze data and write a report based on the outcomes. In addition, the <code class="docutils literal notranslate"><span class="pre">research</span> <span class="pre">project</span></code> will also entail the presentation of relevant literature and a poster presentation.</p>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="finalization/finalization.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="introduction/notebooks/neuroscience/image_manipulation_nibabel.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Finalization - communication, documentation &amp; outreach</p>
+            <p class="prev-next-title">Using Python for neuroimaging data - NiBabel</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="break.html" title="next page">
@@ -373,7 +366,7 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
@@ -381,7 +374,7 @@
     
       By Peer Herholz<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

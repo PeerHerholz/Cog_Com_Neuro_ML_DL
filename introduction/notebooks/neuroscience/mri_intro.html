@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnetic Resonance Imaging (MRI) &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Using Python for neuroimaging data - NiBabel" href="image_manipulation_nibabel.html" />
+    <link rel="prev" title="Cortical maps" href="cortical_maps.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="current reference internal" href="#">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/mri_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/mri_intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/mri_intro.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/mri_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives 📍
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anatomy-of-an-mri">
+   Anatomy of an MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-spin-and-b0-field">
+   Magnetic spin and B0 field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-resonance">
+   Magnetic resonance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-selection-and-image-formation">
+   Section selection and image formation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#t-1-and-t-2-contrasts">
+   <span class="math notranslate nohighlight">
+    \(T_1\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(T_2\)
+   </span>
+   contrasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#t-2-fmri-dmri">
+   <span class="math notranslate nohighlight">
+    \(T_2^*\)
+   </span>
+   , fMRI, dMRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#console-and-acquisition-sequences">
+   Console and acquisition sequences
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusions">
+     Conclusions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Magnetic Resonance Imaging (MRI)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives 📍
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anatomy-of-an-mri">
+   Anatomy of an MRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-spin-and-b0-field">
+   Magnetic spin and B0 field
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-resonance">
+   Magnetic resonance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-selection-and-image-formation">
+   Section selection and image formation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#t-1-and-t-2-contrasts">
+   <span class="math notranslate nohighlight">
+    \(T_1\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(T_2\)
+   </span>
+   contrasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#t-2-fmri-dmri">
+   <span class="math notranslate nohighlight">
+    \(T_2^*\)
+   </span>
+   , fMRI, dMRI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#console-and-acquisition-sequences">
+   Console and acquisition sequences
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusions">
+     Conclusions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="magnetic-resonance-imaging-mri">
+<span id="mri-chapter"></span><h1>Magnetic Resonance Imaging (MRI)<a class="headerlink" href="#magnetic-resonance-imaging-mri" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives 📍<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p>This part of the course aims to introduce you to the <code class="docutils literal notranslate"><span class="pre">physical</span> <span class="pre">principles</span></code> of <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">resonance</span> <span class="pre">imaging</span></code>. During this part of the course, we will cover four fundamental principles of <code class="docutils literal notranslate"><span class="pre">MRI</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Magnetic</span> <span class="pre">resonance</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Relaxation</span></code>: parameters <code class="docutils literal notranslate"><span class="pre">T1</span></code> and <code class="docutils literal notranslate"><span class="pre">T2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Imaging</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">sequences</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="anatomy-of-an-mri">
+<h2>Anatomy of an MRI<a class="headerlink" href="#anatomy-of-an-mri" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="mri-schema-fig">
+<a class="reference internal image-reference" href="../../../_images/mri_schema.png"><img alt="../../../_images/mri_schema.png" src="../../../_images/mri_schema.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Schematic illustration of the main components of an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> machine. Figure generated by <span class="xref myst">P. Bellec</span>, 2021, licensed under CC-BY.</span><a class="headerlink" href="#mri-schema-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#mri-schema-fig"><span class="std std-numref">Fig. 13</span></a> allows us to observe the main elements of an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> device, and in particular:</p>
+<ul class="simple">
+<li><p>The <strong>magnet</strong>: this is a <code class="docutils literal notranslate"><span class="pre">coil</span></code> that generates a very strong <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code>. This <code class="docutils literal notranslate"><span class="pre">coil</span></code> is immersed in <code class="docutils literal notranslate"><span class="pre">liquid</span> <span class="pre">helium</span></code>, close to absolute zero, which makes it <code class="docutils literal notranslate"><span class="pre">superconductive</span></code>: the <code class="docutils literal notranslate"><span class="pre">electric</span> <span class="pre">current</span></code> which crosses it does not undergo any loss of energy, and can continue to circulate for a very long time. For this reason, the <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">magnet</span></code> continues to operate continuously, even when the machine is not in use.</p></li>
+<li><p>The <strong>gradient coils</strong>: allow to vary the <code class="docutils literal notranslate"><span class="pre">intensity</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in space. During <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">acquisition</span></code>, the <code class="docutils literal notranslate"><span class="pre">gradients</span></code> are activated and then stopped several times. <code class="docutils literal notranslate"><span class="pre">Gradients</span></code> can be produced in any direction.</p></li>
+<li><p>The <strong>radio-frequency antenna</strong>: makes it possible to (1) <code class="docutils literal notranslate"><span class="pre">excite</span></code> <code class="docutils literal notranslate"><span class="pre">matter</span></code> using <code class="docutils literal notranslate"><span class="pre">transmitters</span></code>, and (2) measure the <code class="docutils literal notranslate"><span class="pre">response</span></code> of these <code class="docutils literal notranslate"><span class="pre">biological</span> <span class="pre">tissues</span></code> to <code class="docutils literal notranslate"><span class="pre">excitation</span></code> using <code class="docutils literal notranslate"><span class="pre">receivers</span></code>. The <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">pulses</span></code> generated by the <code class="docutils literal notranslate"><span class="pre">antenna</span></code> create a weak <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> <code class="docutils literal notranslate"><span class="pre">perpendicular</span></code> to the main <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> generated by the <code class="docutils literal notranslate"><span class="pre">magnet</span></code>. Receiving <code class="docutils literal notranslate"><span class="pre">antennas</span></code> can also be placed in specific headgear.</p></li>
+</ul>
+<p>We’ll talk more about how all of these work in the next few sections.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">MRI</span></code> is very sensitive to <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">movements</span></code>! Cushions or other devices can be used to reduce <code class="docutils literal notranslate"><span class="pre">movement</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Coil + current = magnetic field</strong>!
+By creating a ring with <code class="docutils literal notranslate"><span class="pre">electric</span> <span class="pre">wire</span></code> and passing an <code class="docutils literal notranslate"><span class="pre">electric</span> <span class="pre">current</span></code>, we produce a <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code>. In the video below we can see the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> lines being drawn when the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> is <code class="docutils literal notranslate"><span class="pre">activated</span></code>. <code class="docutils literal notranslate"><span class="pre">Field</span> <span class="pre">lines</span></code> are straight as they pass through the <code class="docutils literal notranslate"><span class="pre">center</span></code> of the ring, but they <code class="docutils literal notranslate"><span class="pre">propagate</span></code> in <code class="docutils literal notranslate"><span class="pre">circles</span></code> away from the <code class="docutils literal notranslate"><span class="pre">center</span></code> of the ring. To obtain a constant <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> inside the ring, we can thicken the ring so as to form a <code class="docutils literal notranslate"><span class="pre">cylinder</span></code>. It’s the same principle that we find in an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">machine</span></code>!</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Youtube</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/bq6IhapfucE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/bq6IhapfucE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+</div>
+<div class="section" id="magnetic-spin-and-b0-field">
+<h2>Magnetic spin and B0 field<a class="headerlink" href="#magnetic-spin-and-b0-field" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="spin-fig">
+<a class="reference internal image-reference" href="../../../_images/spin.png"><img alt="../../../_images/spin.png" src="../../../_images/spin.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A <code class="docutils literal notranslate"><span class="pre">proton</span></code> is like a small <code class="docutils literal notranslate"><span class="pre">magnet</span></code>, whose <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> <code class="docutils literal notranslate"><span class="pre">oscillates</span></code> around a given position (<code class="docutils literal notranslate"><span class="pre">precessional</span> <span class="pre">motion</span></code>), and is characterized by <code class="docutils literal notranslate"><span class="pre">angular</span> <span class="pre">momentum</span></code>, or <code class="docutils literal notranslate"><span class="pre">spin</span></code>. The right part of the figure was generated by <span class="xref myst">P. Bellec</span>, 2021, under CC-BY license. The left part of the figure is adapted from an image <a class="reference external" href="https://www.shutterstock.com">shutterstock</a> ID <code class="docutils literal notranslate"><span class="pre">130826045</span></code>, used under standard shutterstock license.</span><a class="headerlink" href="#spin-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">protons</span></code> that make up part of the <code class="docutils literal notranslate"><span class="pre">atoms</span></code> behave like little <code class="docutils literal notranslate"><span class="pre">magnets</span></code> that <code class="docutils literal notranslate"><span class="pre">spin</span></code> around their own <code class="docutils literal notranslate"><span class="pre">axis</span></code>, similar to a <code class="docutils literal notranslate"><span class="pre">spinning</span> <span class="pre">top</span></code> (see <a class="reference internal" href="#spin-fig"><span class="std std-numref">Fig. 14</span></a>). This <code class="docutils literal notranslate"><span class="pre">rotation</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">moment</span></code> is called the <code class="docutils literal notranslate"><span class="pre">precession</span> <span class="pre">movement</span></code> and depends among other things on the <code class="docutils literal notranslate"><span class="pre">composition</span></code> of the <code class="docutils literal notranslate"><span class="pre">core</span></code>. Thus, each type of <code class="docutils literal notranslate"><span class="pre">nucleus</span></code> has a characteristic <em>Larmor frequency</em>.</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atom</span></code> has a <code class="docutils literal notranslate"><span class="pre">Larmor</span> <span class="pre">frequency</span></code> of <code class="docutils literal notranslate"><span class="pre">42.58</span> <span class="pre">MHz/Tesla</span></code>. This <code class="docutils literal notranslate"><span class="pre">frequency</span></code> is therefore not fixed, but <strong>depends on the strength of the magnetic field!</strong> Placed in an <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">magnetic</span> <span class="pre">field</span></code> of <code class="docutils literal notranslate"><span class="pre">1T</span></code>, a <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atom</span></code> rotates <code class="docutils literal notranslate"><span class="pre">42580000</span></code> times per second. The stronger the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in which a <code class="docutils literal notranslate"><span class="pre">proton</span></code> is located, the more the speed at which the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">moment</span></code> of this <code class="docutils literal notranslate"><span class="pre">proton</span></code> rotates will increase.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">magnet</span></code> helps align the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">moment</span></code> of the <code class="docutils literal notranslate"><span class="pre">protons</span></code> along the same <code class="docutils literal notranslate"><span class="pre">axis</span></code> as the <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">magnetic</span> <span class="pre">field</span></code>, called <code class="docutils literal notranslate"><span class="pre">B0</span></code>. This <code class="docutils literal notranslate"><span class="pre">B0</span></code> <code class="docutils literal notranslate"><span class="pre">field</span></code> goes from the <code class="docutils literal notranslate"><span class="pre">feet</span></code> to the <code class="docutils literal notranslate"><span class="pre">head</span></code>. The <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">magnet</span></code> is measured in <code class="docutils literal notranslate"><span class="pre">Teslas</span> <span class="pre">(T)</span></code>. <code class="docutils literal notranslate"><span class="pre">1.5T</span></code> devices are mainly used for clinical purposes, while in research, the standard is rather <code class="docutils literal notranslate"><span class="pre">3T</span></code>, which is about <code class="docutils literal notranslate"><span class="pre">60,000</span></code> times more powerful than the Earth’s <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code>! The <code class="docutils literal notranslate"><span class="pre">7T</span></code> devices represent today the new frontier used in research, and some <code class="docutils literal notranslate"><span class="pre">10T</span></code>+ devices exist in the world. But why would we want to increase the <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code>? By <code class="docutils literal notranslate"><span class="pre">increasing</span></code> the <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code>, we can gain <code class="docutils literal notranslate"><span class="pre">spatial</span></code> and <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code>. On the other hand, <code class="docutils literal notranslate"><span class="pre">increasing</span></code> the <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> can also introduce <code class="docutils literal notranslate"><span class="pre">artifacts</span></code>!</p>
+</div>
+<div class="section" id="magnetic-resonance">
+<h2>Magnetic resonance<a class="headerlink" href="#magnetic-resonance" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Resonance… not just magnetic
+We find <code class="docutils literal notranslate"><span class="pre">resonance</span></code> phenomena in many situations. A known example is the <code class="docutils literal notranslate"><span class="pre">resonance</span></code> between the <code class="docutils literal notranslate"><span class="pre">wind</span></code> and the <code class="docutils literal notranslate"><span class="pre">Tacoma</span> <span class="pre">Bridge</span></code>, which led to the collapse of the bridge (see the video below).</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Youtube</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3mclp9QmCGs&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/3mclp9QmCGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+<p>We can think of <code class="docutils literal notranslate"><span class="pre">resonance</span></code> as a <code class="docutils literal notranslate"><span class="pre">seesaw</span> <span class="pre">motion</span></code>. If we push the <code class="docutils literal notranslate"><span class="pre">swing</span></code> <code class="docutils literal notranslate"><span class="pre">randomly</span></code>, it won’t <code class="docutils literal notranslate"><span class="pre">swing</span></code> much. To have an <code class="docutils literal notranslate"><span class="pre">amplified</span> <span class="pre">swing</span> <span class="pre">motion</span></code>, we need to push the <code class="docutils literal notranslate"><span class="pre">swing</span></code> at the <code class="docutils literal notranslate"><span class="pre">same</span> <span class="pre">frequency</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">natural</span> <span class="pre">frequency</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">swing</span></code>. We will then <strong>enter into resonance</strong> with the <code class="docutils literal notranslate"><span class="pre">swing</span></code>, and its <code class="docutils literal notranslate"><span class="pre">movement</span></code> will <code class="docutils literal notranslate"><span class="pre">amplify</span></code>. We can therefore see the <code class="docutils literal notranslate"><span class="pre">swing</span></code> as a <code class="docutils literal notranslate"><span class="pre">phenomenon</span></code> of <code class="docutils literal notranslate"><span class="pre">resonance</span></code> between the <code class="docutils literal notranslate"><span class="pre">object</span></code> that is <code class="docutils literal notranslate"><span class="pre">swinging</span></code> and the <code class="docutils literal notranslate"><span class="pre">person</span></code> who gives <code class="docutils literal notranslate"><span class="pre">impetus</span></code> to this <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MRI</span></code> exploits this <code class="docutils literal notranslate"><span class="pre">resonance</span> <span class="pre">phenomenon</span></code>. <strong>The radio-frequency (RF) antenna</strong> creates a series of <strong>radio-frequency waves</strong> in the <code class="docutils literal notranslate"><span class="pre">direction</span></code> <code class="docutils literal notranslate"><span class="pre">perpendicular</span></code> to the <code class="docutils literal notranslate"><span class="pre">B0</span> <span class="pre">field</span></code>, ie in the <code class="docutils literal notranslate"><span class="pre">direction</span></code> of the <code class="docutils literal notranslate"><span class="pre">B1</span> <span class="pre">field</span></code>. By producing a <code class="docutils literal notranslate"><span class="pre">series</span></code> of <code class="docutils literal notranslate"><span class="pre">pulses</span></code> following the <code class="docutils literal notranslate"><span class="pre">Larmor</span> <span class="pre">frequency</span> <span class="pre">of</span> <span class="pre">hydrogen</span></code>, the <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atoms</span></code> come into <code class="docutils literal notranslate"><span class="pre">resonance</span></code> and tilt in the <code class="docutils literal notranslate"><span class="pre">perpendicular</span> <span class="pre">direction</span></code>.</p>
+<p>By stopping the <code class="docutils literal notranslate"><span class="pre">pulses</span></code>, the <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atoms</span></code> enter into <code class="docutils literal notranslate"><span class="pre">relaxation</span></code>, that is to say that their <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">moment</span></code> will return to the <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">direction</span> <span class="pre">B0</span></code>. In other words, the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">moment</span></code> in <code class="docutils literal notranslate"><span class="pre">direction</span> <span class="pre">B1</span></code> decreases to return in <code class="docutils literal notranslate"><span class="pre">direction</span> <span class="pre">B0</span></code>. This <code class="docutils literal notranslate"><span class="pre">relaxation</span> <span class="pre">phenomenon</span></code> is very important, because the speed of <code class="docutils literal notranslate"><span class="pre">relaxation</span></code> will depend on the <code class="docutils literal notranslate"><span class="pre">characteristics</span></code> of the <code class="docutils literal notranslate"><span class="pre">tissues</span></code> that have been excited. The <code class="docutils literal notranslate"><span class="pre">relaxation</span></code> speed is measured by the receiving <code class="docutils literal notranslate"><span class="pre">antennas</span></code> placed in the <code class="docutils literal notranslate"><span class="pre">helmet</span></code> around the <code class="docutils literal notranslate"><span class="pre">participant</span></code>’s head!</p>
+<div class="tip admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to understand that the <code class="docutils literal notranslate"><span class="pre">signal</span></code> we measure in <code class="docutils literal notranslate"><span class="pre">MRI</span></code> <strong>does not</strong> come from a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">proton</span></code>. For reference, <code class="docutils literal notranslate"><span class="pre">18</span> <span class="pre">grams</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> contains one <a class="reference external" href="https://fr.wikipedia.org/wiki/Mole_(unit)">mole</a> of <code class="docutils literal notranslate"><span class="pre">H2O</span> <span class="pre">molecules</span></code>, or about <span class="math notranslate nohighlight">\(10^{24}\)</span> <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atoms</span></code>… The <code class="docutils literal notranslate"><span class="pre">signal</span></code> that we are measuring comes from the <code class="docutils literal notranslate"><span class="pre">juxtaposition</span></code> of the <code class="docutils literal notranslate"><span class="pre">spins</span></code> of all of these <code class="docutils literal notranslate"><span class="pre">atoms</span></code>. A <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">wave</span></code> which <code class="docutils literal notranslate"><span class="pre">resonates</span></code> with <code class="docutils literal notranslate"><span class="pre">hydrogen</span></code> will not only tilt the <code class="docutils literal notranslate"><span class="pre">spins</span></code>, but also bring them into <code class="docutils literal notranslate"><span class="pre">phase</span></code>. Imagine that you have a thousand <code class="docutils literal notranslate"><span class="pre">swings</span></code>, which you push at the same time (at the right <code class="docutils literal notranslate"><span class="pre">frequency</span></code>). Not only will the <code class="docutils literal notranslate"><span class="pre">movement</span></code> of the <code class="docutils literal notranslate"><span class="pre">swings</span></code> gain in <code class="docutils literal notranslate"><span class="pre">amplitude</span></code>, but all the <code class="docutils literal notranslate"><span class="pre">swings</span></code> will be at the same point in their <code class="docutils literal notranslate"><span class="pre">trajectory</span></code> at the same time. It is the same for <code class="docutils literal notranslate"><span class="pre">spins</span></code> after an <code class="docutils literal notranslate"><span class="pre">excitement</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Why radio?
+As we have seen, the <code class="docutils literal notranslate"><span class="pre">Larmor</span> <span class="pre">frequency</span></code> of <code class="docutils literal notranslate"><span class="pre">hydrogen</span></code> is <code class="docutils literal notranslate"><span class="pre">42.58</span> <span class="pre">MHz/Tesla</span></code>. In a <code class="docutils literal notranslate"><span class="pre">3T</span> <span class="pre">MRI</span></code>, we are therefore going to excite with a <code class="docutils literal notranslate"><span class="pre">wave</span></code> at a <code class="docutils literal notranslate"><span class="pre">frequency</span></code> of approximately <code class="docutils literal notranslate"><span class="pre">120</span> <span class="pre">MHz</span></code>, or <code class="docutils literal notranslate"><span class="pre">120</span> <span class="pre">million</span> <span class="pre">waves</span></code> per second (!). This type of <code class="docutils literal notranslate"><span class="pre">frequency</span></code> falls into the domain of <a class="reference external" href="https://fr.wikipedia.org/wiki/Onde_radio">radio waves</a>.</p>
+</div>
+</div>
+<div class="section" id="section-selection-and-image-formation">
+<h2>Section selection and image formation<a class="headerlink" href="#section-selection-and-image-formation" title="Permalink to this headline">¶</a></h2>
+<p>We have seen how a <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">wave</span></code> can excite <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">nuclei</span></code> and measure the <code class="docutils literal notranslate"><span class="pre">response</span></code> to this <code class="docutils literal notranslate"><span class="pre">excitation</span></code> to examine the <code class="docutils literal notranslate"><span class="pre">characteristics</span></code> of <code class="docutils literal notranslate"><span class="pre">tissues</span></code>. But how to make an <code class="docutils literal notranslate"><span class="pre">image</span></code>? The <strong>gradient coils</strong> make it possible to vary the <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">directions</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Direction</span> <span class="pre">z</span></code>: from <code class="docutils literal notranslate"><span class="pre">feet</span></code> to <code class="docutils literal notranslate"><span class="pre">head</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Direction</span> <span class="pre">x</span></code>: from <code class="docutils literal notranslate"><span class="pre">left</span></code> to <code class="docutils literal notranslate"><span class="pre">right</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Direction</span> <span class="pre">y</span></code>: from the <code class="docutils literal notranslate"><span class="pre">back</span></code> of the <code class="docutils literal notranslate"><span class="pre">head</span></code> to the <code class="docutils literal notranslate"><span class="pre">nose</span></code></p></li>
+</ul>
+<p>These variations are much weaker than the <code class="docutils literal notranslate"><span class="pre">B0</span> <span class="pre">field</span></code>, and only represent a fraction of a <code class="docutils literal notranslate"><span class="pre">Tesla</span></code>, but this will allow us to <code class="docutils literal notranslate"><span class="pre">extract</span> <span class="pre">spatial</span> <span class="pre">information</span></code> in a <code class="docutils literal notranslate"><span class="pre">resonance</span> <span class="pre">process</span></code>. Using these <code class="docutils literal notranslate"><span class="pre">gradients</span></code>, it is possible to measure the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">properties</span></code> of <code class="docutils literal notranslate"><span class="pre">tissues</span></code> located at a <code class="docutils literal notranslate"><span class="pre">specific</span> <span class="pre">point</span></code> in <code class="docutils literal notranslate"><span class="pre">space</span></code>, and therefore to make a <code class="docutils literal notranslate"><span class="pre">(3D)</span> <span class="pre">image</span></code>. This process is complex, but the first step is relatively simple to understand: it is the cut selection.</p>
+<p>We remember that the <code class="docutils literal notranslate"><span class="pre">Larmor</span> <span class="pre">frequency</span></code> of a <code class="docutils literal notranslate"><span class="pre">particle</span></code> depends on the <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in which it finds itself. By changing the <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in a given <code class="docutils literal notranslate"><span class="pre">direction</span></code> thanks to the <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">coils</span></code>, we are going to modify the <code class="docutils literal notranslate"><span class="pre">Larmor</span> <span class="pre">frequency</span></code> of the <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atoms</span></code> at a <code class="docutils literal notranslate"><span class="pre">specific</span> <span class="pre">point</span></code> in the <code class="docutils literal notranslate"><span class="pre">gradient</span></code>. The <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">pulses</span></code> will only <code class="docutils literal notranslate"><span class="pre">excite</span></code> the <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atoms</span></code> in the <code class="docutils literal notranslate"><span class="pre">cut</span></code> where the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> has the <code class="docutils literal notranslate"><span class="pre">strength</span></code> that corresponds to the <code class="docutils literal notranslate"><span class="pre">excitation</span></code> frequency<code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">In</span> <span class="pre">this</span> <span class="pre">way,</span> <span class="pre">instead</span> <span class="pre">of</span> </code>receiving signal<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">the</span></code>whole brain<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">we</span> <span class="pre">only</span> </code>receive signal<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">the</span></code>selected slice<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">because</span> <span class="pre">only</span> <span class="pre">the</span> </code>hydrogen atoms<code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">this</span></code>slice<code class="docutils literal notranslate"><span class="pre">will</span></code>resonate`.</p>
+<p>We still have to cut our section into <code class="docutils literal notranslate"><span class="pre">pixels</span></code>… But that is largely beyond the context of this introductory chapter. To learn more about <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">encoding</span></code> in <code class="docutils literal notranslate"><span class="pre">MRI</span></code>, you can consult this [resource](<a class="reference external" href="https://www.imaios.com/en/e-Courses/e-MRI/Signal-spatial-encoding/Spatial-encoding-">https://www.imaios.com/en/e-Courses/e-MRI/Signal-spatial-encoding/Spatial-encoding-</a> intro).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Field of View (FOV)
+When we make a <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">image</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, we will <code class="docutils literal notranslate"><span class="pre">slice</span></code> the <code class="docutils literal notranslate"><span class="pre">brain</span></code> into a <code class="docutils literal notranslate"><span class="pre">series</span></code> of <code class="docutils literal notranslate"><span class="pre">slices</span></code>. By knowing the <code class="docutils literal notranslate"><span class="pre">size</span></code> of the <code class="docutils literal notranslate"><span class="pre">cuts</span></code> as well as the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">cuts</span></code>, we can deduce the <code class="docutils literal notranslate"><span class="pre">size</span></code> of the <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">cube</span></code> that corresponds to the <code class="docutils literal notranslate"><span class="pre">image</span></code>. This <code class="docutils literal notranslate"><span class="pre">size</span></code> is called <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">of</span> <span class="pre">view</span></code>, or <code class="docutils literal notranslate"><span class="pre">FOV</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The MRI: a noisy machine
+The <code class="docutils literal notranslate"><span class="pre">acquisition</span></code> of an <code class="docutils literal notranslate"><span class="pre">image</span></code> requires <code class="docutils literal notranslate"><span class="pre">modifying</span></code> the <code class="docutils literal notranslate"><span class="pre">gradients</span></code> quickly. The <code class="docutils literal notranslate"><span class="pre">rapid</span> <span class="pre">current</span> <span class="pre">changes</span></code> in the <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">coils</span></code>, as well as in the <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">wave</span> <span class="pre">emitting</span> <span class="pre">coils</span></code>, cause the <code class="docutils literal notranslate"><span class="pre">coils</span></code> to <code class="docutils literal notranslate"><span class="pre">expand</span></code> and <code class="docutils literal notranslate"><span class="pre">contract</span></code> rapidly. These <code class="docutils literal notranslate"><span class="pre">movements</span></code> create <code class="docutils literal notranslate"><span class="pre">significant</span> <span class="pre">noise</span></code>. Each <code class="docutils literal notranslate"><span class="pre">type</span></code> of <code class="docutils literal notranslate"><span class="pre">image</span></code> has its own “music”, which depends on the nature and order of the <code class="docutils literal notranslate"><span class="pre">excitations</span></code> and <code class="docutils literal notranslate"><span class="pre">gradients</span></code>. See excerpts below.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Youtube</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/9GZvd_4ot04?start=11&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/9GZvd_4ot04?start=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+</div>
+<div class="section" id="t-1-and-t-2-contrasts">
+<h2><span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span> contrasts<a class="headerlink" href="#t-1-and-t-2-contrasts" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">contrasts</span></code> <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span> are the main parameters acquired during an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> session. Initially, the <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">proton</span></code> <code class="docutils literal notranslate"><span class="pre">spins</span></code> are aligned with the <span class="math notranslate nohighlight">\(B_0\)</span> field. The application of <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">pulses</span></code> causes the <code class="docutils literal notranslate"><span class="pre">spins</span></code> to tilt along the <span class="math notranslate nohighlight">\(B_1\)</span> axis, an <code class="docutils literal notranslate"><span class="pre">axis</span></code> <code class="docutils literal notranslate"><span class="pre">perpendicular</span></code> to <span class="math notranslate nohighlight">\(B_0\)</span>. Once the <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">pulses</span></code> have stopped, the <code class="docutils literal notranslate"><span class="pre">spins</span></code> <code class="docutils literal notranslate"><span class="pre">realign</span></code> with the <span class="math notranslate nohighlight">\(B_0\)</span> field. This <code class="docutils literal notranslate"><span class="pre">realignment</span></code> is characterized by two distinct dynamics, linked to the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">constants</span></code> <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span>.</p>
+<p><strong>Contrast in <span class="math notranslate nohighlight">\(T_1\)</span></strong>. The <code class="docutils literal notranslate"><span class="pre">increase</span></code> in the component according to <span class="math notranslate nohighlight">\(B_0\)</span> (component <span class="math notranslate nohighlight">\(M_z\)</span>), or <em>longitudinal relaxation</em>, follows an <code class="docutils literal notranslate"><span class="pre">increasing</span> <span class="pre">exponential</span> <span class="pre">function</span></code>. The characteristic time of this growth (the speed of growth) is called <span class="math notranslate nohighlight">\(T_1\)</span>. The time <span class="math notranslate nohighlight">\(T_1\)</span> corresponds to the time elapsed to obtain <code class="docutils literal notranslate"><span class="pre">63%</span></code> of the <code class="docutils literal notranslate"><span class="pre">equilibrium</span> <span class="pre">value</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">moment</span></code> contribution along the <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">axis</span></code> (<span class="math notranslate nohighlight">\(M_0\)</span>). For those who are comfortable with mathematical expressions, the regrowth in <span class="math notranslate nohighlight">\(B_0\)</span> follows the equation <span class="math notranslate nohighlight">\(M_z(t) = M_0 ( 1 - e^{-t / T_1})\)</span>.</p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ignore warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># import necessary libraries</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="c1"># setup figures</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Exponential functions for T1 curves (for example only)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mi">70</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">1.2</span><span class="p">))</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mi">85</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">1.3</span><span class="p">))</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">))</span>
+
+<span class="c1"># Trace the figure</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cerebrospinal fluid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;grey matter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;white matter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;TE&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;TR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;mz&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Curve in T1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+
+<span class="c1"># Import required modules and dataset</span>
+<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_icbm152_2009</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span>
+
+<span class="n">data_mri</span> <span class="o">=</span> <span class="n">fetch_icbm152_2009</span><span class="p">()</span>
+
+<span class="c1"># display T1-weighted image</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plot_anat</span><span class="p">(</span><span class="n">data_mri</span><span class="o">.</span><span class="n">t1</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;MRI - T1 contrast&quot;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+    <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;relax-t1-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="relax-t1-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/mri_intro_7_0.png" src="../../../_images/mri_intro_7_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Longitudinal</span> <span class="pre">relaxation</span></code> and <code class="docutils literal notranslate"><span class="pre">contrast</span></code> <span class="math notranslate nohighlight">\(T_1\)</span>. Left image: growth of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> along the <span class="math notranslate nohighlight">\(B_0\)</span> <code class="docutils literal notranslate"><span class="pre">axis</span></code>, called <span class="math notranslate nohighlight">\(M_{z}\)</span>. Note that different <code class="docutils literal notranslate"><span class="pre">tissue</span> <span class="pre">types</span></code> exhibit distinct <code class="docutils literal notranslate"><span class="pre">longitudinal</span> <span class="pre">relaxation</span> <span class="pre">curves</span></code>. Right image: an <code class="docutils literal notranslate"><span class="pre">image</span></code> generated by reading at time <span class="math notranslate nohighlight">\(TE\)</span> presents a <code class="docutils literal notranslate"><span class="pre">contrast</span></code> between the different <code class="docutils literal notranslate"><span class="pre">tissue</span> <span class="pre">types</span></code>. This figure is generated by python code, click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code.</span><a class="headerlink" href="#relax-t1-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="tip admonition note" id="m0-tip">
+<p class="admonition-title">Note</p>
+<p>At <code class="docutils literal notranslate"><span class="pre">equilibrium</span></code>, the contribution of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">moment</span></code> along the <span class="math notranslate nohighlight">\(B_0\)</span> <code class="docutils literal notranslate"><span class="pre">axis</span></code> is called <span class="math notranslate nohighlight">\(M_0\)</span>. This value depends on the <code class="docutils literal notranslate"><span class="pre">density</span></code> of <code class="docutils literal notranslate"><span class="pre">protons</span></code> in the <code class="docutils literal notranslate"><span class="pre">tissues</span></code>, i.e. the <code class="docutils literal notranslate"><span class="pre">number</span></code> of <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">atoms</span></code> present in the <code class="docutils literal notranslate"><span class="pre">tissue</span></code>. Thus, from one <code class="docutils literal notranslate"><span class="pre">voxel</span></code> to another, we do not necessarily obtain the same value of <span class="math notranslate nohighlight">\(M_0\)</span>. It is possible to image this parameter, and we then speak of an image in <code class="docutils literal notranslate"><span class="pre">proton</span> <span class="pre">density</span></code>.</p>
+</div>
+<p><strong>Contrast in <span class="math notranslate nohighlight">\(T_2\)</span></strong>. The <code class="docutils literal notranslate"><span class="pre">decrease</span></code> in the component according to <span class="math notranslate nohighlight">\(B_1\)</span> (component <span class="math notranslate nohighlight">\(M_{xy}\)</span>), or <em>transverse relaxation</em>, follows a <code class="docutils literal notranslate"><span class="pre">decreasing</span> <span class="pre">exponential</span> <span class="pre">function</span></code>. The characteristic time of this <code class="docutils literal notranslate"><span class="pre">decrease</span></code> (the speed of <code class="docutils literal notranslate"><span class="pre">decrease</span></code>) is called <span class="math notranslate nohighlight">\(T_2\)</span>. The time <span class="math notranslate nohighlight">\(T_2\)</span> corresponds to the <code class="docutils literal notranslate"><span class="pre">time</span></code> elapsed to obtain <code class="docutils literal notranslate"><span class="pre">37%</span></code> of the value of the contribution of the <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">magnetic</span> <span class="pre">moment</span></code> along the axis <span class="math notranslate nohighlight">\(B_1\)</span>. For those who are comfortable with mathematical expressions, the decrease in <span class="math notranslate nohighlight">\(B_1\)</span> follows the equation <span class="math notranslate nohighlight">\(M_{xy}(t) = M_1 e^{-t / T_2}\)</span>. The constant <span class="math notranslate nohighlight">\(M_1\)</span> will depend, among other things, on the <code class="docutils literal notranslate"><span class="pre">density</span></code> of <code class="docutils literal notranslate"><span class="pre">protons</span></code>, like <span class="math notranslate nohighlight">\(M_0\)</span>, and will vary from one <code class="docutils literal notranslate"><span class="pre">tissue</span></code> to another.</p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ignore warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># import necessary functions</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="c1"># setup the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Exponential functions for T2 curves (for example only)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mi">85</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="mi">70</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">0.8</span><span class="p">)</span>
+
+<span class="c1"># Tracer la figure</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cerebrospinal fluid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;grey matter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;white matter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;TE&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;TR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mz&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Curve in T2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
+
+<span class="c1"># Import required modules and dataset</span>
+<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_icbm152_2009</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span>
+
+<span class="n">data_mri</span> <span class="o">=</span> <span class="n">fetch_icbm152_2009</span><span class="p">()</span>
+
+<span class="c1"># display the T2-weighted image</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plot_anat</span><span class="p">(</span><span class="n">data_mri</span><span class="o">.</span><span class="n">t2</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;MRI - T2 contrast&quot;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+    <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;relax-t2-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="relax-t2-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/mri_intro_9_0.png" src="../../../_images/mri_intro_9_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Transverse</span> <span class="pre">relaxation</span></code> and contrast <span class="math notranslate nohighlight">\(T_2\)</span>. Left image: <code class="docutils literal notranslate"><span class="pre">decrease</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> along the <span class="math notranslate nohighlight">\(B_1\)</span> <code class="docutils literal notranslate"><span class="pre">axis</span></code>, called <span class="math notranslate nohighlight">\(M_{xy}\)</span>. Note that different <code class="docutils literal notranslate"><span class="pre">tissue</span> <span class="pre">types</span></code> exhibit <code class="docutils literal notranslate"><span class="pre">distinct</span> <span class="pre">transverse</span> <span class="pre">relaxation</span> <span class="pre">curves</span></code>. Right image: an <code class="docutils literal notranslate"><span class="pre">image</span></code> generated by reading at time <span class="math notranslate nohighlight">\(TE\)</span> presents a <code class="docutils literal notranslate"><span class="pre">contrast</span></code> between the <code class="docutils literal notranslate"><span class="pre">different</span> <span class="pre">tissue</span> <span class="pre">types</span></code>. This <code class="docutils literal notranslate"><span class="pre">contrast</span></code> is essentially reversed with respect to <code class="docutils literal notranslate"><span class="pre">contrast</span></code> <span class="math notranslate nohighlight">\(T_1\)</span>. This figure is generated by python code, click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code.</span><a class="headerlink" href="#relax-t2-fig" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(TE\)</span>
+When we <code class="docutils literal notranslate"><span class="pre">acquire</span></code> <code class="docutils literal notranslate"><span class="pre">MRI</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code>, we generally do not measure the entire <code class="docutils literal notranslate"><span class="pre">relaxation</span> <span class="pre">curve</span></code>, but simply a <code class="docutils literal notranslate"><span class="pre">measurement</span> <span class="pre">point</span></code> at time <span class="math notranslate nohighlight">\(TE\)</span>. By choosing the <span class="math notranslate nohighlight">\(TE\)</span> appropriately, we will obtain very different reading values for the different <code class="docutils literal notranslate"><span class="pre">tissues</span></code>. The time <span class="math notranslate nohighlight">\(TE\)</span> will be different for a <code class="docutils literal notranslate"><span class="pre">contrast</span></code> <span class="math notranslate nohighlight">\(T_1\)</span> and a <code class="docutils literal notranslate"><span class="pre">contrast</span></code> <span class="math notranslate nohighlight">\(T_2\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(TR\)</span>
+We call <span class="math notranslate nohighlight">\(TR\)</span> the time which separates two series of <code class="docutils literal notranslate"><span class="pre">excitations</span></code>. This value will correspond to the <code class="docutils literal notranslate"><span class="pre">acquisition</span> <span class="pre">time</span></code> of a <code class="docutils literal notranslate"><span class="pre">section</span></code> for a <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code>, and the <code class="docutils literal notranslate"><span class="pre">acquisition</span> <span class="pre">time</span></code> of a <code class="docutils literal notranslate"><span class="pre">complete</span> <span class="pre">cerebral</span> <span class="pre">volume</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>. It’s a weird convention, but widely used by <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">physicists</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>flip angle
+If we’re interested in the end of the <code class="docutils literal notranslate"><span class="pre">relaxation</span> <span class="pre">process</span></code>, we don’t need to <code class="docutils literal notranslate"><span class="pre">flip</span></code> the <code class="docutils literal notranslate"><span class="pre">spins</span></code> completely in the <span class="math notranslate nohighlight">\(B_1\)</span> <code class="docutils literal notranslate"><span class="pre">direction</span></code>, just a certain number of <code class="docutils literal notranslate"><span class="pre">degrees</span></code> from <span class="math notranslate nohighlight">\(B_0\)</span>. This parameter is called <code class="docutils literal notranslate"><span class="pre">flip</span> <span class="pre">angle</span></code>.</p>
+</div>
+<div class="tip admonition note" id="diff-t1-t2-tip">
+<p class="admonition-title">Note</p>
+<p>Why bother <code class="docutils literal notranslate"><span class="pre">contrasting</span></code> <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span> when one seems to be the exact opposite of the other? Take a good look at the <a class="reference internal" href="#relax-t1-fig"><span class="std std-numref">Fig. 15</span></a> and <a class="reference internal" href="#relax-t2-fig"><span class="std std-numref">Fig. 16</span></a> <code class="docutils literal notranslate"><span class="pre">images</span></code>. Are there certain <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> where <code class="docutils literal notranslate"><span class="pre">image</span></code> <span class="math notranslate nohighlight">\(T_2\)</span> is not the exact opposite of image <span class="math notranslate nohighlight">\(T_1\)</span>?</p>
+</div>
+</div>
+<div class="section" id="t-2-fmri-dmri">
+<h2><span class="math notranslate nohighlight">\(T_2^*\)</span>, fMRI, dMRI<a class="headerlink" href="#t-2-fmri-dmri" title="Permalink to this headline">¶</a></h2>
+<p><strong>Phase shift.</strong> As we saw in the sidebar <span class="xref std std-ref">on phase</span>, the <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">pulses</span></code> will not only <code class="docutils literal notranslate"><span class="pre">flip</span></code> the <code class="docutils literal notranslate"><span class="pre">spins</span></code>, but also bring them into <code class="docutils literal notranslate"><span class="pre">phase</span></code>. When we stop the <code class="docutils literal notranslate"><span class="pre">impulses</span></code>, the <code class="docutils literal notranslate"><span class="pre">spins</span></code> will gradually go out of <code class="docutils literal notranslate"><span class="pre">phase</span></code>. This <code class="docutils literal notranslate"><span class="pre">phase</span> <span class="pre">shift</span></code> is due to <code class="docutils literal notranslate"><span class="pre">micro-interactions</span></code> between <code class="docutils literal notranslate"><span class="pre">protons</span></code> as well as <code class="docutils literal notranslate"><span class="pre">tissue</span> <span class="pre">molecules</span></code> that exhibit <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">properties</span></code>. The <code class="docutils literal notranslate"><span class="pre">relaxation</span> <span class="pre">curve</span></code> will have the same <code class="docutils literal notranslate"><span class="pre">shape</span></code>, but with <code class="docutils literal notranslate"><span class="pre">modified</span> <span class="pre">characteristic</span> <span class="pre">times</span></code>, which we call <span class="math notranslate nohighlight">\(T_1^*\)</span> and <span class="math notranslate nohighlight">\(T_2^*\)</span>.</p>
+<p><strong>Functional MRI.</strong> The <code class="docutils literal notranslate"><span class="pre">inhomogeneities</span></code> in the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> which cause the <code class="docutils literal notranslate"><span class="pre">phase</span> <span class="pre">shift</span></code> can in particular be created by the <code class="docutils literal notranslate"><span class="pre">deoxyhemoglobin</span></code> that we find in the <code class="docutils literal notranslate"><span class="pre">blood</span></code>. We will see in more detail how <code class="docutils literal notranslate"><span class="pre">oxyhemoglobin</span></code> and <code class="docutils literal notranslate"><span class="pre">deoxyhemoglobin</span></code> <code class="docutils literal notranslate"><span class="pre">disturb</span></code> the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in the chapter on <span class="xref myst">functional MRI</span>. In <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">MRI</span></code>, we use <code class="docutils literal notranslate"><span class="pre">T2*-weighted</span> <span class="pre">sequences</span></code>.</p>
+<p><strong>Diffusion MRI.</strong> In <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>, we also use the <code class="docutils literal notranslate"><span class="pre">T2*</span> <span class="pre">contrast</span></code>. On the other hand, in <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>, we measure <code class="docutils literal notranslate"><span class="pre">inhomogeneities</span></code> by <code class="docutils literal notranslate"><span class="pre">alternating</span></code> the <code class="docutils literal notranslate"><span class="pre">direction</span></code> of the <code class="docutils literal notranslate"><span class="pre">pulses</span></code> (eg by giving a <code class="docutils literal notranslate"><span class="pre">pulse</span></code> along the <code class="docutils literal notranslate"><span class="pre">xy</span> <span class="pre">axis</span></code>, then by giving a <code class="docutils literal notranslate"><span class="pre">pulse</span></code> along the <code class="docutils literal notranslate"><span class="pre">-xy</span> <span class="pre">axis</span></code>). By taking <code class="docutils literal notranslate"><span class="pre">several</span> <span class="pre">images</span></code> with <code class="docutils literal notranslate"><span class="pre">different</span> <span class="pre">directions</span></code> of <code class="docutils literal notranslate"><span class="pre">excitation</span></code>, we can get an idea of ​​the <code class="docutils literal notranslate"><span class="pre">direction</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span> <span class="pre">diffusion</span></code>. This operation allows us in the end to know the <code class="docutils literal notranslate"><span class="pre">direction</span></code> of the <code class="docutils literal notranslate"><span class="pre">fibers</span></code> of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code>, because the more a <code class="docutils literal notranslate"><span class="pre">fiber</span></code> points towards a given <code class="docutils literal notranslate"><span class="pre">direction</span></code>, the greater the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> will be in this <code class="docutils literal notranslate"><span class="pre">direction</span></code>. We will come back to this subject in the chapter on <span class="xref myst">diffusion MRI</span>.</p>
+</div>
+<div class="section" id="console-and-acquisition-sequences">
+<h2>Console and acquisition sequences<a class="headerlink" href="#console-and-acquisition-sequences" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="irm-console-fig">
+<a class="reference internal image-reference" href="../../../_images/mri_console.png"><img alt="../../../_images/mri_console.png" src="../../../_images/mri_console.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Connections between the console and the different parts of an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> system. Figure adapted by <span class="xref myst">P. Bellec</span>, 2021, licensed under CC-BY. The original Figure is taken from the article by Gruber et al. (2018) <a href="#id1"><span class="problematic" id="id2">:cite:p:`Gruber2018-pq`</span></a>, licensed under CC-BY-NC.</span><a class="headerlink" href="#irm-console-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>All elements of the <code class="docutils literal notranslate"><span class="pre">MRI</span></code> device can be controlled by the console (see <a class="reference internal" href="#irm-console-fig"><span class="std std-numref">Fig. 17</span></a>). We have seen together the key principles of <code class="docutils literal notranslate"><span class="pre">MRI</span></code>, but an actual <code class="docutils literal notranslate"><span class="pre">image</span></code> is <code class="docutils literal notranslate"><span class="pre">acquired</span></code> with a complex series of <code class="docutils literal notranslate"><span class="pre">excitations</span></code> and <code class="docutils literal notranslate"><span class="pre">measurements</span></code>, which is called an <em>acquisition sequence</em>. Once the <code class="docutils literal notranslate"><span class="pre">sequence</span></code> has been programmed, we can always modify certain <code class="docutils literal notranslate"><span class="pre">parameters</span></code> of the <code class="docutils literal notranslate"><span class="pre">sequence</span></code>, such as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(TE\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(TR\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">of</span> <span class="pre">view</span></code> (<code class="docutils literal notranslate"><span class="pre">FOV</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Number</span></code> of <code class="docutils literal notranslate"><span class="pre">cuts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Thickness</span></code> of <code class="docutils literal notranslate"><span class="pre">cuts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Voxel</span> <span class="pre">size</span></code></p></li>
+</ul>
+<div class="section" id="conclusions">
+<h3>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h3>
+<p>This chapter introduced you to the <code class="docutils literal notranslate"><span class="pre">physical</span> <span class="pre">principles</span></code> of <code class="docutils literal notranslate"><span class="pre">MRI</span></code>. We have seen the different components of an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">machine</span></code>, the different <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">phenomena</span></code> allowing us to <code class="docutils literal notranslate"><span class="pre">acquire</span></code> <code class="docutils literal notranslate"><span class="pre">images</span></code>, as well as some <code class="docutils literal notranslate"><span class="pre">parameters</span></code> that we can modify during the <code class="docutils literal notranslate"><span class="pre">acquisition</span></code> of <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">data</span></code>. In the next chapter, we will talk about <code class="docutils literal notranslate"><span class="pre">morphometry</span></code> using <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code>.</p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+<p>In the following we created a few exercices that aim to recap core aspects of this part of the course and thus should allow you to assess if you understood the main points.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.1</p>
+<p>Rank the <code class="docutils literal notranslate"><span class="pre">characteristic</span></code> <code class="docutils literal notranslate"><span class="pre">times</span></code> in <code class="docutils literal notranslate"><span class="pre">ascending</span> <span class="pre">order</span></code>, if possible.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TE</span></code> vs <code class="docutils literal notranslate"><span class="pre">TR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TR</span></code> vs. <code class="docutils literal notranslate"><span class="pre">T1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T1</span></code> vs. <code class="docutils literal notranslate"><span class="pre">TE</span></code></p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.2</p>
+<p>True or false? The <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">strength</span></code> of an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> is related to the <code class="docutils literal notranslate"><span class="pre">size</span></code> of the <code class="docutils literal notranslate"><span class="pre">MRI</span></code>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.3</p>
+<p>Choose between the correct answer from 1, 2 or 3. the <code class="docutils literal notranslate"><span class="pre">spin</span></code> of a <code class="docutils literal notranslate"><span class="pre">hydrogen</span> <span class="pre">proton</span></code> has…</p>
+<ol class="simple">
+<li><p>A fixed <code class="docutils literal notranslate"><span class="pre">rotational</span> <span class="pre">frequency</span></code> is the <code class="docutils literal notranslate"><span class="pre">Larmor</span> <span class="pre">frequency</span></code></p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">rotation</span> <span class="pre">frequency</span></code></p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">rotational</span> <span class="pre">frequency</span></code> that depends on the <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> in the <code class="docutils literal notranslate"><span class="pre">MRI</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.4</p>
+<p>What produces <code class="docutils literal notranslate"><span class="pre">noise</span></code> in an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> <code class="docutils literal notranslate"><span class="pre">acquisition</span></code>?</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">B0</span></code> <code class="docutils literal notranslate"><span class="pre">field</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Air</span> <span class="pre">conditioning</span></code> to <code class="docutils literal notranslate"><span class="pre">cool</span></code> the <code class="docutils literal notranslate"><span class="pre">magnet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gradient</span> <span class="pre">coils</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">radio-frequency</span> <span class="pre">antenna</span></code></p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.5</p>
+<p>True or false? The <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">magnet</span></code> consumes a lot of <code class="docutils literal notranslate"><span class="pre">electricity</span></code>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.6</p>
+<p>True or false? <code class="docutils literal notranslate"><span class="pre">Functional</span> <span class="pre">MRI</span></code> and <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code> both use <code class="docutils literal notranslate"><span class="pre">T2*</span> <span class="pre">contrast</span></code>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.7</p>
+<p>In an <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">image</span></code>, we see <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">ventricles</span></code> on a <code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">background</span></code>. Is this a <code class="docutils literal notranslate"><span class="pre">T1</span></code>- or <code class="docutils literal notranslate"><span class="pre">T2</span></code>-<code class="docutils literal notranslate"><span class="pre">weighted</span></code> <code class="docutils literal notranslate"><span class="pre">acquisition</span></code>? Explain why.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.8</p>
+<p>We decide to modify an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">sequence</span></code> to reduce the <code class="docutils literal notranslate"><span class="pre">flip</span> <span class="pre">angle</span></code>: the <code class="docutils literal notranslate"><span class="pre">spins</span></code> will <code class="docutils literal notranslate"><span class="pre">tilt</span></code> by <code class="docutils literal notranslate"><span class="pre">70</span> <span class="pre">degrees</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">90</span> <span class="pre">degrees</span></code>. What will be the effect on the <code class="docutils literal notranslate"><span class="pre">TR</span></code> of this change?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.9</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">acquisition</span></code> is performed with a <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">of</span> <span class="pre">view</span></code> of <code class="docutils literal notranslate"><span class="pre">210</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">210</span> <span class="pre">mm</span></code> <code class="docutils literal notranslate"><span class="pre">in-plane</span></code>, and a <code class="docutils literal notranslate"><span class="pre">resolution</span></code> of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">1</span> <span class="pre">mm</span></code> in the <code class="docutils literal notranslate"><span class="pre">slice</span></code>. What is the <code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">size</span></code> (<code class="docutils literal notranslate"><span class="pre">number</span></code> of <code class="docutils literal notranslate"><span class="pre">pixels</span> <span class="pre">x</span> <span class="pre">number</span></code> of <code class="docutils literal notranslate"><span class="pre">pixels</span></code>)?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.10</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">acquisition</span></code> is carried out with a <code class="docutils literal notranslate"><span class="pre">resolution</span></code> of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">mm</span> <span class="pre">×3</span> <span class="pre">mm</span></code> in the <code class="docutils literal notranslate"><span class="pre">slice</span></code>, a <code class="docutils literal notranslate"><span class="pre">slice</span></code> of <code class="docutils literal notranslate"><span class="pre">dimension</span> <span class="pre">64×64</span></code>, a <code class="docutils literal notranslate"><span class="pre">slice</span> <span class="pre">thickness</span></code> of <code class="docutils literal notranslate"><span class="pre">3.4</span> <span class="pre">mm</span></code> with <code class="docutils literal notranslate"><span class="pre">31</span> <span class="pre">slices</span></code>. We have a <code class="docutils literal notranslate"><span class="pre">TR</span></code> of <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">seconds</span></code>, and we acquire <code class="docutils literal notranslate"><span class="pre">150</span> <span class="pre">volumes</span></code>.
+What is the <code class="docutils literal notranslate"><span class="pre">size</span></code> of the <code class="docutils literal notranslate"><span class="pre">3D</span></code> <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">of</span> <span class="pre">view</span></code>, knowing that the <code class="docutils literal notranslate"><span class="pre">slices</span></code> are acquired in the <code class="docutils literal notranslate"><span class="pre">axial</span> <span class="pre">plane</span></code>?
+What is the <code class="docutils literal notranslate"><span class="pre">duration</span></code> of the <code class="docutils literal notranslate"><span class="pre">acquisition</span></code>?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.11</p>
+<p>To answer this question, read the article by Shukla et al, “<em>Aberrant Frontostriatal Connectivity in Negative Symptoms of Schizophrenia</em>”, published in Schizophrenia Bulletin (2019, 45(5): 1051-59) and available open access at this <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6737477/"> address</a>. The following questions require short answers.</p>
+<ul class="simple">
+<li><p>What is the <code class="docutils literal notranslate"><span class="pre">strength</span></code> of the <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">magnet</span></code>?</p></li>
+<li><p>How many <code class="docutils literal notranslate"><span class="pre">channels</span></code> are present in the <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">antenna</span></code>?</p></li>
+<li><p>What is the <code class="docutils literal notranslate"><span class="pre">TR</span></code> of <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">acquisition</span></code>? and <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">acquisition</span></code>? Comparing these two times with each other, does it make sense that one is bigger than the other?</p></li>
+<li><p>What is the name of the <code class="docutils literal notranslate"><span class="pre">sequence</span></code> used for <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">acquisition</span></code>?</p></li>
+<li><p>What is the name of the <code class="docutils literal notranslate"><span class="pre">sequence</span></code> used for <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">acquisition</span></code>?</p></li>
+<li><p>What is the <code class="docutils literal notranslate"><span class="pre">TE</span></code> of the <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">acquisition</span></code>? and <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">acquisition</span></code>? Comparing these two times with each other, does it make sense that one is bigger than the other?</p></li>
+<li><p>What is the <code class="docutils literal notranslate"><span class="pre">size</span></code> of the <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">acquisition</span></code> <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">of</span> <span class="pre">view</span></code>, in <code class="docutils literal notranslate"><span class="pre">cm</span></code>?</p></li>
+<li><p>How many <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">volumes</span></code> are <code class="docutils literal notranslate"><span class="pre">acquired</span></code> during the <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">sequence</span></code>?</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 2.12</p>
+<p>We want to <code class="docutils literal notranslate"><span class="pre">isolate</span></code> the <code class="docutils literal notranslate"><span class="pre">thalamus</span></code> on an <code class="docutils literal notranslate"><span class="pre">individual</span></code> <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">image</span></code>. Which <code class="docutils literal notranslate"><span class="pre">contrast</span></code> should we use: <code class="docutils literal notranslate"><span class="pre">T1</span></code>, <code class="docutils literal notranslate"><span class="pre">T2</span></code> or both? Please justify your answer.</p>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="cortical_maps.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Cortical maps</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="image_manipulation_nibabel.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Using Python for neuroimaging data - NiBabel</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

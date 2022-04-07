@@ -11,20 +11,74 @@ Traditionally, one way of achieving this is to familiarize students with all par
 
 ### TL;DR
 
-Within this course we will explore basics of the intersection between neuroscience & artificial intelligence, specifically focusing on their respective fundamentals regarding theory, implementation and analyzes, as well as adjacent topics concerning neuro-data-science. To do so, we will follow a “learning by doing” approach in a tripartite manner. Starting from a basic introduction  (Block I), we will run actual experiments (Block II) planned and conducted by you, as well as analyze the resulting data and communicate/present the obtained results (Block III). Thus, we actively seek out realistic examples and workflows that mimic the lifecycle of real-world projects, trying to present you with both a respective overview and hands-on experience. All of this following [open science principles](https://en.wikipedia.org/wiki/Open_science) as outlined in the [rainbow of open science practices](https://zenodo.org/record/1147025#.YWbeymYzblw) below and the aim to enable you to critically evaluate scientific research. Along this way we will also talk about important topics such as [#DEI](https://twitter.com/hashtag/DEI?src=hashtag_click) and systematic biases. For a rather precise outline of the course, please consult the respective section.
+Within this course we will explore basics of the intersection between neuroscience & artificial intelligence, specifically focusing on their respective fundamentals regarding theory, implementation and analyzes, as well as adjacent topics concerning neuro-data-science. To do so, we will follow a “learning by doing” approach in a tripartite manner. Starting from a basic introduction  (Block I), we will run actual experiments (Block II) planned and conducted by you, as well as analyze the resulting data and communicate/present the obtained results (Block III). Thus, we actively seek out realistic examples and workflows that mimic the lifecycle of real-world projects, trying to present you with both a respective overview and hands-on experience. 
 
 ![rainbow os](static/rainbow_os.png)
 
-### How to reach the person in the front
+
+All of this following [open science principles](https://en.wikipedia.org/wiki/Open_science) as outlined in the [rainbow of open science practices](https://zenodo.org/record/1147025#.YWbeymYzblw) below and the aim to enable you to critically evaluate scientific research. Along this way we will also talk about important topics such as [#DEI](https://twitter.com/hashtag/DEI?src=hashtag_click) and systematic biases. For a rather precise outline of the course, please consult the respective section.
+
+![rainbow os](static/rainbow_os.png)
+
+## The framework and setup
+
+All workshop materials will be provided within the [Jupyter Book](https://jupyterbook.org/intro.html) format you're currently looking at, free for everyone to check and try out, as well as utilize further. The workshop itself will use a mixture of slides, code and other media within presentations, practical hands-on sessions and discussion rounds to enable a holistic introduction paired with firsthand experience. Depending on a given participant's computational resources and infrastructure, we provide multiple ways to participate in the workshop as outlined in the [Setup for the workshop](https://repronim.github.io/dgpa_workshop/setup.html) section.    
+
+## Instructors
+
+To provide a holistic introduction into the topic of `reproducible neuroimaging` and its subcomponents, we assembled a stellar team of instructors entailing highly experience experts of both the `ReproNim` team as well as colleagues from adjacent initiatives. You can find them below and get further information via clicking on the respective names. 
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/maren7794">
+        <img src="https://avatars.githubusercontent.com/u/29379501?v=4" width="100px;" alt=""/>
+        <br /><sub><b>Maren Wehrheim (she/her)</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/M-earnest">
+        <img src="https://avatars.githubusercontent.com/u/38036936?v=4" width="100px;" alt=""/>
+        <br /><sub><b>Michael Ernst (she/her)</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/realbitsurfer">
+        <img src="https://avatars.githubusercontent.com/u/25565270?v=4" width="100px;" alt=""/>
+        <br /><sub><b>Luis Marcilla (he/him)</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/jbpoline">
+        <img src="https://avatars.githubusercontent.com/u/16563814?v=4" width="100px;" alt=""/>
+        <br /><sub><b>Felix Körber (he/him)</b></sub>
+      </a>
+    </td>  
+    <td align="center">
+      <a href="https://github.com/PeerHerholz">
+        <img src="https://avatars.githubusercontent.com/u/20129524?s=96&v=4" width="100px;" alt=""/>
+        <br /><sub><b>Peer Herholz (he/him)</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+```{admonition} How to address one another?
+:class: dropdown
+When contacting us, please refrain from using titles when addressing us and super formal language, using our first names is fine and it’s way more important that the content is respectful, fair and constructive (We aim for the same when we reply). However, please let us know if you have a preferred way of interacting with other folks, including how you would liked to be addressed, your pronouns and the level of formality.
+```
+
+
+### How to reach the instructors
 
 The contact information of the instructors are as follows:
 
-- [Peer Herholz (he/him)](https://peerherholz.github.io/)
 - Office hours: [by arrangement via this webpage](https://peerherholz.github.io/contact/)
-- E-mail: Herholz at psych dot uni-frankfurt.de
+- E-mail: please follow the links above
 - preferred mode of contact: usually online to save time and effort for everyone
 
-<iframe src="https://giphy.com/embed/U6GunJi6B1o7ecMfKc" width="240" height="136" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justviralnet-funny-mistake-spelling-U6GunJi6B1o7ecMfKc">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/U6GunJi6B1o7ecMfKc" width="240" height="136" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/justviralnet-funny-mistake-spelling-U6GunJi6B1o7ecMfKc">via GIPHY</a></p></p>
 
 ### Gimme the details
 
@@ -32,30 +86,32 @@ Below you will find important details regarding the course summarized in a compa
 
 #### When and where
 
+As this won't be a "classic" course that entails weekly lectures/assignments, etc. but instead utilizes a different outline that is oriented along the research process, we will have sessions with varying content (situated within three main blocks: [introduction/background](), [project execution](), [project finalization]()) every now and then. Combined with a strong focus on project work and direct supervision, we will organize meetings as we go with all participants. Thus, please watch out for E-Mails/Discord notifications!  
+
 #### What about the pandemic? 
 
 Until further notice, it is assumed that the course will take place in person. This is of course very likely to change given everything we experienced and learned in the last 2 years. Thus, the course is setup in a way that would allow both in person and virtual meetings. If you want to attend in person, please note that the [2G rule](https://www.bundesregierung.de/breg-en/news/federal-regional-consultation-coronavirus-1949666) applies, meaning that you either have to show _proof_ of _full vaccination_ or that you have _recovered from COVID-19_ . Without any of these things you won't be allowed within the University buildings and room where we will meet. Please note that might not be asked when you enter the building but definitely before you enter the room. If you feel uncomfortable doing a busy commute to sit in a room with several other people, please let me know and I'll give my best to come up with a hybrid format. However, based on current regulations there won't be any recordings. Just in case: yes, everyone should wear a mask at all times!
 
-<iframe src="https://giphy.com/embed/opPuISKbzCXAFHhZFJ" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/opPuISKbzCXAFHhZFJ">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/opPuISKbzCXAFHhZFJ" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/opPuISKbzCXAFHhZFJ">via GIPHY</a></p></p>
 
 
 #### Can I use my calculator?
 
 For this class you will need frequent access to a computer. None of the analyses that we will be doing will be very intensive, so this does not need to be a modern or "fast" computer. Still, it will need to be running a standard operating system like Windows, Mac OS X, or Linux. Unfortunately, tablets running mobile operating systems (iOS, Android) probably won't work for this purpose. If this is an issue for you, please get in touch with the instructor as soon as possible so that we can try to figure out a solution. Regarding software and installation thereof, please check the next section.
 
-<iframe src="https://giphy.com/embed/DHqth0hVQoIzS" width="240" height="103" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/maths-DHqth0hVQoIzS">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/DHqth0hVQoIzS" width="240" height="103" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/maths-DHqth0hVQoIzS">via GIPHY</a></p></p>
 
 #### How do I get all the software and do I have to apply for a loan to get it?
 
 Don't worry at all. First, in order to help you get all the software required for the course, a [comprehensive installation instruction]() was compiled. In a step-by-step manner it guides you through the installation process, covering several `OS`: `windows`, `macos` and `linux`. Second, everything will be completely free of charge as we will only use publicly available [open-source software](https://en.wikipedia.org/wiki/Open-source_software). Why? Because teaching students via [proprietary software](https://en.wikipedia.org/wiki/Proprietary_software) is just not fair and won't help anyone: students have to obtain licenses or use those from the university (which usually doesn't have enough for everyone), leading to tremendous problems regarding inequity now and in the future. Additionally, [opens-source software](https://en.wikipedia.org/wiki/Open-source_software) can do everything, if not more, what [proprietary software](https://en.wikipedia.org/wiki/Proprietary_software) can and is furthermore usually better supported, tested and documented, creating a fantastic sense of community. 
 
-<iframe src="https://giphy.com/embed/CTX0ivSQbI78A" width="240" height="177" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/internet-computer-technology-CTX0ivSQbI78A">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/CTX0ivSQbI78A" width="240" height="177" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/internet-computer-technology-CTX0ivSQbI78A">via GIPHY</a></p></p>
 
 #### Where is everything?
 
 All course materials (lecture slides, lecture demo notebooks, lab notebooks, homework assignments, etc.) will be available on the [course website](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/index.html), i.e. the one you're looking at right now. Everything will be completely open and free to use, thus constituting an [open educational resource](https://en.wikipedia.org/wiki/Open_educational_resources) you are free to explore, enhance and share. Thus, this website and all materials will also remain up for the entire duration of the course and beyond, ideally to the end of the internet. The usage of this resource and the materials therein will be explained at the beginning and throughout the course.  
 
-<iframe src="https://giphy.com/embed/c20UV66B7zCWA" width="240" height="155" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/superman-phone-looking-c20UV66B7zCWA">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/c20UV66B7zCWA" width="240" height="155" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/superman-phone-looking-c20UV66B7zCWA">via GIPHY</a></p></p>
 
 #### Syllabus and Text
 
@@ -67,16 +123,14 @@ The course has several textbooks, all of which are online and free:
 
 Additional reading material might be added but will always be open & free with students being informed about any addition.
 
-<iframe src="https://giphy.com/embed/9dFvgd4ID6ne0" width="240" height="135" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/community-nbc-ken-jeong-9dFvgd4ID6ne0">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/9dFvgd4ID6ne0" width="240" height="135" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/community-nbc-ken-jeong-9dFvgd4ID6ne0">via GIPHY</a></p></p>
 
 #### How to get those credits?
 
 
 ##### Exams and Assignments
 
-##### Grading
-
-<iframe src="https://giphy.com/embed/yFHkrrbfITemc" width="240" height="173" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/exams-yFHkrrbfITemc">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/yFHkrrbfITemc" width="240" height="173" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/exams-yFHkrrbfITemc">via GIPHY</a></p></p>
 
 ##### Late Homework & Extension Policy
 
@@ -102,7 +156,7 @@ Please notify the instructor of your pending absence at least fourteen days prio
 
 This course has a `Code of conduct`. Please inform yourself about the specifics by carefully reading through the [respective section](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/CoC.html).
 
-<iframe src="https://giphy.com/embed/l5s71uAp3CzKwxwkoZ" width="240" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/theoffice-nbc-the-office-tv-l5s71uAp3CzKwxwkoZ">via GIPHY</a></p>
+<p align="center"><iframe src="https://giphy.com/embed/l5s71uAp3CzKwxwkoZ" width="240" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/theoffice-nbc-the-office-tv-l5s71uAp3CzKwxwkoZ">via GIPHY</a></p></p>
 
 
 ### How to Get Your Question(s) Answered and/or Provide Feedback

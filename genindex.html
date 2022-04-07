@@ -118,18 +118,47 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="introduction/pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="introduction/pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="introduction/notebooks/neuroscience/cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="introduction/notebooks/neuroscience/mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="introduction/notebooks/neuroscience/image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="experimentation/experimentation.html">
-   Experimentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="finalization/finalization.html">
-   Finalization - communication, documentation &amp; outreach
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="projects.html">
@@ -219,14 +248,17 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1></h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -241,29 +273,11 @@
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
-
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
@@ -271,7 +285,7 @@
     
       By Peer Herholz<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>
