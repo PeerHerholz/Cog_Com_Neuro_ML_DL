@@ -1,2 +1,0 @@
-# Experimentation III
-
