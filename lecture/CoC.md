@@ -16,7 +16,7 @@ Harassment includes, but _is not limited to_:
 ⛔ Advocating for, or encouraging, any of the above behaviour  
 ⛔ Unwelcome sexual attention  
 
-### *Microaggressions*
+## *Microaggressions*
 Incidents can take the form of “microaggressions,” which is a damaging form of harassment. Microaggressions are the everyday slights or insults which communicate negative messages to target individuals, often based upon their marginalized group membership. Over time, microaggressions can take a great toll on mental and emotional health, and the target’s feeling of belonging in science and academia. The following examples can all be labeled micro-aggressions:  
 ⛔ Commenting on a woman’s appearance rather than her work;  
 ⛔ Only directing questions at male colleagues when there are female experts in the room;  
@@ -26,11 +26,11 @@ Incidents can take the form of “microaggressions,” which is a damaging form 
 ⛔ Exclusion from a group can be a common nonverbal form of microaggression.  
 ⛔ Microaggressions can be couched in the form of a “compliment,” (e.g. “you’re too attractive to be a scientist”).  
 
-### *Respecting differences*  
+## *Respecting differences*  
 Participants come from many cultures and backgrounds. We therefore expect everyone to be very respectful of different cultural practices, attitudes, and beliefs. This includes being aware of preferred titles and pronouns, as well as using a respectful tone of voice.
 While we do not assume participants know the cultural practices of every ethnic and cultural group, we expect members to recognize and respect differences within our community. This means being open to learning from and educating others, as well as educating yourself.
 
-### *How to treat each other*  
+## *How to treat each other*  
 👍 Be respectful and value each other’s ideas, styles and viewpoints.  
 👍 Be direct but professional; we cannot withhold hard truths.  
 👍 Be inclusive and help new perspectives be heard.  
