@@ -2,6 +2,7 @@ myst-nb==0.12.0
 myst-parser==0.13.6
 jupyter-book==0.11.1
 nbclient==0.5.1
+jinja2==3.0.0
 jupytext
 nilearn
 seaborn
