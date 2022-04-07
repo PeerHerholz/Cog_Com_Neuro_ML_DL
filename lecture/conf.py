@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Cog_Com_Neuro_ML_DL'
-copyright = '2021, Peer Herholz'
+copyright = '2022, Peer Herholz'
 author = 'Peer Herholz'
 
 master_doc = "index"

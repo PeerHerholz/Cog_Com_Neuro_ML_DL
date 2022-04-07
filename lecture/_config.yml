@@ -7,7 +7,7 @@
 # Book settings
 title                       : "Spring term 2022"  # The title of the book. Will be placed in the left navbar.
 author                      : Peer Herholz  # The author of the book
-copyright                   : "2021"  # Copyright year to be placed in the footer
+copyright                   : "2022"  # Copyright year to be placed in the footer
 logo                        : "static/cog_com_neuro_ml_dl_logo.png"  # A path to the book logo
 exclude_patterns            : []  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 
@@ -56,7 +56,7 @@ sphinx:
     # TODO: #917 this path will be the default in sphinx v4
     # mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     # However, it is incompatible with the mathjax config below for macros
-    mathjax3_config:
+    mathjax_config:
       TeX:
         Macros:
           "N": "\\mathbb{N}"
