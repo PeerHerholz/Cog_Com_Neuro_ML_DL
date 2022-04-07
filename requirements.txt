@@ -1,10 +1,9 @@
-ipykernel
-sphinx-book-theme
-myst-nb==0.13.2
-ghp-import
-jupyter-book==0.12.2
-jupytext==1.11.5
-nilearn==0.8.0
+myst-nb==0.12.0
+myst-parser==0.13.6
+jupyter-book==0.11.1
+nbclient==0.5.1
+jupytext
+nilearn
 seaborn
 tensorflow
 mne
