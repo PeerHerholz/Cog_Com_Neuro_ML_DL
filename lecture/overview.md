@@ -13,12 +13,12 @@ Traditionally, one way of achieving this is to familiarize students with all par
 
 Within this course we will explore basics of the intersection between neuroscience & artificial intelligence, specifically focusing on their respective fundamentals regarding theory, implementation and analyzes, as well as adjacent topics concerning neuro-data-science. To do so, we will follow a “learning by doing” approach in a tripartite manner. Starting from a basic introduction  (Block I), we will run actual experiments (Block II) planned and conducted by you, as well as analyze the resulting data and communicate/present the obtained results (Block III). Thus, we actively seek out realistic examples and workflows that mimic the lifecycle of real-world projects, trying to present you with both a respective overview and hands-on experience. 
 
-![rainbow os](static/rainbow_os.png)
+![outline](../../static/Cog_Com_Neuro_ML_DL_outline.png)
 
 
 All of this following [open science principles](https://en.wikipedia.org/wiki/Open_science) as outlined in the [rainbow of open science practices](https://zenodo.org/record/1147025#.YWbeymYzblw) below and the aim to enable you to critically evaluate scientific research. Along this way we will also talk about important topics such as [#DEI](https://twitter.com/hashtag/DEI?src=hashtag_click) and systematic biases. For a rather precise outline of the course, please consult the respective section.
 
-![rainbow os](static/rainbow_os.png)
+![rainbow os](../../static/rainbow_os.png)
 
 ## The framework and setup
 
@@ -86,11 +86,15 @@ Below you will find important details regarding the course summarized in a compa
 
 #### When and where
 
-As this won't be a "classic" course that entails weekly lectures/assignments, etc. but instead utilizes a different outline that is oriented along the research process, we will have sessions with varying content (situated within three main blocks: [introduction/background](), [project execution](), [project finalization]()) every now and then. Combined with a strong focus on project work and direct supervision, we will organize meetings as we go with all participants. Thus, please watch out for E-Mails/Discord notifications!  
+As this won't be a "classic" course that entails weekly lectures/assignments, etc. but instead utilizes a different outline that is oriented along the research process, we will have sessions with varying content (situated within three main blocks: [introduction/background](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/introduction/pages/introduction.html), [project execution](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/introduction/pages/experimentation.html), [project finalization](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/introduction/pages/finalization.html)) every now and then. Combined with a strong focus on project work and direct supervision, we will organize meetings as we go with all participants. Thus, please watch out for E-Mails/Discord notifications!  
+
+In the beginning we will meet in [PEG 5.129](https://qis.server.uni-frankfurt.de/qisserver/rds?state=wsearchv&search=3&alias_einrichtung.eid=einrichtung.dtxt&alias_k_raumart.raumartid=k_raumart.dtxt&raum.dtxt=5.G+129&P_start=0&P_anzahl=10&_form=display&noDBAction=y&init=y) and check how well this works for us!
+
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=8.661464452743532%2C50.12589530933526%2C8.67423176765442%2C50.130778644149046&amp;layer=mapnik&amp;marker=50.12833703902714%2C8.667848110198975" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=50.12834&amp;mlon=8.66785#map=17/50.12834/8.66785">View Larger Map</a></small>
+
 
 #### What about the pandemic? 
-
-Until further notice, it is assumed that the course will take place in person. This is of course very likely to change given everything we experienced and learned in the last 2 years. Thus, the course is setup in a way that would allow both in person and virtual meetings. If you want to attend in person, please note that the [2G rule](https://www.bundesregierung.de/breg-en/news/federal-regional-consultation-coronavirus-1949666) applies, meaning that you either have to show _proof_ of _full vaccination_ or that you have _recovered from COVID-19_ . Without any of these things you won't be allowed within the University buildings and room where we will meet. Please note that might not be asked when you enter the building but definitely before you enter the room. If you feel uncomfortable doing a busy commute to sit in a room with several other people, please let me know and I'll give my best to come up with a hybrid format. However, based on current regulations there won't be any recordings. Just in case: yes, everyone should wear a mask at all times!
+Until further notice, it is assumed that the course will take place in person. This is of course very likely to change given everything we experienced and learned in the last 2 years. Thus, the course is setup in a way that would allow both in person and virtual meetings. If you want to attend in person, please note that most rules are currently not in place anymore but we would to encourage you to still follow the [2G rule](https://www.bundesregierung.de/breg-en/news/federal-regional-consultation-coronavirus-1949666) applies, meaning that you ideally are _fully vaccinated_ or that you have _recovered from COVID-19_ . If you feel uncomfortable doing a busy commute to sit in a room with several other people, please let me know and I'll give my best to come up with a hybrid format. However, based on current regulations there most likely won't be any recordings. Just in case: yes, everyone should wear a mask at all times!
 
 <p align="center"><iframe src="https://giphy.com/embed/opPuISKbzCXAFHhZFJ" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/opPuISKbzCXAFHhZFJ">via GIPHY</a></p></p>
 
@@ -117,9 +121,9 @@ All course materials (lecture slides, lecture demo notebooks, lab notebooks, hom
 
 As noted above, this page serves as the syllabus for this course, with the precise outline indicated in the [respective section](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/outline.html). This syllabus is subject to change; students who miss class are responsible for learning about any changes to the syllabus.
 
-The course has several textbooks, all of which are online and free:
+This course furthermore has an open shared [zotero library](https://www.zotero.org/groups/4553800/cog_com_neuro_ml_dl) where we add all articles presented/discussed during class.
 
-
+<iframe src="https://bibbase.org/show?bib=https%3A%2F%2Fapi.zotero.org%2Fgroups%2F4553800%2Fitems%3Fkey%3DBfP7bN7FF9dJwtyiLBORewdg%26format%3Dbibtex%26limit%3D100"  frameborder="0" width="700" height="370"></iframe>
 
 Additional reading material might be added but will always be open & free with students being informed about any addition.
 
@@ -127,14 +131,30 @@ Additional reading material might be added but will always be open & free with s
 
 #### How to get those credits?
 
+As this is a practical lab course/research internship intended to provide you with an introduction to the intersection of `neuroscience` & `machine learning` workflow via a mixture of guided and independent work, your assignments and tasks will be rather diverse and quite different from other modules. This is by all means intended and founded on the idea that this course should entail a holistic overview of the respective skills and research process beyond the classic "do this, do that, n=30, do a t-test, tell a story, publish or perish" nonsense. Instead, the goal is to enable you to critically perceive and evaluate research in this fascinating new field, its implementation and its outcomes, regarding both your own work and that of others. The assignments and tasks aim to reflect these aspects and will entail working on research projects, evaluating that of others, reading project-related and general research-related literature and more. The different parts and grading scheme are further outlined below. 
 
 ##### Exams and Assignments
+
+In general, there will be two classes of assignments and tasks you need to work on in order to (successfully) pass this course: ungraded assessments and a graded report. The first will take place throughout the semester at various time points whereas the latter will entail one interactive research report after the last session. 
+
+The ungraded assessments focus on different parts of the research workflow and your active engagement with them:
+
+- reading articles/materials for your project/that are assigned for class (individually or in groups)
+- present a research article (journal club) related to your project (individually)
+- conduct reviews of another participant's project and provide feedback (in groups) 
+- prepare a scientific poster showcasing the results of your experiment (individually) 
+- maintain a lab notebook with weekly updates (individually) 
+- provide all resources in a FAIR manner (individually) 
+
+The graded interactive research report aims to assess your ability to bring the different parts of the research workflow together:
+
+- create an interactive research report via a `jupyter notebook`/`jupyter book` in the style of a scientific paper summarizing your experiment (individually) 
 
 <p align="center"><iframe src="https://giphy.com/embed/yFHkrrbfITemc" width="240" height="173" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/exams-yFHkrrbfITemc">via GIPHY</a></p></p>
 
 ##### Late Homework & Extension Policy
 
-`Homework assignments` are due `5 days` after a given class. `Homework assignments` must be turned in on the due date in order to receive full credit. `Homework assignment` turned in less than 1 week late will be accepted but the score will be penalized by `10%`. `Homework assignments` later than 1 week will _not_ be accepted.
+If there are `Homework assignments` they will be due `5 days` after a given class. `Homework assignments` must be turned in on the due date in order to receive full credit. `Homework assignment` turned in less than 1 week late will be accepted but the score will be penalized by `10%`. `Homework assignments` later than 1 week will _not_ be accepted.
 
 Late `homework assignments` will also be accepted under _exceptional circumstances_ (e.g., medical or family emergency) and at the discretion of the instructor (e.g. exceptional denotes a rare event) with no penalty. This policy allowing for exceptional circumstances is definitely a right, but courtesy to be used when needed and not abused. Should you encounter such circumstances, simply email assignment to instructor and note "late submission due to exceptional circumstances". You do not need to provide any further justification or personally revealing information regarding the details.
 
