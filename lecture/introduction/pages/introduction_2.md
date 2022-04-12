@@ -5,14 +5,14 @@
 
 In the following you'll find the `objectives` and `materials` for each of the topics we'll discuss during this session.
 
-### Topic 1
+### Cortical maps - neuroimaging in space (& time)
 
 #### Objectives📍
 
 #### Materials📓
 
 
-### Topic 2
+### Cortical maps - neuroimaging in time (& space)
 
 #### Objectives📍
 
@@ -20,7 +20,7 @@ In the following you'll find the `objectives` and `materials` for each of the to
 
 ## Project related work 🥼🧑🏿‍🔬👩🏻‍🔬
 
-Not applicable, as project related work didn't start yet.
+Not directly applicable, as project related work didn't start yet. However, you could start brainstorming about ideas you would like to pursue in your research project and which of the introduced methods would provide you with suitable data. 
 
 ## tasks for subsequent meeting 🖥️✍🏽📖
 
