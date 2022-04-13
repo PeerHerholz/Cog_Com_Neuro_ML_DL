@@ -39,19 +39,19 @@ To provide a holistic introduction into the topic of `reproducible neuroimaging`
     <td align="center">
       <a href="https://github.com/M-earnest">
         <img src="https://avatars.githubusercontent.com/u/38036936?v=4" width="100px;" alt=""/>
-        <br /><sub><b>Michael Ernst (she/her)</b></sub>
+        <br /><sub><b>Michael Ernst (he/him)</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/realbitsurfer">
         <img src="https://avatars.githubusercontent.com/u/25565270?v=4" width="100px;" alt=""/>
-        <br /><sub><b>Luis Marcilla (he/him)</b></sub>
+        <br /><sub><b>Luis Marcilla</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/jbpoline">
         <img src="https://avatars.githubusercontent.com/u/16563814?v=4" width="100px;" alt=""/>
-        <br /><sub><b>Felix Körber (he/him)</b></sub>
+        <br /><sub><b>Felix Körber</b></sub>
       </a>
     </td>  
     <td align="center">
