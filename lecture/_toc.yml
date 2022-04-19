@@ -16,6 +16,7 @@ chapters:
       - file: introduction/notebooks/neuroscience/image_manipulation_nibabel.ipynb
     - file: introduction/notebooks/neuroscience/morphometry.ipynb
     - file: introduction/notebooks/neuroscience/fmri_intro.ipynb      
+      - file: introduction/notebooks/neuroscience/image_manipulation_nilearn.ipynb
   - file: introduction/pages/introduction_3.md
   - file: introduction/pages/introduction_4.md
   - file: introduction/pages/introduction_5.md
