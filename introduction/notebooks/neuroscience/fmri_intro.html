@@ -172,10 +172,17 @@
        Morphometric analyzes
       </a>
      </li>
-     <li class="toctree-l3 current active">
+     <li class="toctree-l3 current active has-children">
       <a class="current reference internal" href="#">
        Functional MRI
       </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="simple">
+      </ul>
      </li>
     </ul>
    </li>
@@ -876,7 +883,7 @@ is an <code class="docutils literal notranslate"><span class="pre">imaging</span
 <div class="section" id="registration-in-stereotactic-space">
 <h4>Registration in stereotactic space<a class="headerlink" href="#registration-in-stereotactic-space" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="registration-macaque-fig">
-<a class="reference internal image-reference" href="static/neuroscience/registration-macaque.gif"><img alt="static/neuroscience/registration-macaque.gif" src="static/neuroscience/registration-macaque.gif" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/registration-macaque.gif"><img alt="../../../_images/registration-macaque.gif" src="../../../_images/registration-macaque.gif" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Illustration of the <code class="docutils literal notranslate"><span class="pre">registration</span> <span class="pre">process</span></code> of a <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">MRI</span></code> on a <code class="docutils literal notranslate"><span class="pre">stereotactic</span> <span class="pre">space</span></code> (here in the <code class="docutils literal notranslate"><span class="pre">macaque</span></code>). We start with an <code class="docutils literal notranslate"><span class="pre">affine</span> <span class="pre">transformation</span></code> (to correct the <code class="docutils literal notranslate"><span class="pre">position</span></code> of the <code class="docutils literal notranslate"><span class="pre">head</span></code> and its <code class="docutils literal notranslate"><span class="pre">size</span></code>), then <code class="docutils literal notranslate"><span class="pre">non-linear</span></code> (to adjust the <code class="docutils literal notranslate"><span class="pre">position</span></code> of the <code class="docutils literal notranslate"><span class="pre">furrows</span></code> and <code class="docutils literal notranslate"><span class="pre">subcortical</span> <span class="pre">structures</span></code>). Figure under CC-BY 4.0 license contributed by <a class="reference external" href="https://github.com/danjgale">Dan J Gale</a>.
 For <code class="docutils literal notranslate"><span class="pre">inter-individual</span> <span class="pre">comparisons</span></code> or <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">statistical</span> <span class="pre">analyses</span></code>, there must be a match between the <code class="docutils literal notranslate"><span class="pre">voxels</span></code> of <code class="docutils literal notranslate"><span class="pre">images</span></code> from different <code class="docutils literal notranslate"><span class="pre">individuals</span></code>. However, <code class="docutils literal notranslate"><span class="pre">brains</span></code> and <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">structures</span></code> can have different <code class="docutils literal notranslate"><span class="pre">sizes</span></code> and <code class="docutils literal notranslate"><span class="pre">shapes</span></code> from <code class="docutils literal notranslate"><span class="pre">individual</span></code> to <code class="docutils literal notranslate"><span class="pre">individual</span></code>. <code class="docutils literal notranslate"><span class="pre">Registration</span></code> in <code class="docutils literal notranslate"><span class="pre">stereotactic</span> <span class="pre">space</span></code>, also sometimes called <em>spatial normalization</em>, consists in <code class="docutils literal notranslate"><span class="pre">registering</span></code> the <span class="math notranslate nohighlight">\(T_1\)</span> <code class="docutils literal notranslate"><span class="pre">image</span></code> in a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">standard</span> <span class="pre">space</span></code> defined by the chosen <code class="docutils literal notranslate"><span class="pre">atlas</span></code>, <code class="docutils literal notranslate"><span class="pre">template</span></code>, or so on, thus making the <code class="docutils literal notranslate"><span class="pre">brains</span></code> of different <code class="docutils literal notranslate"><span class="pre">individuals</span> <span class="pre">comparable</span></code>. This technique is identical to what is done for <code class="docutils literal notranslate"><span class="pre">morphometry</span></code> studies. The <a class="reference external" href="http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009">MNI152 template</a> (<a class="reference external" href="https://www.mcgill.ca/neuro/">Montreal Neurological Institute</a>) is widely used as a <code class="docutils literal notranslate"><span class="pre">standard</span> <span class="pre">space</span></code> in the community. The respective <code class="docutils literal notranslate"><span class="pre">transformation</span></code> combines <code class="docutils literal notranslate"><span class="pre">affine</span> <span class="pre">transformation</span></code> and <code class="docutils literal notranslate"><span class="pre">non-linear</span> <span class="pre">transformation</span></code>.</span><a class="headerlink" href="#registration-macaque-fig" title="Permalink to this image">¶</a></p>
 </div>
@@ -1284,6 +1291,8 @@ The following questions require short-answer answers.</p>
 <li><p>What is the main result of the study?</p></li>
 </ul>
 </div>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
