@@ -1,0 +1,1329 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functional MRI &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="morphometry.html">
+       Morphometric analyzes
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/fmri_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/fmri_intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/fmri_intro.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/fmri_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physical-and-physiological-principles">
+   Physical and physiological principles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-images-time">
+     3D images + time
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neurovascular-coupling">
+     Neurovascular coupling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bold-signal">
+     BOLD signal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hemodynamic-response-function">
+     Hemodynamic response function
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#short-impulse-response">
+       Short impulse response
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-brain-bold-as-a-system">
+       The Brain (BOLD) as a System
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fmri-data-pre-processing">
+   fMRI data pre-processing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#realignment-registration">
+     Realignment/registration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#movement-registration">
+       Movement registration
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bold-registration-with-t-1">
+       BOLD registration with
+       <span class="math notranslate nohighlight">
+        \(T_1\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#registration-in-stereotactic-space">
+       Registration in stereotactic space
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spatial-smoothing">
+     Spatial smoothing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-out-factors-of-no-interest">
+     Filtering out factors of no interest
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-analyses">
+   Statistical analyses
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fmri-task-based-experiments">
+     fMRI - Task-Based Experiments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#massive-univariate-regression">
+     Massive univariate regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fmri-activation-maps">
+     fMRI - Activation Maps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Functional MRI</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physical-and-physiological-principles">
+   Physical and physiological principles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-images-time">
+     3D images + time
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neurovascular-coupling">
+     Neurovascular coupling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bold-signal">
+     BOLD signal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hemodynamic-response-function">
+     Hemodynamic response function
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#short-impulse-response">
+       Short impulse response
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-brain-bold-as-a-system">
+       The Brain (BOLD) as a System
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fmri-data-pre-processing">
+   fMRI data pre-processing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#realignment-registration">
+     Realignment/registration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#movement-registration">
+       Movement registration
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bold-registration-with-t-1">
+       BOLD registration with
+       <span class="math notranslate nohighlight">
+        \(T_1\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#registration-in-stereotactic-space">
+       Registration in stereotactic space
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spatial-smoothing">
+     Spatial smoothing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-out-factors-of-no-interest">
+     Filtering out factors of no interest
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-analyses">
+   Statistical analyses
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fmri-task-based-experiments">
+     fMRI - Task-Based Experiments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#massive-univariate-regression">
+     Massive univariate regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fmri-activation-maps">
+     fMRI - Activation Maps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="functional-mri">
+<span id="fmri-chapter"></span><h1>Functional MRI<a class="headerlink" href="#functional-mri" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Functional_magnetic_resonance_imaging">Functional magnetic resonance imaging</a>
+is an <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">modality</span></code> that <strong>indirectly</strong> measures <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>. <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> acquires <code class="docutils literal notranslate"><span class="pre">images</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> in action in relation to different <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">conditions</span></code>, having been designed to isolate specific <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">processes</span></code>. <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> therefore makes it possible to <code class="docutils literal notranslate"><span class="pre">map</span></code> the <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">organization</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, in different <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">contexts</span></code>.</p>
+<div class="figure align-default" id="fmri-fig">
+<a class="reference internal image-reference" href="../../../_images/fmri.jpg"><img alt="../../../_images/fmri.jpg" src="../../../_images/fmri.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">images</span></code> make it possible to observe <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">activation</span></code>, taken from <a class="reference external" href="https://fr.wikipedia.org/wiki/Imagerie_par_r%C3%A9sonance_magn%C3%A9tique_fonctionnelle#/media/Fichier:Researcher-test.jpg">wikipedia</a>.</span><a class="headerlink" href="#fmri-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The specific <code class="docutils literal notranslate"><span class="pre">objectives</span></code> of this part of the course are:</p>
+<ul class="simple">
+<li><p>Understand the <strong>physical</strong> and <strong>physiological</strong> principles of the <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">signal</span></code>.</p></li>
+<li><p>Understand the <code class="docutils literal notranslate"><span class="pre">model</span></code> of the <strong>haemodynamic response</strong>, invariant over time, which makes it possible to <code class="docutils literal notranslate"><span class="pre">estimate</span></code> the level of <code class="docutils literal notranslate"><span class="pre">activation</span></code> in <code class="docutils literal notranslate"><span class="pre">response</span></code> to various <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">paradigms</span></code>.</p></li>
+<li><p>Know the main stages of <strong>pre-processing</strong> of <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">data</span></code>, namely <strong>registration</strong>, <strong>spatial smoothing</strong> and <strong>filtering of factors of non-interest</strong>. These steps are necessary in order to reduce <code class="docutils literal notranslate"><span class="pre">noise</span></code> in the <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">signal</span></code>, which does not reflect <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code>.</p></li>
+<li><p>Know the principle of generating an <strong>activation map</strong>, which, using <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">models</span></code>, makes it possible to test hypotheses on the <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">organization</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="physical-and-physiological-principles">
+<h2>Physical and physiological principles<a class="headerlink" href="#physical-and-physiological-principles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="d-images-time">
+<h3>3D images + time<a class="headerlink" href="#d-images-time" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="text-align:center head"><p><code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code></p></th>
+<th class="text-align:right head"><p><code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">MRI</span> <span class="pre">(T2*)</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Study</span> <span class="pre">objective</span></code></p></td>
+<td class="text-align:center"><p><strong>Anatomy, structures and properties of tissues</strong></p></td>
+<td class="text-align:right"><p><strong>functional organization</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Dimensions</span></code></p></td>
+<td class="text-align:center"><p>1 volume - <strong>3D</strong></p></td>
+<td class="text-align:right"><p>multiple <code class="docutils literal notranslate"><span class="pre">volumes</span></code> over <code class="docutils literal notranslate"><span class="pre">time</span></code> - <strong>4D</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Acquisition</span> <span class="pre">duration</span></code></p></td>
+<td class="text-align:center"><p>multiple minutes</p></td>
+<td class="text-align:right"><p>seconds</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">images</span></code> are like a <code class="docutils literal notranslate"><span class="pre">movie</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> in action. They are composed of a <strong>series of 3D volumes</strong> which follow one another at a given <code class="docutils literal notranslate"><span class="pre">frequency</span></code>, rather than a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">volume</span></code> as was the case in <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code>. We then speak of <strong>4D</strong> or <strong>3D+t</strong> <code class="docutils literal notranslate"><span class="pre">images</span></code> since the <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">dimensions</span></code> (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>) are extended by the <code class="docutils literal notranslate"><span class="pre">dimension</span></code> of time <code class="docutils literal notranslate"><span class="pre">t</span></code>. We could, for example, acquire <code class="docutils literal notranslate"><span class="pre">1</span></code> <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">volume</span></code> every <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">seconds</span></code>, for <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">minutes</span></code>, which would result in an <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> <code class="docutils literal notranslate"><span class="pre">dataset</span></code> consisting of <code class="docutils literal notranslate"><span class="pre">180</span> <span class="pre">3D</span> <span class="pre">brain</span> <span class="pre">volumes</span></code>.</p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import required libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">nilearn</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span><span class="p">,</span> <span class="n">NiftiMasker</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Get a functional MRI from one participant</span>
+<span class="n">haxby_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span><span class="p">()</span>
+<span class="n">haxby_func_filename</span> <span class="o">=</span> <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Initialize the masker</span>
+<span class="n">brain_masker</span> <span class="o">=</span> <span class="n">NiftiMasker</span><span class="p">(</span>
+    <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+    <span class="n">detrend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">low_pass</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">t_r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;nilearn_cache&#39;</span><span class="p">,</span> <span class="n">memory_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Apply the masker</span>
+<span class="n">brain_time_series</span> <span class="o">=</span> <span class="n">brain_masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">haxby_func_filename</span><span class="p">,</span>
+                                               <span class="n">confounds</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># Functions for the visualization of 3D voxels</span>
+<span class="k">def</span> <span class="nf">expand_coordinates</span><span class="p">(</span><span class="n">indices</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">indices</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">z</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">explode</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">shape_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">shape_arr</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">exploded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">size</span><span class="p">,</span> <span class="n">shape_arr</span><span class="p">[</span><span class="mi">3</span><span class="p">:]]),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">exploded</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="k">return</span> <span class="n">exploded</span>
+
+<span class="c1"># Initialization of the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Visualize a voxel</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="s1">&#39;#1f77b430&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">explode</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">filled</span> <span class="o">=</span> <span class="n">explode</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">expand_coordinates</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">filled</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">z</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">voxels</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">filled</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Voxel (3D)&quot;</span><span class="p">)</span>
+
+<span class="c1"># add time series</span>
+<span class="c1"># random voxels</span>
+<span class="n">voxel</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">brain_time_series</span><span class="p">[:,</span> <span class="n">voxel</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Time course of a voxel&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;BOLD signal&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;voxel-timeseries-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="voxel-timeseries-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/fmri_intro_1_7.png" src="../../../_images/fmri_intro_1_7.png" />
+</div>
+<p class="caption"><span class="caption-text">Illustration of a <code class="docutils literal notranslate"><span class="pre">volume</span> <span class="pre">element</span></code> (<code class="docutils literal notranslate"><span class="pre">voxel</span></code>), of size <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">mm</span> <span class="pre">x</span> <span class="pre">3</span> <span class="pre">mm</span></code>, and the associated <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">time</span> <span class="pre">course</span></code>.</span><a class="headerlink" href="#voxel-timeseries-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">volume</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> (<code class="docutils literal notranslate"><span class="pre">3D</span></code>) is formed by several thousand <code class="docutils literal notranslate"><span class="pre">voxels</span></code>, which are small <code class="docutils literal notranslate"><span class="pre">volume</span></code> units (<code class="docutils literal notranslate"><span class="pre">3D</span></code>) having a <code class="docutils literal notranslate"><span class="pre">coordinate</span></code> in <code class="docutils literal notranslate"><span class="pre">space</span></code> <strong>x, y, z</strong>. In <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>, for each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, we have several <code class="docutils literal notranslate"><span class="pre">measurement</span> <span class="pre">points</span></code> of <code class="docutils literal notranslate"><span class="pre">activity</span></code> over <code class="docutils literal notranslate"><span class="pre">time</span></code>, which forms what is called a <strong>time series</strong> or <strong>time course</strong>. Typically, a few <code class="docutils literal notranslate"><span class="pre">tens</span></code> to <code class="docutils literal notranslate"><span class="pre">hundreds</span></code> of <code class="docutils literal notranslate"><span class="pre">measurement</span> <span class="pre">points</span></code> describe the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code>. These <code class="docutils literal notranslate"><span class="pre">measurement</span> <span class="pre">points</span></code> are separated by a <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">interval</span></code>, which can vary from <code class="docutils literal notranslate"><span class="pre">milliseconds</span></code> to <code class="docutils literal notranslate"><span class="pre">seconds</span></code>. These characteristics represent a good compromise between <code class="docutils literal notranslate"><span class="pre">spatial</span></code> and <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code>. As we will see later, the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code> <strong>indirectly</strong> reflects changes in <code class="docutils literal notranslate"><span class="pre">neural</span> <span class="pre">activity</span></code> over <code class="docutils literal notranslate"><span class="pre">time</span></code>. Much of the work in <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">MRI</span></code> consists of analyzing these <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code>.</p>
+<div class="tip admonition" id="resolution">
+<p class="admonition-title">Trade-off between spatial vs temporal resolution in fMRI</p>
+<p>When choosing an <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> <code class="docutils literal notranslate"><span class="pre">sequence</span></code>, we are often led to favor <code class="docutils literal notranslate"><span class="pre">temporal</span></code> vs. <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code>. For example, we can take <code class="docutils literal notranslate"><span class="pre">images</span></code> of the <code class="docutils literal notranslate"><span class="pre">whole</span> <span class="pre">brain</span></code> in <code class="docutils literal notranslate"><span class="pre">700</span> <span class="pre">ms</span></code> with a spatial resolution of 3 x 3 x 3 mm<span class="math notranslate nohighlight">\(^3\)</span>, or acquire the same <code class="docutils literal notranslate"><span class="pre">image</span></code> with a <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> of 2 x 2 x 2 mm<span class="math notranslate nohighlight">\(^3\)</span> , but this time in <code class="docutils literal notranslate"><span class="pre">1500</span> <span class="pre">ms</span></code>. There is no one choice of <code class="docutils literal notranslate"><span class="pre">parameter</span></code> that is better than another, but the researcher must decide whether <code class="docutils literal notranslate"><span class="pre">spatial</span></code> or <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">resolution</span></code> is more important for their research questions.</p>
+</div>
+</div>
+<div class="section" id="neurovascular-coupling">
+<span id="neurovascular-coupling-fmri-section"></span><h3>Neurovascular coupling<a class="headerlink" href="#neurovascular-coupling" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="neurovascular-fig">
+<a class="reference internal image-reference" href="../../../_images/neurovascular-fig.jpg"><img alt="../../../_images/neurovascular-fig.jpg" src="../../../_images/neurovascular-fig.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Summary of neuro-glial-vascular architecture</strong>. (a) <code class="docutils literal notranslate"><span class="pre">Astrocytes</span></code> wrap around <code class="docutils literal notranslate"><span class="pre">synapses</span></code>, and have <code class="docutils literal notranslate"><span class="pre">projections</span></code> to the <code class="docutils literal notranslate"><span class="pre">surface</span></code> of <code class="docutils literal notranslate"><span class="pre">microcapillaries</span></code>. (b) <code class="docutils literal notranslate"><span class="pre">Astrocytes</span></code> establish exclusive <code class="docutils literal notranslate"><span class="pre">anatomical</span></code> domains, which minimally overlap with those of their <code class="docutils literal notranslate"><span class="pre">astrocyte</span></code> neighbors. (c) Diagram representing the <code class="docutils literal notranslate"><span class="pre">morphology</span></code> of a <code class="docutils literal notranslate"><span class="pre">glial</span> <span class="pre">cell</span></code>, with a <code class="docutils literal notranslate"><span class="pre">body</span></code> connected to a tree structure. (d) <code class="docutils literal notranslate"><span class="pre">Neural</span> <span class="pre">micro-circuit</span></code>. (e) <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">microvasculature</span></code>. (f) illustration of <code class="docutils literal notranslate"><span class="pre">neural</span> <span class="pre">microcircuit</span></code> size and <code class="docutils literal notranslate"><span class="pre">vasculature</span></code>. (g) percentage of <code class="docutils literal notranslate"><span class="pre">volume</span> <span class="pre">occupancy</span></code> in <code class="docutils literal notranslate"><span class="pre">circuit</span> <span class="pre">space</span></code>. Figure taken from the article by Zisis et al. (2021) <a href="#id1"><span class="problematic" id="id2">:cite:p:`Zisis2021-ai`</span></a>, licensed under CC-BY-NC-ND.</span><a class="headerlink" href="#neurovascular-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The link between <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code> and <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">signal</span></code> is based on the phenomenon of <strong>neurovascular coupling</strong>, and more specifically the <code class="docutils literal notranslate"><span class="pre">coupling</span></code> between the <code class="docutils literal notranslate"><span class="pre">post-synaptic</span> <span class="pre">activity</span></code> of <code class="docutils literal notranslate"><span class="pre">neurons</span></code> and <code class="docutils literal notranslate"><span class="pre">blood</span> <span class="pre">micro-capillaries</span></code>. The production of <code class="docutils literal notranslate"><span class="pre">neurotransmitters</span></code> in the <code class="docutils literal notranslate"><span class="pre">synaptic</span> <span class="pre">cleft</span></code> triggers a series of <code class="docutils literal notranslate"><span class="pre">chemical</span> <span class="pre">reactions</span></code> in the surrounding <code class="docutils literal notranslate"><span class="pre">glia</span> <span class="pre">cells</span></code>. When <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code> increases, the accompanying <code class="docutils literal notranslate"><span class="pre">chemical</span> <span class="pre">reactions</span></code> lead to a <strong>metabolic demand</strong> for <code class="docutils literal notranslate"><span class="pre">nutrients</span></code> and ultimately the <code class="docutils literal notranslate"><span class="pre">extraction</span></code> of <code class="docutils literal notranslate"><span class="pre">oxygen</span></code> in the <code class="docutils literal notranslate"><span class="pre">micro-capillaries</span></code> locally. The following events then occur:</p>
+<ul class="simple">
+<li><p>increased <code class="docutils literal notranslate"><span class="pre">volume</span></code> of <code class="docutils literal notranslate"><span class="pre">capillaries</span></code>;</p></li>
+<li><p>increased <code class="docutils literal notranslate"><span class="pre">blood</span> <span class="pre">flow</span></code>;</p></li>
+<li><p>increase the delivery of <code class="docutils literal notranslate"><span class="pre">oxygen</span></code> (<code class="docutils literal notranslate"><span class="pre">oxyhaemoglobin</span></code>) to <code class="docutils literal notranslate"><span class="pre">populations</span></code> of <code class="docutils literal notranslate"><span class="pre">active</span> <span class="pre">neurons</span></code>.</p></li>
+</ul>
+<p>The increase in <code class="docutils literal notranslate"><span class="pre">oxygen</span> <span class="pre">extraction</span></code> therefore paradoxically leads to a local increase in the <code class="docutils literal notranslate"><span class="pre">concentration</span></code> of <strong>oxyhemoglobin</strong> (<code class="docutils literal notranslate"><span class="pre">oxygenated</span> <span class="pre">blood</span></code>) compared to the concentration of <strong>deoxyhemoglobin</strong> (<code class="docutils literal notranslate"><span class="pre">deoxygenated</span> <span class="pre">blood</span></code>) locally, which can be detected using <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>. The first <code class="docutils literal notranslate"><span class="pre">quantitative</span> <span class="pre">model</span></code> of <code class="docutils literal notranslate"><span class="pre">neurovascular</span> <span class="pre">coupling</span></code> (known as the <code class="docutils literal notranslate"><span class="pre">“balloon</span> <span class="pre">model”</span></code>) was proposed by Buxton et al. (1998) <a href="#id3"><span class="problematic" id="id4">:cite:p:`Buxton1998-jy`</span></a>.</p>
+</div>
+<div class="section" id="bold-signal">
+<h3>BOLD signal<a class="headerlink" href="#bold-signal" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="hemoglobine-fig">
+<a class="reference internal image-reference" href="../../../_images/hemoglobine-fig.jpg"><img alt="../../../_images/hemoglobine-fig.jpg" src="../../../_images/hemoglobine-fig.jpg" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Illustration of the transport of <code class="docutils literal notranslate"><span class="pre">oxygen</span></code> by <code class="docutils literal notranslate"><span class="pre">hemoglobin</span></code> in the <code class="docutils literal notranslate"><span class="pre">blood</span></code>. Image by <a class="reference external" href="https://www.shutterstock.com/g/ShadeDesign">ShadeDesign</a> available at [shutterstock](<a class="reference external" href="https://www.shutterstock.com/image-illustration/vector-science-medical-icon-blood-">https://www.shutterstock.com/image-illustration/vector-science-medical-icon-blood-</a> hemoglobin-1472480087) ID <code class="docutils literal notranslate"><span class="pre">1472480087</span></code>, used under standard shutterstock license.</span><a class="headerlink" href="#hemoglobine-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>What is the origin of the <strong>BOLD signal</strong>? <code class="docutils literal notranslate"><span class="pre">Hemoglobin</span></code> exists in two states, <code class="docutils literal notranslate"><span class="pre">oxygenated</span></code> (<code class="docutils literal notranslate"><span class="pre">oxygen</span> <span class="pre">carrier</span></code>) and <code class="docutils literal notranslate"><span class="pre">deoxygenated</span></code> (<code class="docutils literal notranslate"><span class="pre">non-oxygen</span> <span class="pre">carrier</span></code>). The presence of <code class="docutils literal notranslate"><span class="pre">oxygen</span></code> modifies the <code class="docutils literal notranslate"><span class="pre">electromagnetic</span> <span class="pre">properties</span></code> of this <code class="docutils literal notranslate"><span class="pre">molecule</span></code>:</p>
+<ul class="simple">
+<li><p><strong>Oxyhemoglobin</strong> is <strong>diamagnetic</strong></p></li>
+<li><p><strong>Deoxyhemoglobin</strong> is <strong>paramagnetic</strong></p></li>
+</ul>
+<p>What this means is that when subjected to <code class="docutils literal notranslate"><span class="pre">electromagnetic</span> <span class="pre">pulses</span></code>, these two <code class="docutils literal notranslate"><span class="pre">molecules</span></code> behave very differently. <code class="docutils literal notranslate"><span class="pre">Deoxyhemoglobin</span></code> will create <code class="docutils literal notranslate"><span class="pre">inhomogeneities</span></code> in the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">oxyhemoglobin</span></code> has no effect on this same <code class="docutils literal notranslate"><span class="pre">field</span></code>. <span class="math notranslate nohighlight">\(T_2^*\)</span> weighted <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">sequences</span></code> are very <code class="docutils literal notranslate"><span class="pre">sensitive</span></code> to such <code class="docutils literal notranslate"><span class="pre">inhomogeneities</span></code>. The <code class="docutils literal notranslate"><span class="pre">deoxyhemoglobin</span></code> therefore <code class="docutils literal notranslate"><span class="pre">distorts</span></code> the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code> <span class="math notranslate nohighlight">\(B_O\)</span> induced by the <code class="docutils literal notranslate"><span class="pre">magnet</span></code>, which causes the <code class="docutils literal notranslate"><span class="pre">relaxation</span> <span class="pre">time</span></code> <span class="math notranslate nohighlight">\(T_2^*\)</span> to be <code class="docutils literal notranslate"><span class="pre">faster</span></code>. The <code class="docutils literal notranslate"><span class="pre">images</span></code> acquired by <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> therefore use a <span class="math notranslate nohighlight">\(T_2^*\)</span> <code class="docutils literal notranslate"><span class="pre">contrast</span></code>, and this has the effect of <code class="docutils literal notranslate"><span class="pre">amplifying</span></code> the signal when the <code class="docutils literal notranslate"><span class="pre">blood</span></code> becomes more <code class="docutils literal notranslate"><span class="pre">oxygenated</span></code> in <code class="docutils literal notranslate"><span class="pre">response</span></code> to an increase in <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code>. For this reason, the <code class="docutils literal notranslate"><span class="pre">signal</span></code> used in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> is called <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code>, for <em>Blood oxygenation level-dependent</em>, or <code class="docutils literal notranslate"><span class="pre">signal</span> <span class="pre">dependent</span> <span class="pre">on</span> <span class="pre">blood</span> <span class="pre">oxygenation</span></code>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="text-align:center head"><p><code class="docutils literal notranslate"><span class="pre">Deoxyhemoglobin</span></code></p></th>
+<th class="text-align:right head"><p><code class="docutils literal notranslate"><span class="pre">Oxyhemoglobin</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Electromagnetic</span> <span class="pre">properties</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">Paramagnetic</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">Diamagnetic</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Impact on the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code></p></td>
+<td class="text-align:center"><p><strong>Reduces</strong> the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code></p></td>
+<td class="text-align:right"><p><strong>Increases</strong> the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(T_2^*\)</span></p></td>
+<td class="text-align:center"><p>Decreasing more <strong>rapidly</strong></p></td>
+<td class="text-align:right"><p>Decreasing more <strong>slowly</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Effect on <code class="docutils literal notranslate"><span class="pre">field</span></code></p></td>
+<td class="text-align:center"><p><strong>Added inhomogeneities/distortions</strong></p></td>
+<td class="text-align:right"><p><strong>No inhomogeneities</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="caution attention admonition" id="neurovascular-warning">
+<p class="admonition-title">Attention!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> is an <strong>indirect measurement</strong> of <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code>. Indeed, this <code class="docutils literal notranslate"><span class="pre">modality</span></code> does <strong>not directly</strong> measure the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of <code class="docutils literal notranslate"><span class="pre">neurons</span></code>, but rather the <code class="docutils literal notranslate"><span class="pre">vascular</span> <span class="pre">consequences</span></code> of the <code class="docutils literal notranslate"><span class="pre">metabolic</span> <span class="pre">demand</span></code> associated with <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code>. This <strong>neurovascular coupling</strong> relationship is very complex, involving many different metabolites and mechanisms.</p>
+</div>
+</div>
+<div class="section" id="hemodynamic-response-function">
+<h3>Hemodynamic response function<a class="headerlink" href="#hemodynamic-response-function" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="short-impulse-response">
+<h4>Short impulse response<a class="headerlink" href="#short-impulse-response" title="Permalink to this headline">¶</a></h4>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To get an impulse response, we simulate a single event</span>
+<span class="c1"># occurring at time t=0, with duration 1s.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">frame_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">61</span><span class="p">)</span>
+<span class="n">onset</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">exp_condition</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">onset</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">stim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">frame_times</span><span class="p">)</span>
+<span class="n">stim</span><span class="p">[(</span><span class="n">frame_times</span> <span class="o">&gt;</span> <span class="n">onset</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">frame_times</span> <span class="o">&lt;=</span> <span class="n">onset</span> <span class="o">+</span> <span class="n">duration</span><span class="p">)]</span> <span class="o">=</span> <span class="n">amplitude</span>
+
+<span class="c1"># Now we plot the hrf</span>
+<span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">compute_regressor</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># obtain the signal of interest by convolution</span>
+<span class="n">signal</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">compute_regressor</span><span class="p">(</span>
+    <span class="n">exp_condition</span><span class="p">,</span> <span class="s1">&#39;glover&#39;</span><span class="p">,</span> <span class="n">frame_times</span><span class="p">,</span> <span class="n">con_id</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="p">,</span>
+    <span class="n">oversampling</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1"># plot this</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">frame_times</span><span class="p">,</span> <span class="n">stim</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;stimulus&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frame_times</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;hrf-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="hrf-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/fmri_intro_3_1.png" src="../../../_images/fmri_intro_3_1.png" />
+</div>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Hemodynamic</span> <span class="pre">response</span></code> to a <code class="docutils literal notranslate"><span class="pre">unit</span> <span class="pre">pulse</span></code> of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">second</span> <span class="pre">duration</span></code>, following the <code class="docutils literal notranslate"><span class="pre">model</span></code> proposed by Glover et al. (1999) <a href="#id5"><span class="problematic" id="id6">:cite:p:`Glover1999-cb`</span></a>. The code to generate this figure is adapted from a [Nilearn tutorial](<a class="reference external" href="https://nilearn.github.io/auto_examples/04_glm_first_level/plot_hrf.html#sphx-glr-auto-examples-04-glm-first-level-plot">https://nilearn.github.io/auto_examples/04_glm_first_level/plot_hrf.html#sphx-glr-auto-examples-04-glm-first-level-plot</a> -hrf-py), and the figure is licensed under CC-BY.</span><a class="headerlink" href="#hrf-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The following figure shows the expected <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> following a <code class="docutils literal notranslate"><span class="pre">finite</span> <span class="pre">activation</span> <span class="pre">pulse</span></code> at <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">0</span></code>, and of duration <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">second</span></code>. The <code class="docutils literal notranslate"><span class="pre">response</span></code> to this type of <code class="docutils literal notranslate"><span class="pre">stimulus</span></code> visualizes the most widely used <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code>, describing the sustained relationship between <code class="docutils literal notranslate"><span class="pre">neural</span> <span class="pre">activity</span></code> (blue) and <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> (red), as a <code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">of</span> <span class="pre">time</span></code>. The <code class="docutils literal notranslate"><span class="pre">'x'</span> <span class="pre">axis</span></code> represents <code class="docutils literal notranslate"><span class="pre">time</span></code>, in <code class="docutils literal notranslate"><span class="pre">seconds</span></code>, and the <code class="docutils literal notranslate"><span class="pre">'y'</span> <span class="pre">axis</span></code> the <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">signal</span></code>, expressed as <code class="docutils literal notranslate"><span class="pre">percentage</span> <span class="pre">change</span></code> from a <code class="docutils literal notranslate"><span class="pre">baseline</span></code>. Important features of the <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span> <span class="pre">function</span></code> are:</p>
+<ul class="simple">
+<li><p><strong>temporal resolution</strong>: this is a <code class="docutils literal notranslate"><span class="pre">slow</span> <span class="pre">response</span></code>, which lasts between <strong>15 to 20 seconds</strong> depending on the <code class="docutils literal notranslate"><span class="pre">stimulus</span></code></p></li>
+<li><p><strong>the time before reaching the maximum amplitude</strong>: from <strong>4 to 6 seconds</strong></p></li>
+<li><p><strong>Post-stimulation trough (<em>Undershoot</em> in English)</strong>: decreases from the <code class="docutils literal notranslate"><span class="pre">maximum</span> <span class="pre">amplitude</span></code> until it is below the <code class="docutils literal notranslate"><span class="pre">baseline</span></code>.</p></li>
+<li><p><strong>Return to baseline</strong>: The <code class="docutils literal notranslate"><span class="pre">function</span></code> returns to the <code class="docutils literal notranslate"><span class="pre">level</span></code> before the <code class="docutils literal notranslate"><span class="pre">stimulation</span></code> after approximately <strong>15 to 20</strong> <code class="docutils literal notranslate"><span class="pre">seconds</span></code></p></li>
+<li><p><strong>Maximum amplitude</strong>: The order of the <code class="docutils literal notranslate"><span class="pre">relative</span> <span class="pre">change</span></code> of the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> reaches around <strong>5%</strong> for <code class="docutils literal notranslate"><span class="pre">sensory</span> <span class="pre">stimulations</span></code>, while it is more like **0.1 to 0.5% ** for other <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">paradigms</span></code></p></li>
+</ul>
+<div class="tip admonition" id="model-tip-fit">
+<p class="admonition-title">Attention!</p>
+<p>The above <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span> <span class="pre">model</span></code> is very <code class="docutils literal notranslate"><span class="pre">rigid</span></code> and may prove to be an <code class="docutils literal notranslate"><span class="pre">invalid</span> <span class="pre">assumption</span></code> for some <code class="docutils literal notranslate"><span class="pre">populations</span></code>, especially if the <code class="docutils literal notranslate"><span class="pre">neurovascular</span> <span class="pre">coupling</span></code> is different from the original study by Glover et al. (1999) <a href="#id7"><span class="problematic" id="id8">:cite:p:`Glover1999-cb`</span></a>. This is probably the case, for example, in the <code class="docutils literal notranslate"><span class="pre">elderly</span></code> or in <code class="docutils literal notranslate"><span class="pre">individuals</span> <span class="pre">with</span> <span class="pre">cardiovascular</span> <span class="pre">diseases</span></code>. The <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span> <span class="pre">function</span></code> can also vary from one <code class="docutils literal notranslate"><span class="pre">region</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> to another. It is possible to use <code class="docutils literal notranslate"><span class="pre">models</span></code> of the <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> which are more flexible and allow, for example, to modify the <code class="docutils literal notranslate"><span class="pre">time</span></code> of the <code class="docutils literal notranslate"><span class="pre">peak</span></code> of the <code class="docutils literal notranslate"><span class="pre">response</span></code>.</p>
+</div>
+</div>
+<div class="section" id="the-brain-bold-as-a-system">
+<h4>The Brain (BOLD) as a System<a class="headerlink" href="#the-brain-bold-as-a-system" title="Permalink to this headline">¶</a></h4>
+<p>The process that transforms <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code> into a <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> can be formalized within the general framework of <code class="docutils literal notranslate"><span class="pre">systems</span> <span class="pre">theory</span></code>. More specifically, the <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span> <span class="pre">function</span></code> of the <code class="xref std std-numref docutils literal notranslate"><span class="pre">hrf-fig</span></code> is generally <code class="docutils literal notranslate"><span class="pre">approximated</span></code> as a <code class="docutils literal notranslate"><span class="pre">linear</span></code> and <code class="docutils literal notranslate"><span class="pre">time-invariant</span> <span class="pre">system</span></code>. This <code class="docutils literal notranslate"><span class="pre">approximation</span></code> underlies the inferences we make about the <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">organization</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>: we use it to <code class="docutils literal notranslate"><span class="pre">estimate</span></code> the <code class="docutils literal notranslate"><span class="pre">response</span></code> to a given <code class="docutils literal notranslate"><span class="pre">task</span></code> or <code class="docutils literal notranslate"><span class="pre">condition</span></code>. The <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span> <span class="pre">function</span></code> of the <code class="xref std std-numref docutils literal notranslate"><span class="pre">hrf-fig</span></code> relates to a <code class="docutils literal notranslate"><span class="pre">simple</span> <span class="pre">experimental</span> <span class="pre">context</span></code>: a <code class="docutils literal notranslate"><span class="pre">short</span></code> and <code class="docutils literal notranslate"><span class="pre">isolated</span> <span class="pre">stimulation</span></code>. In reality, <strong>experimental paradigms are much more complex</strong>: they <code class="docutils literal notranslate"><span class="pre">repeatedly</span> <span class="pre">alternate</span></code> between <code class="docutils literal notranslate"><span class="pre">different</span> <span class="pre">experimental</span> <span class="pre">conditions</span></code>/<code class="docutils literal notranslate"><span class="pre">stimuli</span></code> (in <code class="docutils literal notranslate"><span class="pre">blocks</span></code>, <code class="docutils literal notranslate"><span class="pre">randomly</span></code> or in a <code class="docutils literal notranslate"><span class="pre">specific</span> <span class="pre">order</span></code>). In addition, they often involve more than one <code class="docutils literal notranslate"><span class="pre">stimulation</span></code> close in <code class="docutils literal notranslate"><span class="pre">time</span></code>, or/and <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> that extend over <code class="docutils literal notranslate"><span class="pre">several</span> <span class="pre">milliseconds</span></code> or <code class="docutils literal notranslate"><span class="pre">seconds</span></code>. What then happens to the <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span> <span class="pre">function</span></code>? A key property of a <code class="docutils literal notranslate"><span class="pre">linear</span> <span class="pre">system</span></code> is to be <code class="docutils literal notranslate"><span class="pre">additive</span></code>, ie the <code class="docutils literal notranslate"><span class="pre">response</span></code> to a <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">stimulation</span></code> can be <code class="docutils literal notranslate"><span class="pre">decomposed</span></code> like the <code class="docutils literal notranslate"><span class="pre">superposition</span></code> of <code class="docutils literal notranslate"><span class="pre">responses</span></code> to <code class="docutils literal notranslate"><span class="pre">shorter</span> <span class="pre">stimulations</span></code>. Another key assumption is <strong>time invariance</strong>, which tells us that the <code class="docutils literal notranslate"><span class="pre">system</span></code> <code class="docutils literal notranslate"><span class="pre">response</span></code> will not vary if we perform the same <code class="docutils literal notranslate"><span class="pre">short</span> <span class="pre">stimulation</span></code> at different <code class="docutils literal notranslate"><span class="pre">times</span></code>. When <strong>combining</strong> the <code class="docutils literal notranslate"><span class="pre">linearity</span> <span class="pre">assumption</span></code> with <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">invariance</span></code>, it is possible to predict the <code class="docutils literal notranslate"><span class="pre">response</span></code> to any <code class="docutils literal notranslate"><span class="pre">series</span></code> of <code class="docutils literal notranslate"><span class="pre">complex</span> <span class="pre">stimuli</span></code> from the <code class="docutils literal notranslate"><span class="pre">response</span></code> to a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">short</span> <span class="pre">stimulus</span></code>, as shown in <a href="#id9"><span class="problematic" id="id10">:refnum:`hrf-fig`</span></a>. The study by Logothetis et al. (2001) {cite:p} <code class="docutils literal notranslate"><span class="pre">Logothetis2001-lt</span></code> was the first to demonstrate in monkeys that this assumption of <code class="docutils literal notranslate"><span class="pre">linearity</span></code> and <code class="docutils literal notranslate"><span class="pre">invariance</span></code> seems to be fairly well respected, at least in the <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">cortex</span></code> for <code class="docutils literal notranslate"><span class="pre">simple</span> <span class="pre">visual</span> <span class="pre">stimuli</span></code> (context of the study).</p>
+<div class="tip admonition" id="additivity-tip">
+<p class="admonition-title">Additivity</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">system</span></code> is said to be <strong>additive</strong> if the <code class="docutils literal notranslate"><span class="pre">response</span></code> to several <code class="docutils literal notranslate"><span class="pre">impulses</span></code> corresponds to the <code class="docutils literal notranslate"><span class="pre">sum</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">responses</span></code> to these <code class="docutils literal notranslate"><span class="pre">impulses</span></code> taken <code class="docutils literal notranslate"><span class="pre">independently</span></code>. This `behavior is illustrated below.</p>
+<div class="figure align-default" id="systeme-additif-fig">
+<a class="reference internal image-reference" href="../../../_images/additive_system.png"><img alt="../../../_images/additive_system.png" src="../../../_images/additive_system.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Figure licensed under CC-BY.</span><a class="headerlink" href="#systeme-additif-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fmri-data-pre-processing">
+<h2>fMRI data pre-processing<a class="headerlink" href="#fmri-data-pre-processing" title="Permalink to this headline">¶</a></h2>
+<p>We have discussed in previous sections various aspects of <code class="docutils literal notranslate"><span class="pre">modeling</span></code> the <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code>. Another important point in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> is the <code class="docutils literal notranslate"><span class="pre">modeling</span></code> of <code class="docutils literal notranslate"><span class="pre">noise</span></code> and <code class="docutils literal notranslate"><span class="pre">sources</span> <span class="pre">of</span> <span class="pre">variations</span></code> that may be present in <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code>. Different <strong>confounding factors</strong> and <strong>artifacts</strong> (from the <code class="docutils literal notranslate"><span class="pre">MRI</span></code> scanner or from the scanned <code class="docutils literal notranslate"><span class="pre">participant</span></code>s themselves) can induce substantial <code class="docutils literal notranslate"><span class="pre">fluctuations</span></code> in the measured <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code>, and <code class="docutils literal notranslate"><span class="pre">confound</span></code> <code class="docutils literal notranslate"><span class="pre">inferences</span></code> made about the <code class="docutils literal notranslate"><span class="pre">neural</span> <span class="pre">activity</span></code> in <code class="docutils literal notranslate"><span class="pre">response</span></code> to <code class="docutils literal notranslate"><span class="pre">tasks</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">heart</span></code>/<code class="docutils literal notranslate"><span class="pre">pulse</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">artefact</span></code> linked to the <code class="docutils literal notranslate"><span class="pre">movement</span></code> of the <code class="docutils literal notranslate"><span class="pre">participant</span></code> during the <code class="docutils literal notranslate"><span class="pre">acquisition</span></code>,</p></li>
+<li><p>fault in the <code class="docutils literal notranslate"><span class="pre">antenna</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inhomogeneities</span></code> in the <code class="docutils literal notranslate"><span class="pre">magnetic</span> <span class="pre">field</span></code>, in particular at the <code class="docutils literal notranslate"><span class="pre">air-tissue</span> <span class="pre">intersections</span></code>,</p></li>
+<li><p>differences between the <code class="docutils literal notranslate"><span class="pre">anatomy</span></code> of the <code class="docutils literal notranslate"><span class="pre">participant</span></code>s.</p></li>
+</ul>
+<p>Different <code class="docutils literal notranslate"><span class="pre">modeling</span></code> strategies can be employed to reduce the influence of <code class="docutils literal notranslate"><span class="pre">confounding</span> <span class="pre">factors</span></code> and <code class="docutils literal notranslate"><span class="pre">artifacts</span></code>. In this section, we present an overview of three major <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">preprocessing</span></code> steps, which typically are applied <code class="docutils literal notranslate"><span class="pre">sequentially</span></code>. We speak of <em>processing chain</em>, or even <em>pipeline</em> or <em>worflow</em>.</p>
+<div class="section" id="realignment-registration">
+<h3>Realignment/registration<a class="headerlink" href="#realignment-registration" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">registration</span></code> consists in <code class="docutils literal notranslate"><span class="pre">aligning</span></code> an <code class="docutils literal notranslate"><span class="pre">image</span></code> to a <code class="docutils literal notranslate"><span class="pre">reference</span> <span class="pre">image</span></code>. It is a <code class="docutils literal notranslate"><span class="pre">pre-processing</span></code> step completed before <code class="docutils literal notranslate"><span class="pre">individual</span> <span class="pre">statistical</span></code> and <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">statistical</span> <span class="pre">analyses</span></code>, as these presuppose that there is a match between the <code class="docutils literal notranslate"><span class="pre">voxels</span></code> of <code class="docutils literal notranslate"><span class="pre">images</span></code> within a <code class="docutils literal notranslate"><span class="pre">participant</span></code> and between <code class="docutils literal notranslate"><span class="pre">participant</span></code>s. We have already discussed the <span class="xref std std-ref">registration-tip&gt;</span>registration in the <a class="reference internal" href="morphometry.html"><span class="doc std std-doc">morphometry</span></a> section. We will see that three types of <code class="docutils literal notranslate"><span class="pre">registration</span></code> are used in <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">MRI</span></code>.</p>
+<div class="section" id="movement-registration">
+<h4>Movement registration<a class="headerlink" href="#movement-registration" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-default" id="movement-fig">
+<a class="reference internal image-reference" href="../../../_images/movement_parameters.png"><img alt="../../../_images/movement_parameters.png" src="../../../_images/movement_parameters.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Illustration of the <code class="docutils literal notranslate"><span class="pre">motion</span> <span class="pre">registration</span></code> process during an <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">scan</span></code>. Figure licensed under CC-BY.</span><a class="headerlink" href="#movement-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Often, the <code class="docutils literal notranslate"><span class="pre">participant</span></code> does not maintain exactly the same <code class="docutils literal notranslate"><span class="pre">position</span></code> of the <code class="docutils literal notranslate"><span class="pre">head</span></code> in the <code class="docutils literal notranslate"><span class="pre">scanner</span></code> throughout the <code class="docutils literal notranslate"><span class="pre">acquisitions</span></code>, which can sometimes last more than an hour and/or require stops. (e.g. <code class="docutils literal notranslate"><span class="pre">yawning</span></code>, <code class="docutils literal notranslate"><span class="pre">muscle</span> <span class="pre">fatigue</span></code>, <code class="docutils literal notranslate"><span class="pre">blinking</span></code>, etc.). These <code class="docutils literal notranslate"><span class="pre">movements</span></code> have <code class="docutils literal notranslate"><span class="pre">non-negligible</span> <span class="pre">impacts</span></code> on the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code>. They can cause <code class="docutils literal notranslate"><span class="pre">distortions</span></code> in the <code class="docutils literal notranslate"><span class="pre">signal</span> <span class="pre">intensity</span></code> of the picture. They imply that, from one <code class="docutils literal notranslate"><span class="pre">image</span></code> to another, the same <code class="docutils literal notranslate"><span class="pre">voxel</span></code> does not necessarily correspond to the same <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">structure</span></code>. As the <code class="docutils literal notranslate"><span class="pre">brain</span></code> of the same <code class="docutils literal notranslate"><span class="pre">individual</span></code> does not change <code class="docutils literal notranslate"><span class="pre">shape</span></code> or <code class="docutils literal notranslate"><span class="pre">size</span></code> through the <code class="docutils literal notranslate"><span class="pre">acquisitions</span></code>, this step uses a special case of <code class="docutils literal notranslate"><span class="pre">affine</span> <span class="pre">transformation</span></code>, called <code class="docutils literal notranslate"><span class="pre">rigid</span> <span class="pre">transformation</span></code>, comprising only <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">translations</span></code> (according to <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>) and <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">rotations</span></code> (according to <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>). A <code class="docutils literal notranslate"><span class="pre">reference</span> <span class="pre">volume</span></code> is used as the target for the <code class="docutils literal notranslate"><span class="pre">registration</span></code>, for example the <code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">volume</span></code> of the <code class="docutils literal notranslate"><span class="pre">series</span></code>, the <code class="docutils literal notranslate"><span class="pre">last</span></code>, or else the <code class="docutils literal notranslate"><span class="pre">average</span></code> of <code class="docutils literal notranslate"><span class="pre">all</span></code> the <code class="docutils literal notranslate"><span class="pre">volumes</span></code>. Different <code class="docutils literal notranslate"><span class="pre">movement</span> <span class="pre">parameters</span></code> are estimated for each <code class="docutils literal notranslate"><span class="pre">volume</span></code>, and can be represented over time as on the graph above.</p>
+<div class="tip admonition" id="motion-tip">
+<p class="admonition-title">Excessive movements</p>
+<p>The level of <code class="docutils literal notranslate"><span class="pre">movement</span></code> varies depending on the <code class="docutils literal notranslate"><span class="pre">population</span></code> studied. <code class="docutils literal notranslate"><span class="pre">Children</span></code> and <code class="docutils literal notranslate"><span class="pre">older</span> <span class="pre">people</span></code> tend to <code class="docutils literal notranslate"><span class="pre">move</span></code> more than <code class="docutils literal notranslate"><span class="pre">young</span> <span class="pre">adults</span></code>. Some researchers choose to exclude <code class="docutils literal notranslate"><span class="pre">participant</span></code>s who <code class="docutils literal notranslate"><span class="pre">moved</span></code> beyond a certain <code class="docutils literal notranslate"><span class="pre">threshold</span></code>.</p>
+</div>
+</div>
+<div class="section" id="bold-registration-with-t-1">
+<h4>BOLD registration with <span class="math notranslate nohighlight">\(T_1\)</span><a class="headerlink" href="#bold-registration-with-t-1" title="Permalink to this headline">¶</a></h4>
+<p>It is common to <code class="docutils literal notranslate"><span class="pre">align</span></code> the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">image</span></code> with the <span class="math notranslate nohighlight">\(T_1\)</span> <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">image</span></code> of the <code class="docutils literal notranslate"><span class="pre">participant</span></code>. Why? The <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">image</span></code> has a lower <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> than the <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">image</span></code> <span class="math notranslate nohighlight">\(T_1\)</span>: we have shorter <code class="docutils literal notranslate"><span class="pre">acquisition</span> <span class="pre">times</span></code> to <code class="docutils literal notranslate"><span class="pre">acquire</span></code> the same <code class="docutils literal notranslate"><span class="pre">volume</span></code>. The contrast between <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">structures</span></code> is also much better in <span class="math notranslate nohighlight">\(T_1\)</span>. It is therefore useful to superimpose the two <code class="docutils literal notranslate"><span class="pre">images</span></code> to locate the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">activations</span></code>. This <code class="docutils literal notranslate"><span class="pre">transformation</span></code> is estimated <code class="docutils literal notranslate"><span class="pre">rigidly</span></code>, like <code class="docutils literal notranslate"><span class="pre">motion</span></code>. Note that there are also <code class="docutils literal notranslate"><span class="pre">non-rigid</span> <span class="pre">distortions</span></code> caused by <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">non-uniformities</span></code>, which can be additionally corrected.</p>
+</div>
+<div class="section" id="registration-in-stereotactic-space">
+<h4>Registration in stereotactic space<a class="headerlink" href="#registration-in-stereotactic-space" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-default" id="registration-macaque-fig">
+<a class="reference internal image-reference" href="static/neuroscience/registration-macaque.gif"><img alt="static/neuroscience/registration-macaque.gif" src="static/neuroscience/registration-macaque.gif" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Illustration of the <code class="docutils literal notranslate"><span class="pre">registration</span> <span class="pre">process</span></code> of a <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">MRI</span></code> on a <code class="docutils literal notranslate"><span class="pre">stereotactic</span> <span class="pre">space</span></code> (here in the <code class="docutils literal notranslate"><span class="pre">macaque</span></code>). We start with an <code class="docutils literal notranslate"><span class="pre">affine</span> <span class="pre">transformation</span></code> (to correct the <code class="docutils literal notranslate"><span class="pre">position</span></code> of the <code class="docutils literal notranslate"><span class="pre">head</span></code> and its <code class="docutils literal notranslate"><span class="pre">size</span></code>), then <code class="docutils literal notranslate"><span class="pre">non-linear</span></code> (to adjust the <code class="docutils literal notranslate"><span class="pre">position</span></code> of the <code class="docutils literal notranslate"><span class="pre">furrows</span></code> and <code class="docutils literal notranslate"><span class="pre">subcortical</span> <span class="pre">structures</span></code>). Figure under CC-BY 4.0 license contributed by <a class="reference external" href="https://github.com/danjgale">Dan J Gale</a>.
+For <code class="docutils literal notranslate"><span class="pre">inter-individual</span> <span class="pre">comparisons</span></code> or <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">statistical</span> <span class="pre">analyses</span></code>, there must be a match between the <code class="docutils literal notranslate"><span class="pre">voxels</span></code> of <code class="docutils literal notranslate"><span class="pre">images</span></code> from different <code class="docutils literal notranslate"><span class="pre">individuals</span></code>. However, <code class="docutils literal notranslate"><span class="pre">brains</span></code> and <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">structures</span></code> can have different <code class="docutils literal notranslate"><span class="pre">sizes</span></code> and <code class="docutils literal notranslate"><span class="pre">shapes</span></code> from <code class="docutils literal notranslate"><span class="pre">individual</span></code> to <code class="docutils literal notranslate"><span class="pre">individual</span></code>. <code class="docutils literal notranslate"><span class="pre">Registration</span></code> in <code class="docutils literal notranslate"><span class="pre">stereotactic</span> <span class="pre">space</span></code>, also sometimes called <em>spatial normalization</em>, consists in <code class="docutils literal notranslate"><span class="pre">registering</span></code> the <span class="math notranslate nohighlight">\(T_1\)</span> <code class="docutils literal notranslate"><span class="pre">image</span></code> in a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">standard</span> <span class="pre">space</span></code> defined by the chosen <code class="docutils literal notranslate"><span class="pre">atlas</span></code>, <code class="docutils literal notranslate"><span class="pre">template</span></code>, or so on, thus making the <code class="docutils literal notranslate"><span class="pre">brains</span></code> of different <code class="docutils literal notranslate"><span class="pre">individuals</span> <span class="pre">comparable</span></code>. This technique is identical to what is done for <code class="docutils literal notranslate"><span class="pre">morphometry</span></code> studies. The <a class="reference external" href="http://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009">MNI152 template</a> (<a class="reference external" href="https://www.mcgill.ca/neuro/">Montreal Neurological Institute</a>) is widely used as a <code class="docutils literal notranslate"><span class="pre">standard</span> <span class="pre">space</span></code> in the community. The respective <code class="docutils literal notranslate"><span class="pre">transformation</span></code> combines <code class="docutils literal notranslate"><span class="pre">affine</span> <span class="pre">transformation</span></code> and <code class="docutils literal notranslate"><span class="pre">non-linear</span> <span class="pre">transformation</span></code>.</span><a class="headerlink" href="#registration-macaque-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="spatial-smoothing">
+<h3>Spatial smoothing<a class="headerlink" href="#spatial-smoothing" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary modules</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download a functional scan</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">haxby_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span><span class="p">()</span>
+
+<span class="c1"># Calculate mean image</span>
+<span class="kn">from</span> <span class="nn">nilearn.image.image</span> <span class="kn">import</span> <span class="n">mean_img</span>
+<span class="n">func_filename</span> <span class="o">=</span> <span class="n">haxby_dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">mean_haxby</span> <span class="o">=</span> <span class="n">mean_img</span><span class="p">(</span><span class="n">func_filename</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_epi</span><span class="p">,</span> <span class="n">show</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_anat</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">math_img</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">smooth_img</span>
+
+<span class="n">list_fwhm</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">n_fwhm</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_fwhm</span><span class="p">)</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">fwhm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_fwhm</span><span class="p">):</span>
+    <span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="n">n_fwhm</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">vol</span> <span class="o">=</span> <span class="n">smooth_img</span><span class="p">(</span><span class="n">mean_haxby</span><span class="p">,</span> <span class="n">fwhm</span><span class="p">)</span>
+    <span class="n">plot_epi</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span>
+              <span class="n">cut_coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
+              <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+              <span class="n">black_bg</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;FWHM=</span><span class="si">{</span><span class="n">fwhm</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+              <span class="n">vmax</span><span class="o">=</span><span class="mi">1500</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;smoothing-fmri-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="smoothing-fmri-fig" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/fmri_intro_5_0.png" src="../../../_images/fmri_intro_5_0.png" />
+</div>
+<p class="caption"><span class="caption-text">Illustration of the impact of <code class="docutils literal notranslate"><span class="pre">smoothing</span></code> on a <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">volume</span></code>.
+As the ``FWHM<code class="docutils literal notranslate"> <span class="pre">parameter</span></code> increases, the measure in a <code class="docutils literal notranslate"><span class="pre">voxel</span></code> represents the <code class="docutils literal notranslate"><span class="pre">average</span></code> in a <code class="docutils literal notranslate"><span class="pre">larger</span></code> and <code class="docutils literal notranslate"><span class="pre">larger</span></code> <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">neighborhood</span></code>.
+This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library and the <code class="docutils literal notranslate"><span class="pre">haxby</span></code> <a class="reference external" href="https://nilearn.github.io/modules/generated/nilearn.datasets.fetch_haxby.html#nilearn.datasets.fetch_haxby">dataset</a> (click on + to see the code). The figure is licensed under CC-BY.</span><a class="headerlink" href="#smoothing-fmri-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>We return here to a <code class="docutils literal notranslate"><span class="pre">preprocessing</span></code> step that we have already covered during the <code class="docutils literal notranslate"><span class="pre">VBM</span></code> section: <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">smoothing</span></code>. The <code class="docutils literal notranslate"><span class="pre">smoothing</span></code> process is similar for <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">MRI</span></code>, but the purpose of this step is a little different. <code class="docutils literal notranslate"><span class="pre">Random</span> <span class="pre">thermal</span> <span class="pre">noise</span></code> plays a greater role in the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code>, and can have a detrimental effect on <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">analyses</span></code>. <code class="docutils literal notranslate"><span class="pre">Spatial</span> <span class="pre">smoothing</span></code> <em>reduces</em> this <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">noise</span></code>. Apart from improving the <code class="docutils literal notranslate"><span class="pre">signal-to-noise</span> <span class="pre">ratio</span></code>, <code class="docutils literal notranslate"><span class="pre">smoothing</span></code> also makes it possible to attenuate <code class="docutils literal notranslate"><span class="pre">registration</span></code> <code class="docutils literal notranslate"><span class="pre">imperfections</span></code> between <code class="docutils literal notranslate"><span class="pre">participant</span></code>s, by <code class="docutils literal notranslate"><span class="pre">diffusing</span></code> the <code class="docutils literal notranslate"><span class="pre">activity</span></code> in <code class="docutils literal notranslate"><span class="pre">space</span></code>. More operationally, <code class="docutils literal notranslate"><span class="pre">smoothing</span></code> consists in taking the <code class="docutils literal notranslate"><span class="pre">voxels</span></code> of the <code class="docutils literal notranslate"><span class="pre">image</span></code> and <code class="docutils literal notranslate"><span class="pre">replacing</span></code> them with a new <code class="docutils literal notranslate"><span class="pre">value</span></code> considering the <code class="docutils literal notranslate"><span class="pre">values</span></code> ​​of <code class="docutils literal notranslate"><span class="pre">neighboring</span> <span class="pre">voxels</span></code>. Each <code class="docutils literal notranslate"><span class="pre">neighboring</span> <span class="pre">voxel</span></code> is assigned a <code class="docutils literal notranslate"><span class="pre">weight</span></code> that <code class="docutils literal notranslate"><span class="pre">quantifies</span></code> its <code class="docutils literal notranslate"><span class="pre">contribution</span></code> to the new <code class="docutils literal notranslate"><span class="pre">value</span></code> assigned to a target <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. The <code class="docutils literal notranslate"><span class="pre">original</span> <span class="pre">value</span></code> of the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">voxel</span></code> is the one that will have the greatest <code class="docutils literal notranslate"><span class="pre">weighting</span></code>, and the <code class="docutils literal notranslate"><span class="pre">values</span></code> ​​of <code class="docutils literal notranslate"><span class="pre">neighboring</span> <span class="pre">voxels</span></code> will be <code class="docutils literal notranslate"><span class="pre">weighted</span></code> according to the <code class="docutils literal notranslate"><span class="pre">proximity</span></code> maintained with the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">voxel</span></code>. So <code class="docutils literal notranslate"><span class="pre">smoothing</span></code> replaces the <code class="docutils literal notranslate"><span class="pre">value</span></code> associated with each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> with a <code class="docutils literal notranslate"><span class="pre">weighted</span> <span class="pre">average</span></code> of its <code class="docutils literal notranslate"><span class="pre">neighbors</span></code>. As it is a <code class="docutils literal notranslate"><span class="pre">weighted</span> <span class="pre">average</span></code>, the <code class="docutils literal notranslate"><span class="pre">original</span> <span class="pre">value</span></code> of the <code class="docutils literal notranslate"><span class="pre">voxel</span></code> is the one that will have the greatest <code class="docutils literal notranslate"><span class="pre">weight</span></code>, but the <code class="docutils literal notranslate"><span class="pre">values</span></code> ​​of the <code class="docutils literal notranslate"><span class="pre">voxels</span></code> located directly around it will also affect it greatly. The <code class="docutils literal notranslate"><span class="pre">FWHM</span></code> parameter (<em>full width at half maximum</em>) controls the <code class="docutils literal notranslate"><span class="pre">scale</span></code> of this <code class="docutils literal notranslate"><span class="pre">smoothing</span></code> (larger or smaller). It determines the <code class="docutils literal notranslate"><span class="pre">spread</span></code> of <code class="docutils literal notranslate"><span class="pre">neighboring</span> <span class="pre">voxels</span></code> that will participate in the new <code class="docutils literal notranslate"><span class="pre">value</span></code> of a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">voxel</span></code>. From a mathematical point of view, the <code class="docutils literal notranslate"><span class="pre">FWHM</span></code> parameter represents <code class="docutils literal notranslate"><span class="pre">half</span> <span class="pre">the</span> <span class="pre">width</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">Gaussian</span> <span class="pre">curve</span></code>, which describes <code class="docutils literal notranslate"><span class="pre">randomly</span> <span class="pre">distributed</span> <span class="pre">noise</span></code>. A larger <code class="docutils literal notranslate"><span class="pre">FWHM</span></code> <code class="docutils literal notranslate"><span class="pre">value</span></code> underlies a more spread participation of <code class="docutils literal notranslate"><span class="pre">neighboring</span> <span class="pre">voxels</span></code> to the new <code class="docutils literal notranslate"><span class="pre">value</span></code> of a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">voxel</span></code> in the <code class="docutils literal notranslate"><span class="pre">image</span></code>. Several studies choose <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">mm</span></code> as the value for the <code class="docutils literal notranslate"><span class="pre">FWHM</span></code> parameter.</p>
+</div>
+<div class="section" id="filtering-out-factors-of-no-interest">
+<h3>Filtering out factors of no interest<a class="headerlink" href="#filtering-out-factors-of-no-interest" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Import a functional dataset</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_development_fmri</span><span class="p">(</span><span class="n">n_subjects</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">func_filename</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Import an atlas</span>
+<span class="n">atlas</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_harvard_oxford</span><span class="p">(</span><span class="s1">&#39;cort-maxprob-thr25-2mm&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+
+<span class="c1"># Generate a time series</span>
+<span class="n">masker</span> <span class="o">=</span> <span class="n">NiftiLabelsMasker</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">maps</span><span class="p">,</span>
+                           <span class="n">labels</span><span class="o">=</span><span class="n">atlas</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span>
+                           <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">masker</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">func_filename</span><span class="p">)</span>
+<span class="n">signals</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">func_filename</span><span class="p">)</span>
+
+<span class="c1"># Plot the atlas</span>
+<span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_roi</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plot_roi</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">maps</span><span class="p">,</span>
+    <span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Atlas Harvard-Oxford&quot;</span><span class="p">,</span>
+    <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the time series</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">label_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">signals</span><span class="p">[:,</span> <span class="n">label_idx</span><span class="p">],</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">atlas</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">label_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># 0 is background</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Before correction of slow drifts&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generates time series after correcting for slow drifts</span>
+<span class="n">masker</span> <span class="o">=</span> <span class="n">NiftiLabelsMasker</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">maps</span><span class="p">,</span>
+                           <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+                           <span class="n">t_r</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                           <span class="n">labels</span><span class="o">=</span><span class="n">atlas</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span>
+                           <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">masker</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">func_filename</span><span class="p">)</span>
+<span class="n">signals</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">func_filename</span><span class="p">)</span>
+
+<span class="c1"># Plot the time series</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">label_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">signals</span><span class="p">[:,</span> <span class="n">label_idx</span><span class="p">],</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">atlas</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">label_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># 0 is background</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;After correction of slow drifts&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;detrending-fmri-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="detrending-fmri-fig" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/fmri_intro_7_0.png" src="../../../_images/fmri_intro_7_0.png" />
+</div>
+<p class="caption"><span class="caption-text">We extract the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code> associated with the <code class="docutils literal notranslate"><span class="pre">Harvard-Oxford</span></code> <code class="docutils literal notranslate"><span class="pre">atlas</span></code> before (on the left) and after (on the right) <code class="docutils literal notranslate"><span class="pre">regression</span></code> of the <code class="docutils literal notranslate"><span class="pre">slow</span> <span class="pre">drifts</span></code>.
+This figure is adapted from a tutorial from [nilearn](<a class="reference external" href="https://nilearn.github.io/auto_examples/06_manipulating_images/plot_nifti_labels_simple.html#sphx-glr-auto-examples-06-manipulating-images-plot-nifti">https://nilearn.github.io/auto_examples/06_manipulating_images/plot_nifti_labels_simple.html#sphx-glr-auto-examples-06-manipulating-images-plot-nifti</a> -labels-simple-py) from a <code class="docutils literal notranslate"><span class="pre">development_fmri</span></code> <a class="reference external" href="https://nilearn.github.io/modules/generated/nilearn.datasets.fetch_development_fmri.html#nilearn.datasets.fetch_development_fmri">dataset</a> (click on + to see the code). The figure is licensed under CC-BY.</span><a class="headerlink" href="#detrending-fmri-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The last <code class="docutils literal notranslate"><span class="pre">pre-processing</span></code> step that will be addressed is that of <code class="docutils literal notranslate"><span class="pre">filtering</span></code> out <code class="docutils literal notranslate"><span class="pre">factors</span> <span class="pre">of</span> <span class="pre">non-interest</span></code>, or <code class="docutils literal notranslate"><span class="pre">confounding</span> <span class="pre">factors</span></code>. These <code class="docutils literal notranslate"><span class="pre">confounding</span> <span class="pre">factors</span></code> can have different <code class="docutils literal notranslate"><span class="pre">sources</span></code>, such as <code class="docutils literal notranslate"><span class="pre">heart</span></code>/<code class="docutils literal notranslate"><span class="pre">pulse</span></code>, <code class="docutils literal notranslate"><span class="pre">breathing</span></code>, or <code class="docutils literal notranslate"><span class="pre">movement</span></code>. They are characterized in particular by different <code class="docutils literal notranslate"><span class="pre">frequencies</span></code> of the <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, either <code class="docutils literal notranslate"><span class="pre">slower</span></code> or <code class="docutils literal notranslate"><span class="pre">faster</span></code>. <code class="docutils literal notranslate"><span class="pre">Slow</span> <span class="pre">drifts</span></code> are a common example of <code class="docutils literal notranslate"><span class="pre">factors</span> <span class="pre">of</span> <span class="pre">no</span> <span class="pre">interest</span></code>, and they are quite easily spotted in the <code class="docutils literal notranslate"><span class="pre">signal</span></code>. In this case, we can apply a <code class="docutils literal notranslate"><span class="pre">high-pass</span> <span class="pre">filter</span></code>, which only keeps <code class="docutils literal notranslate"><span class="pre">frequencies</span></code> <code class="docutils literal notranslate"><span class="pre">higher</span></code> than a certain <code class="docutils literal notranslate"><span class="pre">threshold</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">0.01</span> <span class="pre">Hz</span></code>). Many other types of <code class="docutils literal notranslate"><span class="pre">confounders</span></code> are commonly regressed in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> - for example <code class="docutils literal notranslate"><span class="pre">motion</span> <span class="pre">parameters</span></code>.</p>
+</div>
+</div>
+<div class="section" id="statistical-analyses">
+<h2>Statistical analyses<a class="headerlink" href="#statistical-analyses" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Statistical</span> <span class="pre">analyzes</span></code> generally include <strong>individual analyses</strong> in which the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code> are <code class="docutils literal notranslate"><span class="pre">analyzed</span></code> separately for each of the <code class="docutils literal notranslate"><span class="pre">participants</span></code> (we analyze the <code class="docutils literal notranslate"><span class="pre">effect</span></code> of the <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">manipulations</span></code>), then <strong>group analyses</strong> (we <code class="docutils literal notranslate"><span class="pre">analyze</span></code> the <code class="docutils literal notranslate"><span class="pre">effect</span></code> at the <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">level</span></code>), where this data is combined for multiple <code class="docutils literal notranslate"><span class="pre">participants</span></code> for <code class="docutils literal notranslate"><span class="pre">analysis</span></code>. In this section we will briefly discuss the generation of <code class="docutils literal notranslate"><span class="pre">individual</span> <span class="pre">statistical</span> <span class="pre">maps</span></code>. We will come back to the <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">analyzes</span></code> and the <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">models</span></code> used in the <code class="docutils literal notranslate"><span class="pre">chapter</span></code> on <span class="xref myst">cerebral statistical maps</span>.</p>
+<div class="section" id="fmri-task-based-experiments">
+<h3>fMRI - Task-Based Experiments<a class="headerlink" href="#fmri-task-based-experiments" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_spm_auditory</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">masking</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># load fMRI data</span>
+<span class="n">subject_data</span> <span class="o">=</span> <span class="n">fetch_spm_auditory</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># load events</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">subject_data</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">])</span>
+<span class="n">events</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">events</span><span class="p">[</span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;trial_type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;active&#39;</span><span class="p">]</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;onset&#39;</span><span class="p">,</span> <span class="s1">&#39;duration&#39;</span><span class="p">,</span> <span class="s1">&#39;amplitude&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+<span class="n">frame_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span> <span class="mi">100</span><span class="o">-</span><span class="mi">4</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">compute_regressor</span>
+
+<span class="n">block</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">compute_regressor</span><span class="p">(</span>
+        <span class="n">events</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">frame_times</span><span class="p">,</span> <span class="n">con_id</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="p">,</span>
+        <span class="n">oversampling</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">block</span> <span class="o">=</span> <span class="n">block</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+<span class="n">response</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">compute_regressor</span><span class="p">(</span>
+        <span class="n">events</span><span class="p">,</span> <span class="s1">&#39;glover&#39;</span><span class="p">,</span> <span class="n">frame_times</span><span class="p">,</span> <span class="n">con_id</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="p">,</span>
+        <span class="n">oversampling</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">frame_times</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;stimulus&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frame_times</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;BOLD signal (u.a.)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;hrf-auditory-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="hrf-auditory-fig" style="width: 500px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/fmri_intro_9_2.png" src="../../../_images/fmri_intro_9_2.png" />
+</div>
+<p class="caption"><span class="caption-text">Illustration of a <code class="docutils literal notranslate"><span class="pre">block</span> <span class="pre">paradigm</span></code>, here <code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">perception</span></code>. In blue: <code class="docutils literal notranslate"><span class="pre">periods</span></code> of <code class="docutils literal notranslate"><span class="pre">audio</span> <span class="pre">stimulation</span></code>. In red: <code class="docutils literal notranslate"><span class="pre">predicted</span> <span class="pre">brain</span> <span class="pre">response</span></code> with the <code class="docutils literal notranslate"><span class="pre">time-invariant</span> <span class="pre">linear</span> <span class="pre">response</span> <span class="pre">model</span></code>, and a <code class="docutils literal notranslate"><span class="pre">unitary</span> <span class="pre">response</span></code> following the <code class="docutils literal notranslate"><span class="pre">model</span></code> of Glover et al. (1999) <a href="#id11"><span class="problematic" id="id12">:cite:p:`Glover1999-cb`</span></a>. The code to generate this figure is adapted from a [ Nilearn tutorial](<a class="reference external" href="https://nilearn.github.io/auto_examples/04_glm_first_level/plot_hrf.html#sphx-glr-auto-examples-04-glm-first-level-plot">https://nilearn.github.io/auto_examples/04_glm_first_level/plot_hrf.html#sphx-glr-auto-examples-04-glm-first-level-plot</a> -hrf-py), and the figure is licensed under CC-BY.</span><a class="headerlink" href="#hrf-auditory-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>To determine whether <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">voxel</span></code> <code class="docutils literal notranslate"><span class="pre">activity</span></code> changes in <code class="docutils literal notranslate"><span class="pre">response</span></code> to <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">manipulations</span></code>, a standard <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">approach</span></code> is to <code class="docutils literal notranslate"><span class="pre">manipulate</span></code> the <code class="docutils literal notranslate"><span class="pre">task</span></code> the <code class="docutils literal notranslate"><span class="pre">participant</span></code> is performing in the <code class="docutils literal notranslate"><span class="pre">scanner</span></code>, for example by <code class="docutils literal notranslate"><span class="pre">alternating</span></code> different <code class="docutils literal notranslate"><span class="pre">block</span> <span class="pre">conditions</span></code> (<code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">stimulation</span></code>, <code class="docutils literal notranslate"><span class="pre">silence</span></code>). We then use <code class="docutils literal notranslate"><span class="pre">contrasts</span></code>, also called <code class="docutils literal notranslate"><span class="pre">subtraction</span> <span class="pre">analysis</span></code>, which proceed by <code class="docutils literal notranslate"><span class="pre">comparing</span></code> the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code> of one <code class="docutils literal notranslate"><span class="pre">condition</span></code> to another <code class="docutils literal notranslate"><span class="pre">condition</span></code>, or to a <code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">threshold</span></code>. In a simplified way, the <code class="docutils literal notranslate"><span class="pre">analysis</span></code> consists of computing the difference of <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">brain</span> <span class="pre">activity</span></code> between the <code class="docutils literal notranslate"><span class="pre">period</span></code> of <code class="docutils literal notranslate"><span class="pre">silence</span></code> and the <code class="docutils literal notranslate"><span class="pre">period</span></code> of <code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">stimulations</span></code>. These <code class="docutils literal notranslate"><span class="pre">contrasts</span></code> are repeated for each of the <code class="docutils literal notranslate"><span class="pre">voxels</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, and generate a <strong>cerebral statistical map</strong>.</p>
+</div>
+<div class="section" id="massive-univariate-regression">
+<h3>Massive univariate regression<a class="headerlink" href="#massive-univariate-regression" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to <code class="docutils literal notranslate"><span class="pre">generalize</span></code> the <code class="docutils literal notranslate"><span class="pre">subtraction</span> <span class="pre">analysis</span></code> to account for <strong>1) the shape of the hemodynamic response</strong>
+<strong>2) the presence of several conditions in the same experiment</strong>. In practice, by making an <code class="docutils literal notranslate"><span class="pre">assumption</span></code> of a <code class="docutils literal notranslate"><span class="pre">linear</span></code> and <code class="docutils literal notranslate"><span class="pre">time-invariant</span> <span class="pre">system</span></code>, one generates a <code class="docutils literal notranslate"><span class="pre">prediction</span></code> of the <code class="docutils literal notranslate"><span class="pre">shape</span></code> of the <code class="docutils literal notranslate"><span class="pre">response</span></code> to an <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">condition</span></code>, as in the <code class="xref std std-numref docutils literal notranslate"><span class="pre">hrf-auditory-fig</span></code>. A <code class="docutils literal notranslate"><span class="pre">linear</span> <span class="pre">regression</span> <span class="pre">model</span></code> is then used to <code class="docutils literal notranslate"><span class="pre">estimate</span></code> the <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> of this <code class="docutils literal notranslate"><span class="pre">response</span></code>, in order to adjust the <code class="docutils literal notranslate"><span class="pre">model</span></code> as closely as possible to the <code class="docutils literal notranslate"><span class="pre">values</span></code> measured in a <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. This <code class="docutils literal notranslate"><span class="pre">regression</span></code> generates an <code class="docutils literal notranslate"><span class="pre">amplitude</span> <span class="pre">parameter</span></code> (and runs a <code class="docutils literal notranslate"><span class="pre">significance</span> <span class="pre">test</span></code>) for each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. We talk about <code class="docutils literal notranslate"><span class="pre">univariate</span> <span class="pre">regression</span></code> because each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code> is <code class="docutils literal notranslate"><span class="pre">analyzed</span></code> <code class="docutils literal notranslate"><span class="pre">independently</span></code>. And we talk about <code class="docutils literal notranslate"><span class="pre">massive</span> <span class="pre">univariate</span> <span class="pre">regression</span></code>, because we repeat this procedure for <code class="docutils literal notranslate"><span class="pre">tens</span></code> (or even <code class="docutils literal notranslate"><span class="pre">hundreds</span></code>) of <code class="docutils literal notranslate"><span class="pre">thousands</span></code> of <code class="docutils literal notranslate"><span class="pre">voxels</span></code>!(activation-section)=</p>
+</div>
+<div class="section" id="fmri-activation-maps">
+<h3>fMRI - Activation Maps<a class="headerlink" href="#fmri-activation-maps" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_spm_auditory</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">masking</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># load fMRI data</span>
+<span class="n">subject_data</span> <span class="o">=</span> <span class="n">fetch_spm_auditory</span><span class="p">()</span>
+<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">concat_imgs</span><span class="p">(</span><span class="n">subject_data</span><span class="o">.</span><span class="n">func</span><span class="p">)</span>
+
+<span class="c1"># Make an average</span>
+<span class="n">mean_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">mean_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">masking</span><span class="o">.</span><span class="n">compute_epi_mask</span><span class="p">(</span><span class="n">mean_img</span><span class="p">)</span>
+
+<span class="c1"># Clean and smooth data</span>
+<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">clean_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">,</span> <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">t_r</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">,</span> <span class="mf">5.</span><span class="p">)</span>
+
+<span class="c1"># load events</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">subject_data</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">])</span>
+
+<span class="c1"># Fit model</span>
+<span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">FirstLevelModel</span>
+<span class="n">fmri_glm</span> <span class="o">=</span> <span class="n">FirstLevelModel</span><span class="p">(</span><span class="n">t_r</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+                           <span class="n">drift_model</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span>
+                           <span class="n">signal_scaling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                           <span class="n">mask_img</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>                           
+                           <span class="n">minimize_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fmri_glm</span> <span class="o">=</span> <span class="n">fmri_glm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">,</span> <span class="n">events</span><span class="p">)</span>
+
+<span class="c1"># Extract activation clusters</span>
+<span class="kn">from</span> <span class="nn">nilearn.reporting</span> <span class="kn">import</span> <span class="n">get_clusters_table</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">input_data</span>
+<span class="n">z_map</span> <span class="o">=</span> <span class="n">fmri_glm</span><span class="o">.</span><span class="n">compute_contrast</span><span class="p">(</span><span class="s1">&#39;active - rest&#39;</span><span class="p">)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">get_clusters_table</span><span class="p">(</span><span class="n">z_map</span><span class="p">,</span> <span class="n">stat_threshold</span><span class="o">=</span><span class="mf">3.1</span><span class="p">,</span>
+                           <span class="n">cluster_threshold</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Cluster ID&#39;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># get the 3 largest clusters&#39; max x, y, and z coordinates</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># extract time series from each coordinate</span>
+<span class="n">masker</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">NiftiSpheresMasker</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+<span class="n">real_timeseries</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">)</span>
+<span class="n">predicted_timeseries</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">fmri_glm</span><span class="o">.</span><span class="n">predicted</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Plot figure</span>
+<span class="c1"># colors for each of the clusters</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="s1">&#39;olive&#39;</span><span class="p">,</span> <span class="s1">&#39;teal&#39;</span><span class="p">]</span>
+<span class="c1"># plot the time series and corresponding locations</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">axs1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="c1"># plotting time series</span>
+    <span class="n">axs1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cluster peak </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">axs1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">real_timeseries</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axs1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">predicted_timeseries</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axs1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+    <span class="n">axs1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Signal intensity&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># plotting image below the time series</span>
+    <span class="n">roi_img</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span>
+        <span class="n">z_map</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]],</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">3.1</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig1</span><span class="p">,</span>
+        <span class="n">axes</span><span class="o">=</span><span class="n">axs1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="n">display_mode</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">mean_img</span><span class="p">)</span>
+    <span class="n">roi_img</span><span class="o">.</span><span class="n">add_markers</span><span class="p">([</span><span class="n">coords</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;auditory-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="auditory-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/fmri_intro_11_0.png" src="../../../_images/fmri_intro_11_0.png" />
+</div>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Activation</span> <span class="pre">map</span></code> for an <code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">block</span> <span class="pre">paradigm</span></code>. The three main <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">peaks</span></code> have been identified, and the <code class="docutils literal notranslate"><span class="pre">signal</span></code> is presented for each <code class="docutils literal notranslate"><span class="pre">peak</span></code>, superimposed with the <code class="docutils literal notranslate"><span class="pre">activity</span></code> <code class="docutils literal notranslate"><span class="pre">predicted</span></code> by the <code class="docutils literal notranslate"><span class="pre">model</span></code> based on the <code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">stimuli</span></code>. Note how the <code class="docutils literal notranslate"><span class="pre">shape</span></code> of the <code class="docutils literal notranslate"><span class="pre">response</span></code> is identical for the three selected <code class="docutils literal notranslate"><span class="pre">voxels</span></code>, but the <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> of the pattern varies (<code class="docutils literal notranslate"><span class="pre">estimated</span></code> by the <code class="docutils literal notranslate"><span class="pre">regression</span></code>). The code to generate this figure is adapted from a [Nilearn tutorial](<a class="reference external" href="https://nilearn.github.io/auto_examples/04_glm_first_level/plot_hrf.html#sphx-glr-auto-examples-04-glm-first-level-plot">https://nilearn.github.io/auto_examples/04_glm_first_level/plot_hrf.html#sphx-glr-auto-examples-04-glm-first-level-plot</a> -hrf-py), and the figure is licensed under CC-BY.</span><a class="headerlink" href="#auditory-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Activation</span> <span class="pre">maps</span></code> are often what are found in scientific papers in the results section. These are <code class="docutils literal notranslate"><span class="pre">maps</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> on which the <code class="docutils literal notranslate"><span class="pre">statistics</span></code> obtained are superimposed (e.g. <code class="docutils literal notranslate"><span class="pre">level</span> <span class="pre">of</span> <span class="pre">activation</span></code>, <code class="docutils literal notranslate"><span class="pre">t-test</span></code>, <code class="docutils literal notranslate"><span class="pre">p-value</span></code>). They are superimposed vis-à-vis the corresponding <code class="docutils literal notranslate"><span class="pre">voxels</span></code> or <code class="docutils literal notranslate"><span class="pre">regions</span></code>. They are often presented following the application of <code class="docutils literal notranslate"><span class="pre">thresholds</span></code> or <code class="docutils literal notranslate"><span class="pre">masks</span></code>, isolating the most <code class="docutils literal notranslate"><span class="pre">active</span> <span class="pre">regions</span></code>, with the average differences between the most important and/or the most <code class="docutils literal notranslate"><span class="pre">statistically</span> <span class="pre">significant</span></code> <code class="docutils literal notranslate"><span class="pre">conditions</span></code>. Via such <code class="docutils literal notranslate"><span class="pre">maps</span></code>, we can study the <code class="docutils literal notranslate"><span class="pre">organization</span></code> of <code class="docutils literal notranslate"><span class="pre">systems</span></code> of interest (<code class="docutils literal notranslate"><span class="pre">visual</span></code>, <code class="docutils literal notranslate"><span class="pre">motor</span></code>, <code class="docutils literal notranslate"><span class="pre">auditory</span></code>, <code class="docutils literal notranslate"><span class="pre">working</span> <span class="pre">memory</span></code>, etc.), but also <code class="docutils literal notranslate"><span class="pre">compare</span></code> <code class="docutils literal notranslate"><span class="pre">groups</span></code> or associate the <code class="docutils literal notranslate"><span class="pre">level</span> <span class="pre">of</span> <span class="pre">activation</span></code> with <code class="docutils literal notranslate"><span class="pre">traits</span></code> of <code class="docutils literal notranslate"><span class="pre">interest</span></code> such as <code class="docutils literal notranslate"><span class="pre">age</span></code>, <code class="docutils literal notranslate"><span class="pre">training</span></code>, etc. .</p>
+</div>
+</div>
+<div class="section" id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
+<p>Performing an <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">experiment</span></code> requires thinking carefully about the <code class="docutils literal notranslate"><span class="pre">conditions</span></code> of <code class="docutils literal notranslate"><span class="pre">interest</span></code> and <code class="docutils literal notranslate"><span class="pre">controls</span></code> to <code class="docutils literal notranslate"><span class="pre">isolate</span></code> relevant <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">processes</span></code>, but it also requires thinking about the <code class="docutils literal notranslate"><span class="pre">underlying</span> <span class="pre">assumptions</span></code>:</p>
+<ul class="simple">
+<li><p><strong>neural hypotheses</strong>: <code class="docutils literal notranslate"><span class="pre">populations</span></code> of <code class="docutils literal notranslate"><span class="pre">neurons</span></code> will <code class="docutils literal notranslate"><span class="pre">activate</span></code> in <code class="docutils literal notranslate"><span class="pre">response</span></code> to our <code class="docutils literal notranslate"><span class="pre">conditions</span></code>.</p></li>
+<li><p><strong>neurovascular assumptions</strong>: We assume that the <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">response</span></code> will be <code class="docutils literal notranslate"><span class="pre">coupled</span></code> to a <code class="docutils literal notranslate"><span class="pre">characteristic</span> <span class="pre">vascular</span> <span class="pre">response</span></code> that can be <code class="docutils literal notranslate"><span class="pre">modeled</span></code> with a <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">function</span></code>, which is <code class="docutils literal notranslate"><span class="pre">linear</span></code> and <code class="docutils literal notranslate"><span class="pre">time-invariant</span></code>.</p></li>
+<li><p><strong>Statistical assumptions</strong>: We assume that our <code class="docutils literal notranslate"><span class="pre">regression</span> <span class="pre">model</span></code> adequately captures <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>, and that we correctly account for <code class="docutils literal notranslate"><span class="pre">confounding</span> <span class="pre">factors</span></code> and <code class="docutils literal notranslate"><span class="pre">artifacts</span></code>.</p></li>
+</ul>
+<p>For all these reasons, there are still important <code class="docutils literal notranslate"><span class="pre">limitations</span></code> to the interpretation that can be made based on <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> results. But it is also the <code class="docutils literal notranslate"><span class="pre">non-invasive</span></code> <code class="docutils literal notranslate"><span class="pre">whole-brain</span></code> technique that has the best <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">resolution</span></code> to date.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>In the following we created a few exercises that aim to recap core aspects of this part of the course and thus should allow you to assess if you understood the main points.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.1</p>
+<p>Choose the right answer. <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> are usually…</p>
+<ol class="simple">
+<li><p>A picture of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p></li>
+<li><p>A dozen <code class="docutils literal notranslate"><span class="pre">images</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p></li>
+<li><p>Dozens of <code class="docutils literal notranslate"><span class="pre">brain</span></code> <code class="docutils literal notranslate"><span class="pre">images</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.2</p>
+<p>What is the <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code>? (right/wrong).</p>
+<ol class="simple">
+<li><p>A very brave <code class="docutils literal notranslate"><span class="pre">signal</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">T2*-weighted</span></code> sequence.</p></li>
+<li><p>A type of <code class="docutils literal notranslate"><span class="pre">MRI</span></code> <code class="docutils literal notranslate"><span class="pre">sequence</span></code> that measures <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>.</p></li>
+<li><p>A type of <code class="docutils literal notranslate"><span class="pre">MRI</span></code> <code class="docutils literal notranslate"><span class="pre">sequence</span></code> that measures <code class="docutils literal notranslate"><span class="pre">blood</span> <span class="pre">oxygenation</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.3</p>
+<p>Choose the right answer. The <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> depends on…</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">blood</span> <span class="pre">flow</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">blood</span> <span class="pre">volume</span></code>.</p></li>
+<li><p>The relative <code class="docutils literal notranslate"><span class="pre">deoxyhemoglobin</span></code> concentration.</p></li>
+<li><p>All of the above answers.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.4</p>
+<p>(Right/wrong) The principle of <code class="docutils literal notranslate"><span class="pre">additivity</span></code> of the <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> is…</p>
+<ol class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">mathematical</span> <span class="pre">model</span></code>.</p></li>
+<li><p>A basic property of <code class="docutils literal notranslate"><span class="pre">neurovascular</span> <span class="pre">coupling</span></code>, always verified.</p></li>
+<li><p>A common <code class="docutils literal notranslate"><span class="pre">hypothesis</span></code>, partly confirmed experimentally.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.5</p>
+<p>What <code class="docutils literal notranslate"><span class="pre">phenomena</span></code> cause a change in the <code class="docutils literal notranslate"><span class="pre">signal</span></code> measured by the <code class="docutils literal notranslate"><span class="pre">BOLD</span></code>?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.6</p>
+<p>In which portion of the <code class="docutils literal notranslate"><span class="pre">vascular</span> <span class="pre">tree</span></code> are the main changes related to local <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code> observed?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.7</p>
+<p>Right/wrong?</p>
+<ol class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> starts immediately after <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">excitation</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> is visible <code class="docutils literal notranslate"><span class="pre">one</span> <span class="pre">second</span></code> after <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">excitation</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> is maximal <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">seconds</span></code> after <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">excitation</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> is still visible <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">seconds</span></code> after <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">excitation</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span></code> is still visible <code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">seconds</span></code> after <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">excitation</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.8</p>
+<p>True/False/Maybe? (explain why)</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Functional</span></code> and <code class="docutils literal notranslate"><span class="pre">structural</span></code> <code class="docutils literal notranslate"><span class="pre">MRI</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> must be <code class="docutils literal notranslate"><span class="pre">realigned</span></code> to generate an <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">“Raw”</span></code> <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> (before pre-processing) cannot be used to generate an <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spatial</span> <span class="pre">smoothing</span></code> is important even for <code class="docutils literal notranslate"><span class="pre">individual</span> <span class="pre">analysis</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.9</p>
+<p>We compare <code class="docutils literal notranslate"><span class="pre">activation</span></code> for a <code class="docutils literal notranslate"><span class="pre">memory</span> <span class="pre">task</span></code> in the <code class="docutils literal notranslate"><span class="pre">frontal</span> <span class="pre">cortex</span></code> between two groups of <code class="docutils literal notranslate"><span class="pre">participants</span></code>: young <code class="docutils literal notranslate"><span class="pre">participants</span></code> and elderly <code class="docutils literal notranslate"><span class="pre">participants</span></code> (N=20 per group). Contrary to our hypotheses, no difference is found. Give three reasons that can explain this result. For each possible reason, suggest a modification to the <code class="docutils literal notranslate"><span class="pre">protocol</span></code> that would uncover a difference between the two groups.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 4.10</p>
+<p>To answer the questions in this exercise, first read the article <em>High-resolution functional MRI of the human amygdala at 7 T</em> by Mensen et al. (published in 2013 in the journal <em>European Journal of radiology</em>, volume 82, pages 728 to 733).
+It is freely available at this <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3629563/">address</a>.
+The following questions require short-answer answers.</p>
+<ul class="simple">
+<li><p>What type of <code class="docutils literal notranslate"><span class="pre">participants</span></code> were recruited in this study?</p></li>
+<li><p>What is the main <code class="docutils literal notranslate"><span class="pre">objective</span></code> of the study?</p></li>
+<li><p>What are the <code class="docutils literal notranslate"><span class="pre">inclusion</span></code> and <code class="docutils literal notranslate"><span class="pre">exclusion</span> <span class="pre">criteria</span></code>?</p></li>
+<li><p>What <code class="docutils literal notranslate"><span class="pre">neuroimaging</span></code> technique is used? Is it a <code class="docutils literal notranslate"><span class="pre">structural</span></code> or <code class="docutils literal notranslate"><span class="pre">functional</span></code> technique?</p></li>
+<li><p>What type of <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">acquisition</span> <span class="pre">sequence</span></code> is used? List the <code class="docutils literal notranslate"><span class="pre">parameters</span></code>.</p></li>
+<li><p>Which pre-processing steps were applied?</p></li>
+<li><p>What <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">models</span></code> were applied?</p></li>
+<li><p>Which figure (or table) meets the main <code class="docutils literal notranslate"><span class="pre">objective</span></code> of the study?</p></li>
+<li><p>What is the main result of the study?</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
