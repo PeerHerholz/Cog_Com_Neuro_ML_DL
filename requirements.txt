@@ -4,7 +4,7 @@ jupyter-book==0.11.1
 nbclient==0.5.1
 jinja2==3.0.0
 jupytext
-nilearn
+nilearn==0.7.0
 seaborn
 tensorflow
 mne
