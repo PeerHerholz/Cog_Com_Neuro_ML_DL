@@ -400,6 +400,47 @@ To get things up and running, please follow these steps:
 You can use this approach to run and test most of the notebooks and to explore the slides. To access the MyBinder instance, use [this link](https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/HEAD).
 ```
 
+A few of the hands-on sections will require a dataset to showcase certain things. However, don't worry: we will of course only utilize `open` and `standardized` `datasets`! Moreover, we will make use of the fantastic `DataLad` to easily download the `dataset` (thus please make sure that `DataLad` is installed and works). At first, we will `install` the `dataset`:
+
+```
+mkdir data
+cd data
+datalad install https://github.com/OpenNeuroDatasets/ds000114.git
+```
+
+And then download (parts of) it:
+
+```
+cd ds000114
+datalad get -J 4 ds000114/sub-0[1237]/ses-test/anat/sub-0[1237]_ses-test_T1w.nii.gz
+                 ds000114/sub-0[1237]/ses-test/func/*fingerfootlips* \
+                 ds000114/derivatives/freesurfer/sub-01 \
+                 ds000114/derivatives/fmriprep/sub-01/ses-test/func/*fingerfootlips* \
+                 ds000114/derivatives/fmriprep/sub-02/ses-test/func/*fingerfootlips* \
+                 ds000114/derivatives/fmriprep/sub-03/ses-test/func/*fingerfootlips* \
+                 ds000114/derivatives/fmriprep/sub-07/ses-test/func/*fingerfootlips* \
+```
+
+Finally, we will rename and move a few things:
+
+```
+mv /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && mv /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && mv /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && mv /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_events.tsv \
+             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_events.tsv \
+             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_events.tsv \
+             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_events.tsv \
+             && rm -r /data/ds000114/*/ses-retest/* \
+             && rm -r /data/ds000114/derivatives/fmriprep/*/ses-retest/* \
+             && mv /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
+             && mv /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
+             && mv /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
+             && mv /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv'
+```
+
+
 ## Enter the matrix
 
 Once you reached this point, you should be ready the enter the matrix and follow the course in your preferred way. Congrats, fantastic work!
