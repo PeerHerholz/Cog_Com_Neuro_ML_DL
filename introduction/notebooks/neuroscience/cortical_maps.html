@@ -490,9 +490,9 @@
                 
   <div class="section" id="cortical-maps">
 <h1>Cortical maps<a class="headerlink" href="#cortical-maps" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default" id="id3">
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../../_images/cortical_maps.png"><img alt="../../../_images/cortical_maps.png" src="../../../_images/cortical_maps.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The neuroimaging tree. Each branch represents one of the techniques that will be briefly presented during this part of the course. Figure adapted by P. Bellec from a variety of non-copyright sources and inspired by the book <a href="#id1"><span class="problematic" id="id2">:cite:p:`wager2015`</span></a>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The neuroimaging tree. Each branch represents one of the techniques that will be briefly presented during this part of the course. Figure adapted by P. Bellec from a variety of non-copyright sources and inspired by the book <span id="id1">[<a class="reference internal" href="#id38">Wager and Lindquist, 2015</a>]</span>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>This first chapter aims to give an overview of this part of the course as a whole. This is a condensed format, which covers all the <code class="docutils literal notranslate"><span class="pre">imaging</span> <span class="pre">techniques</span></code> that we will briefly discuss during this part of the course. If you want to start your project by studying only one chapter, you’ve come to the right place. But this strategy is not recommended! If, on the contrary, you wish to work on the material of each chapter in depth, the essential information can be found elsewhere in the course notes with more details. Nevertheless, this chapter specifies elements of vocabulary, basic notions and will allow you to quickly make connections between the different techniques seen in this part of the course and beyond.</p>
 <div class="section" id="objectives">
@@ -509,7 +509,7 @@
 <h2>Structural and functional imaging<a class="headerlink" href="#structural-and-functional-imaging" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="structure-function-fig">
 <a class="reference internal image-reference" href="introduction/notebooks/neuroscience/cartes_cerebrales/fig_structure_function.png"><img alt="introduction/notebooks/neuroscience/cartes_cerebrales/fig_structure_function.png" src="introduction/notebooks/neuroscience/cartes_cerebrales/fig_structure_function.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration of the structural and functional techniques briefly discussed in this part of the course, as well as some possible applications in cognitive neuroscience. Figure adapted by P. Bellec from a variety of non-copyright sources and inspired by the book<a href="#id4"><span class="problematic" id="id5">:cite:p:`wager2015`</span></a>.</span><a class="headerlink" href="#structure-function-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration of the structural and functional techniques briefly discussed in this part of the course, as well as some possible applications in cognitive neuroscience. Figure adapted by P. Bellec from a variety of non-copyright sources and inspired by the book<span id="id3">[<a class="reference internal" href="#id38">Wager and Lindquist, 2015</a>]</span>.</span><a class="headerlink" href="#structure-function-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">techniques</span></code> studied in this part of the course have in common that they aim to generate <code class="docutils literal notranslate"><span class="pre">maps</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. They are also central tools in many <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">neuroscience</span></code> studies that use <code class="docutils literal notranslate"><span class="pre">neuroimaging</span></code>. These techniques include:
 *<strong>Structural Magnetic Resonance Imaging (MRI)</strong>. This is the best known <code class="docutils literal notranslate"><span class="pre">technique</span></code> in <code class="docutils literal notranslate"><span class="pre">MRI</span></code>. It is an <code class="docutils literal notranslate"><span class="pre">image</span></code> that captures the <code class="docutils literal notranslate"><span class="pre">shape</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. It also allows you to see different types of <code class="docutils literal notranslate"><span class="pre">tissue</span></code>, and in particular the <code class="docutils literal notranslate"><span class="pre">gray</span> <span class="pre">matter</span></code>, that entails the bodies of <code class="docutils literal notranslate"><span class="pre">neurons</span></code> that are in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p>
@@ -558,7 +558,9 @@
 <h2>Structural MRI<a class="headerlink" href="#structural-mri" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code retrieves T1 MRI data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># This code retrieves T1 MRI data</span>
 <span class="c1"># and generates an image in three planes of cuts</span>
 
 <span class="c1"># ignore warnings</span>
@@ -575,7 +577,8 @@
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">view_img</span> 
 
 <span class="c1">#fig = plt.figure(figsize=(12, 4))</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">view_img</span><span class="p">(</span>
+<span class="c1">#fig = </span>
+<span class="n">view_img</span><span class="p">(</span>
   <span class="n">mni</span><span class="o">.</span><span class="n">t1</span><span class="p">,</span>
   <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bone&#39;</span><span class="p">,</span>
   <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -584,15 +587,14 @@
   <span class="n">symmetric_cmap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;T1 weighted MRI&#39;</span>
 <span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">save_as_html</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/t1w.html&#39;</span><span class="p">)</span>
-<span class="n">fig</span>
+<span class="c1">#fig</span>
 <span class="c1">#glue(&quot;t1-fig&quot;, fig, display=False)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="figure align-default" id="t1-fig" style="width: 800px">
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">An example of <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code> (here with a so-called <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">contrast</span></code>), on <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">slice</span> <span class="pre">planes</span></code>: <code class="docutils literal notranslate"><span class="pre">coronal</span></code> (left), <code class="docutils literal notranslate"><span class="pre">sagital</span></code> (middle) and <code class="docutils literal notranslate"><span class="pre">axial</span></code> (right). See the tip {ref} <code class="docutils literal notranslate"><span class="pre">Navigating</span> <span class="pre">Through</span> <span class="pre">Brain</span> <span class="pre">Slices&lt;slices-tip&gt;</span></code> for an explanation of these terms. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library from a public dataset called <code class="docutils literal notranslate"><span class="pre">template</span> <span class="pre">MNI152</span> <span class="pre">2009</span></code> <a href="#id6"><span class="problematic" id="id7">:cite:p:`Fonov2011 -xr`</span></a> (click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code).</span><a class="headerlink" href="#t1-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">An example of <code class="docutils literal notranslate"><span class="pre">structural</span> <span class="pre">MRI</span></code> (here with a so-called <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">contrast</span></code>), on <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">slice</span> <span class="pre">planes</span></code>: <code class="docutils literal notranslate"><span class="pre">coronal</span></code> (left), <code class="docutils literal notranslate"><span class="pre">sagital</span></code> (middle) and <code class="docutils literal notranslate"><span class="pre">axial</span></code> (right). See the tip {ref} <code class="docutils literal notranslate"><span class="pre">Navigating</span> <span class="pre">Through</span> <span class="pre">Brain</span> <span class="pre">Slices&lt;slices-tip&gt;</span></code> for an explanation of these terms. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library from a public dataset called <code class="docutils literal notranslate"><span class="pre">template</span> <span class="pre">MNI152</span> <span class="pre">2009</span></code> <span id="id4">[<a class="reference internal" href="morphometry.html#id19">Fonov <em>et al.</em>, 2011</a>]</span> (click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code).</span><a class="headerlink" href="#t1-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>The most common type of <code class="docutils literal notranslate"><span class="pre">image</span></code> acquired with an <code class="docutils literal notranslate"><span class="pre">MRI</span> <span class="pre">machine</span></code> aims to characterize the <code class="docutils literal notranslate"><span class="pre">morphology</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. As we can see in the figure <a class="reference internal" href="#t1-fig"><span class="std std-ref">above</span></a>, we easily distinguish some <code class="docutils literal notranslate"><span class="pre">anatomical</span> <span class="pre">elements</span></code>:</p>
 <ul class="simple">
@@ -609,7 +611,6 @@
 <li><p>the <code class="docutils literal notranslate"><span class="pre">m</span></code> (or <code class="docutils literal notranslate"><span class="pre">y</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> goes from the <code class="docutils literal notranslate"><span class="pre">back</span></code> of the <code class="docutils literal notranslate"><span class="pre">skull</span></code> (<code class="docutils literal notranslate"><span class="pre">posterior</span></code>) to the <code class="docutils literal notranslate"><span class="pre">face</span></code> (<code class="docutils literal notranslate"><span class="pre">anterior</span></code>). With reference to the <code class="docutils literal notranslate"><span class="pre">mouse</span></code>, <code class="docutils literal notranslate"><span class="pre">anterior</span></code> is sometimes called <code class="docutils literal notranslate"><span class="pre">&quot;rostral&quot;</span></code> (towards the muzzle) and <code class="docutils literal notranslate"><span class="pre">posterior</span></code> is sometimes called <code class="docutils literal notranslate"><span class="pre">&quot;caudal&quot;</span></code> (towards the tail).</p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">d</span></code> (or <code class="docutils literal notranslate"><span class="pre">z</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> goes from the feet to the head. The <code class="docutils literal notranslate"><span class="pre">direction</span></code> of the feet is called <code class="docutils literal notranslate"><span class="pre">&quot;ventral&quot;</span></code> and the <code class="docutils literal notranslate"><span class="pre">direction</span></code> of the head is called <code class="docutils literal notranslate"><span class="pre">&quot;dorsal&quot;</span></code>. This terminology makes sense when thinking of a mouse and illogical for humans - but we use it anyway!</p></li>
 </ul>
-<p><a class="reference external" href="https://atlases.ebrains.eu/viewer/#/a:juelich:iav:atlas:v1.0.0:1/t:minds:core:referencespace:v1.0.0:dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2/p:minds:core:parcellationatlas:v1.0.0:94c1125b-b87e-45e4-901c-00daee7f2579-290/&#64;:0.0.0.-W000">https://atlases.ebrains.eu/viewer/#/a:juelich:iav:atlas:v1.0.0:1/t:minds:core:referencespace:v1.0.0:dafcffc5-4826-4bf1-8ff6-46b8a31ff8e2/p:minds:core:parcellationatlas:v1.0.0:94c1125b-b87e-45e4-901c-00daee7f2579-290/&#64;:0.0.0.-W000</a>..<em>eCwg.2-FUe3.</em>-s_W.2_evlu..7LIx..0.0.0..1LSm</p>
 </div>
 </div>
 <div class="section" id="functional-mri">
@@ -636,20 +637,19 @@
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">view_img</span>
 <span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">index_img</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">view_img</span><span class="p">(</span><span class="n">index_img</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">view_img</span><span class="p">(</span><span class="n">index_img</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">),</span>
               <span class="n">bg_img</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">axes</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span>
               <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="o">-</span><span class="mi">27</span><span class="p">,</span> <span class="mi">66</span><span class="p">),</span>
               <span class="n">black_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
               <span class="n">title</span><span class="o">=</span><span class="s2">&quot;An fMRI volume&quot;</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fmri-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span>
+<span class="c1">#glue(&quot;fmri-fig&quot;, fig, display=False)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="figure align-default" id="fmri-fig" style="width: 800px">
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Example of a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">volume</span></code> in an <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">series</span></code>. The <code class="docutils literal notranslate"><span class="pre">volume</span></code> is represented on <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">planes</span></code> of cuts: <code class="docutils literal notranslate"><span class="pre">coronal</span></code> (left), <code class="docutils literal notranslate"><span class="pre">sagital</span></code> (middle) and <code class="docutils literal notranslate"><span class="pre">axial</span></code> (right). See the tip {ref} <code class="docutils literal notranslate"><span class="pre">Navigating</span> <span class="pre">Through</span> <span class="pre">Brain</span> <span class="pre">Slices&lt;slices-tip&gt;</span></code> for an explanation of these terms. Note that the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> of the <code class="docutils literal notranslate"><span class="pre">volume</span></code> is much lower than for <a class="reference internal" href="#t1-fig"><span class="std std-ref">anatomical MRI</span></a>, and it is very difficult to see the details of the <code class="docutils literal notranslate"><span class="pre">anatomy</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. This <code class="docutils literal notranslate"><span class="pre">figure</span></code> is generated by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code</span></code> using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library from a public dataset called ADHD200 <a href="#id8"><span class="problematic" id="id9">:cite:p:`HD-200_Consortium2012 -uv, BELLEC2017275`</span></a> (click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code).</span><a class="headerlink" href="#fmri-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Example of a <code class="docutils literal notranslate"><span class="pre">single</span> <span class="pre">volume</span></code> in an <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">series</span></code>. The <code class="docutils literal notranslate"><span class="pre">volume</span></code> is represented on <code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">planes</span></code> of cuts: <code class="docutils literal notranslate"><span class="pre">coronal</span></code> (left), <code class="docutils literal notranslate"><span class="pre">sagital</span></code> (middle) and <code class="docutils literal notranslate"><span class="pre">axial</span></code> (right). See the tip {ref} <code class="docutils literal notranslate"><span class="pre">Navigating</span> <span class="pre">Through</span> <span class="pre">Brain</span> <span class="pre">Slices&lt;slices-tip&gt;</span></code> for an explanation of these terms. Note that the <code class="docutils literal notranslate"><span class="pre">resolution</span></code> of the <code class="docutils literal notranslate"><span class="pre">volume</span></code> is much lower than for <a class="reference internal" href="#t1-fig"><span class="std std-ref">anatomical MRI</span></a>, and it is very difficult to see the details of the <code class="docutils literal notranslate"><span class="pre">anatomy</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. This <code class="docutils literal notranslate"><span class="pre">figure</span></code> is generated by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code</span></code> using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library from a public dataset called ADHD200 <span id="id5">[]</span> (click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> to see the code).</span><a class="headerlink" href="#fmri-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>These measurements do not directly reflect the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of the <code class="docutils literal notranslate"><span class="pre">neurons</span></code>, but rather the <code class="docutils literal notranslate"><span class="pre">oxygenation</span></code> of the <code class="docutils literal notranslate"><span class="pre">blood</span></code></strong>. We speak of a <code class="docutils literal notranslate"><span class="pre">signal</span></code> depending on the level of <code class="docutils literal notranslate"><span class="pre">oxygenation</span></code> in the <code class="docutils literal notranslate"><span class="pre">blood</span></code>, or <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> (for <em>Blood Oxygen Level Dependent</em>). As we will see in the <span class="xref std std-ref">coupling-neurovascular-section</span> section, this <code class="docutils literal notranslate"><span class="pre">BOLD</span> <span class="pre">signal</span></code> nevertheless indirectly reflects the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of <code class="docutils literal notranslate"><span class="pre">neurons</span></code> and will allow us to make <code class="docutils literal notranslate"><span class="pre">maps</span></code> of <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>. There are two major types of <code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">techniques</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>:</p>
 <ul class="simple">
@@ -711,14 +711,13 @@
 <span class="c1"># Visualization of the 3D brain volume</span>
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">view_img</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">view_img</span><span class="p">(</span><span class="n">stat_img</span><span class="p">,</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">view_img</span><span class="p">(</span><span class="n">stat_img</span><span class="p">,</span>
               <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-              <span class="n">axes</span> <span class="o">=</span> <span class="n">ax_plot</span><span class="p">,</span>
               <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Statistical map related to movements&quot;</span><span class="p">,</span>
               <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="o">-</span><span class="mi">27</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
               <span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;stat-map-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span>
+<span class="c1">#glue(&quot;stat-map-fig&quot;, fig, display=False)</span>
 </pre></div>
 </div>
 </div>
@@ -734,6 +733,15 @@
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id6"><dl class="citation">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>Vladimir Fonov, Alan C. Evans, Kelly Botteron, C. Robert Almli, Robert C. McKinstry, and D. Louis Collins. Unbiased average age-appropriate atlases for pediatric studies. <em>NeuroImage</em>, 54(1):313–327, January 2011. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1053811910010062">https://www.sciencedirect.com/science/article/pii/S1053811910010062</a> (visited on 2022-04-01), <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2010.07.033">doi:10.1016/j.neuroimage.2010.07.033</a>.</p>
+</dd>
+<dt class="label" id="id38"><span class="brackets">2</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Tor D. Wager and Martin A. Lindquist. <em>Principles of fMRI</em>. Leanpub, July 2015. URL: <a class="reference external" href="https://leanpub.com/principlesoffmri">https://leanpub.com/principlesoffmri</a> (visited on 2022-04-19).</p>
+</dd>
+</dl>
+</p>
 </div>
 <div class="section" id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
@@ -822,16 +830,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-neuro_ai-py"
+            mode: "ex"
         },
         kernelOptions: {
-            kernelName: "conda-env-neuro_ai-py",
+            kernelName: "ex",
             path: "./introduction/notebooks/neuroscience"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-neuro_ai-py'</script>
+    <script>kernelName = 'ex'</script>
 
               </div>
               
