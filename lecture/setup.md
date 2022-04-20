@@ -25,12 +25,13 @@ If you foresee any of these being a problem please reach out to one of the instr
 To get the most out of the course, we ask that you arrive with the following software already installed:
 
 - A command-line shell: `Bash`
-- A version control system: `Git`
-- A remote-capable text editor: `VSCode`
+- A version control system: [Git](https://git-scm.com/) & [DataLad](https://www.datalad.org/)
+- A remote-capable text editor: [VSCode](https://code.visualstudio.com/)
+- A literature & reference manager: [Zotero](https://www.zotero.org/)
 - `Python 3` via `Miniconda`
-- A `GitHub` account
-- `Discord`
-- A `modern browser`
+- A [GitHub](https://github.com/) account
+- [Discord](https://discord.com/)
+- A `modern browser` (e.g. [Chrome](https://www.google.com/chrome/index.html), or [Firefox](https://www.mozilla.org/en-CA/firefox/new/))
 
 If you already have all of the above software tools/packages installed, or are confident you’ll be able to install them by the time the course starts, you can jump straight to [checking your install](#checking-your-install).
 The rest of this page provides more detail on installation procedures for each of the above elements, with separate instructions for each of the three major operating systems (`Windows`, `Mac OS`, and `Linux`).
@@ -84,6 +85,10 @@ You already have it, now that you’ve installed the WSL!
 
 You already have it, now that you’ve installed the WSL!
 
+**DataLad**
+
+Please follow the [fantastic install instructions of the `DataLad handbook`](http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration). 
+
 **VSCode**
 
 1. Go to https://code.visualstudio.com/ and click the download button, then run the `.exe` file.
@@ -104,6 +109,13 @@ You already have it, now that you’ve installed the WSL!
       - Live Share Extension Pack
       - Docker
       - Remote - WSL
+
+**Zotero**
+
+1. Go to https://www.zotero.org/ and click the "Log in" button followed by the "Register for a free account" button on the subsequent page.
+2. Register for a free account via providing the necessary information. N.B.: Think about the email address you are using for the registration. While it might seem feasible/appropriate to use your university account, please remember that you won't have access to it anymore after you finished your studies. Obviously, you could just change it when the time comes but you could also just use a different one right away (which might be less prone to problems anyway). 
+3. Download the [Zotero Desktop App for windows](https://www.zotero.org/download/client/dl?channel=release&platform=win32&version=5.0.96.3) from the [Download page](https://www.zotero.org/download/), run the downloaded `.exe` file and follow the instructions on your screen.
+4. Open the `Zotero Desktop App`, go to `Zotero` -> `Preferences` -> `Sync` and log in with your user credentials.
 
 **Python**
 
@@ -153,6 +165,10 @@ To check whether this is necessary, follow these steps:
 You may already have it; try typing `sudo apt-get install git` (Ubuntu, Debian) or `sudo yum install git` (Fedora) inside the terminal.
 If you are prompted to install it follow the instructions on-screen to do so.
 
+**DataLad**
+
+Please follow the [fantastic install instructions of the `DataLad handbook`](http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration). 
+
 **VSCode**
 
 1. Go to https://code.visualstudio.com/ and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.
@@ -170,6 +186,13 @@ If you are prompted to install it follow the instructions on-screen to do so.
       - Live Share (n.b., you may need to press "Ctrl/Cmd+Shift+P" and type "install extensions" again after installing this)
       - Live Share Extension Pack
       - Docker
+
+**Zotero**
+
+1. Go to https://www.zotero.org/ and click the "Log in" button followed by the "Register for a free account" button on the subsequent page.
+2. Register for a free account via providing the necessary information. N.B.: Think about the email address you are using for the registration. While it might seem feasible/appropriate to use your university account, please remember that you won't have access to it anymore after you finished your studies. Obviously, you could just change it when the time comes but you could also just use a different one right away (which might be less prone to problems anyway). 
+3. Download the [Zotero Desktop App for linux](https://www.zotero.org/download/client/dl?channel=release&platform=linux-x86_64&version=5.0.96.3) from the [Download page](https://www.zotero.org/download/), run the downloaded file and follow the instructions on your screen.
+4. Open the `Zotero Desktop App`, go to `Zotero` -> `Preferences` -> `Sync` and log in with your user credentials.
 
 **Python**
 
@@ -227,6 +250,10 @@ If you do not see something like “git version X.XX.X” printed out, then foll
 1. Double click the downloaded file (`git-2.23.0-intel-universal-mavericks.dmg`) and then double click the `git-2.23.0-intel-universal-mavericks.pkg` icon inside the dmg that is opened.
 1. Follow the on-screen instructions to install the package.
 
+**DataLad**
+
+Please follow the [fantastic install instructions of the `DataLad handbook`](http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration). 
+
 **VSCode**
 
 1. Go to https://code.visualstudio.com/ and click the download button.
@@ -246,6 +273,13 @@ If you do not see something like “git version X.XX.X” printed out, then foll
       - Live Share (n.b., you may need to press "Ctrl/Cmd+Shift+P" and type "install extensions" again after installing this)
       - Live Share Extension Pack
       - Docker
+
+**Zotero**
+
+1. Go to https://www.zotero.org/ and click the "Log in" button followed by the "Register for a free account" button on the subsequent page.
+2. Register for a free account via providing the necessary information. N.B.: Think about the email address you are using for the registration. While it might seem feasible/appropriate to use your university account, please remember that you won't have access to it anymore after you finished your studies. Obviously, you could just change it when the time comes but you could also just use a different one right away (which might be less prone to problems anyway). 
+3. Download the [Zotero Desktop App for macOS](https://www.zotero.org/download/client/dl?channel=release&platform=mac&version=5.0.96.3) from the [Download page](https://www.zotero.org/download/), run the downloaded file and follow the instructions on your screen.
+4. Open the `Zotero Desktop App`, go to `Zotero` -> `Preferences` -> `Sync` and log in with your user credentials.
 
 **Python**
 
@@ -296,9 +330,27 @@ You will be invited to the course channel via e-mail.
 
 ### Modern web browser
 
-Install Firefox or Chrome.
-(Safari will also work.)
+Please install [Chrome](https://www.google.com/chrome/index.html) or [Firefox](https://www.mozilla.org/en-CA/firefox/new/).
+(Safari might also work.)
 Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.
+
+
+**Integrations**
+
+A few of the tools you installed additionally nicely integrate with one another. It's of course up to you to make use of that but it's definitely recommended as it will ease up your (research/work/study) life quite a bit.
+
+1. Go to https://www.zotero.org/download/ and install the connector for your respective browser. With that you can directly get `articles`, `books`, `blog posts`, etc. and their `meta-data` from the web and added to your `zotero` library. Please note: the `Zotero Desktop App` needs to be open for this to work. 
+2. Make sure the `connector` also added the `Zotero plug in` to `google docs`, which should look like the following. Please note: the `Zotero Desktop App` needs to be open for the plug in to work.
+
+<img align="center" src="https://www.zotero.org/support/_media/google-docs-menu.png?w=400&tok=55835d" alt="logo" title="logo" width="300" height="150" hspace=50 />
+<img align="center" src="https://www.zotero.org/support/_media/google-docs-toolbar.png?w=300&tok=799a8a" alt="logo" title="logo" width="300" height="150" />
+
+**Other cool/interesting things**
+
+1. A [Google Chrome Extension](https://chrome.google.com/webstore/detail/citation-transparency/cepnbdbhabaljgecaddglhhcgajphbcf?hl=en) targeting citation transparency focusing gender imbalance. Going further, your `Zotero library` can also be used to [create a diversity statement](https://github.com/dalejn/cleanBib#instructions) which can be added to your written submissions. Find out more about it on [Dani Bassett](https://complexsystemsupenn.com/)'s [lab website](https://complexsystemsupenn.com/diversity-1).
+2. [Grammarly](https://www.grammarly.com/): an AI powered cloud-based writing assistant that can help with typos, spelling, grammar, punctuation, clarity, engagement, and delivery mistakes. The basic version is free and integrates nicely with browsers and local apps. 
+3. [GitKraken Glo Boards](https://app.gitkraken.com/glo/): create and track tasks for better project management.
+4. Get a [pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) app that helps you to stay focus, track your work and get things done. For some examples check this [list](https://www.jotform.com/blog/best-pomodoro-app/).  
 
 ## Checking your install
 
@@ -330,8 +382,8 @@ To get things up and running, please follow these steps:
 
 1. Download the [`environment.yml`](https://raw.githubusercontent.com/peerherholz/Cog_Com_Neuro_ML_DL/master/environment.yml) file (e.g. with right mouse click -> Save As). Make sure that the file ends with `.yml` and not `.txt`.
 2. Open up a conda terminal (or any other terminal), and create a new conda environment with the following command: `conda env create -f /path/to/file/environment.yml` - For example ``conda env create -f ~/Downloads/environment.yml`
-3. Download the notebooks in this repository via [this link](https://github.com/peerherholz/Cog_Com_Neuro_ML_DL/archive/master.zip)) and unzip them to your preferred location, e.g. `Desktop/Cog_Com_Neuro_ML_DL`.
-4. Next, open up a `conda terminal` (or any other `terminal`), activate the `conda environment` with `conda activate neuro_ml` (or on older `conda environment` with `source activate neuro_ml` for `mac` and `linux` and `activate pfp_2021` for `windows`).
+3. Download the notebooks in this repository via [this link](https://github.com/peerherholz/Cog_Com_Neuro_ML_DL/archive/master.zip)) and unzip them to your preferred location, e.g. `Desktop/Cog_Com_Neuro_ML_DL` or via the Download option in the respective sections.
+4. Next, open up a `conda terminal` (or any other `terminal`), activate the `conda environment` with `conda activate neuro_ml` (or on older `conda environment` with `source activate neuro_ml` for `mac` and `linux` and `activate neuro_ml` for `windows`).
 5. Finally, via the `terminal`, move to the folder where you've put all the unzipped content of this workshop, e.g. with the command `cd ~/Desktop/Cog_Com_Neuro_ML_DL` and run the command `jupyter notebook`. If the `notebook server` isn't automatically opened in a new browser window, please copy-paste either the `http://127.0.0.1:8888/...` or the `http://localhost:8888/...` path into a new browser window and press `Enter`. You should now see the `jupyter notebook server` (looking like a file browser and displaying the content of the directory). 
 ```
 
@@ -341,11 +393,11 @@ To get things up and running, please follow these steps:
 <sub><sup><sub><sup>https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b</sup></sub></sup></sub>
 
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/peerherholz/Python_for_Psychologists_Winter2021/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/HEAD)
 
-[MyBinder.org](https://mybinder.org/) is a great service that allows you to run Jupyter notebooks in a Docker or Python environment, directly online and for free. However, this service comes of course with a restricted computational environment (1-2GB of RAM). This means, many notebooks might be very slow and some might even crash, due to not enough memory.
+[MyBinder.org](https://mybinder.org/) is a great service that allows you to run Jupyter notebooks in a `Docker` or `Python` `environment`, directly online and for free. However, this service comes of course with a restricted computational environment (1-2GB of RAM). This means, many notebooks might be very slow and some might even crash, due to not enough memory.
 
-You can use this approach to run and test most of the notebooks and to explore the slides. To access the MyBinder instance, use [this link](https://mybinder.org/v2/gh/peerherholz/Python_for_Psychologists_Winter2021/HEAD).
+You can use this approach to run and test most of the notebooks and to explore the slides. To access the MyBinder instance, use [this link](https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/HEAD).
 ```
 
 ## Enter the matrix
