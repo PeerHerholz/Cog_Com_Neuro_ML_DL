@@ -88,3 +88,7 @@ sphinx:
       sphinx-panels:
         - https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/
         - null
+    bibtex_reference_style: author_year
+
+bibtex_bibfiles: 
+  - Cog_Com_Neuro_ML_DL.bib
