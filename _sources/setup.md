@@ -405,7 +405,7 @@ A few of the hands-on sections will require a dataset to showcase certain things
 ```
 mkdir data
 cd data
-datalad install https://github.com/OpenNeuroDatasets/ds000114.git
+datalad install -r ///workshops/nih-2017/ds000114
 ```
 
 And then download (parts of) it:
