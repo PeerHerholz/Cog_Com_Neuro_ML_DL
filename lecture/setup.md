@@ -412,7 +412,7 @@ And then download (parts of) it:
 
 ```
 cd ds000114
-datalad get -J 4 sub-0[1237]/ses-test/anat/sub-0[1237]_ses-test_T1w.nii.gz
+datalad get -J 4 sub-0[1237]/ses-test/anat/sub-0[1237]_ses-test_T1w.nii.gz \
                  sub-0[1237]/ses-test/func/*fingerfootlips* \
                  derivatives/freesurfer/sub-01 \
                  derivatives/fmriprep/sub-01/ses-test/func/*fingerfootlips* \
