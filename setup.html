@@ -483,8 +483,8 @@ You <em>must</em> have <code class="docutils literal notranslate"><span class="p
 <h3>OS-specific installation instructions<a class="headerlink" href="#os-specific-installation-instructions" title="Permalink to this headline">¶</a></h3>
 <p>Select the tab that corresponds to your operating system and follow the instructions therein.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="24c018c2-eedb-46ec-ad08-e2800ea3cb38" name="739798c4-6896-4db2-83a6-c6ff460c95c4" type="radio">
-</input><label class="tabbed-label" for="24c018c2-eedb-46ec-ad08-e2800ea3cb38">
+<input checked="checked" id="5211016a-e178-4736-83ff-c0ff8e4d8bad" name="35e716ad-1536-4b81-91fd-47c0f5036141" type="radio">
+</input><label class="tabbed-label" for="5211016a-e178-4736-83ff-c0ff8e4d8bad">
 Windows</label><div class="tabbed-content docutils">
 <p><strong>Windows Subsystem for Linux (WSL)</strong></p>
 <ol>
@@ -517,7 +517,20 @@ If you have questions during the installation procedure those resources may have
 <p><strong>Git</strong></p>
 <p>You already have it, now that you’ve installed the WSL!</p>
 <p><strong>DataLad</strong></p>
-<p>Please follow the <a class="reference external" href="http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration">fantastic install instructions of the <code class="docutils literal notranslate"><span class="pre">DataLad</span> <span class="pre">handbook</span></code></a>.</p>
+<p>Please follow the <a class="reference external" href="http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration">fantastic install instructions of the <code class="docutils literal notranslate"><span class="pre">DataLad</span> <span class="pre">handbook</span></code></a>. However, here’s what worked for us in short:</p>
+<p>At first, we need to get <a class="reference external" href="https://neuro.debian.net/">NeuroDebian</a> in order to install the fitting version of <a class="reference external" href="https://www.datalad.org/">DataLad</a>, i.e. <code class="docutils literal notranslate"><span class="pre">0.14</span></code>. Thus, please select your <a class="reference external" href="https://neuro.debian.net/#get-neurodebian">respective OS</a>, here <code class="docutils literal notranslate"><span class="pre">Ubuntu</span> <span class="pre">18.04</span></code> and a <code class="docutils literal notranslate"><span class="pre">download</span> <span class="pre">server</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">Germany</span> <span class="pre">(G-Node,</span> <span class="pre">LMU</span> <span class="pre">Munich)</span></code>. Then, simply follow the resulting instructions, starting with adding the <code class="docutils literal notranslate"><span class="pre">NeuroDebian</span></code> <code class="docutils literal notranslate"><span class="pre">repository</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  wget -O- http://neuro.debian.net/lists/bionic.de-m.full | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
+  sudo apt-key adv --recv-keys --keyserver hkps://keyserver.ubuntu.com 0xA5D32F012649A5A9
+</pre></div>
+</div>
+<p>and then updating the package index:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  sudo apt-get update
+</pre></div>
+</div>
+<p>Now you should be able to install <code class="docutils literal notranslate"><span class="pre">DataLad</span></code> via:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  sudo apt-get install datalad
+</pre></div>
+</div>
 <p><strong>VSCode</strong></p>
 <ol class="simple">
 <li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button, then run the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.</p></li>
@@ -588,8 +601,8 @@ If your issue is still not resolved skip the following step and contact an instr
 </pre></div>
 </div>
 </div>
-<input id="a3952f83-8526-4abb-96eb-59cc7cdba93c" name="739798c4-6896-4db2-83a6-c6ff460c95c4" type="radio">
-</input><label class="tabbed-label" for="a3952f83-8526-4abb-96eb-59cc7cdba93c">
+<input id="58194263-fe9d-4f59-add1-574e6a7b40fc" name="35e716ad-1536-4b81-91fd-47c0f5036141" type="radio">
+</input><label class="tabbed-label" for="58194263-fe9d-4f59-add1-574e6a7b40fc">
 Linux</label><div class="tabbed-content docutils">
 <p><strong>Bash shell</strong></p>
 <p>You already have it!
@@ -604,7 +617,20 @@ If not, whenever the instructions read “open a terminal,” please assume you 
 <p>You may already have it; try typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code> (Ubuntu, Debian) or <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">git</span></code> (Fedora) inside the terminal.
 If you are prompted to install it follow the instructions on-screen to do so.</p>
 <p><strong>DataLad</strong></p>
-<p>Please follow the <a class="reference external" href="http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration">fantastic install instructions of the <code class="docutils literal notranslate"><span class="pre">DataLad</span> <span class="pre">handbook</span></code></a>.</p>
+<p>Please follow the <a class="reference external" href="http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration">fantastic install instructions of the <code class="docutils literal notranslate"><span class="pre">DataLad</span> <span class="pre">handbook</span></code></a>. However, here’s what worked for us in short:</p>
+<p>At first, we need to get <a class="reference external" href="https://neuro.debian.net/">NeuroDebian</a> in order to install the fitting version of <a class="reference external" href="https://www.datalad.org/">DataLad</a>, i.e. <code class="docutils literal notranslate"><span class="pre">0.14</span></code>. Thus, please select your <a class="reference external" href="https://neuro.debian.net/#get-neurodebian">respective OS</a>, here <code class="docutils literal notranslate"><span class="pre">Ubuntu</span> <span class="pre">18.04</span></code> and a <code class="docutils literal notranslate"><span class="pre">download</span> <span class="pre">server</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">Germany</span> <span class="pre">(G-Node,</span> <span class="pre">LMU</span> <span class="pre">Munich)</span></code>. Then, simply follow the resulting instructions, starting with adding the <code class="docutils literal notranslate"><span class="pre">NeuroDebian</span></code> <code class="docutils literal notranslate"><span class="pre">repository</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  wget -O- http://neuro.debian.net/lists/bionic.de-m.full | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
+  sudo apt-key adv --recv-keys --keyserver hkps://keyserver.ubuntu.com 0xA5D32F012649A5A9
+</pre></div>
+</div>
+<p>and then updating the package index:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  sudo apt-get update
+</pre></div>
+</div>
+<p>Now you should be able to install <code class="docutils literal notranslate"><span class="pre">DataLad</span></code> via:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  sudo apt-get install datalad
+</pre></div>
+</div>
 <p><strong>VSCode</strong></p>
 <ol class="simple">
 <li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.</p></li>
@@ -669,8 +695,8 @@ If your issue is still not resolved skip the following step and contact an instr
 </pre></div>
 </div>
 </div>
-<input id="941bd8c4-9f7f-4b01-96da-fb2344012532" name="739798c4-6896-4db2-83a6-c6ff460c95c4" type="radio">
-</input><label class="tabbed-label" for="941bd8c4-9f7f-4b01-96da-fb2344012532">
+<input id="f8dd26ef-45bb-427a-bca7-a123f3a5e0ed" name="35e716ad-1536-4b81-91fd-47c0f5036141" type="radio">
+</input><label class="tabbed-label" for="f8dd26ef-45bb-427a-bca7-a123f3a5e0ed">
 MacOs</label><div class="tabbed-content docutils">
 <p><strong>Bash shell</strong></p>
 <p>You already have it!
@@ -814,8 +840,8 @@ If you followed these instructions step-by-step and cannot resolve the issue ple
 <h2>Getting the course content<a class="headerlink" href="#getting-the-course-content" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have installed the required software (or not) to follow the course, it’s time to gather the respective materials.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="543d03da-7344-46ce-b43e-2b5ca2987077" name="8410ec31-4450-4c05-baf6-9afcf8bc4fa3" type="radio">
-</input><label class="tabbed-label" for="543d03da-7344-46ce-b43e-2b5ca2987077">
+<input checked="checked" id="e5dc5a85-d97f-4d97-88d2-f807adfa756b" name="01d224c7-ceff-41e7-8773-789658980bf7" type="radio">
+</input><label class="tabbed-label" for="e5dc5a85-d97f-4d97-88d2-f807adfa756b">
 Local</label><div class="tabbed-content docutils">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg" alt="conda logo" width="300"/><br />
 <sub><sup><sub><sup><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg">https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg</a></sup></sub></sup></sub></p>
@@ -829,8 +855,8 @@ Local</label><div class="tabbed-content docutils">
 <li><p>Finally, via the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>, move to the folder where you’ve put all the unzipped content of this workshop, e.g. with the command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Desktop/Cog_Com_Neuro_ML_DL</span></code> and run the command <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. If the <code class="docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">server</span></code> isn’t automatically opened in a new browser window, please copy-paste either the <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8888/...</span></code> or the <code class="docutils literal notranslate"><span class="pre">http://localhost:8888/...</span></code> path into a new browser window and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. You should now see the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">server</span></code> (looking like a file browser and displaying the content of the directory).</p></li>
 </ol>
 </div>
-<input id="cb5362b3-796f-41ea-be1f-6adde22ebbc3" name="8410ec31-4450-4c05-baf6-9afcf8bc4fa3" type="radio">
-</input><label class="tabbed-label" for="cb5362b3-796f-41ea-be1f-6adde22ebbc3">
+<input id="90c9aa5a-052d-4cdd-92cf-ac886f76c7b0" name="01d224c7-ceff-41e7-8773-789658980bf7" type="radio">
+</input><label class="tabbed-label" for="90c9aa5a-052d-4cdd-92cf-ac886f76c7b0">
 Cloud via Mybinder</label><div class="tabbed-content docutils">
 <p><img src="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b" alt="binder logo" width="300"/><br />
 <sub><sup><sub><sup><a class="reference external" href="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b">https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b</a></sup></sub></sup></sub></p>
