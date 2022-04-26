@@ -187,11 +187,11 @@ If you are prompted to install it follow the instructions on-screen to do so.
 
 Please follow the [fantastic install instructions of the `DataLad handbook`](http://handbook.datalad.org/en/latest/intro/installation.html#installation-and-configuration). However, here's what worked for us in short:
 
-At first, we need to get [NeuroDebian](https://neuro.debian.net/) in order to install the fitting version of [DataLad](https://www.datalad.org/), i.e. `0.14`. Thus, please select your [respective OS](https://neuro.debian.net/#get-neurodebian), here `Ubuntu 18.04` and a `download server`, e.g. `Germany (G-Node, LMU Munich)`. Then, simply follow the resulting instructions, starting with adding the `NeuroDebian` `repository`:
+At first, we need to get [NeuroDebian](https://neuro.debian.net/) in order to install the fitting version of [DataLad](https://www.datalad.org/), i.e. `~0.14`. Thus, please select your [respective OS](https://neuro.debian.net/#get-neurodebian), here `Ubuntu 18.04` and a `download server`, e.g. `Germany (G-Node, LMU Munich)`. Then, simply follow the resulting instructions, starting with adding the `NeuroDebian` `repository`:
 
 
       wget -O- http://neuro.debian.net/lists/bionic.us-nh.full | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
-      sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xA5D32F012649A5A9
+      sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xA5D32F012649A5A9Hi
 
 
 and then updating the package index:
