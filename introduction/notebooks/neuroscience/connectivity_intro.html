@@ -1,0 +1,1159 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functional connectivity &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Functional connectivity and resting state" href="functional_connectivity.html" />
+    <link rel="prev" title="Using Python for neuroimaging data - Nilearn" href="image_manipulation_nilearn.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="morphometry.html">
+       Morphometric analyzes
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="fmri_intro.html">
+       Functional MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nilearn.html">
+         Using Python for neuroimaging data - Nilearn
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="current reference internal" href="#">
+       Functional connectivity
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="functional_connectivity.html">
+         Functional connectivity and resting state
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/connectivity_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/connectivity_intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/connectivity_intro.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/connectivity_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-connectivity-cards">
+   Functional connectivity cards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-default-mode-network">
+   The default mode network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-networks">
+   Functional networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Functional connectivity</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-connectivity-cards">
+   Functional connectivity cards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-default-mode-network">
+   The default mode network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-networks">
+   Functional networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="functional-connectivity">
+<span id="connectivity-chapter"></span><h1>Functional connectivity<a class="headerlink" href="#functional-connectivity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p>In the chapter on <span class="xref myst">activation maps in fMRI</span>, we saw that this type of analysis emphasizes the notion of <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">segregation</span></code>, i.e. to what extent certain <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">regions</span></code> are involved specifically by a certain category of <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">processes</span></code>. But it is well known that <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">processes</span></code> also require some degree of <strong>functional integration</strong>, where different <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> interact together to perform a <code class="docutils literal notranslate"><span class="pre">task</span></code>. This notion of <code class="docutils literal notranslate"><span class="pre">integration</span></code> leads us to conceive of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> as a <code class="docutils literal notranslate"><span class="pre">network</span></code>, or even a <code class="docutils literal notranslate"><span class="pre">graph</span></code>, which describes the <strong>functional connectivity</strong> between <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. This chapter introduces basic concepts used to study <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">connectivity</span></code> using <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>.</p>
+<div class="figure align-default" id="brain-graph-fig">
+<a class="reference internal image-reference" href="static/neuroscience/brain-graph-fig.png"><img alt="static/neuroscience/brain-graph-fig.png" src="static/neuroscience/brain-graph-fig.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Average</span> <span class="pre">functional</span> <span class="pre">connectivity</span></code> graph on the <code class="docutils literal notranslate"><span class="pre">ADHD-200</span></code> <code class="docutils literal notranslate"><span class="pre">dataset</span></code>. Each <code class="docutils literal notranslate"><span class="pre">node</span></code> in the <code class="docutils literal notranslate"><span class="pre">graph</span></code> represents a <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">region</span></code>, and the <code class="docutils literal notranslate"><span class="pre">connections</span></code> represent the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">functional</span> <span class="pre">connectivity</span></code> on the <code class="docutils literal notranslate"><span class="pre">ADHD-200</span></code> <span id="id1">[<a class="reference internal" href="#id26">Milham <em>et al.</em>, 2012</a>]</span> dataset, after <code class="docutils literal notranslate"><span class="pre">thresholding</span></code>. The <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">scale</span></code> and <code class="docutils literal notranslate"><span class="pre">node</span></code> <code class="docutils literal notranslate"><span class="pre">size</span></code> represent the <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">of</span> <span class="pre">connections</span></code> (<code class="docutils literal notranslate"><span class="pre">degree</span></code>) associated with each <code class="docutils literal notranslate"><span class="pre">node</span></code>. The <code class="docutils literal notranslate"><span class="pre">graph</span></code> is generated using the <a class="reference external" href="https://gephi.org/">gephi</a> library. The figure is taken from <span id="id2">[<a class="reference internal" href="#id24">Bellec <em>et al.</em>, 2017</a>]</span>, licensed under CC-BY.</span><a class="headerlink" href="#brain-graph-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The specific <code class="docutils literal notranslate"><span class="pre">objectives</span></code> of the chapter are to:</p>
+<ul class="simple">
+<li><p>Understand the definition of <strong>functional connectivity</strong>.</p></li>
+<li><p>Understand the distinction between <strong>intrinsic</strong> and <strong>evoked</strong> activity.</p></li>
+<li><p>Understand the notion of <strong>functional network</strong>.</p></li>
+<li><p>Know the <strong>main idle networks</strong>.</p></li>
+</ul>
+</div>
+<div class="section" id="functional-connectivity-cards">
+<h2>Functional connectivity cards<a class="headerlink" href="#functional-connectivity-cards" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">math_img</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span><span class="p">,</span> <span class="n">input_data</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span> <span class="c1"># Fetch data using nilearn</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+
+<span class="c1"># ignore warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Import data</span>
+<span class="n">basc</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_basc_multiscale_2015</span><span class="p">()</span> <span class="c1"># the BASC multiscale atlas</span>
+<span class="n">adhd</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_adhd</span><span class="p">(</span><span class="n">n_subjects</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>          <span class="c1"># ADHD200 preprocessed data (Athena pipeline)\</span>
+
+<span class="c1"># Pre-processing parameters</span>
+<span class="n">num_data</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">fwhm</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">high_pass</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">high_variance_confounds</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">time_samp</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Extract the signal by plot for a functional atlas (BASC)</span>
+<span class="n">masker</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">NiftiLabelsMasker</span><span class="p">(</span>
+                                      <span class="n">basc</span><span class="p">[</span><span class="s1">&#39;scale122&#39;</span><span class="p">],</span>
+                                      <span class="n">resampling_target</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+                                      <span class="n">high_pass</span><span class="o">=</span><span class="n">high_pass</span><span class="p">,</span>
+                                      <span class="n">t_r</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">high_variance_confounds</span><span class="o">=</span><span class="n">high_variance_confounds</span><span class="p">,</span>
+                                      <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                      <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;nilearn_cache&#39;</span><span class="p">,</span>
+                                      <span class="n">memory_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                      <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="n">fwhm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">tseries</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time series with shape </span><span class="si">{</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> (# time points, # parcels))&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load data by voxel</span>
+<span class="n">masker_voxel</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">NiftiMasker</span><span class="p">(</span><span class="n">high_pass</span><span class="o">=</span><span class="n">high_pass</span><span class="p">,</span>
+                                      <span class="n">t_r</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">high_variance_confounds</span><span class="o">=</span><span class="n">high_variance_confounds</span><span class="p">,</span>
+                                      <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                      <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="n">fwhm</span>
+                                     <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">])</span>
+<span class="n">tseries_voxel</span> <span class="o">=</span> <span class="n">masker_voxel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time series with shape </span><span class="si">{</span><span class="n">tseries_voxel</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> (# time points, # voxels))&quot;</span><span class="p">)</span>
+
+<span class="c1"># Show a parcel</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">num_parcel</span> <span class="o">=</span> <span class="mi">73</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;img == </span><span class="si">{</span><span class="n">num_parcel</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">basc</span><span class="p">[</span><span class="s1">&#39;scale122&#39;</span><span class="p">]),</span>
+                  <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                  <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;target region (right M1)&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot the time series of a region</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">time_samp</span><span class="p">],</span> <span class="n">tseries</span><span class="p">[</span><span class="n">time_samp</span><span class="p">,</span> <span class="p">:][:,</span> <span class="n">num_parcel</span><span class="p">],</span> <span class="s1">&#39;o-&#39;</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s.)&#39;</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;BOLD (u.a.)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time series&#39;</span><span class="p">)</span>
+
+<span class="c1"># connectivity map</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">seed_to_voxel_correlations</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">tseries_voxel</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">tseries</span><span class="p">[:,</span> <span class="n">num_parcel</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="c1"># Show the connectivity map</span>
+<span class="n">conn_map</span> <span class="o">=</span> <span class="n">masker_voxel</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">seed_to_voxel_correlations</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">conn_map</span><span class="p">,</span>
+                       <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                       <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                       <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+                       <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">59</span><span class="p">),</span>
+                       <span class="n">title</span><span class="o">=</span><span class="s2">&quot;connectivity map (right M1)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Show a parcel</span>
+<span class="n">num_parcel</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;img == </span><span class="si">{</span><span class="n">num_parcel</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">basc</span><span class="p">[</span><span class="s1">&#39;scale122&#39;</span><span class="p">]),</span>
+                  <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;target region (PCC)&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot the time series of a region</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">time_samp</span><span class="p">],</span> <span class="n">tseries</span><span class="p">[</span><span class="n">time_samp</span><span class="p">,</span> <span class="p">:][:,</span> <span class="n">num_parcel</span><span class="p">],</span> <span class="s1">&#39;o-&#39;</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s.)&#39;</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;BOLD (u.a.)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time series&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># connectivity map</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">seed_to_voxel_correlations</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">tseries_voxel</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">tseries</span><span class="p">[:,</span> <span class="n">num_parcel</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="c1"># Show the connectivity map</span>
+<span class="n">conn_map</span> <span class="o">=</span> <span class="n">masker_voxel</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">seed_to_voxel_correlations</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">conn_map</span><span class="p">,</span>
+                       <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                       <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">52</span><span class="p">,</span> <span class="mi">26</span><span class="p">),</span>
+                       <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                       <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+                       <span class="n">title</span><span class="o">=</span><span class="s2">&quot;connectivity map (PCC)&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fcmri-map-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-center" id="fcmri-map-fig" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/connectivity_intro_1_9.png" src="../../../_images/connectivity_intro_1_9.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Resting</span> <span class="pre">state</span></code> <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">maps</span></code> generated from <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> of an <code class="docutils literal notranslate"><span class="pre">individual</span></code> from the <code class="docutils literal notranslate"><span class="pre">ADHD-200</span> <span class="pre">dataset</span></code> <span id="id3">[<a class="reference internal" href="#id26">Milham <em>et al.</em>, 2012</a>]</span>. For each <code class="docutils literal notranslate"><span class="pre">map</span></code>, the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> used as well as the first five minutes of <code class="docutils literal notranslate"><span class="pre">BOLD</span></code> <code class="docutils literal notranslate"><span class="pre">activity</span></code> associated with the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> are shown. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library (click on + to see the code), and is distributed under CC-BY license.</span><a class="headerlink" href="#fcmri-map-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Before talking about <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">connectivity</span></code>, let’s revisit the concept of <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">maps</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>. As we saw <span class="xref std std-ref">&lt;activation-section&gt;</span>, an <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code> is generated by comparing the <code class="docutils literal notranslate"><span class="pre">BOLD</span></code> <code class="docutils literal notranslate"><span class="pre">fluctuations</span></code> in a given <code class="docutils literal notranslate"><span class="pre">region</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> with a <code class="docutils literal notranslate"><span class="pre">prediction</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> <code class="docutils literal notranslate"><span class="pre">response</span></code> associated with a <code class="docutils literal notranslate"><span class="pre">task</span></code>. In a simplified way, the <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code> shows us the <code class="docutils literal notranslate"><span class="pre">correlation</span></code> between the expected <code class="docutils literal notranslate"><span class="pre">activity</span></code> (based on the <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">paradigm</span></code> and a <code class="docutils literal notranslate"><span class="pre">hemodynamic</span> <span class="pre">response</span> <span class="pre">function</span></code>) and the <code class="docutils literal notranslate"><span class="pre">activity</span></code> measured at each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">map</span></code> is somewhat of the same logic. But instead of looking at the expected <code class="docutils literal notranslate"><span class="pre">response</span></code> to a <code class="docutils literal notranslate"><span class="pre">task</span></code>, we’re going to look at the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of a particular <code class="docutils literal notranslate"><span class="pre">region</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, called the <strong>target region</strong>. We will then measure the <code class="docutils literal notranslate"><span class="pre">correlation</span></code> between the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">course</span></code> of each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code> and the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">course</span></code> of the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code>. We will obtain a <strong>functional connectivity map</strong> which shows us which <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> have a highly <code class="docutils literal notranslate"><span class="pre">correlated</span></code> (or <code class="docutils literal notranslate"><span class="pre">synchronous</span></code>) <code class="docutils literal notranslate"><span class="pre">activity</span></code> with the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code>.</p>
+<div class="tip admonition" id="correlation">
+<p class="admonition-title">Correlation measurement</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Correlation">correlation</a> between two <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code> is a measure that (usually) varies between <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>. If the <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">series</span></code> are identical (at their <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">variance</span></code>), the <code class="docutils literal notranslate"><span class="pre">correlation</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>. If the <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">series</span></code> are <code class="docutils literal notranslate"><span class="pre">statistically</span> <span class="pre">independent</span></code>, the <code class="docutils literal notranslate"><span class="pre">correlation</span></code> is close to <code class="docutils literal notranslate"><span class="pre">zero</span></code>. If the <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">series</span></code> mirror each other, the <code class="docutils literal notranslate"><span class="pre">correlation</span></code> is <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+</div>
+<p><em><strong>Functional connectivity</strong></em> is a relatively generic term used to describe a set of techniques for analyzing <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">patterns</span></code> of <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code> <span id="id4">[<a class="reference internal" href="#id58">Fox and Raichle, 2007</a>]</span>. Fox and Raischle (2007) propose that the simplest technique to conduct this kind of analysis is indeed to extract the <code class="docutils literal notranslate"><span class="pre">BOLD</span></code> <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">course</span></code> of a <strong>target region</strong> and determine its <code class="docutils literal notranslate"><span class="pre">correlation</span></code> with the remaining <code class="docutils literal notranslate"><span class="pre">voxels</span></code>. More sophisticated techniques have been developed to overcome the limitations of this <code class="docutils literal notranslate"><span class="pre">modeling</span></code>. They will be discussed at the end of this chapter.</p>
+<p>The concept of a <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">map</span></code> was introduced by Biswal and colleagues (1995) <span id="id5">[<a class="reference internal" href="#id59">Biswal <em>et al.</em>, 1995</a>]</span>, using a <code class="docutils literal notranslate"><span class="pre">target</span></code> in the <code class="docutils literal notranslate"><span class="pre">right</span> <span class="pre">primary</span> <span class="pre">sensorimotor</span> <span class="pre">cortex</span></code>. This <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> had been obtained with an <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code> and a <code class="docutils literal notranslate"><span class="pre">motor</span> <span class="pre">task</span></code>. Biswal and colleagues then came up with the idea of observing <code class="docutils literal notranslate"><span class="pre">BOLD</span></code> <code class="docutils literal notranslate"><span class="pre">fluctuations</span></code> in a <strong>resting</strong> condition, in the absence of an <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">task</span></code>. This <code class="docutils literal notranslate"><span class="pre">map</span></code> reveals a <code class="docutils literal notranslate"><span class="pre">distributed</span> <span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">regions</span></code> (see <a class="reference internal" href="#fcmri-map-fig"><span class="std std-numref">Fig. 52</span></a>, <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">M1</span> <span class="pre">right</span></code>), which includes the <code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">sensorimotor</span> <span class="pre">cortex</span></code>, but also the <code class="docutils literal notranslate"><span class="pre">supplementary</span> <span class="pre">motor</span> <span class="pre">area</span></code>, the <code class="docutils literal notranslate"><span class="pre">premotor</span> <span class="pre">cortex</span></code>, and other <code class="docutils literal notranslate"><span class="pre">regions</span></code> known for their involvement in the <strong>motor network</strong>. This study initially generated a great deal of skepticism, on the grounds that these <code class="docutils literal notranslate"><span class="pre">correlated</span> <span class="pre">functional</span> <span class="pre">activity</span> <span class="pre">patterns</span></code> could have reflected <code class="docutils literal notranslate"><span class="pre">heart</span></code> or <code class="docutils literal notranslate"><span class="pre">breath</span></code> <code class="docutils literal notranslate"><span class="pre">confounds</span></code>.</p>
+<div class="tip admonition" id="slow-fluctuations">
+<p class="admonition-title">Slow fluctuations</p>
+<p>Another key observation by <span id="id6">[<a class="reference internal" href="#id59">Biswal <em>et al.</em>, 1995</a>]</span> is that the <code class="docutils literal notranslate"><span class="pre">resting</span></code> <code class="docutils literal notranslate"><span class="pre">BOLD</span></code> <code class="docutils literal notranslate"><span class="pre">signal</span></code> is dominated by <code class="docutils literal notranslate"><span class="pre">slow</span> <span class="pre">fluctuations</span></code>, with bursts of <code class="docutils literal notranslate"><span class="pre">activity</span></code> lasting <code class="docutils literal notranslate"><span class="pre">20-30</span> <span class="pre">seconds</span></code> , clearly visible in the <a class="reference internal" href="#fcmri-map-fig"><span class="std std-numref">Fig. 52</span></a>. More specifically, the <code class="docutils literal notranslate"><span class="pre">BOLD</span></code> <code class="docutils literal notranslate"><span class="pre">signal</span></code> <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> at <code class="docutils literal notranslate"><span class="pre">rest</span></code> is dominated by <code class="docutils literal notranslate"><span class="pre">frequencies</span></code> below <code class="docutils literal notranslate"><span class="pre">0.08</span> <span class="pre">Hz</span></code>, and even <code class="docutils literal notranslate"><span class="pre">0.03-0.05</span> <span class="pre">Hz</span></code>.</p>
+</div>
+<p>The credibility of <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">connectivity</span> <span class="pre">maps</span></code> was enhanced when different research groups were able to identify other <code class="docutils literal notranslate"><span class="pre">networks</span></code> using different <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">regions</span></code>, including the <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">network</span></code> and the <code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">network</span></code>. But it was the study by Greicius and collaborators, in 2003 <span id="id7">[<a class="reference internal" href="#id60">Greicius <em>et al.</em>, 2003</a>]</span>, that sparked enormous interest in <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">connectivity</span> <span class="pre">maps</span></code> using a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> in the <code class="docutils literal notranslate"><span class="pre">posterior</span> <span class="pre">cingulate</span> <span class="pre">cortex</span></code> (<code class="docutils literal notranslate"><span class="pre">PCC</span></code>) to identify a <code class="docutils literal notranslate"><span class="pre">network</span></code> that had not yet been identified: the <strong>default mode network</strong> (see <a href="#id8"><span class="problematic" id="id9">:refnum:`fcmri-map-fig`</span></a>, <code class="docutils literal notranslate"><span class="pre">PCC</span> <span class="pre">target</span></code>). We will discuss in the next section the origins of this <code class="docutils literal notranslate"><span class="pre">network</span></code>, and how it can help us understand what <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">state</span> <span class="pre">connectivity</span></code> measures. It is also important to mention that the work of Shmuel and colleagues (2008) <span id="id10">[<a class="reference internal" href="#id61">Shmuel and Leopold, 2008</a>]</span> demonstrated that <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">state</span></code> <code class="docutils literal notranslate"><span class="pre">BOLD</span></code> <code class="docutils literal notranslate"><span class="pre">activity</span></code> <code class="docutils literal notranslate"><span class="pre">correlates</span></code> with <code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">fluctuations</span></code> of <code class="docutils literal notranslate"><span class="pre">neural</span> <span class="pre">activity</span></code> in the <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">cortex</span></code> of a anesthetized <code class="docutils literal notranslate"><span class="pre">macaque</span></code>, demonstrating that <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">connectivity</span></code> at least partially reflects the <code class="docutils literal notranslate"><span class="pre">synchrony</span></code> of <code class="docutils literal notranslate"><span class="pre">neuronal</span> <span class="pre">activity</span></code>, and not simply <code class="docutils literal notranslate"><span class="pre">physiological</span> <span class="pre">noise</span></code> (<code class="docutils literal notranslate"><span class="pre">cardiac</span></code>, <code class="docutils literal notranslate"><span class="pre">respiration</span></code>).</p>
+<div class="caution attention admonition" id="fcmri-map-warning">
+<p class="admonition-title">Intra- and inter-individual variability</p>
+<p>The <a class="reference internal" href="#fcmri-map-fig"><span class="std std-numref">Fig. 52</span></a> can make <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">networks</span></code> appear extremely <code class="docutils literal notranslate"><span class="pre">stable</span></code>. In reality, <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">maps</span></code> <code class="docutils literal notranslate"><span class="pre">vary</span></code> a lot over <code class="docutils literal notranslate"><span class="pre">time</span></code>, ie by looking at different <code class="docutils literal notranslate"><span class="pre">windows</span> <span class="pre">of</span> <span class="pre">activity</span></code> for the same <code class="docutils literal notranslate"><span class="pre">individual</span></code>, and also between <code class="docutils literal notranslate"><span class="pre">individuals</span></code>. Indeed, the <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> of a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> may be partially inaccurate even if the <code class="docutils literal notranslate"><span class="pre">images</span></code> are registered. Characterizing the <code class="docutils literal notranslate"><span class="pre">intra-</span></code> and <code class="docutils literal notranslate"><span class="pre">inter-individual</span></code> <code class="docutils literal notranslate"><span class="pre">variability</span></code> of <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">maps</span></code> is an active area of research.</p>
+</div>
+</div>
+<div class="section" id="the-default-mode-network">
+<h2>The default mode network<a class="headerlink" href="#the-default-mode-network" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">math_img</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">masking</span>
+<span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">FirstLevelModel</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">input_data</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># load fMRI data</span>
+<span class="n">subject_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_spm_auditory</span><span class="p">()</span>
+<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">concat_imgs</span><span class="p">(</span><span class="n">subject_data</span><span class="o">.</span><span class="n">func</span><span class="p">)</span>
+
+<span class="c1"># Make an average</span>
+<span class="n">mean_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">mean_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">masking</span><span class="o">.</span><span class="n">compute_epi_mask</span><span class="p">(</span><span class="n">mean_img</span><span class="p">)</span>
+
+<span class="c1"># Clean and smooth data</span>
+<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">clean_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">,</span> <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">t_r</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fmri_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">smooth_img</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">,</span> <span class="mf">8.</span><span class="p">)</span>
+
+<span class="c1"># load events</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">subject_data</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">])</span>
+
+<span class="c1"># Fit model</span>
+<span class="n">fmri_glm</span> <span class="o">=</span> <span class="n">FirstLevelModel</span><span class="p">(</span><span class="n">t_r</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+                           <span class="n">drift_model</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span>
+                           <span class="n">signal_scaling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                           <span class="n">mask_img</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>                           
+                           <span class="n">minimize_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fmri_glm</span> <span class="o">=</span> <span class="n">fmri_glm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">fmri_img</span><span class="p">,</span> <span class="n">events</span><span class="p">)</span>
+
+<span class="c1"># Extract activation clusters</span>
+<span class="n">z_map</span> <span class="o">=</span> <span class="n">fmri_glm</span><span class="o">.</span><span class="n">compute_contrast</span><span class="p">(</span><span class="s1">&#39;active - rest&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot activation map</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span>
+        <span class="n">z_map</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span>
+        <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="n">bg_img</span><span class="o">=</span><span class="n">mean_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;activation map (auditory)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;deactivation-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-center" id="deactivation-fig" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/connectivity_intro_3_0.png" src="../../../_images/connectivity_intro_3_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Individual <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code> in an <code class="docutils literal notranslate"><span class="pre">auditory</span> <span class="pre">paradigm</span></code> (<a class="reference external" href="https://www.fil.ion.ucl.ac.uk/spm/data/auditory/">spm_auditory dataset</a>). The <code class="docutils literal notranslate"><span class="pre">significance</span> <span class="pre">level</span></code> is liberally selected (<code class="docutils literal notranslate"><span class="pre">|z|&gt;2</span></code>). Moderate <code class="docutils literal notranslate"><span class="pre">deactivation</span></code> is identified in different <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>, including the <code class="docutils literal notranslate"><span class="pre">posterior</span> <span class="pre">cingulate</span> <span class="pre">cortex</span></code> (<code class="docutils literal notranslate"><span class="pre">PCC</span></code>) and the <code class="docutils literal notranslate"><span class="pre">medial</span> <span class="pre">prefrontal</span> <span class="pre">cortex</span></code> (<code class="docutils literal notranslate"><span class="pre">mPFC</span></code>). The <code class="docutils literal notranslate"><span class="pre">PCC</span></code> and <code class="docutils literal notranslate"><span class="pre">mPFC</span></code> are key <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code>. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library (click on + to see the code), and is distributed under CC-BY license.</span><a class="headerlink" href="#deactivation-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The discovery of the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span></code> was carried out through the study of <code class="docutils literal notranslate"><span class="pre">activation</span></code>, in <code class="docutils literal notranslate"><span class="pre">PET</span></code>. In 1997, Shulman and colleagues <span id="id11">[<a class="reference internal" href="#id62">Shulman <em>et al.</em>, 1997</a>]</span> combined 9 <code class="docutils literal notranslate"><span class="pre">PET</span></code> studies that used the same <code class="docutils literal notranslate"><span class="pre">&quot;resting&quot;</span></code> <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">condition</span></code> (consisting of <code class="docutils literal notranslate"><span class="pre">passively</span></code> looking at <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">stimuli</span></code>), and varied <code class="docutils literal notranslate"><span class="pre">cognitively</span> <span class="pre">demanding</span> <span class="pre">tasks</span></code> . The authors demonstrate that a set of <code class="docutils literal notranslate"><span class="pre">regions</span></code> are <code class="docutils literal notranslate"><span class="pre">systematically</span></code> more <code class="docutils literal notranslate"><span class="pre">involved</span></code> at <code class="docutils literal notranslate"><span class="pre">rest</span></code> than during the <code class="docutils literal notranslate"><span class="pre">task</span></code>, including in particular the <code class="docutils literal notranslate"><span class="pre">posterior</span> <span class="pre">cingulate</span> <span class="pre">cortex</span></code> (<code class="docutils literal notranslate"><span class="pre">PCC</span></code>). In 2001, Gusnard and Raichle <span id="id12">[<a class="reference internal" href="#id63">Raichle <em>et al.</em>, 2001</a>]</span> build on the study by Shulman et al. to formulate the now famous “<em>default mode hypothesis</em>”. There would be a number of <code class="docutils literal notranslate"><span class="pre">introspective</span> <span class="pre">cognitive</span> <span class="pre">processes</span></code> that would be consistently present in a <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">state</span></code>, and there would be a <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">network</span></code> that would support this <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span> <span class="pre">activity</span></code>. To confirm this hypothesis, Greicius and colleagues <span id="id13">[<a class="reference internal" href="#id60">Greicius <em>et al.</em>, 2003</a>]</span> used an <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> <code class="docutils literal notranslate"><span class="pre">resting</span></code> <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">map</span></code> with a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> in the <code class="docutils literal notranslate"><span class="pre">PCC</span></code>, and identified a <code class="docutils literal notranslate"><span class="pre">spatially</span></code> very similar <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">spontaneous</span> <span class="pre">activity</span> <span class="pre">network</span> <span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code>, see <a href="#id14"><span class="problematic" id="id15">:refnum:`fcmri-map-fig`</span></a>. The <code class="docutils literal notranslate"><span class="pre">network</span></code> context of the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span></code> has since evolved, see the review by Buckner and DiNicola (2019) <span id="id16">[<a class="reference internal" href="#id64">Buckner and DiNicola, 2019</a>]</span> for a recent review of its <code class="docutils literal notranslate"><span class="pre">neuroanatomy</span></code> and <code class="docutils literal notranslate"><span class="pre">cognitive</span> <span class="pre">roles</span></code>.</p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">math_img</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">masking</span>
+<span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">FirstLevelModel</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">input_data</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Import data</span>
+<span class="n">basc</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_basc_multiscale_2015</span><span class="p">()</span> <span class="c1"># the BASC multiscale atlas</span>
+<span class="n">adhd</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_adhd</span><span class="p">(</span><span class="n">n_subjects</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>          <span class="c1"># ADHD200 preprocessed data (Athena pipeline)\</span>
+
+<span class="c1"># Pre-processing parameters</span>
+<span class="n">num_data</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fwhm</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">high_pass</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">high_variance_confounds</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">time_samp</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Extract the signal for a functional atlas (BASC)</span>
+<span class="n">masker</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">NiftiLabelsMasker</span><span class="p">(</span>
+                                      <span class="n">basc</span><span class="p">[</span><span class="s1">&#39;scale122&#39;</span><span class="p">],</span>
+                                      <span class="n">resampling_target</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+                                      <span class="n">high_pass</span><span class="o">=</span><span class="n">high_pass</span><span class="p">,</span>
+                                      <span class="n">t_r</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">high_variance_confounds</span><span class="o">=</span><span class="n">high_variance_confounds</span><span class="p">,</span>
+                                      <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                      <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;nilearn_cache&#39;</span><span class="p">,</span>
+                                      <span class="n">memory_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                      <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="n">fwhm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">tseries</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time series with shape </span><span class="si">{</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> (# time points, # parcels))&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load data by voxel</span>
+<span class="n">masker_voxel</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">NiftiMasker</span><span class="p">(</span><span class="n">high_pass</span><span class="o">=</span><span class="n">high_pass</span><span class="p">,</span>
+                                      <span class="n">t_r</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">high_variance_confounds</span><span class="o">=</span><span class="n">high_variance_confounds</span><span class="p">,</span>
+                                      <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                      <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="n">fwhm</span>
+                                     <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">])</span>
+<span class="n">tseries_voxel</span> <span class="o">=</span> <span class="n">masker_voxel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time series with shape </span><span class="si">{</span><span class="n">tseries_voxel</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> (# time points, # voxels))&quot;</span><span class="p">)</span>
+
+<span class="c1"># Applies global signal correction</span>
+<span class="kn">from</span> <span class="nn">nilearn.signal</span> <span class="kn">import</span> <span class="n">clean</span> <span class="k">as</span> <span class="n">signal_clean</span>
+<span class="n">gb_signal</span> <span class="o">=</span> <span class="n">signal_clean</span><span class="p">(</span>
+                        <span class="n">tseries</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">]),</span>
+                        <span class="n">high_pass</span><span class="o">=</span><span class="n">high_pass</span><span class="p">,</span>
+                        <span class="n">t_r</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                        <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tseries</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">],</span> <span class="n">confounds</span><span class="o">=</span><span class="n">gb_signal</span><span class="p">)</span>
+<span class="n">tseries_voxel</span> <span class="o">=</span> <span class="n">masker_voxel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">],</span> <span class="n">confounds</span><span class="o">=</span><span class="n">gb_signal</span><span class="p">)</span>
+
+<span class="c1"># Show a parcel</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">num_parcel</span> <span class="o">=</span> <span class="mi">113</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;img == </span><span class="si">{</span><span class="n">num_parcel</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">basc</span><span class="p">[</span><span class="s1">&#39;scale122&#39;</span><span class="p">]),</span>
+                  <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                  <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;target region (FEF)&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot la série temporelle d&#39;une région</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">time_samp</span><span class="p">],</span> <span class="n">tseries</span><span class="p">[</span><span class="n">time_samp</span><span class="p">,</span> <span class="p">:][:,</span> <span class="n">num_parcel</span><span class="p">],</span> <span class="s1">&#39;o-&#39;</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s.)&#39;</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;BOLD (u.a.)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time series&#39;</span><span class="p">)</span>
+
+<span class="c1"># connectivity map</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">seed_to_voxel_correlations</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">tseries_voxel</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">tseries</span><span class="p">[:,</span> <span class="n">num_parcel</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="c1"># Show the connectivity map</span>
+<span class="n">conn_map</span> <span class="o">=</span> <span class="n">masker_voxel</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">seed_to_voxel_correlations</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span><span class="n">conn_map</span><span class="p">,</span>
+                       <span class="n">threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                       <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                       <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+                       <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span>
+                       <span class="n">display_mode</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
+                       <span class="n">title</span><span class="o">=</span><span class="s2">&quot;connectivity map (FEF)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;negative-DMN-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-center" id="negative-dmn-fig" style="width: 600px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/connectivity_intro_5_1.png" src="../../../_images/connectivity_intro_5_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">A <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> is selected at the <code class="docutils literal notranslate"><span class="pre">&quot;frontal</span> <span class="pre">eye</span> <span class="pre">field&quot;</span></code> (<code class="docutils literal notranslate"><span class="pre">FEF</span></code>) level, to generate a <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">map</span></code> on a <code class="docutils literal notranslate"><span class="pre">participant</span></code> from the <code class="docutils literal notranslate"><span class="pre">ADHD-200</span></code> <span id="id17">[<a class="reference internal" href="#id26">Milham <em>et al.</em>, 2012</a>]</span> dataset. The <code class="docutils literal notranslate"><span class="pre">significance</span> <span class="pre">level</span></code> is liberally selected (<code class="docutils literal notranslate"><span class="pre">|r|&gt;0.2</span></code>). In addition to the <code class="docutils literal notranslate"><span class="pre">dorsal</span> <span class="pre">attentional</span> <span class="pre">network</span></code> associated with the <code class="docutils literal notranslate"><span class="pre">FEF</span></code>, the <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">map</span></code> highlights a <code class="docutils literal notranslate"><span class="pre">negative</span> <span class="pre">correlation</span></code> with the <code class="docutils literal notranslate"><span class="pre">PCC</span></code> and the <code class="docutils literal notranslate"><span class="pre">anterior</span> <span class="pre">cingulate</span> <span class="pre">cortex</span></code> (<code class="docutils literal notranslate"><span class="pre">ACC</span></code>). The <code class="docutils literal notranslate"><span class="pre">ACC</span></code> and <code class="docutils literal notranslate"><span class="pre">PCC</span></code> are key <code class="docutils literal notranslate"><span class="pre">regions</span></code> of the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code>. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library (click on + to see the code), and is distributed under CC-BY license.</span><a class="headerlink" href="#negative-dmn-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code> is not the only one that can be identified at <code class="docutils literal notranslate"><span class="pre">rest</span></code>. We have already seen the <code class="docutils literal notranslate"><span class="pre">sensorimotor</span> <span class="pre">network</span></code> which was first identified by Biswal et al. <span id="id18">[<a class="reference internal" href="#id59">Biswal <em>et al.</em>, 1995</a>]</span>. Another <code class="docutils literal notranslate"><span class="pre">network</span></code> commonly examined in the literature is the <code class="docutils literal notranslate"><span class="pre">dorsal</span> <span class="pre">attentional</span> <span class="pre">network</span></code> (<code class="docutils literal notranslate"><span class="pre">DAN</span></code>), which notably includes the <code class="docutils literal notranslate"><span class="pre">superior</span> <span class="pre">intraparietal</span> <span class="pre">sulci</span></code> (<code class="docutils literal notranslate"><span class="pre">IPS</span></code>) and the <code class="docutils literal notranslate"><span class="pre">frontal</span> <span class="pre">eye</span> <span class="pre">fields</span></code> (<code class="docutils literal notranslate"><span class="pre">FEF</span></code>). The <code class="docutils literal notranslate"><span class="pre">DAN</span></code> is often identified as <code class="docutils literal notranslate"><span class="pre">activated</span></code> in <code class="docutils literal notranslate"><span class="pre">experiments</span></code> using a <code class="docutils literal notranslate"><span class="pre">cognitively</span> <span class="pre">demanding</span></code> <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">task</span></code>, and is sometimes referred to as the <code class="docutils literal notranslate"><span class="pre">&quot;task</span> <span class="pre">positive</span> <span class="pre">network&quot;</span></code> - even though it is not <code class="docutils literal notranslate"><span class="pre">positively</span></code> engaged by all <code class="docutils literal notranslate"><span class="pre">tasks</span></code>. In 2005, Fox and colleagues <span id="id19">[<a class="reference internal" href="#id65">Fox <em>et al.</em>, 2005</a>]</span> notice a <code class="docutils literal notranslate"><span class="pre">negative</span> <span class="pre">correlation</span></code> between <code class="docutils literal notranslate"><span class="pre">DAN</span></code> and the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code>. This analysis reinforces the notion of <code class="docutils literal notranslate"><span class="pre">spontaneous</span></code> transitions between a <code class="docutils literal notranslate"><span class="pre">mental</span> <span class="pre">state</span></code> directed towards <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">stimuli</span></code>, and an <code class="docutils literal notranslate"><span class="pre">introspective</span> <span class="pre">state</span></code>, reflecting the competition between two distributed <code class="docutils literal notranslate"><span class="pre">networks</span></code>.</p>
+<div class="caution attention admonition" id="negative-r-warning">
+<p class="admonition-title">Global signal regression controversies</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">negative</span> <span class="pre">correlations</span></code> of the <a class="reference internal" href="#negative-dmn-fig"><span class="std std-numref">Fig. 54</span></a> are strong only when we apply certain data <code class="docutils literal notranslate"><span class="pre">denoising</span></code> steps, and in particular the <em>global signal regression</em>. Significant controversy has arisen around the <code class="docutils literal notranslate"><span class="pre">negative</span> <span class="pre">connections</span></code>, as some researchers believe it to be an <code class="docutils literal notranslate"><span class="pre">artifact</span></code> related to this <code class="docutils literal notranslate"><span class="pre">preprocessing</span> <span class="pre">step</span></code>. Nevertheless, <code class="docutils literal notranslate"><span class="pre">negative</span> <span class="pre">correlations</span></code> can be observed robustly for <code class="docutils literal notranslate"><span class="pre">participants</span></code> who move very little, and whose <code class="docutils literal notranslate"><span class="pre">signal</span></code> is therefore particularly <code class="docutils literal notranslate"><span class="pre">clean</span></code>. Their <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> is however low in the absence of <code class="docutils literal notranslate"><span class="pre">regression</span></code> of the overall <code class="docutils literal notranslate"><span class="pre">signal</span></code>.</p>
+</div>
+<div class="tip admonition" id="intrinsic-tip">
+<p class="admonition-title">Intrinsic vs Extrinsic Activity</p>
+<p><code class="docutils literal notranslate"><span class="pre">Resting</span> <span class="pre">networks</span></code> can be observed even in the presence of a <code class="docutils literal notranslate"><span class="pre">task</span></code>. Rather than opposing the notion of <code class="docutils literal notranslate"><span class="pre">rest</span></code> and <code class="docutils literal notranslate"><span class="pre">task</span></code>, it is common to speak of <code class="docutils literal notranslate"><span class="pre">intrinsic</span></code> and <code class="docutils literal notranslate"><span class="pre">extrinsic</span></code> <code class="docutils literal notranslate"><span class="pre">activity</span></code>. <strong>Extrinsic activity</strong> is the <code class="docutils literal notranslate"><span class="pre">activity</span></code> evoked by a <code class="docutils literal notranslate"><span class="pre">task</span></code>, and reflects how the environment influences <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code>. In contrast, <strong>intrinsic activity</strong> refers to <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">activity</span></code> that emerges <code class="docutils literal notranslate"><span class="pre">spontaneously</span></code>, and is <code class="docutils literal notranslate"><span class="pre">independent</span></code> of <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">stimuli</span></code>. Both types of <code class="docutils literal notranslate"><span class="pre">activity</span></code> are always present, and can interact with each other.</p>
+</div>
+</div>
+<div class="section" id="functional-networks">
+<h2>Functional networks<a class="headerlink" href="#functional-networks" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">math_img</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">masking</span>
+<span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">FirstLevelModel</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">input_data</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Import data</span>
+<span class="n">basc</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_basc_multiscale_2015</span><span class="p">()</span> <span class="c1"># the BASC multiscale atlas</span>
+<span class="n">adhd</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_adhd</span><span class="p">(</span><span class="n">n_subjects</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>          <span class="c1"># ADHD200 preprocessed data (Athena pipeline)\</span>
+
+<span class="c1"># Pre-processing parameters</span>
+<span class="n">num_data</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fwhm</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">high_pass</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">high_variance_confounds</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">time_samp</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Extract the signal for a functional atlas (BASC)</span>
+<span class="n">masker</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">NiftiLabelsMasker</span><span class="p">(</span>
+                                      <span class="n">basc</span><span class="p">[</span><span class="s1">&#39;scale122&#39;</span><span class="p">],</span>
+                                      <span class="n">resampling_target</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
+                                      <span class="n">high_pass</span><span class="o">=</span><span class="n">high_pass</span><span class="p">,</span>
+                                      <span class="n">t_r</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">high_variance_confounds</span><span class="o">=</span><span class="n">high_variance_confounds</span><span class="p">,</span>
+                                      <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                      <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;nilearn_cache&#39;</span><span class="p">,</span>
+                                      <span class="n">memory_level</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                      <span class="n">smoothing_fwhm</span><span class="o">=</span><span class="n">fwhm</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">tseries</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time series with shape </span><span class="si">{</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> (# time points, # parcels))&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Applies global signal correction</span>
+<span class="kn">from</span> <span class="nn">nilearn.signal</span> <span class="kn">import</span> <span class="n">clean</span> <span class="k">as</span> <span class="n">signal_clean</span>
+<span class="n">gb_signal</span> <span class="o">=</span> <span class="n">signal_clean</span><span class="p">(</span>
+                        <span class="n">tseries</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="n">tseries</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">]),</span>
+                        <span class="n">high_pass</span><span class="o">=</span><span class="n">high_pass</span><span class="p">,</span>
+                        <span class="n">t_r</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                        <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tseries</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">adhd</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="n">num_data</span><span class="p">],</span> <span class="n">confounds</span><span class="o">=</span><span class="n">gb_signal</span><span class="p">)</span>
+
+<span class="c1"># Affiche le template</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">basc</span><span class="p">[</span><span class="s1">&#39;scale122&#39;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;parcellation&quot;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+
+<span class="c1"># We generate a connectome</span>
+<span class="kn">from</span> <span class="nn">nilearn.connectome</span> <span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">ConnectivityMeasure</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">([</span><span class="n">tseries</span><span class="p">]))</span>
+
+<span class="c1"># we use scipy&#39;s hierarchical clustering implementation</span>
+<span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="kn">import</span> <span class="n">dendrogram</span><span class="p">,</span> <span class="n">linkage</span><span class="p">,</span> <span class="n">cut_tree</span>
+<span class="c1"># That&#39;s the hierarchical clustering step</span>
+<span class="n">hier</span> <span class="o">=</span> <span class="n">linkage</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;average&#39;</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span> <span class="c1"># scipy&#39;s hierarchical clustering</span>
+<span class="c1"># HAC proceeds by iteratively merging brain regions, which can be visualized with a tree</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">dendrogram</span><span class="p">(</span><span class="n">hier</span><span class="p">,</span> <span class="n">get_leaves</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">no_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Generate a dendrogram from the hierarchy</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;leaves&#39;</span><span class="p">)</span> <span class="c1"># Extract the order on parcels from the dendrogram</span>
+<span class="n">part</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">cut_tree</span><span class="p">(</span><span class="n">hier</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Show the connectome</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">rowspan</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax_plot</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;regions&#39;</span><span class="p">)</span>
+<span class="n">ax_plot</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;connectome&#39;</span><span class="p">)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">ax_plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">conn</span><span class="p">[</span><span class="n">order</span><span class="p">,</span> <span class="p">:][:,</span> <span class="n">order</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">)</span>
+
+<span class="c1"># Show networks</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">part_img</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">122</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># note the sneaky shift to 1-indexing</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">part_img</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;regions&quot;</span><span class="p">,</span>
+                  <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;inferno&quot;</span><span class="p">,</span>
+                  <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span>
+                  <span class="n">cut_coords</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">52</span><span class="p">,</span> <span class="mi">26</span><span class="p">])</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;network-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-center" id="network-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/connectivity_intro_7_2.png" src="../../../_images/connectivity_intro_7_2.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">A <code class="docutils literal notranslate"><span class="pre">functional</span></code> <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">parcellation</span></code> with <code class="docutils literal notranslate"><span class="pre">122</span> <span class="pre">parcels</span></code> is shown on the left (<code class="docutils literal notranslate"><span class="pre">BASC</span></code>). In the center, we see a <code class="docutils literal notranslate"><span class="pre">matrix</span></code> where each <code class="docutils literal notranslate"><span class="pre">element</span></code> represents the <code class="docutils literal notranslate"><span class="pre">correlation</span></code> between the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of two <code class="docutils literal notranslate"><span class="pre">regions</span></code>. The plots have been ordered in such a way as to highlight diagonal squares: these are <code class="docutils literal notranslate"><span class="pre">groups</span></code> of <code class="docutils literal notranslate"><span class="pre">regions</span></code> whose <code class="docutils literal notranslate"><span class="pre">activity</span></code> <code class="docutils literal notranslate"><span class="pre">correlates</span></code> strongly with each other, and little with the rest of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. <code class="docutils literal notranslate"><span class="pre">Clustering-type</span> <span class="pre">algorithms</span></code> make it possible to automatically detect these <code class="docutils literal notranslate"><span class="pre">groups</span></code> of <code class="docutils literal notranslate"><span class="pre">regions</span></code>, called <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">networks</span></code>. An example of <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">networks</span></code> generated with <code class="docutils literal notranslate"><span class="pre">hierarchical</span> <span class="pre">clustering</span></code> is shown on the right, which notably identifies the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code>. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library (click on + to see the code), and is distributed under CC-BY license.</span><a class="headerlink" href="#network-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the last section, we spoke several times about <em><strong>working network</strong></em>, but without really defining what it is. When using a <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">map</span></code>, the <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">network</span></code> is the <code class="docutils literal notranslate"><span class="pre">set</span></code> of <code class="docutils literal notranslate"><span class="pre">regions</span></code> that appear in the <code class="docutils literal notranslate"><span class="pre">map</span></code>, and which are therefore <code class="docutils literal notranslate"><span class="pre">connected</span></code> to our <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code>. But this approach depends on the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code>. Still, it’s intuitive that all <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">maps</span></code> using <code class="docutils literal notranslate"><span class="pre">targets</span></code> in, say, the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span></code> are going to look the same. To formalize this intuition, we need to introduce the notion of <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">connectome</span></code>.</p>
+<p>A <strong>functional connectome</strong> is a <code class="docutils literal notranslate"><span class="pre">matrix</span></code> that represents all the (<code class="docutils literal notranslate"><span class="pre">functional</span></code>) <code class="docutils literal notranslate"><span class="pre">connections</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. We therefore start by selecting a <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">parcellation</span></code>, then we calculate the <code class="docutils literal notranslate"><span class="pre">correlation</span></code> of the <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">activity</span></code> for all the pairs of <code class="docutils literal notranslate"><span class="pre">parcels</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. This <code class="docutils literal notranslate"><span class="pre">correlation</span> <span class="pre">matrix</span></code> is of size <code class="docutils literal notranslate"><span class="pre">#plots</span> <span class="pre">x</span> <span class="pre">#plots</span></code>. By using <code class="docutils literal notranslate"><span class="pre">unsupervised</span> <span class="pre">learning</span></code> techniques, such as <code class="docutils literal notranslate"><span class="pre">clustering</span></code>, it is possible to identify <code class="docutils literal notranslate"><span class="pre">groups</span></code> of <code class="docutils literal notranslate"><span class="pre">regions</span></code> that are strongly <code class="docutils literal notranslate"><span class="pre">connected</span></code> to each other, and weakly <code class="docutils literal notranslate"><span class="pre">connected</span></code> to the rest of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. This is the most common definition of a <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">network</span></code>. This type of approach makes it possible to divide the <code class="docutils literal notranslate"><span class="pre">brain</span></code> into <code class="docutils literal notranslate"><span class="pre">networks</span></code>, automatically and guided by data.</p>
+<div class="cell tag_hide-input tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ignore warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download data</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span> <span class="c1"># Fetch data using nilearn</span>
+<span class="n">atlas_yeo</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_yeo_2011</span><span class="p">()</span>        <span class="c1"># the Yeo-Krienen atlas</span>
+
+<span class="c1"># Initialize the figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s plot the Yeo-Krienen 7 clusters parcellation</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">math_img</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Yeo-Krienen atlas-7&#39;</span><span class="p">,</span>
+                  <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">)</span>
+
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="s1">&#39;(img==1).astype(</span><span class="se">\&#39;</span><span class="s1">float</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Visual&#39;</span><span class="p">,</span>
+                  <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="s1">&#39;2 * (img==2).astype(</span><span class="se">\&#39;</span><span class="s1">float</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sensorimotor&#39;</span><span class="p">,</span>
+                  <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="s1">&#39;3 * (img==3).astype(</span><span class="se">\&#39;</span><span class="s1">float</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Dorsal attention&#39;</span><span class="p">,</span>
+                  <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">27</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">58</span><span class="p">),</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="s1">&#39;4 * (img==4).astype(</span><span class="se">\&#39;</span><span class="s1">float</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ventral attention / salience&#39;</span><span class="p">,</span>
+                  <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="s1">&#39;5 * (img==5).astype(</span><span class="se">\&#39;</span><span class="s1">float</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;mesolimbique&#39;</span><span class="p">,</span>
+                  <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="s1">&#39;6 * (img==6).astype(</span><span class="se">\&#39;</span><span class="s1">float</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;fronto-parietal&#39;</span><span class="p">,</span>
+                  <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">ax_plot</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">math_img</span><span class="p">(</span><span class="s1">&#39;7 * (img==7).astype(</span><span class="se">\&#39;</span><span class="s1">float</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">atlas_yeo</span><span class="o">.</span><span class="n">thick_7</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Default mode&#39;</span><span class="p">,</span>
+                  <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax_plot</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;yeo-krienen-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-center" id="yeo-krienen-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/connectivity_intro_9_2.png" src="../../../_images/connectivity_intro_9_2.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code> of Yeo-Krienen <span id="id20">[<a class="reference internal" href="#id66">Thomas Yeo <em>et al.</em>, 2011</a>]</span> constructed by <code class="docutils literal notranslate"><span class="pre">clustering</span></code> analysis from <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">state</span></code> <code class="docutils literal notranslate"><span class="pre">fMRI</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> from a large number of <code class="docutils literal notranslate"><span class="pre">participants</span></code>. The <code class="docutils literal notranslate"><span class="pre">networks</span></code> are defined at several <code class="docutils literal notranslate"><span class="pre">resolutions</span></code> in this <code class="docutils literal notranslate"><span class="pre">atlas</span></code> (<code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">17</span></code>). Here, the division into <code class="docutils literal notranslate"><span class="pre">7</span></code> large distributed <code class="docutils literal notranslate"><span class="pre">networks</span></code> is presented. This figure is generated by python code using the <a class="reference external" href="https://nilearn.github.io/">nilearn</a> library (click on + to see the code), and is distributed under CC-BY license.</span><a class="headerlink" href="#yeo-krienen-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>There is not an exact number of <code class="docutils literal notranslate"><span class="pre">brain</span> <span class="pre">networks</span></code>, but rather a <code class="docutils literal notranslate"><span class="pre">hierarchy</span></code> of more or less <code class="docutils literal notranslate"><span class="pre">specialized</span> <span class="pre">networks</span></code>. Nevertheless, many articles have studied a division into <code class="docutils literal notranslate"><span class="pre">7</span></code> <code class="docutils literal notranslate"><span class="pre">cortical</span> <span class="pre">networks</span></code>. The <code class="docutils literal notranslate"><span class="pre">atlas</span></code> by Yeo, Krienen and colleagues <span id="id21">[<a class="reference internal" href="#id66">Thomas Yeo <em>et al.</em>, 2011</a>]</span> is widely used, and identifies seven <code class="docutils literal notranslate"><span class="pre">major</span> <span class="pre">networks</span></code>. Some of these <code class="docutils literal notranslate"><span class="pre">networks</span></code> have already been discussed in this chapter: <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span></code>, <code class="docutils literal notranslate"><span class="pre">dorsal</span> <span class="pre">attentional</span></code>, <code class="docutils literal notranslate"><span class="pre">sensorimotor</span></code>. Two other <code class="docutils literal notranslate"><span class="pre">associative</span> <span class="pre">networks</span></code> must be added: the <code class="docutils literal notranslate"><span class="pre">frontoparietal</span></code> and the <code class="docutils literal notranslate"><span class="pre">ventral</span> <span class="pre">attentional</span></code> (sometimes called <code class="docutils literal notranslate"><span class="pre">salience</span></code>). There is also a <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">network</span></code>, and a <code class="docutils literal notranslate"><span class="pre">mesolimbic</span> <span class="pre">network</span></code> involving the <code class="docutils literal notranslate"><span class="pre">temporal</span> <span class="pre">pole</span></code> and the <code class="docutils literal notranslate"><span class="pre">orbitofrontal</span> <span class="pre">cortex</span></code>. Note that this <code class="docutils literal notranslate"><span class="pre">atlas</span></code> ignores all <code class="docutils literal notranslate"><span class="pre">subcortical</span> <span class="pre">structures</span></code>. The same study proposed a division into <code class="docutils literal notranslate"><span class="pre">17</span> <span class="pre">sub-networks</span></code>. You can use this <a class="reference external" href="https://simexp.github.io/multiscale_dashboard/index.html">interactive tool</a> to explore the <code class="docutils literal notranslate"><span class="pre">multiscale</span> <span class="pre">organization</span></code> of <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">networks</span></code> interactively, using the <code class="docutils literal notranslate"><span class="pre">MIST</span> <span class="pre">atlas</span></code> { quote:p}<code class="docutils literal notranslate"><span class="pre">urchs_mist_2019</span></code>.</p>
+</div>
+<div class="section" id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Functional</span> <span class="pre">connectivity</span></code> consists of measuring the <code class="docutils literal notranslate"><span class="pre">coherence</span></code> (<code class="docutils literal notranslate"><span class="pre">correlation</span></code>) between the <code class="docutils literal notranslate"><span class="pre">activity</span></code> of two <code class="docutils literal notranslate"><span class="pre">regions</span></code> (or <code class="docutils literal notranslate"><span class="pre">voxels</span></code>) of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">connectivity</span> <span class="pre">map</span></code> makes it possible to study the <code class="docutils literal notranslate"><span class="pre">connectivity</span></code> between a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> and the rest of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Functional</span> <span class="pre">connectivity</span></code> can be observed at <code class="docutils literal notranslate"><span class="pre">rest</span></code> (<code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">activity</span></code>), in the absence of an <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">protocol</span></code>. In general, there is a superposition of <code class="docutils literal notranslate"><span class="pre">intrinsic</span> <span class="pre">activity</span></code> (linked to <code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">activity</span></code>) and <code class="docutils literal notranslate"><span class="pre">extrinsic</span></code> (linked to the <code class="docutils literal notranslate"><span class="pre">environment</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Resting</span> <span class="pre">fMRI</span> <span class="pre">connectivity</span></code> played a key role in the discovery of the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">network</span></code> is a group of <code class="docutils literal notranslate"><span class="pre">regions</span></code> whose <code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">activity</span></code> shows strong <code class="docutils literal notranslate"><span class="pre">intra-network</span> <span class="pre">functional</span> <span class="pre">connectivity</span></code>, and weak <code class="docutils literal notranslate"><span class="pre">connectivity</span></code> with the rest of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. Different <code class="docutils literal notranslate"><span class="pre">atlases</span></code> of <code class="docutils literal notranslate"><span class="pre">networks</span></code> at <code class="docutils literal notranslate"><span class="pre">rest</span></code> exist, and at different <code class="docutils literal notranslate"><span class="pre">scales</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id22"><dl class="citation">
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id2">BCCD+17</a></span></dt>
+<dd><p>Pierre Bellec, Carlton Chu, François Chouinard-Decorte, Yassine Benhajali, Daniel S. Margulies, and R. Cameron Craddock. The Neuro Bureau ADHD-200 Preprocessed repository. <em>NeuroImage</em>, 144:275–286, January 2017. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S105381191630283X">https://www.sciencedirect.com/science/article/pii/S105381191630283X</a> (visited on 2022-04-01), <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2016.06.034">doi:10.1016/j.neuroimage.2016.06.034</a>.</p>
+</dd>
+<dt class="label" id="id59"><span class="brackets">BZYHH95</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>,<a href="#id18">3</a>)</span></dt>
+<dd><p>Bharat Biswal, F. Zerrin Yetkin, Victor M. Haughton, and James S. Hyde. Functional connectivity in the motor cortex of resting human brain using echo-planar mri. <em>Magnetic Resonance in Medicine</em>, 34(4):537–541, 1995. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/mrm.1910340409. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/mrm.1910340409">https://onlinelibrary.wiley.com/doi/abs/10.1002/mrm.1910340409</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1002/mrm.1910340409">doi:10.1002/mrm.1910340409</a>.</p>
+</dd>
+<dt class="label" id="id64"><span class="brackets"><a class="fn-backref" href="#id16">BD19</a></span></dt>
+<dd><p>Randy L. Buckner and Lauren M. DiNicola. The brain’s default network: updated anatomy, physiology and evolving insights. <em>Nature Reviews Neuroscience</em>, 20(10):593–608, October 2019. Number: 10 Publisher: Nature Publishing Group. URL: <a class="reference external" href="https://www.nature.com/articles/s41583-019-0212-7">https://www.nature.com/articles/s41583-019-0212-7</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1038/s41583-019-0212-7">doi:10.1038/s41583-019-0212-7</a>.</p>
+</dd>
+<dt class="label" id="id58"><span class="brackets"><a class="fn-backref" href="#id4">FR07</a></span></dt>
+<dd><p>Michael D. Fox and Marcus E. Raichle. Spontaneous fluctuations in brain activity observed with functional magnetic resonance imaging. <em>Nature Reviews Neuroscience</em>, 8(9):700–711, September 2007. Number: 9 Publisher: Nature Publishing Group. URL: <a class="reference external" href="https://www.nature.com/articles/nrn2201">https://www.nature.com/articles/nrn2201</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1038/nrn2201">doi:10.1038/nrn2201</a>.</p>
+</dd>
+<dt class="label" id="id65"><span class="brackets"><a class="fn-backref" href="#id19">FSV+05</a></span></dt>
+<dd><p>Michael D. Fox, Abraham Z. Snyder, Justin L. Vincent, Maurizio Corbetta, David C. Van Essen, and Marcus E. Raichle. The human brain is intrinsically organized into dynamic, anticorrelated functional networks. <em>Proceedings of the National Academy of Sciences</em>, 102(27):9673–9678, July 2005. Publisher: Proceedings of the National Academy of Sciences. URL: <a class="reference external" href="https://www.pnas.org/doi/abs/10.1073/pnas.0504136102">https://www.pnas.org/doi/abs/10.1073/pnas.0504136102</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1073/pnas.0504136102">doi:10.1073/pnas.0504136102</a>.</p>
+</dd>
+<dt class="label" id="id60"><span class="brackets">GKRM03</span><span class="fn-backref">(<a href="#id7">1</a>,<a href="#id13">2</a>)</span></dt>
+<dd><p>Michael D. Greicius, Ben Krasnow, Allan L. Reiss, and Vinod Menon. Functional connectivity in the resting brain: A network analysis of the default mode hypothesis. <em>Proceedings of the National Academy of Sciences</em>, 100(1):253–258, January 2003. Publisher: Proceedings of the National Academy of Sciences. URL: <a class="reference external" href="https://www.pnas.org/doi/abs/10.1073/pnas.0135058100">https://www.pnas.org/doi/abs/10.1073/pnas.0135058100</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1073/pnas.0135058100">doi:10.1073/pnas.0135058100</a>.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">MFMM12</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>,<a href="#id17">3</a>)</span></dt>
+<dd><p>Michael Milham, Damien Fair, Maarten Mennes, and Stewart Mostofsky. The adhd-200 consortium: a model to advance the translational potential of neuroimaging in clinical neuroscience. <em>Frontiers in Systems Neuroscience</em>, 2012. URL: <a class="reference external" href="https://www.frontiersin.org/article/10.3389/fnsys.2012.00062">https://www.frontiersin.org/article/10.3389/fnsys.2012.00062</a> (visited on 2022-04-01).</p>
+</dd>
+<dt class="label" id="id63"><span class="brackets"><a class="fn-backref" href="#id12">RMS+01</a></span></dt>
+<dd><p>Marcus E. Raichle, Ann Mary MacLeod, Abraham Z. Snyder, William J. Powers, Debra A. Gusnard, and Gordon L. Shulman. A default mode of brain function. <em>Proceedings of the National Academy of Sciences</em>, 98(2):676–682, January 2001. Publisher: Proceedings of the National Academy of Sciences. URL: <a class="reference external" href="https://www.pnas.org/doi/full/10.1073/pnas.98.2.676">https://www.pnas.org/doi/full/10.1073/pnas.98.2.676</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1073/pnas.98.2.676">doi:10.1073/pnas.98.2.676</a>.</p>
+</dd>
+<dt class="label" id="id61"><span class="brackets"><a class="fn-backref" href="#id10">SL08</a></span></dt>
+<dd><p>Amir Shmuel and David A. Leopold. Neuronal correlates of spontaneous fluctuations in fMRI signals in monkey visual cortex: Implications for functional connectivity at rest. <em>Human Brain Mapping</em>, 29(7):751–761, 2008. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/hbm.20580. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.20580">https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.20580</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1002/hbm.20580">doi:10.1002/hbm.20580</a>.</p>
+</dd>
+<dt class="label" id="id62"><span class="brackets"><a class="fn-backref" href="#id11">SCB+97</a></span></dt>
+<dd><p>Gordon L. Shulman, Maurizio Corbetta, Randy L. Buckner, Julie A. Fiez, Francis M. Miezin, Marcus E. Raichle, and Steven E. Petersen. Common Blood Flow Changes across Visual Tasks: I. Increases in Subcortical Structures and Cerebellum but Not in Nonvisual Cortex. <em>Journal of Cognitive Neuroscience</em>, 9(5):624–647, October 1997. URL: <a class="reference external" href="https://doi.org/10.1162/jocn.1997.9.5.624">https://doi.org/10.1162/jocn.1997.9.5.624</a> (visited on 2022-04-25), <a class="reference external" href="https://doi.org/10.1162/jocn.1997.9.5.624">doi:10.1162/jocn.1997.9.5.624</a>.</p>
+</dd>
+<dt class="label" id="id66"><span class="brackets">TYKS+11</span><span class="fn-backref">(<a href="#id20">1</a>,<a href="#id21">2</a>)</span></dt>
+<dd><p>B. T. Thomas Yeo, Fenna M. Krienen, Jorge Sepulcre, Mert R. Sabuncu, Danial Lashkari, Marisa Hollinshead, Joshua L. Roffman, Jordan W. Smoller, Lilla Zöllei, Jonathan R. Polimeni, Bruce Fischl, Hesheng Liu, and Randy L. Buckner. The organization of the human cerebral cortex estimated by intrinsic functional connectivity. <em>Journal of Neurophysiology</em>, 106(3):1125–1165, September 2011. Publisher: American Physiological Society. URL: <a class="reference external" href="https://journals.physiology.org/doi/full/10.1152/jn.00338.2011">https://journals.physiology.org/doi/full/10.1152/jn.00338.2011</a> (visited on 2022-04-26), <a class="reference external" href="https://doi.org/10.1152/jn.00338.2011">doi:10.1152/jn.00338.2011</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+<div class="section" id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+<p>In the following we created a few exercises that aim to recap core aspects of this part of the course and thus should allow you to assess if you understood the main points.</p>
+<p>We start with the following “resting-state network” video:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Youtube</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/_Iph3WW9UOU?start=18&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/_Iph3WW9UOU?start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.1.</p>
+<p>“The Seventh Day” (sic), excerpt in French: 0:54 - 4:35</p>
+<ol class="simple">
+<li><p>Who represents the young man?</p></li>
+<li><p>What result does it refer to?</p></li>
+<li><p>Who represents the young woman?</p></li>
+<li><p>What outcome does it refer to?</p></li>
+<li><p>Why call this film “the seventh day” (sic)?</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.2.</p>
+<p>“Neuro-meteorology”: 4:48 - 5:30</p>
+<ol class="simple">
+<li><p>What <code class="docutils literal notranslate"><span class="pre">networks</span></code> are we talking about here?</p></li>
+<li><p>Why does he refer to the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code> and the <code class="docutils literal notranslate"><span class="pre">“task-positive”</span> <span class="pre">network</span></code> as “Yin and yang”?</p></li>
+<li><p>Are any <code class="docutils literal notranslate"><span class="pre">networks</span></code> missing in this forecast?</p></li>
+<li><p>Why is turbulence in the <code class="docutils literal notranslate"><span class="pre">precuneus</span></code> (or rather the <code class="docutils literal notranslate"><span class="pre">posterior</span> <span class="pre">cingulate</span> <span class="pre">cortex</span></code>) interesting?</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.3.</p>
+<p>“Hardball”: 8:01 - 9:46</p>
+<ol class="simple">
+<li><p>Is it true that <code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">activity</span></code> is present both at <code class="docutils literal notranslate"><span class="pre">rest</span></code> and during a <code class="docutils literal notranslate"><span class="pre">task</span></code>?</p></li>
+<li><p>Is it true that <code class="docutils literal notranslate"><span class="pre">spontaneous</span> <span class="pre">activity</span></code> has mainly been studied in a <code class="docutils literal notranslate"><span class="pre">resting</span> <span class="pre">state</span></code> in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>?</p></li>
+<li><p>How is it “unpsychological” to study a <code class="docutils literal notranslate"><span class="pre">condition</span></code> of <code class="docutils literal notranslate"><span class="pre">rest</span></code>?</p></li>
+<li><p>Open question: is one of them right? Or both?</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.4.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Connectivity</span> <span class="pre">map</span></code>: true/false</p>
+<ol class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">map</span></code> changes if the <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code> is changed.</p></li>
+<li><p>To define a <code class="docutils literal notranslate"><span class="pre">target</span> <span class="pre">region</span></code>, one must generate an <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">connectivity</span> <span class="pre">map</span></code> has <code class="docutils literal notranslate"><span class="pre">values</span></code> between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">connectivity</span> <span class="pre">map</span></code> is a tool to identify the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.5.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Spontaneous</span></code> and <code class="docutils literal notranslate"><span class="pre">evoked</span> <span class="pre">activity</span></code>: true/false</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Spontaneous</span> <span class="pre">brain</span> <span class="pre">activity</span></code> occurs only in a state of <code class="docutils literal notranslate"><span class="pre">rest</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Brain</span> <span class="pre">activity</span></code> <code class="docutils literal notranslate"><span class="pre">evoked</span></code> by a <code class="docutils literal notranslate"><span class="pre">task</span></code> can be characterized by an <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">activation</span> <span class="pre">map</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spontaneous</span> <span class="pre">brain</span> <span class="pre">activity</span></code> is greater at <code class="docutils literal notranslate"><span class="pre">rest</span></code> than during a <code class="docutils literal notranslate"><span class="pre">visual</span> <span class="pre">task</span></code> in certain parts of the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.6.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">networks</span></code>: true/false</p>
+<ol class="simple">
+<li><p>There are exactly <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">functional</span> <span class="pre">networks</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">network</span></code> is composed of <code class="docutils literal notranslate"><span class="pre">regions</span></code> with <code class="docutils literal notranslate"><span class="pre">strong</span> <span class="pre">functional</span> <span class="pre">connectivity</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">mode</span> <span class="pre">network</span></code> can be identified with an <code class="docutils literal notranslate"><span class="pre">activation</span> <span class="pre">map</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">mode</span> <span class="pre">network</span></code> <code class="docutils literal notranslate"><span class="pre">regions</span></code> are <code class="docutils literal notranslate"><span class="pre">negatively</span> <span class="pre">correlated</span></code> with <code class="docutils literal notranslate"><span class="pre">sensorimotor</span> <span class="pre">network</span></code> <code class="docutils literal notranslate"><span class="pre">regions</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.7</p>
+<p>To answer this question, read the article by Shukla et al, “<em>Aberrant Frontostriatal Connectivity in Negative Symptoms of Schizophrenia</em>”, published in Schizophrenia Bulletin (2019, 45(5): 1051-59) and available open access at this <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6737477/"> address</a>. The following questions require short answers.</p>
+<ul class="simple">
+<li><p>What <code class="docutils literal notranslate"><span class="pre">software</span></code> was used to <code class="docutils literal notranslate"><span class="pre">analyze</span></code> the <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">data</span></code>?</p></li>
+<li><p>What <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">condition</span></code> was used during the <code class="docutils literal notranslate"><span class="pre">fMRI</span> <span class="pre">acquisitions</span></code>?</p></li>
+<li><p>What was the <code class="docutils literal notranslate"><span class="pre">spatial</span> <span class="pre">smoothing</span></code> setting?</p></li>
+<li><p>Has the <code class="docutils literal notranslate"><span class="pre">data</span></code> been <code class="docutils literal notranslate"><span class="pre">motion</span> <span class="pre">corrected</span></code>? Why?</p></li>
+<li><p>Did one of the two <code class="docutils literal notranslate"><span class="pre">groups</span></code> <code class="docutils literal notranslate"><span class="pre">move</span></code> more than the other?</p></li>
+<li><p>What <code class="docutils literal notranslate"><span class="pre">filtering</span></code> and <code class="docutils literal notranslate"><span class="pre">noise</span> <span class="pre">correction</span></code> procedures have been applied?</p></li>
+<li><p>In which <code class="docutils literal notranslate"><span class="pre">stereotactic</span> <span class="pre">space</span></code> are <code class="docutils literal notranslate"><span class="pre">group</span></code> <code class="docutils literal notranslate"><span class="pre">analyzes</span></code> performed?</p></li>
+<li><p>What type of <code class="docutils literal notranslate"><span class="pre">connectivity</span> <span class="pre">metric</span></code> is used in the article?</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercice 5.8.</p>
+<p>We want to compare the <code class="docutils literal notranslate"><span class="pre">functional</span> <span class="pre">connectivity</span></code> between young and old people. Name three potential <code class="docutils literal notranslate"><span class="pre">confounders</span></code>, which are not related to <code class="docutils literal notranslate"><span class="pre">intrinsic</span> <span class="pre">neural</span> <span class="pre">activity</span></code>.</p>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="image_manipulation_nilearn.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Using Python for neuroimaging data - Nilearn</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="functional_connectivity.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Functional connectivity and resting state</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
