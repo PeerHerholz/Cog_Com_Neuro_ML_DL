@@ -569,7 +569,7 @@
 <div class="section" id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this part of the course is to introduce you to the principles of <a class="reference external" href="https://en.wikipedia.org/wiki/Diffusion_MRI">diffusion magnetic resonance imaging (dMRI)</a>. <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> is a <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">modality</span></code> that allows us to study <strong>white matter fibres</strong>. We are therefore able to examine the <code class="docutils literal notranslate"><span class="pre">connections</span></code> between different <code class="docutils literal notranslate"><span class="pre">regions</span></code>, both <code class="docutils literal notranslate"><span class="pre">interhemispheric</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> traveling from one <code class="docutils literal notranslate"><span class="pre">hemisphere</span></code> to another), and <code class="docutils literal notranslate"><span class="pre">intrahemispheric</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> traveling within the same <code class="docutils literal notranslate"><span class="pre">hemisphere</span></code>) . To get a concrete idea of ​​what <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> look like, you can watch this <a class="reference external" href="https://www.youtube.com/watch?v=PazaHElk6wc">video</a> presenting brain dissections, taken from the <a class="reference external" href="http://www.neuroanatomy.ca/">course of Functional Neuroanatomy from UBC</a>.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -599,7 +599,7 @@
 <p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Illustration of the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of a drop of ink in a glass of <code class="docutils literal notranslate"><span class="pre">water</span></code>. Image by <a class="reference external" href="https://www.shutterstock.com/g/NARUDON+ATSAWALARPSAKUN">Narudon Atsawalarpsakun</a> available at [shutterstock](<a class="reference external" href="https://www.shutterstock.com/image-photo/blue-food-coloring-diffuse">https://www.shutterstock.com/image-photo/blue-food-coloring-diffuse</a> -water-inside-736860766) ID <code class="docutils literal notranslate"><span class="pre">736860766</span></code>, used under standard shutterstock license.</span><a class="headerlink" href="#diffusion-water-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>In <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>, we are interested in the way <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">diffuses</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. By examining how <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">diffuses</span></code>, we can learn information about the medium of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>, in our case, the <code class="docutils literal notranslate"><span class="pre">brain</span></code>! Specifically, <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> allows us to learn more about the <strong>microstructure properties</strong> of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code>. For a concrete example of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>, we can imagine what happens when we drop a drop of ink into a glass of <code class="docutils literal notranslate"><span class="pre">water</span></code>, illustrated as <a class="reference internal" href="#diffusion-water-fig"><span class="std std-numref">Fig. 41</span></a>. The ink will over time <code class="docutils literal notranslate"><span class="pre">diffuse</span></code> into the <code class="docutils literal notranslate"><span class="pre">water</span></code>, coloring the <code class="docutils literal notranslate"><span class="pre">water</span></code> little by little, until it becomes <code class="docutils literal notranslate"><span class="pre">homogeneously</span></code> colored. <code class="docutils literal notranslate"><span class="pre">Water</span></code> and ink <code class="docutils literal notranslate"><span class="pre">molecules</span></code> <code class="docutils literal notranslate"><span class="pre">collide</span></code> in <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">directions</span></code>, and follow a <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">walk</span> <span class="pre">process</span></code> called <a class="reference external" href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion</a>, see <code class="xref std std-numref docutils literal notranslate"> <span class="pre">brownian-fig</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Brownian motion</span>
 <span class="sd">code adapted from Scipy Cookbook https://scipy-cookbook.readthedocs.io/items/BrownianMotion.html</span>
@@ -719,11 +719,12 @@
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;brownian-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/dMRI_intro_3_1.png" src="../../../_images/dMRI_intro_3_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="brownian-fig" style="width: 500px">
@@ -735,7 +736,7 @@
 </div>
 <div class="section" id="isotropic-and-anisotropic-diffusion">
 <h3>Isotropic and anisotropic diffusion<a class="headerlink" href="#isotropic-and-anisotropic-diffusion" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_speed</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">)</span>
 
@@ -766,11 +767,12 @@
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;anisotropic-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/dMRI_intro_5_1.png" src="../../../_images/dMRI_intro_5_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="anisotropic-fig" style="width: 800px">
@@ -792,7 +794,7 @@ So by knowing how <code class="docutils literal notranslate"><span class="pre">w
 </div>
 <div class="section" id="dmri-acquisition">
 <h3>dMRI acquisition<a class="headerlink" href="#dmri-acquisition" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">get_fnames</span>
@@ -843,7 +845,7 @@ So by knowing how <code class="docutils literal notranslate"><span class="pre">w
 </div>
 <div class="section" id="diffusion-tensor-imaging">
 <h3>Diffusion Tensor Imaging<a class="headerlink" href="#diffusion-tensor-imaging" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import modules</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -927,11 +929,12 @@ So by knowing how <code class="docutils literal notranslate"><span class="pre">w
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;tensor-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/dMRI_intro_9_1.png" src="../../../_images/dMRI_intro_9_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="tensor-fig" style="width: 800px">
@@ -944,7 +947,7 @@ So by knowing how <code class="docutils literal notranslate"><span class="pre">w
 </div>
 <div class="section" id="characteristics-of-tensors">
 <h3>Characteristics of tensors<a class="headerlink" href="#characteristics-of-tensors" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">RGB2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">RGB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">RGB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">RGB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
@@ -970,11 +973,12 @@ So by knowing how <code class="docutils literal notranslate"><span class="pre">w
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fa-md-rgb-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/dMRI_intro_11_1.png" src="../../../_images/dMRI_intro_11_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fa-md-rgb-fig" style="width: 800px">
@@ -1004,7 +1008,7 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 <h2>Tractography<a class="headerlink" href="#tractography" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="streamline-tractography">
 <h3>Streamline Tractography<a class="headerlink" href="#streamline-tractography" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="n">MD</span> <span class="o">=</span> <span class="n">MD1</span>
@@ -1027,14 +1031,15 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mask-wm-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/dMRI_intro_13_1.png" src="../../../_images/dMRI_intro_13_1.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dipy.tracking</span> <span class="kn">import</span> <span class="n">utils</span>
 
@@ -1096,11 +1101,12 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fibers-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/dMRI_intro_14_1.png" src="../../../_images/dMRI_intro_14_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fibers-fig" style="width: 800px">
@@ -1128,7 +1134,7 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 <p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Illustration of the <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">crossing</span> <span class="pre">problem</span></code>, shown at left. The <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> in each <code class="docutils literal notranslate"><span class="pre">fiber</span></code> is associated with a <code class="docutils literal notranslate"><span class="pre">tensor</span></code> that points in a different <code class="docutils literal notranslate"><span class="pre">direction</span></code> (middle). When we try to <code class="docutils literal notranslate"><span class="pre">approximate</span></code> the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> in the <code class="docutils literal notranslate"><span class="pre">crossing</span></code> with a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">tensor</span></code>, we observe an <code class="docutils literal notranslate"><span class="pre">isotropic</span> <span class="pre">tensor</span></code> (right). Figure by P Bellec, under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, inspired by the thesis of C. Poupon, 1999.</span><a class="headerlink" href="#crossing-fibers" title="Permalink to this image">¶</a></p>
 </div>
 <p>A limitation we encounter with <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span> <span class="pre">imaging</span></code> is <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">crossing</span></code>. It is very common in <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code> to have several <code class="docutils literal notranslate"><span class="pre">intersecting</span></code> <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code>. When many <code class="docutils literal notranslate"><span class="pre">fibers</span></code> <code class="docutils literal notranslate"><span class="pre">cross</span></code> as in the figure below, the <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span></code> appears <code class="docutils literal notranslate"><span class="pre">isotropic</span></code>, even if there are indeed <code class="docutils literal notranslate"><span class="pre">fibers</span></code> present in the <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. In this case, the <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">reconstruction</span></code> algorithm will not know which <code class="docutils literal notranslate"><span class="pre">direction</span></code> to follow. One of the techniques used to solve this problem is <strong>high resolution diffusion imaging</strong>, which allows us to estimate several <code class="docutils literal notranslate"><span class="pre">tensors</span></code> for the same <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. This technique consists of <code class="docutils literal notranslate"><span class="pre">acquiring</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> in many <code class="docutils literal notranslate"><span class="pre">directions</span></code> (around <code class="docutils literal notranslate"><span class="pre">30</span></code> to <code class="docutils literal notranslate"><span class="pre">60</span></code> <code class="docutils literal notranslate"><span class="pre">directions</span></code>) using a <strong>HARDI</strong> <code class="docutils literal notranslate"><span class="pre">sequence</span></code> (<em>High Angular Resolution Diffusion Imaging</em>). The <code class="docutils literal notranslate"><span class="pre">acquisitions</span></code> made with this <code class="docutils literal notranslate"><span class="pre">sequence</span></code> are longer than those in <code class="docutils literal notranslate"><span class="pre">DTI</span></code>, <code class="docutils literal notranslate"><span class="pre">5-30</span></code> min vs <code class="docutils literal notranslate"><span class="pre">3-4</span></code> min.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">dipy.reconst.csdeconv</span> <span class="kn">import</span> <span class="n">auto_response_ssst</span>
@@ -1174,14 +1180,15 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fodf-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 24424/24424 [00:04&lt;00:00, 5025.95it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|███████████████████████████████████████████████████████████████████████████████████████| 24424/24424 [00:07&lt;00:00, 3338.83it/s]
 </pre></div>
 </div>
-<img alt="../../../_images/dMRI_intro_16_2.png" src="../../../_images/dMRI_intro_16_2.png" />
 </div>
 </div>
 <div class="figure align-default" id="fodf-fig" style="width: 800px">
@@ -1191,7 +1198,7 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 <p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Estimation</span></code> of <code class="docutils literal notranslate"><span class="pre">fODF</span></code> on an <code class="docutils literal notranslate"><span class="pre">axial</span> <span class="pre">slice</span></code> (left) and zoom on a portion of the <code class="docutils literal notranslate"><span class="pre">slice</span></code> (right). Figure generated by python code adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/reconst_csd/#example-reconst-csd">DIPY tutorial</a> by P. Bellec under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC- BY 4.0</a>.</span><a class="headerlink" href="#fodf-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>With a <code class="docutils literal notranslate"><span class="pre">HARDI</span></code> <code class="docutils literal notranslate"><span class="pre">sequence</span></code>, we can <code class="docutils literal notranslate"><span class="pre">estimate</span></code> a <code class="docutils literal notranslate"><span class="pre">fiber</span></code> <code class="docutils literal notranslate"><span class="pre">Orientation</span> <span class="pre">Distribution</span> <span class="pre">Function</span></code> (<code class="docutils literal notranslate"><span class="pre">fODF</span></code>) when there are <code class="docutils literal notranslate"><span class="pre">perpendicular</span></code> <code class="docutils literal notranslate"><span class="pre">fiber</span></code> <code class="docutils literal notranslate"><span class="pre">crossings</span></code>. This allows us to <code class="docutils literal notranslate"><span class="pre">estimate</span></code> <strong>several</strong> <code class="docutils literal notranslate"><span class="pre">tensors</span></code> inside a <code class="docutils literal notranslate"><span class="pre">voxel</span></code> and to overcome certain limits of the <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span></code> (<code class="docutils literal notranslate"><span class="pre">DTI</span></code>). In areas with low <code class="docutils literal notranslate"><span class="pre">anisotropy</span></code> we observe <strong>several</strong> <code class="docutils literal notranslate"><span class="pre">directions</span></code>, like small balloons in each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, while we observe a <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">direction</span></code> in the most important <code class="docutils literal notranslate"><span class="pre">fibers</span></code>.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csa_peaks</span> <span class="o">=</span> <span class="n">peaks_from_model</span><span class="p">(</span><span class="n">csd_model</span><span class="p">,</span> <span class="n">maskdata</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">default_sphere</span><span class="p">,</span>
                              <span class="n">relative_peak_threshold</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
@@ -1240,11 +1247,12 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 <span class="c1"># Glue the figure</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fodf-tracts-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/dMRI_intro_18_1.png" src="../../../_images/dMRI_intro_18_1.png" />
 </div>
 </div>
 <div class="figure align-default" id="fodf-tracts-fig" style="width: 800px">
@@ -1290,6 +1298,7 @@ The <code class="docutils literal notranslate"><span class="pre">average</span> 
 </div>
 <div class="section" id="exercices">
 <h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+<p>In the following we created a few exercises that aim to recap core aspects of this part of the course and thus should allow you to assess if you understood the main points.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Exercise 6.1</p>
 <p><code class="docutils literal notranslate"><span class="pre">Diffusion</span> <span class="pre">MRI</span></code> can measure… (true/false, explain your answers)</p>
