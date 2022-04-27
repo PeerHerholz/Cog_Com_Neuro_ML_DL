@@ -1,0 +1,1409 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diffusion MRI &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Structural connectivity and diffusion imaging" href="diffusion_imaging.html" />
+    <link rel="prev" title="Morphometric analyzes" href="morphometry.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="morphometry.html">
+       Morphometric analyzes
+      </a>
+     </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="current reference internal" href="#">
+       Diffusion MRI
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="diffusion_imaging.html">
+         Structural connectivity and diffusion imaging
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="fmri_intro.html">
+       Functional MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nilearn.html">
+         Using Python for neuroimaging data - Nilearn
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="connectivity_intro.html">
+       Functional connectivity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="functional_connectivity.html">
+         Functional connectivity and resting state
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/dMRI_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/dMRI_intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/dMRI_intro.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/dMRI_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physical-and-physiological-principles">
+   Physical and physiological principles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#water-diffusion">
+     Water diffusion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#isotropic-and-anisotropic-diffusion">
+     Isotropic and anisotropic diffusion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffusion-and-white-matter-fibers">
+     Diffusion and white matter fibers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dmri-acquisition">
+     dMRI acquisition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffusion-tensor">
+   Diffusion tensor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-tensor-model">
+     The tensor model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffusion-tensor-imaging">
+     Diffusion Tensor Imaging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#characteristics-of-tensors">
+     Characteristics of tensors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tractography">
+   Tractography
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#streamline-tractography">
+     Streamline Tractography
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fiber-crossing">
+     Fiber crossing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fiber-bundles">
+     Fiber Bundles
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Diffusion MRI</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physical-and-physiological-principles">
+   Physical and physiological principles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#water-diffusion">
+     Water diffusion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#isotropic-and-anisotropic-diffusion">
+     Isotropic and anisotropic diffusion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffusion-and-white-matter-fibers">
+     Diffusion and white matter fibers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dmri-acquisition">
+     dMRI acquisition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffusion-tensor">
+   Diffusion tensor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-tensor-model">
+     The tensor model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diffusion-tensor-imaging">
+     Diffusion Tensor Imaging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#characteristics-of-tensors">
+     Characteristics of tensors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tractography">
+   Tractography
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#streamline-tractography">
+     Streamline Tractography
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fiber-crossing">
+     Fiber crossing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fiber-bundles">
+     Fiber Bundles
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="diffusion-mri">
+<span id="dmri-chapter"></span><h1>Diffusion MRI<a class="headerlink" href="#diffusion-mri" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this part of the course is to introduce you to the principles of <a class="reference external" href="https://en.wikipedia.org/wiki/Diffusion_MRI">diffusion magnetic resonance imaging (dMRI)</a>. <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> is a <code class="docutils literal notranslate"><span class="pre">neuroimaging</span> <span class="pre">modality</span></code> that allows us to study <strong>white matter fibres</strong>. We are therefore able to examine the <code class="docutils literal notranslate"><span class="pre">connections</span></code> between different <code class="docutils literal notranslate"><span class="pre">regions</span></code>, both <code class="docutils literal notranslate"><span class="pre">interhemispheric</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> traveling from one <code class="docutils literal notranslate"><span class="pre">hemisphere</span></code> to another), and <code class="docutils literal notranslate"><span class="pre">intrahemispheric</span></code> (i.e., <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> traveling within the same <code class="docutils literal notranslate"><span class="pre">hemisphere</span></code>) . To get a concrete idea of ​​what <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> look like, you can watch this <a class="reference external" href="https://www.youtube.com/watch?v=PazaHElk6wc">video</a> presenting brain dissections, taken from the <a class="reference external" href="http://www.neuroanatomy.ca/">course of Functional Neuroanatomy from UBC</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># Youtube</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/PazaHElk6wc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/PazaHElk6wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+<p>During this lesson, we will cover:</p>
+<ul class="simple">
+<li><p>The <strong>physical</strong> and <strong>physiological</strong> principles of the signal in <code class="docutils literal notranslate"><span class="pre">dMRI</span></code>.</p></li>
+<li><p>The model of the <strong>diffusion tensor</strong>.</p></li>
+<li><p><strong>tractography</strong> analyses.</p></li>
+</ul>
+</div>
+<div class="section" id="physical-and-physiological-principles">
+<h2>Physical and physiological principles<a class="headerlink" href="#physical-and-physiological-principles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="water-diffusion">
+<h3>Water diffusion<a class="headerlink" href="#water-diffusion" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="diffusion-water-fig">
+<a class="reference internal image-reference" href="../../../_images/diffusion-water.jpg"><img alt="../../../_images/diffusion-water.jpg" src="../../../_images/diffusion-water.jpg" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Illustration of the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of a drop of ink in a glass of <code class="docutils literal notranslate"><span class="pre">water</span></code>. Image by <a class="reference external" href="https://www.shutterstock.com/g/NARUDON+ATSAWALARPSAKUN">Narudon Atsawalarpsakun</a> available at [shutterstock](<a class="reference external" href="https://www.shutterstock.com/image-photo/blue-food-coloring-diffuse">https://www.shutterstock.com/image-photo/blue-food-coloring-diffuse</a> -water-inside-736860766) ID <code class="docutils literal notranslate"><span class="pre">736860766</span></code>, used under standard shutterstock license.</span><a class="headerlink" href="#diffusion-water-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>, we are interested in the way <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">diffuses</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code>. By examining how <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">diffuses</span></code>, we can learn information about the medium of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>, in our case, the <code class="docutils literal notranslate"><span class="pre">brain</span></code>! Specifically, <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> allows us to learn more about the <strong>microstructure properties</strong> of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code>. For a concrete example of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>, we can imagine what happens when we drop a drop of ink into a glass of <code class="docutils literal notranslate"><span class="pre">water</span></code>, illustrated as <a class="reference internal" href="#diffusion-water-fig"><span class="std std-numref">Fig. 41</span></a>. The ink will over time <code class="docutils literal notranslate"><span class="pre">diffuse</span></code> into the <code class="docutils literal notranslate"><span class="pre">water</span></code>, coloring the <code class="docutils literal notranslate"><span class="pre">water</span></code> little by little, until it becomes <code class="docutils literal notranslate"><span class="pre">homogeneously</span></code> colored. <code class="docutils literal notranslate"><span class="pre">Water</span></code> and ink <code class="docutils literal notranslate"><span class="pre">molecules</span></code> <code class="docutils literal notranslate"><span class="pre">collide</span></code> in <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">directions</span></code>, and follow a <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">walk</span> <span class="pre">process</span></code> called <a class="reference external" href="https://en.wikipedia.org/wiki/Brownian_motion">Brownian motion</a>, see <code class="xref std std-numref docutils literal notranslate"> <span class="pre">brownian-fig</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Brownian motion</span>
+<span class="sd">code adapted from Scipy Cookbook https://scipy-cookbook.readthedocs.io/items/BrownianMotion.html</span>
+<span class="sd">under an MIT-like license https://github.com/scipy/scipy-cookbook/blob/master/LICENSE.txt</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">brownian</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate an instance of Brownian motion (i.e. the Wiener process):</span>
+
+<span class="sd">        X(t) = X(0) + N(0, delta**2 * t; 0, t)</span>
+
+<span class="sd">    where N(a,b; t0, t1) is a normally distributed random variable with mean a and</span>
+<span class="sd">    variance b.  The parameters t0 and t1 make explicit the statistical</span>
+<span class="sd">    independence of N on different time intervals; that is, if [t0, t1) and</span>
+<span class="sd">    [t2, t3) are disjoint intervals, then N(a, b; t0, t1) and N(a, b; t2, t3)</span>
+<span class="sd">    are independent.</span>
+
+<span class="sd">    Written as an iteration scheme,</span>
+
+<span class="sd">        X(t + dt) = X(t) + N(0, delta**2 * dt; t, t+dt)</span>
+
+
+<span class="sd">    If `x0` is an array (or array-like), each value in `x0` is treated as</span>
+<span class="sd">    an initial condition, and the value returned is a numpy array with one</span>
+<span class="sd">    more dimension than `x0`.</span>
+
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    x0 : float or numpy array (or something that can be converted to a numpy array</span>
+<span class="sd">         using numpy.asarray(x0)).</span>
+<span class="sd">        The initial condition(s) (i.e. position(s)) of the Brownian motion.</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The number of steps to take.</span>
+<span class="sd">    dt : float</span>
+<span class="sd">        The time step.</span>
+<span class="sd">    delta : float</span>
+<span class="sd">        delta determines the &quot;speed&quot; of the Brownian motion.  The random variable</span>
+<span class="sd">        of the position at time t, X(t), has a normal distribution whose mean is</span>
+<span class="sd">        the position at time t=0 and whose variance is delta**2*t.</span>
+<span class="sd">    out : numpy array or None</span>
+<span class="sd">        If `out` is not None, it specifies the array in which to put the</span>
+<span class="sd">        result.  If `out` is None, a new numpy array is created and returned.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    A numpy array of floats with shape `x0.shape + (n,)`.</span>
+
+<span class="sd">    Note that the initial value `x0` is not included in the returned array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+
+    <span class="c1"># For each element of x0, generate a sample of n numbers from a</span>
+    <span class="c1"># normal distribution.</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">x0</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="p">,))</span>
+        <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,),</span> <span class="n">scale</span><span class="o">=</span><span class="n">delta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dt</span><span class="p">))</span>
+        <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,),</span> <span class="n">scale</span><span class="o">=</span><span class="n">delta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dt</span><span class="p">))</span>
+        <span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,),</span> <span class="n">scale</span><span class="o">=</span><span class="n">delta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dt</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">x0</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="p">,),</span> <span class="n">scale</span><span class="o">=</span><span class="n">delta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dt</span><span class="p">))</span>
+
+    <span class="c1"># If `out` was not given, create an output array.</span>
+    <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c1"># This computes the Brownian motion by forming the cumulative sum of</span>
+    <span class="c1"># the random samples.</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+
+    <span class="c1"># Add the initial condition.</span>
+    <span class="n">out</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># The Wiener process parameter.</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">]</span>
+<span class="c1"># Total time.</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="c1"># Number of steps.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="c1"># Time step size</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="n">N</span>
+<span class="c1"># Initial values of x.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+<span class="n">n_samp</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_samp</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">samp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samp</span><span class="p">):</span>
+    <span class="n">brownian</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">N</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="c1"># Plot the 2D trajectory.</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+    <span class="n">points</span><span class="p">[:,</span> <span class="n">samp</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Mark the start and end points.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">samp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samp</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">samp</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">samp</span><span class="p">],</span><span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># More plot decorations.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Brownien 2D Movement&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;brownian-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_3_1.png" src="../../../_images/dMRI_intro_3_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="brownian-fig" style="width: 500px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_3_0.png" src="../../../_images/dMRI_intro_3_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Illustration of <code class="docutils literal notranslate"><span class="pre">Brownian</span> <span class="pre">motion</span></code> of a <code class="docutils literal notranslate"><span class="pre">molecule</span></code>. The starting point is indicated by a red circle. The color <code class="docutils literal notranslate"><span class="pre">trajectories</span></code> correspond to simulated <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">walks</span></code> following a <code class="docutils literal notranslate"><span class="pre">Brownian</span> <span class="pre">movement</span></code>. The <code class="docutils literal notranslate"><span class="pre">blue</span> <span class="pre">dots</span></code> indicate the <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">point</span></code> of each <code class="docutils literal notranslate"><span class="pre">step</span></code>. Figure generated using Python code by P. Bellec, licensed under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. The <code class="docutils literal notranslate"><span class="pre">Brownian</span> <span class="pre">motion</span></code> simulation code is adapted from <a class="reference external" href="https://scipy-cookbook.readthedocs.io/items/BrownianMotion.html">Scipy Cookbook</a> under a <a class="reference external" href="https://github.com/scipy/scipy-cookbook/blob/master/LICENSE.txt">license</a> close to MIT.</span><a class="headerlink" href="#brownian-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="isotropic-and-anisotropic-diffusion">
+<h3>Isotropic and anisotropic diffusion<a class="headerlink" href="#isotropic-and-anisotropic-diffusion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_speed</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">)</span>
+
+<span class="c1"># Initial values of x.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">speed</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_speed</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_speed</span><span class="p">),</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">n_samp</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">delta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">speed</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">])</span>
+    <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_samp</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">samp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samp</span><span class="p">):</span>
+        <span class="n">brownian</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">N</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">x</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="n">points</span><span class="p">[:,</span> <span class="n">samp</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_box_aspect</span><span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span>
+                       <span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span>
+                       <span class="n">ax</span><span class="o">.</span><span class="n">get_zlim</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_zlim</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
+                    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;speed x = </span><span class="si">{</span><span class="n">speed</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;anisotropic-fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_5_1.png" src="../../../_images/dMRI_intro_5_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="anisotropic-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_5_0.png" src="../../../_images/dMRI_intro_5_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Isotropic</span></code> vs <code class="docutils literal notranslate"><span class="pre">anisotropic</span> <span class="pre">diffusion</span></code>. Each blue circle represents the <code class="docutils literal notranslate"><span class="pre">arrival</span> <span class="pre">point</span></code> of a <code class="docutils literal notranslate"><span class="pre">water</span> <span class="pre">molecule</span></code> according to a <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">walk</span></code> simulation with a <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Brownian</span> <span class="pre">process</span></code>. On the graph on the left, the <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">rate</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span> <span class="pre">molecules</span></code> is identical in all <code class="docutils literal notranslate"><span class="pre">directions</span></code>. On the graphs in the middle and on the right, the <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">velocity</span></code> is greater along the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis than along the <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> axes. Figure generated using Python code by P. Bellec, licensed <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.</span><a class="headerlink" href="#anisotropic-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">movement</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span> <span class="pre">molecules</span></code> in a <code class="docutils literal notranslate"><span class="pre">medium</span></code> follows a <code class="docutils literal notranslate"><span class="pre">Brownian</span> <span class="pre">motion</span></code>. If the <code class="docutils literal notranslate"><span class="pre">medium</span></code> has similar characteristics in all <code class="docutils literal notranslate"><span class="pre">directions</span></code>, it is said to be an <strong>isotropic</strong> <code class="docutils literal notranslate"><span class="pre">medium</span></code>. The left graph of the <a class="reference internal" href="#anisotropic-fig"><span class="std std-numref">Fig. 43</span></a> represents the set of <code class="docutils literal notranslate"><span class="pre">endpoints</span></code> of <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">walks</span></code> in such an <code class="docutils literal notranslate"><span class="pre">isotropic</span> <span class="pre">medium</span></code>. We notice that the <code class="docutils literal notranslate"><span class="pre">molecules</span></code> are distributed approximately in a <code class="docutils literal notranslate"><span class="pre">sphere</span></code>. What if the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> is faster in a given <code class="docutils literal notranslate"><span class="pre">direction</span></code>, for example the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis? We then speak of an <strong>anisotropic</strong> <code class="docutils literal notranslate"><span class="pre">medium</span></code>. On the middle graph, we see that the shape filled by the <code class="docutils literal notranslate"><span class="pre">molecules</span></code> is getting longer, and looks more like an American football than a <code class="docutils literal notranslate"><span class="pre">sphere</span></code> (or, in mathematical terms, an <code class="docutils literal notranslate"><span class="pre">ellipse</span></code>). The more the <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">velocity</span></code> difference on <code class="docutils literal notranslate"><span class="pre">x</span></code> grows with respect to the <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> <code class="docutils literal notranslate"><span class="pre">directions</span></code>, the more the shape lengthens (graph on the right).</p>
+</div>
+<div class="section" id="diffusion-and-white-matter-fibers">
+<h3>Diffusion and white matter fibers<a class="headerlink" href="#diffusion-and-white-matter-fibers" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="dissection-fig">
+<a class="reference internal image-reference" href="../../../_images/dissection.png"><img alt="../../../_images/dissection.png" src="../../../_images/dissection.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Cerebral</span> <span class="pre">dissection</span></code> illustrating the <code class="docutils literal notranslate"><span class="pre">organization</span></code> of <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">white</span> <span class="pre">matter</span></code> into <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code>. Bottom right: diagram illustrating the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> constrained by the <code class="docutils literal notranslate"><span class="pre">fibres</span></code>. The red dot corresponds to the origin of <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">walks</span></code>, whose terminations are indicated by the blue dots. <code class="docutils literal notranslate"><span class="pre">Brain</span></code> images taken from <span id="id1">[<a class="reference internal" href="#id51">Bakhit <em>et al.</em>, 2020</a>]</span>, licensed under CC-BY 4.0. The rest of the figure by P Bellec, under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, inspired by the thesis of C. Poupon, 1999.</span><a class="headerlink" href="#dissection-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">axons</span></code> of the <code class="docutils literal notranslate"><span class="pre">neurons</span></code> come to constrain the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code>, the <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">molecules</span></code> can therefore not move freely in all <code class="docutils literal notranslate"><span class="pre">directions</span></code>. The <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">profile</span></code> of the <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">molecules</span></code> then follows an <code class="docutils literal notranslate"><span class="pre">anisotropic</span> <span class="pre">shape</span></code>, as we have just seen in <a class="reference internal" href="#anisotropic-fig"><span class="std std-numref">Fig. 43</span></a>. <code class="docutils literal notranslate"><span class="pre">Water</span> <span class="pre">diffuses</span></code> more easily in the <code class="docutils literal notranslate"><span class="pre">direction</span></code> <code class="docutils literal notranslate"><span class="pre">parallel</span></code> to the <code class="docutils literal notranslate"><span class="pre">fibres</span></code>. <code class="docutils literal notranslate"><span class="pre">Diffusion</span></code> is therefore <code class="docutils literal notranslate"><span class="pre">anisotropic</span></code> and the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> <code class="docutils literal notranslate"><span class="pre">coefficient</span></code> will then be higher in this <code class="docutils literal notranslate"><span class="pre">parallel</span></code> <code class="docutils literal notranslate"><span class="pre">direction</span></code>, see <a class="reference internal" href="#dissection-fig"><span class="std std-numref">Fig. 44</span></a>.
+So by knowing how <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">diffuses</span></code>, we can determine the configuration of the <code class="docutils literal notranslate"><span class="pre">axons</span></code>. The phenomenon of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> depends on the <code class="docutils literal notranslate"><span class="pre">structure</span></code> of the <code class="docutils literal notranslate"><span class="pre">fabric</span></code>! This is the <code class="docutils literal notranslate"><span class="pre">physiological</span></code> principle at the origin of <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> measurements.</p>
+</div>
+<div class="section" id="dmri-acquisition">
+<h3>dMRI acquisition<a class="headerlink" href="#dmri-acquisition" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">get_fnames</span>
+<span class="kn">from</span> <span class="nn">dipy.io.image</span> <span class="kn">import</span> <span class="n">load_nifti</span><span class="p">,</span> <span class="n">save_nifti</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">hardi_fname</span><span class="p">,</span> <span class="n">hardi_bval_fname</span><span class="p">,</span> <span class="n">hardi_bvec_fname</span> <span class="o">=</span> <span class="n">get_fnames</span><span class="p">(</span><span class="s1">&#39;stanford_hardi&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">affine</span> <span class="o">=</span> <span class="n">load_nifti</span><span class="p">(</span><span class="n">hardi_fname</span><span class="p">)</span>
+
+<span class="n">sli</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">list_vol</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>  <span class="c1"># pick out random volumes and gradient directions</span>
+
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;xticks&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;yticks&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">vol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_vol</span><span class="p">):</span>
+    <span class="n">vol_slice</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">sli</span><span class="p">,</span> <span class="n">vol</span><span class="p">]</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">vol_slice</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+                  <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;direction </span><span class="si">{</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;diffusion-direction-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_7_1.png" src="../../../_images/dMRI_intro_7_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="broadcast-direction-fig" style="width: 600px">
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Diffusion-weighted</span></code> <code class="docutils literal notranslate"><span class="pre">MRI</span></code> <code class="docutils literal notranslate"><span class="pre">volumes</span></code>. Each <code class="docutils literal notranslate"><span class="pre">axial</span></code> <code class="docutils literal notranslate"><span class="pre">slice</span></code> represents a <code class="docutils literal notranslate"><span class="pre">diffusion-weighted</span></code> <code class="docutils literal notranslate"><span class="pre">T2*</span> <span class="pre">volume</span></code> for a different <code class="docutils literal notranslate"><span class="pre">direction</span></code>. Figure generated using Python code by P. Bellec, licensed <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>. The code is adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/denoise_patch2self/#example-denoise-patch2self">tutorial</a> of the <a class="reference external" href="https://dipy.org/">DIPY</a> library, distributed under the <a class="reference external" href="https://github.com/dipy/dipy/blob/master/LICENSE">BSD 3-Clause</a> license.</span><a class="headerlink" href="#broadcast-direction-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>, we take <code class="docutils literal notranslate"><span class="pre">images</span></code> in several <code class="docutils literal notranslate"><span class="pre">orientations</span></code>. These are <code class="docutils literal notranslate"><span class="pre">T2*-weighted</span></code> <code class="docutils literal notranslate"><span class="pre">images</span></code> that we <code class="docutils literal notranslate"><span class="pre">acquire</span></code> using <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">acquisition</span> <span class="pre">protocol</span></code>. The applied <code class="docutils literal notranslate"><span class="pre">sequence</span></code> makes the <code class="docutils literal notranslate"><span class="pre">image</span></code> sensitive to <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>, in a given <code class="docutils literal notranslate"><span class="pre">direction</span></code>. For a given <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, we’ll take measurements in different <code class="docutils literal notranslate"><span class="pre">directions</span></code>, which will tell us if the <code class="docutils literal notranslate"><span class="pre">water</span></code> has <code class="docutils literal notranslate"><span class="pre">diffused</span></code> a lot in that <code class="docutils literal notranslate"><span class="pre">direction</span></code>, much like the blue dots in the <a class="reference internal" href="#dissection-fig"><span class="std std-numref">Fig. 44</span></a>. For a <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> <code class="docutils literal notranslate"><span class="pre">volume</span></code>, the value in a <code class="docutils literal notranslate"><span class="pre">voxel</span></code> tells us if the blue point is far or not from the red point, for a <code class="docutils literal notranslate"><span class="pre">direction</span></code> that we have selected, see <code class="xref std std-numref docutils literal notranslate"><span class="pre">diffusion-direction-fig</span></code></p>
+</div>
+</div>
+<div class="section" id="diffusion-tensor">
+<h2>Diffusion tensor<a class="headerlink" href="#diffusion-tensor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-tensor-model">
+<h3>The tensor model<a class="headerlink" href="#the-tensor-model" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="tensor-schematic-fig">
+<a class="reference internal image-reference" href="../../../_images/tensor-schematic.png"><img alt="../../../_images/tensor-schematic.png" src="../../../_images/tensor-schematic.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">molecules</span></code> over time can be visualized as a cloud of points. Due to the constraints of the environment, in particular the <code class="docutils literal notranslate"><span class="pre">axons</span></code>, this cloud takes the form of a rugby ball (top, left). The shape of the cloud can be approximated with a <code class="docutils literal notranslate"><span class="pre">tensor</span> <span class="pre">model</span></code> (bottom left). The main parameters of this model are the main <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">directions</span></code> <span class="math notranslate nohighlight">\(e_1\)</span>, <span class="math notranslate nohighlight">\(e_2\)</span>, <span class="math notranslate nohighlight">\(e_3\)</span>, as well as the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> values ​​associated with these <code class="docutils literal notranslate"><span class="pre">directions</span></code> <span class="math notranslate nohighlight">\(\lambda_1 \geq \lambda_2 \geq \lambda_3\)</span>. Figure by P. Bellec under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, inspired by M. Descoteaux and C. Poupon.</span><a class="headerlink" href="#tensor-schematic-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>From the simulations above, it is intuitive to imagine the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> as a balloon, more or less elongated. Mathematically, this is formulated with a <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span></code>, or <strong>Gaussian model</strong>, see <a class="reference internal" href="#tensor-schematic-fig"><span class="std std-numref">Fig. 46</span></a>. To estimate the shape of our balloon in each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, we use the different <code class="docutils literal notranslate"><span class="pre">scattering</span></code> values ​​obtained for each <code class="docutils literal notranslate"><span class="pre">acquisition</span> <span class="pre">direction</span></code>. If the spread is greater in a certain <code class="docutils literal notranslate"><span class="pre">direction</span></code>, our ball will look more like a rugby ball. If the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> is similar in all <code class="docutils literal notranslate"><span class="pre">acquisition</span> <span class="pre">directions</span></code>, we will obtain a soccer ball instead.</p>
+</div>
+<div class="section" id="diffusion-tensor-imaging">
+<h3>Diffusion Tensor Imaging<a class="headerlink" href="#diffusion-tensor-imaging" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">dipy.io.image</span> <span class="kn">import</span> <span class="n">load_nifti</span><span class="p">,</span> <span class="n">save_nifti</span>
+<span class="kn">from</span> <span class="nn">dipy.io.gradients</span> <span class="kn">import</span> <span class="n">read_bvals_bvecs</span>
+<span class="kn">from</span> <span class="nn">dipy.core.gradients</span> <span class="kn">import</span> <span class="n">gradient_table</span>
+<span class="kn">import</span> <span class="nn">dipy.reconst.dti</span> <span class="k">as</span> <span class="nn">dti</span>
+<span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">get_fnames</span>
+
+<span class="c1"># Select patch</span>
+<span class="n">minx</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">maxx</span> <span class="o">=</span> <span class="mi">81</span>
+<span class="n">miny</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">maxy</span> <span class="o">=</span> <span class="mi">106</span>
+<span class="n">minz</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="n">maxz</span> <span class="o">=</span> <span class="mi">32</span>
+
+<span class="c1"># Download HARDI data</span>
+<span class="n">hardi_fname</span><span class="p">,</span> <span class="n">hardi_bval_fname</span><span class="p">,</span> <span class="n">hardi_bvec_fname</span> <span class="o">=</span> <span class="n">get_fnames</span><span class="p">(</span><span class="s1">&#39;stanford_hardi&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">affine</span> <span class="o">=</span> <span class="n">load_nifti</span><span class="p">(</span><span class="n">hardi_fname</span><span class="p">)</span>
+<span class="n">bvals</span><span class="p">,</span> <span class="n">bvecs</span> <span class="o">=</span> <span class="n">read_bvals_bvecs</span><span class="p">(</span><span class="n">hardi_bval_fname</span><span class="p">,</span> <span class="n">hardi_bvec_fname</span><span class="p">)</span>
+<span class="n">gtab</span> <span class="o">=</span> <span class="n">gradient_table</span><span class="p">(</span><span class="n">bvals</span><span class="p">,</span> <span class="n">bvecs</span><span class="p">)</span>
+
+<span class="c1"># Force affine to something simple to make it easier to extract patches</span>
+<span class="n">affine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Mask data and estimate tensors</span>
+<span class="kn">from</span> <span class="nn">dipy.segment.mask</span> <span class="kn">import</span> <span class="n">median_otsu</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">minz</span><span class="p">:</span><span class="n">maxz</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">maskdata</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">median_otsu</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">vol_idx</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">median_radius</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                             <span class="n">numpass</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">autocrop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dilate</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">tenmodel</span> <span class="o">=</span> <span class="n">dti</span><span class="o">.</span><span class="n">TensorModel</span><span class="p">(</span><span class="n">gtab</span><span class="p">)</span>
+<span class="n">tenfit</span> <span class="o">=</span> <span class="n">tenmodel</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">maskdata</span><span class="p">)</span>
+
+<span class="c1"># Generate derived metrics (FA etc)</span>
+<span class="kn">from</span> <span class="nn">dipy.reconst.dti</span> <span class="kn">import</span> <span class="n">fractional_anisotropy</span><span class="p">,</span> <span class="n">color_fa</span>
+<span class="n">FA</span> <span class="o">=</span> <span class="n">fractional_anisotropy</span><span class="p">(</span><span class="n">tenfit</span><span class="o">.</span><span class="n">evals</span><span class="p">)</span>
+<span class="n">FA</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">FA</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">FA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">FA</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">RGB</span> <span class="o">=</span> <span class="n">color_fa</span><span class="p">(</span><span class="n">FA</span><span class="p">,</span> <span class="n">tenfit</span><span class="o">.</span><span class="n">evecs</span><span class="p">)</span>
+<span class="n">MD1</span> <span class="o">=</span> <span class="n">dti</span><span class="o">.</span><span class="n">mean_diffusivity</span><span class="p">(</span><span class="n">tenfit</span><span class="o">.</span><span class="n">evals</span><span class="p">)</span>
+
+<span class="c1"># Figure</span>
+<span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">get_sphere</span>
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">get_sphere</span><span class="p">(</span><span class="s1">&#39;repulsion724&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dipy.viz</span> <span class="kn">import</span> <span class="n">window</span><span class="p">,</span> <span class="n">actor</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+<span class="n">evals</span> <span class="o">=</span> <span class="n">tenfit</span><span class="o">.</span><span class="n">evals</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">evecs</span> <span class="o">=</span> <span class="n">tenfit</span><span class="o">.</span><span class="n">evecs</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># boost the colors</span>
+<span class="n">RGB</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="n">RGB</span><span class="p">[</span><span class="n">RGB</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">cfa</span> <span class="o">=</span> <span class="n">RGB</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">actor</span><span class="o">.</span><span class="n">tensor_slicer</span><span class="p">(</span><span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span><span class="p">,</span> <span class="n">scalar_colors</span><span class="o">=</span><span class="n">cfa</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span>
+                              <span class="n">scale</span><span class="o">=</span><span class="mf">0.3</span><span class="p">))</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">14.87946710578175</span><span class="p">,</span> <span class="mf">25.770232149765413</span><span class="p">,</span> <span class="mf">173.54578028650144</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">33.43851200470716</span><span class="p">,</span> <span class="mf">40.67356830562871</span><span class="p">,</span> <span class="mf">15.545914873824975</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.003256400517440014</span><span class="p">,</span> <span class="mf">0.9955397521536979</span><span class="p">,</span> <span class="mf">0.09428678453221151</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;tensor-slice.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">6.398539759431944</span><span class="p">,</span> <span class="mf">36.122368120824724</span><span class="p">,</span> <span class="mf">21.074961978614017</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">17.02336666201742</span><span class="p">,</span> <span class="mf">55.39317316617157</span><span class="p">,</span> <span class="mf">7.230217513090364</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.10205867972271891</span><span class="p">,</span> <span class="mf">0.5426923506538308</span><span class="p">,</span> <span class="mf">0.8337080055001721</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;tensor-zoom.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>             
+
+<span class="c1"># Make figure</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">imageio</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;xticks&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;yticks&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;tensor-slice.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;full slice&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;tensor-zoom.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;zoom&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;tensor-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_9_1.png" src="../../../_images/dMRI_intro_9_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="tensor-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_9_0.png" src="../../../_images/dMRI_intro_9_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Diffusion</span> <span class="pre">tensors</span></code> estimated on an <code class="docutils literal notranslate"><span class="pre">axial</span> <span class="pre">slice</span></code> (left) and zoom on a portion of the slice (right). The color of each <code class="docutils literal notranslate"><span class="pre">tensor</span></code> codes for the main <code class="docutils literal notranslate"><span class="pre">direction</span></code> of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>, as well as the <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code> of each <code class="docutils literal notranslate"><span class="pre">tensor</span></code>. The brightest <code class="docutils literal notranslate"><span class="pre">tensors</span></code> are strongly <code class="docutils literal notranslate"><span class="pre">anisotropic</span></code>, ie the <code class="docutils literal notranslate"><span class="pre">principal</span></code> <code class="docutils literal notranslate"><span class="pre">direction</span></code> of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> is clearly stronger than the <code class="docutils literal notranslate"><span class="pre">transverse</span></code> <code class="docutils literal notranslate"><span class="pre">directions</span></code>. Figure generated by python code adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/reconst_dti/#example-reconst-dti">DIPY tutorial</a> by P. Bellec under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC- BY 4.0</a>.</span><a class="headerlink" href="#tensor-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Diffusion</span> <span class="pre">tensor</span> <span class="pre">imaging</span></code> (<em>diffusion tensor imaging</em>, <code class="docutils literal notranslate"><span class="pre">DTI</span></code>) is one of the first analysis techniques that emerged in <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>. To estimate the shape of our balloon, we need at least six <code class="docutils literal notranslate"><span class="pre">acquisition</span> <span class="pre">directions</span></code>: <code class="docutils literal notranslate"><span class="pre">xy</span></code>, <code class="docutils literal notranslate"><span class="pre">xz</span></code>, <code class="docutils literal notranslate"><span class="pre">yz</span></code>, <code class="docutils literal notranslate"><span class="pre">-xy</span></code>, <code class="docutils literal notranslate"><span class="pre">-xz</span></code>, <code class="docutils literal notranslate"><span class="pre">y-z</span></code>. It is by combining the <code class="docutils literal notranslate"><span class="pre">images</span></code> in these six <code class="docutils literal notranslate"><span class="pre">directions</span></code> that we can estimate our <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span></code> (our balloon). Since we have these measurements for each of the <code class="docutils literal notranslate"><span class="pre">voxels</span></code>, we can create a <code class="docutils literal notranslate"><span class="pre">brain</span></code> <code class="docutils literal notranslate"><span class="pre">volume</span></code> where the value of each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> is a <code class="docutils literal notranslate"><span class="pre">tensor</span></code> (balloon), see <a class="reference internal" href="#tensor-fig"><span class="std std-numref">Fig. 47</span></a>.</p>
+</div>
+<div class="section" id="characteristics-of-tensors">
+<h3>Characteristics of tensors<a class="headerlink" href="#characteristics-of-tensors" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">RGB2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">RGB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">RGB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">RGB</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">MD</span> <span class="o">=</span> <span class="n">MD1</span>
+<span class="n">MD</span><span class="p">[</span><span class="n">mask</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">RGB2</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">RGB</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">num</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;xticks&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;yticks&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">FA</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FA map&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">MD</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;DM map&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">RGB2</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;principal direction&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fa-md-rgb-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_11_1.png" src="../../../_images/dMRI_intro_11_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="fa-md-rgb-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_11_0.png" src="../../../_images/dMRI_intro_11_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Tensor-derived</span> <span class="pre">maps</span></code> in <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>: <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code> (left), <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">diffusivity</span></code> (middle) and <code class="docutils literal notranslate"><span class="pre">principal</span> <span class="pre">direction</span></code> of the <code class="docutils literal notranslate"><span class="pre">tensor</span></code> (right). For the <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">direction</span></code>, the <code class="docutils literal notranslate"><span class="pre">medial-lateral</span></code> (<code class="docutils literal notranslate"><span class="pre">x</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> is coded in red, the <code class="docutils literal notranslate"><span class="pre">anterior-posterior</span></code> (<code class="docutils literal notranslate"><span class="pre">y</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> is coded in green, and the <code class="docutils literal notranslate"><span class="pre">ventral-dorsal</span></code> (<code class="docutils literal notranslate"><span class="pre">z</span></code>) <code class="docutils literal notranslate"><span class="pre">axis</span></code> is coded in blue. Figure generated using Python code adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/reconst_fwdti/#example-reconst-fwdti">DIPY tutorial</a> by P. Bellec, under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.</span><a class="headerlink" href="#fa-md-rgb-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>It is possible to summarize some important characteristics of <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensors</span></code> using a single measure, such as <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code> and <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">diffusivity</span></code> (see definitions below). We therefore extract a measurement per <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, which can be represented with a <code class="docutils literal notranslate"><span class="pre">cerebral</span> <span class="pre">map</span></code>, in a similar way to what we have seen with <code class="docutils literal notranslate"><span class="pre">T1</span></code> or <code class="docutils literal notranslate"><span class="pre">T2</span> <span class="pre">weighted</span></code> <code class="docutils literal notranslate"><span class="pre">images</span></code>, see <code class="xref std std-numref docutils literal notranslate"><span class="pre">fa-md-rgb-</span> <span class="pre">fig</span></code>. It is also possible to create a color image, which codes for the <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">direction</span></code> of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>.</p>
+<div class="admonition-fractional-anisotropy admonition">
+<p class="admonition-title">Fractional Anisotropy</p>
+<p>A popular measure is <a class="reference external" href="https://en.wikipedia.org/wiki/Fractional_anisotropy">Fractional Anisotropy</a> (FA), which measures the <code class="docutils literal notranslate"><span class="pre">degree</span></code> of <code class="docutils literal notranslate"><span class="pre">anisotropy</span></code> of a <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> phenomenon, by taking values ​​between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>. A <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code> value of <code class="docutils literal notranslate"><span class="pre">0</span></code> indicates <code class="docutils literal notranslate"><span class="pre">isotropic</span> <span class="pre">diffusion</span></code> (soccer ball), while a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> indicates strongly <code class="docutils literal notranslate"><span class="pre">anisotropic</span> <span class="pre">diffusion</span></code> (rugby ball). Note that the <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, unless <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> is constrained by a structure. Strong <code class="docutils literal notranslate"><span class="pre">FA</span></code> values ​​are usually found in <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code>.</p>
+</div>
+<div class="admonition-average-diffusivity admonition">
+<p class="admonition-title">Average Diffusivity</p>
+<p>We can also measure the <strong>mean diffusivity</strong> according to the following equation (see <a class="reference internal" href="#tensor-schematic-fig"><span class="std std-numref">Fig. 46</span></a> for notations):
+<span class="math notranslate nohighlight">\(\overline{\lambda} = \frac{\lambda_{1}+\lambda_{2}+\lambda_{3}}{3}\)</span>
+The <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">diffusivity</span></code> tells us how much <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> there is inside a <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. The <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">diffusivity</span></code> is very strong in the <code class="docutils literal notranslate"><span class="pre">cerebrospinal</span> <span class="pre">fluid</span></code>, where the <code class="docutils literal notranslate"><span class="pre">water</span></code> <code class="docutils literal notranslate"><span class="pre">molecules</span></code> are very little constrained.</p>
+</div>
+<div class="admonition-main-direction-of-dissemination admonition">
+<p class="admonition-title">Main Direction of Dissemination</p>
+<p>In order to visualize which <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">direction</span></code> the <code class="docutils literal notranslate"><span class="pre">tensors</span></code> point, a popular approach is to encode each <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> <code class="docutils literal notranslate"><span class="pre">axis</span></code> with a color (red, green, blue, respectively). For a given <code class="docutils literal notranslate"><span class="pre">direction</span></code>, the three colors are mixed in a proportion corresponding to the contributions of the three <code class="docutils literal notranslate"><span class="pre">axes</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="tractography">
+<h2>Tractography<a class="headerlink" href="#tractography" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="streamline-tractography">
+<h3>Streamline Tractography<a class="headerlink" href="#streamline-tractography" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">MD</span> <span class="o">=</span> <span class="n">MD1</span>
+<span class="n">MD</span><span class="p">[</span><span class="n">mask</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">threshold_fa</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">mask_wm</span> <span class="o">=</span> <span class="n">FA</span> <span class="o">&gt;</span> <span class="n">threshold_fa</span>
+
+
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;xticks&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;yticks&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">FA</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;fractional anisotropy map&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">mask_wm</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;white matter mask&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mask-wm-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_13_1.png" src="../../../_images/dMRI_intro_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dipy.tracking</span> <span class="kn">import</span> <span class="n">utils</span>
+
+<span class="n">seeds</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">seeds_from_mask</span><span class="p">(</span><span class="n">mask_wm</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:],</span> <span class="n">affine</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="kn">from</span> <span class="nn">dipy.tracking.stopping_criterion</span> <span class="kn">import</span> <span class="n">ThresholdStoppingCriterion</span>
+
+<span class="n">stopping_criterion</span> <span class="o">=</span> <span class="n">ThresholdStoppingCriterion</span><span class="p">(</span><span class="n">FA</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">dipy.direction</span> <span class="kn">import</span> <span class="n">peaks_from_model</span>
+<span class="n">csa_peaks</span> <span class="o">=</span> <span class="n">peaks_from_model</span><span class="p">(</span><span class="n">tenmodel</span><span class="p">,</span> <span class="n">maskdata</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">sphere</span><span class="p">,</span>
+                             <span class="n">relative_peak_threshold</span><span class="o">=</span><span class="mf">.8</span><span class="p">,</span>
+                             <span class="n">min_separation_angle</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span>
+                             <span class="n">mask</span><span class="o">=</span><span class="n">mask_wm</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:])</span>
+
+<span class="kn">from</span> <span class="nn">dipy.tracking.local_tracking</span> <span class="kn">import</span> <span class="n">LocalTracking</span>
+<span class="kn">from</span> <span class="nn">dipy.tracking.streamline</span> <span class="kn">import</span> <span class="n">Streamlines</span>
+
+<span class="c1"># Initialization of LocalTracking. The computation happens in the next step.</span>
+<span class="n">streamlines_generator</span> <span class="o">=</span> <span class="n">LocalTracking</span><span class="p">(</span><span class="n">csa_peaks</span><span class="p">,</span> <span class="n">stopping_criterion</span><span class="p">,</span> <span class="n">seeds</span><span class="p">,</span>
+                                      <span class="n">affine</span><span class="o">=</span><span class="n">affine</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">max_cross</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Generate streamlines object</span>
+<span class="n">streamlines</span> <span class="o">=</span> <span class="n">Streamlines</span><span class="p">(</span><span class="n">streamlines_generator</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">dipy.viz</span> <span class="kn">import</span> <span class="n">colormap</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="o">.</span><span class="n">line_colors</span><span class="p">(</span><span class="n">streamlines</span><span class="p">)</span>
+<span class="n">streamlines_actor</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">streamlines</span><span class="p">,</span>
+                               <span class="n">colormap</span><span class="o">.</span><span class="n">line_colors</span><span class="p">(</span><span class="n">streamlines</span><span class="p">))</span>
+
+<span class="c1"># Create the 3D display.</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">streamlines_actor</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">actor</span><span class="o">.</span><span class="n">tensor_slicer</span><span class="p">(</span><span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span><span class="p">,</span> <span class="n">scalar_colors</span><span class="o">=</span><span class="n">cfa</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span>
+                              <span class="n">scale</span><span class="o">=</span><span class="mf">0.3</span><span class="p">))</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">14.87946710578175</span><span class="p">,</span> <span class="mf">25.770232149765413</span><span class="p">,</span> <span class="mf">173.54578028650144</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">33.43851200470716</span><span class="p">,</span> <span class="mf">40.67356830562871</span><span class="p">,</span> <span class="mf">15.545914873824975</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.003256400517440014</span><span class="p">,</span> <span class="mf">0.9955397521536979</span><span class="p">,</span> <span class="mf">0.09428678453221151</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;../../../static/neuroscience/fibers-slice.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">6.398539759431944</span><span class="p">,</span> <span class="mf">36.122368120824724</span><span class="p">,</span> <span class="mf">21.074961978614017</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">17.02336666201742</span><span class="p">,</span> <span class="mf">55.39317316617157</span><span class="p">,</span> <span class="mf">7.230217513090364</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.10205867972271891</span><span class="p">,</span> <span class="mf">0.5426923506538308</span><span class="p">,</span> <span class="mf">0.8337080055001721</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;../../../static/neuroscience/fibers-zoom.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Make figure</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">imageio</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;xticks&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;yticks&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/fibers-slice.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;full slice&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/fibers-zoom.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;zoom&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fibers-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_14_1.png" src="../../../_images/dMRI_intro_14_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="fibers-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_14_0.png" src="../../../_images/dMRI_intro_14_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Fibers</span></code> reconstructed by a <code class="docutils literal notranslate"><span class="pre">deterministic</span> <span class="pre">streamline</span> <span class="pre">approach</span></code>, which consists in <code class="docutils literal notranslate"><span class="pre">drawing</span></code> a <code class="docutils literal notranslate"><span class="pre">fiber</span></code> following the <code class="docutils literal notranslate"><span class="pre">principal</span> <span class="pre">direction</span></code> of each <code class="docutils literal notranslate"><span class="pre">tensor</span></code> in an <code class="docutils literal notranslate"><span class="pre">iterative</span></code> way, starting from all the points in the <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code> on an <code class="docutils literal notranslate"><span class="pre">axial</span> <span class="pre">section</span></code> (left) and zooming in on a portion of the cut (right). The color of each <code class="docutils literal notranslate"><span class="pre">fiber</span></code> codes for the <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">direction</span></code> of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> along the <code class="docutils literal notranslate"><span class="pre">fiber</span></code>. Figure generated by python code adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/tracking_introduction_eudx/#example-tracking-introduction-eudx">DIPY tutorial</a> by P. Bellec under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/"> CC-BY 4.0</a>.</span><a class="headerlink" href="#fibers-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Tractography">Tractography</a> makes it possible to <code class="docutils literal notranslate"><span class="pre">trace</span></code> the <code class="docutils literal notranslate"><span class="pre">path</span></code> of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> in vivo. There are several approaches to <code class="docutils literal notranslate"><span class="pre">tractography</span></code>. <code class="docutils literal notranslate"><span class="pre">Deterministic</span></code> <em>streamline</em> <code class="docutils literal notranslate"><span class="pre">tractography</span></code> makes it possible to <code class="docutils literal notranslate"><span class="pre">reconstruct</span></code> <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> starting from a given point in the <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code> and moving <code class="docutils literal notranslate"><span class="pre">iteratively</span></code> along the <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">direction</span></code> of <code class="docutils literal notranslate"><span class="pre">diffusion</span></code>. The path will end when we come to <code class="docutils literal notranslate"><span class="pre">gray</span> <span class="pre">matter</span></code>. This <code class="docutils literal notranslate"><span class="pre">path</span></code> will be <code class="docutils literal notranslate"><span class="pre">traced</span></code> using specific algorithms. <code class="docutils literal notranslate"><span class="pre">Probabilistic</span> <span class="pre">tractography</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">deterministic</span> <span class="pre">tractography</span></code>, but also considers uncertainty about the <code class="docutils literal notranslate"><span class="pre">direction</span></code> of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code>. So instead of <code class="docutils literal notranslate"><span class="pre">reconstructing</span></code> a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">fiber</span></code> associated with a point of <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code>, <code class="docutils literal notranslate"><span class="pre">probabilistic</span> <span class="pre">tractography</span></code> will <code class="docutils literal notranslate"><span class="pre">reconstruct</span></code> <strong>several</strong> that will all be slightly different.</p>
+<div class="admonition-preprocessing-steps admonition">
+<p class="admonition-title">Preprocessing steps</p>
+<p>Just like <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>, <code class="docutils literal notranslate"><span class="pre">registration</span></code> and <code class="docutils literal notranslate"><span class="pre">denoising</span></code> steps are necessary to prepare the <code class="docutils literal notranslate"><span class="pre">data</span></code> before <code class="docutils literal notranslate"><span class="pre">estimating</span></code> the <code class="docutils literal notranslate"><span class="pre">tensors</span></code> and performing the <code class="docutils literal notranslate"><span class="pre">tractography</span></code>. Many parameters have to be selected for the <code class="docutils literal notranslate"><span class="pre">tractography</span></code> itself, which can influence the results. It is also necessary to select a <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">mask</span></code> that contains the starting points for <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">reconstruction</span></code>, obtained here by <code class="docutils literal notranslate"><span class="pre">thresholding</span></code> an <code class="docutils literal notranslate"><span class="pre">AF</span> <span class="pre">map</span></code>.</p>
+<div class="figure align-default" id="mask-wm-fig" style="width: 500px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_13_0.png" src="../../../_images/dMRI_intro_13_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Fractional</span> <span class="pre">anisotropic</span> <span class="pre">map</span></code> (left) and <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">mask</span></code> obtained by <code class="docutils literal notranslate"><span class="pre">thresholding</span></code> (right). Figure generated by python code adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/tracking_introduction_eudx/#example-tracking-introduction-eudx">DIPY tutorial</a> by P. Bellec under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/"> CC-BY 4.0</a>.</span><a class="headerlink" href="#mask-wm-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="fiber-crossing">
+<h3>Fiber crossing<a class="headerlink" href="#fiber-crossing" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="crossing-fibers">
+<a class="reference internal image-reference" href="../../../_images/crossing-fibers.png"><img alt="../../../_images/crossing-fibers.png" src="../../../_images/crossing-fibers.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Illustration of the <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">crossing</span> <span class="pre">problem</span></code>, shown at left. The <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> in each <code class="docutils literal notranslate"><span class="pre">fiber</span></code> is associated with a <code class="docutils literal notranslate"><span class="pre">tensor</span></code> that points in a different <code class="docutils literal notranslate"><span class="pre">direction</span></code> (middle). When we try to <code class="docutils literal notranslate"><span class="pre">approximate</span></code> the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> in the <code class="docutils literal notranslate"><span class="pre">crossing</span></code> with a <strong>single</strong> <code class="docutils literal notranslate"><span class="pre">tensor</span></code>, we observe an <code class="docutils literal notranslate"><span class="pre">isotropic</span> <span class="pre">tensor</span></code> (right). Figure by P Bellec, under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, inspired by the thesis of C. Poupon, 1999.</span><a class="headerlink" href="#crossing-fibers" title="Permalink to this image">¶</a></p>
+</div>
+<p>A limitation we encounter with <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span> <span class="pre">imaging</span></code> is <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">crossing</span></code>. It is very common in <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code> to have several <code class="docutils literal notranslate"><span class="pre">intersecting</span></code> <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code>. When many <code class="docutils literal notranslate"><span class="pre">fibers</span></code> <code class="docutils literal notranslate"><span class="pre">cross</span></code> as in the figure below, the <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span></code> appears <code class="docutils literal notranslate"><span class="pre">isotropic</span></code>, even if there are indeed <code class="docutils literal notranslate"><span class="pre">fibers</span></code> present in the <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. In this case, the <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">reconstruction</span></code> algorithm will not know which <code class="docutils literal notranslate"><span class="pre">direction</span></code> to follow. One of the techniques used to solve this problem is <strong>high resolution diffusion imaging</strong>, which allows us to estimate several <code class="docutils literal notranslate"><span class="pre">tensors</span></code> for the same <code class="docutils literal notranslate"><span class="pre">voxel</span></code>. This technique consists of <code class="docutils literal notranslate"><span class="pre">acquiring</span></code> <code class="docutils literal notranslate"><span class="pre">data</span></code> in many <code class="docutils literal notranslate"><span class="pre">directions</span></code> (around <code class="docutils literal notranslate"><span class="pre">30</span></code> to <code class="docutils literal notranslate"><span class="pre">60</span></code> <code class="docutils literal notranslate"><span class="pre">directions</span></code>) using a <strong>HARDI</strong> <code class="docutils literal notranslate"><span class="pre">sequence</span></code> (<em>High Angular Resolution Diffusion Imaging</em>). The <code class="docutils literal notranslate"><span class="pre">acquisitions</span></code> made with this <code class="docutils literal notranslate"><span class="pre">sequence</span></code> are longer than those in <code class="docutils literal notranslate"><span class="pre">DTI</span></code>, <code class="docutils literal notranslate"><span class="pre">5-30</span></code> min vs <code class="docutils literal notranslate"><span class="pre">3-4</span></code> min.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">dipy.reconst.csdeconv</span> <span class="kn">import</span> <span class="n">auto_response_ssst</span>
+<span class="kn">from</span> <span class="nn">dipy.reconst.csdeconv</span> <span class="kn">import</span> <span class="n">ConstrainedSphericalDeconvModel</span>
+<span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">default_sphere</span>
+<span class="kn">from</span> <span class="nn">dipy.viz</span> <span class="kn">import</span> <span class="n">actor</span>
+
+<span class="n">response</span><span class="p">,</span> <span class="n">ratio</span> <span class="o">=</span> <span class="n">auto_response_ssst</span><span class="p">(</span><span class="n">gtab</span><span class="p">,</span> <span class="n">maskdata</span><span class="p">,</span> <span class="n">roi_radii</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fa_thr</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">csd_model</span> <span class="o">=</span> <span class="n">ConstrainedSphericalDeconvModel</span><span class="p">(</span><span class="n">gtab</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="n">csd_fit</span> <span class="o">=</span> <span class="n">csd_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">maskdata</span><span class="p">)</span>
+<span class="n">csd_odf</span> <span class="o">=</span> <span class="n">csd_fit</span><span class="o">.</span><span class="n">odf</span><span class="p">(</span><span class="n">default_sphere</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dipy.data</span> <span class="kn">import</span> <span class="n">default_sphere</span>
+<span class="n">fodf_spheres</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">odf_slicer</span><span class="p">(</span><span class="n">csd_odf</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">default_sphere</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+                                <span class="n">norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create the 3D display.</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_spheres</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">14.87946710578175</span><span class="p">,</span> <span class="mf">25.770232149765413</span><span class="p">,</span> <span class="mf">173.54578028650144</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">33.43851200470716</span><span class="p">,</span> <span class="mf">40.67356830562871</span><span class="p">,</span> <span class="mf">15.545914873824975</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.003256400517440014</span><span class="p">,</span> <span class="mf">0.9955397521536979</span><span class="p">,</span> <span class="mf">0.09428678453221151</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;../../../static/neuroscience/fodf-slice.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">6.398539759431944</span><span class="p">,</span> <span class="mf">36.122368120824724</span><span class="p">,</span> <span class="mf">21.074961978614017</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">17.02336666201742</span><span class="p">,</span> <span class="mf">55.39317316617157</span><span class="p">,</span> <span class="mf">7.230217513090364</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.10205867972271891</span><span class="p">,</span> <span class="mf">0.5426923506538308</span><span class="p">,</span> <span class="mf">0.8337080055001721</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;../../../static/neuroscience/fodf-zoom.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>   
+
+<span class="c1"># Make figure</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">imageio</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;xticks&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;yticks&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/fodf-slice.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;full slice&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/fodf-zoom.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;zoom&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fodf-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 24424/24424 [00:04&lt;00:00, 5025.95it/s]
+</pre></div>
+</div>
+<img alt="../../../_images/dMRI_intro_16_2.png" src="../../../_images/dMRI_intro_16_2.png" />
+</div>
+</div>
+<div class="figure align-default" id="fodf-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_16_1.png" src="../../../_images/dMRI_intro_16_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Estimation</span></code> of <code class="docutils literal notranslate"><span class="pre">fODF</span></code> on an <code class="docutils literal notranslate"><span class="pre">axial</span> <span class="pre">slice</span></code> (left) and zoom on a portion of the <code class="docutils literal notranslate"><span class="pre">slice</span></code> (right). Figure generated by python code adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/reconst_csd/#example-reconst-csd">DIPY tutorial</a> by P. Bellec under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC- BY 4.0</a>.</span><a class="headerlink" href="#fodf-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>With a <code class="docutils literal notranslate"><span class="pre">HARDI</span></code> <code class="docutils literal notranslate"><span class="pre">sequence</span></code>, we can <code class="docutils literal notranslate"><span class="pre">estimate</span></code> a <code class="docutils literal notranslate"><span class="pre">fiber</span></code> <code class="docutils literal notranslate"><span class="pre">Orientation</span> <span class="pre">Distribution</span> <span class="pre">Function</span></code> (<code class="docutils literal notranslate"><span class="pre">fODF</span></code>) when there are <code class="docutils literal notranslate"><span class="pre">perpendicular</span></code> <code class="docutils literal notranslate"><span class="pre">fiber</span></code> <code class="docutils literal notranslate"><span class="pre">crossings</span></code>. This allows us to <code class="docutils literal notranslate"><span class="pre">estimate</span></code> <strong>several</strong> <code class="docutils literal notranslate"><span class="pre">tensors</span></code> inside a <code class="docutils literal notranslate"><span class="pre">voxel</span></code> and to overcome certain limits of the <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">tensor</span></code> (<code class="docutils literal notranslate"><span class="pre">DTI</span></code>). In areas with low <code class="docutils literal notranslate"><span class="pre">anisotropy</span></code> we observe <strong>several</strong> <code class="docutils literal notranslate"><span class="pre">directions</span></code>, like small balloons in each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, while we observe a <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">direction</span></code> in the most important <code class="docutils literal notranslate"><span class="pre">fibers</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csa_peaks</span> <span class="o">=</span> <span class="n">peaks_from_model</span><span class="p">(</span><span class="n">csd_model</span><span class="p">,</span> <span class="n">maskdata</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">default_sphere</span><span class="p">,</span>
+                             <span class="n">relative_peak_threshold</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
+                             <span class="n">min_separation_angle</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+                             <span class="n">mask</span><span class="o">=</span><span class="n">mask_wm</span><span class="p">[</span><span class="n">minx</span><span class="p">:</span><span class="n">maxx</span><span class="p">,</span> <span class="n">miny</span><span class="p">:</span><span class="n">maxy</span><span class="p">,</span> <span class="p">:])</span>
+
+<span class="c1"># Initialization of LocalTracking. The computation happens in the next step.</span>
+<span class="n">streamlines_generator</span> <span class="o">=</span> <span class="n">LocalTracking</span><span class="p">(</span><span class="n">csa_peaks</span><span class="p">,</span> <span class="n">stopping_criterion</span><span class="p">,</span> <span class="n">seeds</span><span class="p">,</span>
+                                      <span class="n">affine</span><span class="o">=</span><span class="n">affine</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">max_cross</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># Generate streamlines object</span>
+<span class="n">streamlines</span> <span class="o">=</span> <span class="n">Streamlines</span><span class="p">(</span><span class="n">streamlines_generator</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">dipy.viz</span> <span class="kn">import</span> <span class="n">colormap</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">colormap</span><span class="o">.</span><span class="n">line_colors</span><span class="p">(</span><span class="n">streamlines</span><span class="p">)</span>
+<span class="n">streamlines_actor</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">streamlines</span><span class="p">,</span>
+                               <span class="n">colormap</span><span class="o">.</span><span class="n">line_colors</span><span class="p">(</span><span class="n">streamlines</span><span class="p">))</span>
+
+<span class="c1"># Create the 3D display.</span>
+<span class="n">scene</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">streamlines_actor</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fodf_spheres</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">14.87946710578175</span><span class="p">,</span> <span class="mf">25.770232149765413</span><span class="p">,</span> <span class="mf">173.54578028650144</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">33.43851200470716</span><span class="p">,</span> <span class="mf">40.67356830562871</span><span class="p">,</span> <span class="mf">15.545914873824975</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.003256400517440014</span><span class="p">,</span> <span class="mf">0.9955397521536979</span><span class="p">,</span> <span class="mf">0.09428678453221151</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;../../../static/neuroscience/fibers-slice.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">set_camera</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mf">6.398539759431944</span><span class="p">,</span> <span class="mf">36.122368120824724</span><span class="p">,</span> <span class="mf">21.074961978614017</span><span class="p">),</span>
+                 <span class="n">focal_point</span><span class="o">=</span><span class="p">(</span><span class="mf">17.02336666201742</span><span class="p">,</span> <span class="mf">55.39317316617157</span><span class="p">,</span> <span class="mf">7.230217513090364</span><span class="p">),</span>
+                 <span class="n">view_up</span><span class="o">=</span><span class="p">(</span><span class="mf">0.10205867972271891</span><span class="p">,</span> <span class="mf">0.5426923506538308</span><span class="p">,</span> <span class="mf">0.8337080055001721</span><span class="p">))</span>
+<span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">n_frames</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_path</span><span class="o">=</span><span class="s1">&#39;../../../static/neuroscience/fibers-zoom.png&#39;</span><span class="p">,</span>
+              <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">reset_camera</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Make figure</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">imageio</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;xticks&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;yticks&#39;</span><span class="p">:</span> <span class="p">[]})</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/fibers-slice.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;full slice&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../../static/neuroscience/fibers-zoom.png&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;zoom&#39;</span><span class="p">)</span>
+
+<span class="c1"># Glue the figure</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fodf-tracts-fig&quot;</span><span class="p">,</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_18_1.png" src="../../../_images/dMRI_intro_18_1.png" />
+</div>
+</div>
+<div class="figure align-default" id="fodf-tracts-fig" style="width: 800px">
+<div class="cell_output docutils container">
+<img alt="../../../_images/dMRI_intro_18_0.png" src="../../../_images/dMRI_intro_18_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Fibers</span></code> <code class="docutils literal notranslate"><span class="pre">reconstructed</span></code> by a <code class="docutils literal notranslate"><span class="pre">deterministic</span> <span class="pre">streamline</span> <span class="pre">approach</span></code> with a <code class="docutils literal notranslate"><span class="pre">multi-tensor</span></code> approach, which makes it possible to follow <strong>several</strong> <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">peaks</span></code> at each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>, from all the points in the <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code> on an <code class="docutils literal notranslate"><span class="pre">axial</span> <span class="pre">slice</span></code> (left) and zoom on a portion of the cut (right). This approach makes it possible to be more robust to the presence of <code class="docutils literal notranslate"><span class="pre">crossing</span> <span class="pre">fibers</span></code>. Figure generated by python code adapted from a <a class="reference external" href="https://dipy.org/documentation/1.4.1./examples_built/tracking_introduction_eudx/#example-tracking-introduction-eudx">DIPY tutorial</a> by P. Bellec under license <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/"> CC-BY 4.0</a>.</span><a class="headerlink" href="#fodf-tracts-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>The ability of <code class="docutils literal notranslate"><span class="pre">fODF</span></code> to represent <code class="docutils literal notranslate"><span class="pre">multiple</span> <span class="pre">tensors</span></code> at each <code class="docutils literal notranslate"><span class="pre">voxel</span></code> allows the <code class="docutils literal notranslate"><span class="pre">reconstruction</span></code> of <code class="docutils literal notranslate"><span class="pre">intersecting</span> <span class="pre">fibers</span></code>, as is apparent in the zoom of <a class="reference internal" href="#fodf-tracts-fig"><span class="std std-numref">Fig. 53</span></a>. It is important to realize that the <code class="docutils literal notranslate"><span class="pre">data</span></code> used to generate <a class="reference internal" href="#fibers-fig"><span class="std std-numref">Fig. 49</span></a> and <a class="reference internal" href="#fodf-tracts-fig"><span class="std std-numref">Fig. 53</span></a> are the same, but the <code class="docutils literal notranslate"><span class="pre">reconstructed</span></code> <code class="docutils literal notranslate"><span class="pre">fibers</span></code> are very different! The parameters that we choose for the <code class="docutils literal notranslate"><span class="pre">reconstruction</span></code> method will also change the shape and the number of <code class="docutils literal notranslate"><span class="pre">fibers</span></code>. <code class="docutils literal notranslate"><span class="pre">dMRI</span> <span class="pre">tractography</span></code> is therefore not an exact science, and false positives (a <code class="docutils literal notranslate"><span class="pre">reconstructed</span></code> <code class="docutils literal notranslate"><span class="pre">fiber</span></code> that does not really exist) as well as false negatives (a <code class="docutils literal notranslate"><span class="pre">fiber</span></code> that is not <code class="docutils literal notranslate"><span class="pre">reconstructed</span></code> but which nevertheless exists) are very common.</p>
+</div>
+<div class="section" id="fiber-bundles">
+<h3>Fiber Bundles<a class="headerlink" href="#fiber-bundles" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="bundles-fig">
+<a class="reference internal image-reference" href="../../../_images/faisceaux.png"><img alt="../../../_images/faisceaux.png" src="../../../_images/faisceaux.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Illustration of three <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code>: the <code class="docutils literal notranslate"><span class="pre">radiating</span> <span class="pre">optics</span></code> (<code class="docutils literal notranslate"><span class="pre">OR</span></code>), the <code class="docutils literal notranslate"><span class="pre">arcuate</span> <span class="pre">fasciculus</span> <span class="pre">bundle</span></code> (<code class="docutils literal notranslate"><span class="pre">AF</span></code>) and the <code class="docutils literal notranslate"><span class="pre">vertical</span> <span class="pre">occipital</span> <span class="pre">bundle</span></code> (<code class="docutils literal notranslate"><span class="pre">VOF</span></code>). The <code class="docutils literal notranslate"><span class="pre">bundles</span></code> are presented on <code class="docutils literal notranslate"><span class="pre">different</span> <span class="pre">views</span></code> of a <code class="docutils literal notranslate"><span class="pre">dissection</span></code> (<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code>), as well as using a <code class="docutils literal notranslate"><span class="pre">virtual</span> <span class="pre">dissection</span></code> (<code class="docutils literal notranslate"><span class="pre">C</span></code>). Figure taken from <span id="id2">[<a class="reference internal" href="#id52">Jitsuishi <em>et al.</em>, 2020</a>]</span>, licensed under CC-BY 4.0.</span><a class="headerlink" href="#bundles-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can provide <code class="docutils literal notranslate"><span class="pre">tractography</span></code> algorithms with <code class="docutils literal notranslate"><span class="pre">priors</span></code> about the <code class="docutils literal notranslate"><span class="pre">fibers</span></code> in the <code class="docutils literal notranslate"><span class="pre">brain</span></code> that we know from <code class="docutils literal notranslate"><span class="pre">dissection</span></code> studies. In a <strong>systematic reconstruction</strong> of <code class="docutils literal notranslate"><span class="pre">fibers</span></code>, everything will be <code class="docutils literal notranslate"><span class="pre">traced</span></code>, whereas in a <strong>virtual dissection</strong>, only certain <code class="docutils literal notranslate"><span class="pre">bundles</span></code> of <code class="docutils literal notranslate"><span class="pre">fibers</span></code> will be selected. These <code class="docutils literal notranslate"><span class="pre">priors</span></code> make it possible to limit false positives, and the use of <code class="docutils literal notranslate"><span class="pre">high-performance</span> <span class="pre">tractography</span></code> algorithms makes it possible to limit false negatives. There are a number of classic <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code> with well-established <code class="docutils literal notranslate"><span class="pre">dissection</span></code> patterns, such as the <code class="docutils literal notranslate"><span class="pre">corpus</span> <span class="pre">callosum</span></code>, the <code class="docutils literal notranslate"><span class="pre">arcuate</span> <span class="pre">fasciculus</span> <span class="pre">bundle</span></code>, or the <code class="docutils literal notranslate"><span class="pre">superior</span> <span class="pre">longitudinal</span> <span class="pre">fascicle</span></code>.</p>
+<p>It is possible to calculate the average value of the <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code>, or any other metric, along a <code class="docutils literal notranslate"><span class="pre">fiber</span></code>, and then to compare this average value between different <code class="docutils literal notranslate"><span class="pre">individuals</span></code> to perform <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">tests</span></code>. In this case, the <code class="docutils literal notranslate"><span class="pre">registration</span></code> between <code class="docutils literal notranslate"><span class="pre">individuals</span></code> is done via the identification of <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code>, rather than by a <code class="docutils literal notranslate"><span class="pre">non-linear</span> <span class="pre">deformation</span></code> method.</p>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>In this part of the course, we have seen the principles of <code class="docutils literal notranslate"><span class="pre">diffusion</span> <span class="pre">MRI</span></code>. Specifically, we have seen:</p>
+<ul class="simple">
+<li><p>How to obtain <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> <code class="docutils literal notranslate"><span class="pre">images</span></code> thanks to the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> in different <code class="docutils literal notranslate"><span class="pre">directions</span></code>.</p></li>
+<li><p>How to <code class="docutils literal notranslate"><span class="pre">estimate</span></code> the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> process using <code class="docutils literal notranslate"><span class="pre">tensors</span></code> and measure different metrics (<code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">diffusivity</span></code>, <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code>).</p></li>
+<li><p>The principle of <code class="docutils literal notranslate"><span class="pre">tractography</span></code> methods.</p></li>
+<li><p>How to <code class="docutils literal notranslate"><span class="pre">estimate</span></code> <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">crossings</span></code>.</p></li>
+<li><p>How <code class="docutils literal notranslate"><span class="pre">dMRI</span></code> can be used to perform <code class="docutils literal notranslate"><span class="pre">virtual</span> <span class="pre">dissection</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id51"><span class="brackets"><a class="fn-backref" href="#id1">BFH+20</a></span></dt>
+<dd><p>Mudathir Bakhit, Masazumi Fujii, Ryo Hiruta, Masayuki Yamada, Kenichiro Iwami, Taku Sato, and Kiyoshi Saito. The superior frontal longitudinal tract: a connection between the dorsal premotor and the dorsolateral prefrontal cortices. <em>Scientific Reports</em>, 10(1):15855, September 2020. Number: 1 Publisher: Nature Publishing Group. URL: <a class="reference external" href="https://www.nature.com/articles/s41598-020-73001-7">https://www.nature.com/articles/s41598-020-73001-7</a> (visited on 2022-04-27), <a class="reference external" href="https://doi.org/10.1038/s41598-020-73001-7">doi:10.1038/s41598-020-73001-7</a>.</p>
+</dd>
+<dt class="label" id="id52"><span class="brackets"><a class="fn-backref" href="#id2">JHY+20</a></span></dt>
+<dd><p>Tatsuya Jitsuishi, Seiichiro Hirono, Tatsuya Yamamoto, Keiko Kitajo, Yasuo Iwadate, and Atsushi Yamaguchi. White matter dissection and structural connectivity of the human vertical occipital fasciculus to link vision-associated brain cortex. <em>Scientific Reports</em>, 10(1):820, January 2020. Number: 1 Publisher: Nature Publishing Group. URL: <a class="reference external" href="https://www.nature.com/articles/s41598-020-57837-7">https://www.nature.com/articles/s41598-020-57837-7</a> (visited on 2022-04-27), <a class="reference external" href="https://doi.org/10.1038/s41598-020-57837-7">doi:10.1038/s41598-020-57837-7</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+<div class="section" id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 6.1</p>
+<p><code class="docutils literal notranslate"><span class="pre">Diffusion</span> <span class="pre">MRI</span></code> can measure… (true/false, explain your answers)</p>
+<ol class="simple">
+<li><p>An <code class="docutils literal notranslate"><span class="pre">image</span></code> with a <code class="docutils literal notranslate"><span class="pre">tensor</span></code> at each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">image</span></code> with one or more <code class="docutils literal notranslate"><span class="pre">tensors</span></code> at each <code class="docutils literal notranslate"><span class="pre">voxel</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">series</span></code> of <code class="docutils literal notranslate"><span class="pre">images</span></code> sensitive to the <code class="docutils literal notranslate"><span class="pre">diffusion</span></code> of <code class="docutils literal notranslate"><span class="pre">water</span></code> in different <code class="docutils literal notranslate"><span class="pre">directions</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Images</span></code> showing the <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span> <span class="pre">fibers</span></code> of the <code class="docutils literal notranslate"><span class="pre">brain</span></code> in <code class="docutils literal notranslate"><span class="pre">3D</span></code>.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 6.2</p>
+<p>Give an example of a <code class="docutils literal notranslate"><span class="pre">region</span></code> with…</p>
+<ol class="simple">
+<li><p>Low <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code>, with high average <code class="docutils literal notranslate"><span class="pre">diffusivity</span></code>?</p></li>
+<li><p>Strong <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code>, with low average <code class="docutils literal notranslate"><span class="pre">diffusivity</span></code>?</p></li>
+<li><p>Low <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code>, with low average <code class="docutils literal notranslate"><span class="pre">diffusivity</span></code>?</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 6.3</p>
+<p>We observe a <code class="docutils literal notranslate"><span class="pre">voxel</span></code> whose <code class="docutils literal notranslate"><span class="pre">fractional</span> <span class="pre">anisotropy</span></code> is low. Give two interpretations of this observation.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 6.4</p>
+<p>List three examples of <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundles</span></code>.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 6.5</p>
+<p>Give two examples of problems that can cause a <code class="docutils literal notranslate"><span class="pre">deterministic</span> <span class="pre">streamline</span> <span class="pre">tractography</span></code> process to fail.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 6.6</p>
+<p>What is the advantage of performing <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">statistics</span></code> on a <code class="docutils literal notranslate"><span class="pre">fiber</span> <span class="pre">bundle</span></code>, rather than <code class="docutils literal notranslate"><span class="pre">voxel</span></code> by <code class="docutils literal notranslate"><span class="pre">voxel</span></code> with traditional <code class="docutils literal notranslate"><span class="pre">anatomical</span></code> <code class="docutils literal notranslate"><span class="pre">registration</span></code>, as in <code class="docutils literal notranslate"><span class="pre">fMRI</span></code>?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 6.7</p>
+<p>To answer the questions in this exercise, first read the article <em>Quantification of apparent <code class="docutils literal notranslate"><span class="pre">axon</span></code> <code class="docutils literal notranslate"><span class="pre">density</span></code> and <code class="docutils literal notranslate"><span class="pre">orientation</span></code> <code class="docutils literal notranslate"><span class="pre">dispersion</span></code> in the <code class="docutils literal notranslate"><span class="pre">white</span> <span class="pre">matter</span></code> of youth born with congenital heart disease</em> by Easson et al. (published in 2020 in the journal <em>Neuroimage</em> , volume 205, ID 116255).
+It is freely available at this <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2019.116255">address</a>.
+The following questions require short-answer answers.</p>
+<ul class="simple">
+<li><p>What type of <code class="docutils literal notranslate"><span class="pre">participants</span></code> were recruited in this study?</p></li>
+<li><p>What is the main objective of the study?</p></li>
+<li><p>What are the inclusion and exclusion criteria?</p></li>
+<li><p>What <code class="docutils literal notranslate"><span class="pre">neuroimaging</span></code> technique is used? Is it a <code class="docutils literal notranslate"><span class="pre">structural</span></code> or <code class="docutils literal notranslate"><span class="pre">functional</span></code> technique?</p></li>
+<li><p>What type of <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">acquisition</span> <span class="pre">sequence</span></code> is used? List the parameters.</p></li>
+<li><p>What types of analyzes have been applied?</p></li>
+<li><p>Which figure (or table) meets the main objective of the study?</p></li>
+<li><p>What is the main result of the study?</p></li>
+</ul>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "neuro_ai"
+        },
+        kernelOptions: {
+            kernelName: "neuro_ai",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'neuro_ai'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="morphometry.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Morphometric analyzes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="diffusion_imaging.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Structural connectivity and diffusion imaging</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
