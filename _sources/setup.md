@@ -458,20 +458,20 @@ datalad get -J 4 sub-0[1237]/ses-test/anat/sub-0[1237]_ses-test_T1w.nii.gz \
 Finally, we will rename and move a few things:
 
 ```
-mv /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
-             && mv /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
-             && mv /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
-             && mv /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
-             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_events.tsv \
-             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_events.tsv \
-             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_events.tsv \
-             && cp /data/ds000114/task-fingerfootlips_events.tsv /data/ds000114/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_events.tsv \
-             && rm -r /data/ds000114/*/ses-retest/* \
-             && rm -r /data/ds000114/derivatives/fmriprep/*/ses-retest/* \
-             && mv /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
-             && mv /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
-             && mv /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
-             && mv /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_confounds.tsv /data/ds000114/derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv'
+mv derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && mv derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && mv derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && mv derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_space-mni152nlin2009casym_preproc.nii.gz derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_space-MNI152nlin2009casym_desc-preproc_bold.nii.gz \
+             && cp task-fingerfootlips_events.tsv sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_events.tsv \
+             && cp task-fingerfootlips_events.tsv sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_events.tsv \
+             && cp task-fingerfootlips_events.tsv sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_events.tsv \
+             && cp task-fingerfootlips_events.tsv sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_events.tsv \
+             && rm -r */ses-retest/* \
+             && rm -r derivatives/fmriprep/*/ses-retest/* \
+             && mv derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_confounds.tsv derivatives/fmriprep/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
+             && mv derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_confounds.tsv derivatives/fmriprep/sub-02/ses-test/func/sub-02_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
+             && mv derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_confounds.tsv derivatives/fmriprep/sub-03/ses-test/func/sub-03_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv \
+             && mv derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_confounds.tsv derivatives/fmriprep/sub-07/ses-test/func/sub-07_ses-test_task-fingerfootlips_bold_desc-confounds_timeseries.tsv'
 ```
 
 
