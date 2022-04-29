@@ -1,0 +1,2736 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MNE Workflow tutorial &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Student projects" href="../../../projects.html" />
+    <link rel="prev" title="Evoked potentials/ERPs with MNE" href="mne_erp.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="morphometry.html">
+       Morphometric analyzes
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="dMRI_intro.html">
+       Diffusion MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="diffusion_imaging.html">
+         Structural connectivity and diffusion imaging
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="fmri_intro.html">
+       Functional MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nilearn.html">
+         Using Python for neuroimaging data - Nilearn
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="connectivity_intro.html">
+       Functional connectivity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="functional_connectivity.html">
+         Functional connectivity and resting state
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="eeg_introduction.html">
+       Electroencephalography
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/mne_workflow_tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/mne_workflow_tutorial.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/mne_workflow_tutorial.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/mne_workflow_tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MNE Workflow tutorial
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     Setup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data">
+       Data?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-preperation">
+   1. Data Preperation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing">
+     2. Preprocessing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#setting-the-eeg-reference">
+       Setting the eeg-reference
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise">
+       Next we’ll filter our signal to get rid of slow drifts and line noise
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#next-we-ll-identify-noisy-channels">
+       Next  we’ll identify noisy channels
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking">
+       Next up we’ll be dealing with artfifacts produced by eye-movement (i.e. blinking)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ica-for-occular-artifacts">
+       ICA for occular artifacts
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#epoching">
+       Epoching
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-evoked-potentials-mmn">
+     3. Calculate evoked potentials/MMN
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-the-mmn">
+     Calculate the MMN
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-data">
+     4. Save Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis">
+       Now we can export our epochs data in a number of ways for further analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>MNE Workflow tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   MNE Workflow tutorial
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     Setup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data">
+       Data?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-preperation">
+   1. Data Preperation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing">
+     2. Preprocessing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#setting-the-eeg-reference">
+       Setting the eeg-reference
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise">
+       Next we’ll filter our signal to get rid of slow drifts and line noise
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#next-we-ll-identify-noisy-channels">
+       Next  we’ll identify noisy channels
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking">
+       Next up we’ll be dealing with artfifacts produced by eye-movement (i.e. blinking)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ica-for-occular-artifacts">
+       ICA for occular artifacts
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#epoching">
+       Epoching
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-evoked-potentials-mmn">
+     3. Calculate evoked potentials/MMN
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-the-mmn">
+     Calculate the MMN
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-data">
+     4. Save Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis">
+       Now we can export our epochs data in a number of ways for further analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="mne-workflow-tutorial">
+<h1>MNE Workflow tutorial<a class="headerlink" href="#mne-workflow-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Tutorial: Calculating evoked potentials ans Mismatch negativity in an auditory oddball task</p>
+<ol class="simple">
+<li><p>Data preparation</p>
+<ul class="simple">
+<li><p>load raw data</p></li>
+<li><p>crop data</p></li>
+<li><p>set eog reference</p></li>
+<li><p>set eeg montage</p></li>
+</ul>
+</li>
+<li><p>Preprocessing</p>
+<ul class="simple">
+<li><p>referencing</p></li>
+<li><p>filter data</p></li>
+<li><p>find and interpolate bad channels</p></li>
+<li><p>artifact detection/repair with ICA</p></li>
+<li><p>Epoching</p></li>
+</ul>
+</li>
+<li><p>Calculate evoked potentials/MMN</p></li>
+<li><p>Save Data</p></li>
+</ol>
+<br/>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<br/>
+<p><strong>First we’ll import necessary libraries/functions</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+
+<span class="c1"># this allows for interactive pop-up plots</span>
+<span class="c1">#%matplotlib qt</span>
+
+<span class="c1"># allows for rendering in output-cell</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+
+<span class="c1"># import mne library</span>
+<span class="kn">import</span> <span class="nn">mne</span>
+<span class="kn">from</span> <span class="nn">mne_bids</span> <span class="kn">import</span> <span class="n">BIDSPath</span><span class="p">,</span> <span class="n">write_raw_bids</span><span class="p">,</span> <span class="n">print_dir_tree</span><span class="p">,</span> <span class="n">make_report</span><span class="p">,</span> <span class="n">read_raw_bids</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<div class="section" id="data">
+<h3>Data?<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<p><strong>This tutorial uses data from the ERP Core set collected by Kappenmann et al. (Kappenman et al., 2021). The ERP Core dataset contains data on a number of EEG experiments exploring different event-related and evoked potentials such as  the Error-Related Negativity (ERN (Flanker task)), the P3b (Active Visual Oddball Paradigm), or the mismatch negativity (Passive Auditory Oddball Paradigm).</strong></p>
+<p>The dataset can be found on <a href="https://osf.io/thsqg/" title="ERP CORE: Contributors: Emily S. Kappenman Jaclyn Farrens Wendy Zhang Andrew X Stewart Steven J. Luck ">OSF</a>. For an explanation of the study, the EEG and ERP processing and anlysis procedures, see the <a href="https://osf.io/w3dyn/" title="OSF: ERP CORE MMN Readme.txt">Readme.txt</a> file provided by the authors.</p>
+<p><em>Kappenman, E., Farrens, J., Zhang, W., Stewart, A. X., &amp; Luck, S. J. (2021). ERP CORE: An open resource for human event-related potential research. NeuroImage 225: 117465. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2020.117465">https://doi.org/10.1016/j.neuroimage.2020.117465</a></em></p>
+<br/>
+<p><strong>We’ll be using eeg data from a single subject preforming a passive auditory oddball task.</strong>
+In this experiment subjects were presented with two tones differing in amplitude. Most of the time a “standard” tone was presented (80 dB, p = .8; ~800 trials), while a “deviant” tone was pseudo-randomly (apparently) presented some of the time (70 dB, p = .2, ~ 200 trials). In theory this violation of a learned rule (i.e. a 70 dB tone is presented in a stream of repeated 80 dB tone events) manifests in a potential called the mismatch negativity (MMN) over fronto-central electrodes, which is calculated by subtracting the response to the common (or standard) from the response to the odd (or deviant) stimuli.
+The MMN is thought to reflect “the brain’s ability to perform automatic comparisons between consecutive stimuli and provides an electrophysiological index of sensory learning and perceptual accuracy” <a href="https://www.sciencedirect.com/science/article/pii/S1388245708012686" title="ScienceDirect: The mismatch negativity: A review of underlying mechanisms">(Garrido et al. 2009; see paper for more information)</a>.</p>
+<p><strong>Download the dataset</strong></p>
+<p><em>Now as we don’t want to download multiple GB of data for a simple tutorial we’ll have to download the Data by hand.</em></p>
+<p>First find your home_directory</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">homedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>  <span class="c1"># find home diretory</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">homedir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/michael
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1.</strong> Create a folder called <strong>msc_05_eeg_workflow</strong> in your <strong>home directory</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc_05_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">homedir</span><span class="p">,</span> <span class="s1">&#39;msc_05_eeg_workflow&#39;</span><span class="p">)</span>  <span class="c1"># assemble our path</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">msc_05_path</span><span class="p">)</span>  <span class="c1"># find home diretory</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>2.</strong> Create the folders <strong>sub-21</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_21_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">msc_05_path</span><span class="p">,</span> <span class="s1">&#39;sub-21&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">sub_21_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3.</strong> Create folder <strong>eeg</strong>  and <strong>derivatives</strong> in folder <strong>sub-21</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_21_eeg_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sub_21_path</span><span class="p">,</span> <span class="s1">&#39;eeg&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">sub_21_eeg_path</span><span class="p">)</span>
+
+<span class="n">derivatives_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sub_21_path</span><span class="p">,</span> <span class="s1">&#39;derivatives&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">derivatives_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>4.</strong> Next, navigate to the <a href="https://osf.io/5q4xs/" title="https://osf.io/5q4xs/">OSF directory of the ERP-Core dataset containing the MMN data </a>
+<br/></p>
+<div class="figure align-default" id="osf">
+<a class="reference internal image-reference" href="../../../_images/osf_repo.png"><img alt="../../../_images/osf_repo.png" src="../../../_images/osf_repo.png" style="width: 600px;" /></a>
+</div>
+<p><strong>5.</strong> Open the <strong>MMN Raw Data BIDS-compatible folder</strong></p>
+<div class="figure align-default" id="mmn-raw-data-bids-compatible-folder">
+<a class="reference internal image-reference" href="../../../_images/mmn_folder.png"><img alt="../../../_images/mmn_folder.png" src="../../../_images/mmn_folder.png" style="width: 600px;" /></a>
+</div>
+<p><strong>6.</strong> Download all files for <strong>sub_21</strong> and move them into the local <strong>sub-21/eeg</strong> folder created above</p>
+<div class="figure align-default" id="sub-21-files">
+<a class="reference internal image-reference" href="../../../_images/sub_21_eeg_folder.png"><img alt="../../../_images/sub_21_eeg_folder.png" src="../../../_images/sub_21_eeg_folder.png" style="width: 600px;" /></a>
+</div>
+<br/>
+</div>
+</div>
+</div>
+<div class="section" id="data-preperation">
+<h1>1. Data Preperation<a class="headerlink" href="#data-preperation" title="Permalink to this headline">¶</a></h1>
+<p><strong>Import the raw data and event file for subject 21</strong></p>
+<p>Using  <a href="https://mne.tools/stable/generated/mne.io.read_raw.htmls" title="https://mne.tools/stable/generated/mne.io.read_raw.htmls">mne.io.read_raw_eeglab()</a> to read our data, as the EEG data ends with <strong>.set</strong>. For info on EEG file types consult the MNE Introduction chapter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_eeglab</span><span class="p">(</span><span class="n">sub_21_eeg_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-021_task-MMN_eeg.set&#39;</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading /home/michael/msc_05_eeg_workflow/sub-21/eeg/sub-021_task-MMN_eeg.fdt
+Reading 0 ... 616447  =      0.000 ...   601.999 secs...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event_file</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">sub_21_eeg_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-021_task-MMN_events.tsv&#39;</span><span class="p">,</span>
+           <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p><strong>Get a quick overview on what we’re workig with</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event_file</span> <span class="c1"># contains info on duration, onset, trial_type and identity of presented events</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>onset</th>
+      <th>duration</th>
+      <th>sample</th>
+      <th>trial_type</th>
+      <th>stim_file</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.3506</td>
+      <td>NaN</td>
+      <td>10600</td>
+      <td>STATUS</td>
+      <td>NaN</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>13.4941</td>
+      <td>0.1</td>
+      <td>13819</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14.1328</td>
+      <td>0.1</td>
+      <td>14473</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>14.7363</td>
+      <td>0.1</td>
+      <td>15091</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15.2861</td>
+      <td>0.1</td>
+      <td>15654</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>597.5869</td>
+      <td>0.1</td>
+      <td>611930</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>598.1875</td>
+      <td>0.1</td>
+      <td>612545</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>598.7471</td>
+      <td>0.1</td>
+      <td>613118</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>599.3535</td>
+      <td>0.1</td>
+      <td>613739</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>1000</th>
+      <td>599.9307</td>
+      <td>0.1</td>
+      <td>614330</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+</table>
+<p>1001 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>  <span class="c1"># data recorded with EGGLAB software</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mne.io.eeglab.eeglab.RawEEGLAB
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>or explanations of info stored in the raw file we use the <a href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne.info">raw.info()</a> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># .info function stores relevant header data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+<span class="c1"># . keys function shows the keyword we can use to access info</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Info | 7 non-empty values
+ bads: []
+ ch_names: FP1, F3, F7, FC3, C3, C5, P3, P7, P9, PO7, PO3, O1, Oz, Pz, CPz, ...
+ chs: 33 EEG
+ custom_ref_applied: False
+ highpass: 0.0 Hz
+ lowpass: 512.0 Hz
+ meas_date: unspecified
+ nchan: 33
+ projs: []
+ sfreq: 1024.0 Hz
+&gt;
+dict_keys([&#39;acq_pars&#39;, &#39;acq_stim&#39;, &#39;ctf_head_t&#39;, &#39;description&#39;, &#39;dev_ctf_t&#39;, &#39;dig&#39;, &#39;experimenter&#39;, &#39;utc_offset&#39;, &#39;device_info&#39;, &#39;file_id&#39;, &#39;highpass&#39;, &#39;hpi_subsystem&#39;, &#39;kit_system_id&#39;, &#39;helium_info&#39;, &#39;line_freq&#39;, &#39;lowpass&#39;, &#39;meas_date&#39;, &#39;meas_id&#39;, &#39;proj_id&#39;, &#39;proj_name&#39;, &#39;subject_info&#39;, &#39;xplotter_layout&#39;, &#39;gantry_angle&#39;, &#39;bads&#39;, &#39;chs&#39;, &#39;comps&#39;, &#39;events&#39;, &#39;hpi_meas&#39;, &#39;hpi_results&#39;, &#39;projs&#39;, &#39;proc_history&#39;, &#39;custom_ref_applied&#39;, &#39;sfreq&#39;, &#39;dev_head_t&#39;, &#39;ch_names&#39;, &#39;nchan&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;ch_names&#39;</span><span class="p">]</span>  <span class="c1"># show names of channels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;FP1&#39;,
+ &#39;F3&#39;,
+ &#39;F7&#39;,
+ &#39;FC3&#39;,
+ &#39;C3&#39;,
+ &#39;C5&#39;,
+ &#39;P3&#39;,
+ &#39;P7&#39;,
+ &#39;P9&#39;,
+ &#39;PO7&#39;,
+ &#39;PO3&#39;,
+ &#39;O1&#39;,
+ &#39;Oz&#39;,
+ &#39;Pz&#39;,
+ &#39;CPz&#39;,
+ &#39;FP2&#39;,
+ &#39;Fz&#39;,
+ &#39;F4&#39;,
+ &#39;F8&#39;,
+ &#39;FC4&#39;,
+ &#39;FCz&#39;,
+ &#39;Cz&#39;,
+ &#39;C4&#39;,
+ &#39;C6&#39;,
+ &#39;P4&#39;,
+ &#39;P8&#39;,
+ &#39;P10&#39;,
+ &#39;PO8&#39;,
+ &#39;PO4&#39;,
+ &#39;O2&#39;,
+ &#39;HEOG_left&#39;,
+ &#39;HEOG_right&#39;,
+ &#39;VEOG_lower&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>and let’s take a look at the raw data in source space</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>  <span class="c1"># visualize our data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using matplotlib as 2D backend.
+Opening raw-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_27_1.png" src="../../../_images/mne_workflow_tutorial_27_1.png" />
+</div>
+</div>
+<br/>
+<p><strong>We can further crop or cut parts of the recording that we are not interested in or that contain artifacts, like breaks etc.</strong></p>
+<p>For illustrative purposes we’ll crop the data to the first event provided in our event file (signaling the start of the experiment), to avoid including irrelevant data or early artifacts (likely muscle activity related or blinks), due to the particpant getting situated. See <a href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.crop" title="MNE API: raw.crop()">raw.crop()</a> for possible parameters to provide.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># choosing the entry onset column containing the &quot;value&quot; encoded with &quot;1&quot; (i.e. the start signal)</span>
+<span class="c1"># in the event file returns the time in seconds of start signal</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">crop</span><span class="p">(</span><span class="n">tmin</span><span class="o">=</span><span class="p">(</span><span class="n">event_file</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">event_file</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s1">&#39;onset&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>  <span class="c1"># visualize our data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening raw-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_29_1.png" src="../../../_images/mne_workflow_tutorial_29_1.png" />
+</div>
+</div>
+<br/>
+<p><strong>In the present study eye movement was monitored in vertical and horizontal directions via paired electrodes, therefore we have to combine these channels to recreate our eog reference electrodes using the <a href="https://mne.tools/stable/generated/mne.set_bipolar_reference.html" title="MNE API: .set_bipolar_reference">.set_bipolar_reference()</a> function</strong></p>
+<p>using the electrodes:</p>
+<ul class="simple">
+<li><p>‘HEOG_left’</p></li>
+<li><p>‘HEOG_right’</p></li>
+<li><p>‘VEOG_lower’</p></li>
+<li><p>‘FP2’</p></li>
+</ul>
+<p>we’ll create the 2 eog channels: <strong>VEOG &amp; HEOG</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FP1 is not included in the standard montage we&#39;ll apply shortly, as this electrode is not of interest</span>
+<span class="c1"># for our analysis, we might as well exclude it from here on out</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">drop_channels</span><span class="p">(</span><span class="s1">&#39;FP1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>Unknown</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>32 EEG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>Not available</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>1024.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>512.00 Hz</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Filenames</th>
+        <td>sub-021_task-MMN_eeg.fdt</td>
+    </tr>
+
+    <tr>
+        <th>Duration</th>
+        <td>00:09:51 (HH:MM:SS)</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bipolar electro-occulogram</span>
+<span class="n">mne</span><span class="o">.</span><span class="n">set_bipolar_reference</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">raw</span><span class="p">,</span>
+                          <span class="n">anode</span><span class="o">=</span><span class="s1">&#39;VEOG_lower&#39;</span><span class="p">,</span>
+                          <span class="n">cathode</span><span class="o">=</span><span class="s1">&#39;FP2&#39;</span><span class="p">,</span>
+                          <span class="n">ch_name</span><span class="o">=</span><span class="s1">&#39;VEOG&#39;</span><span class="p">,</span>  <span class="c1"># name of new channel</span>
+                          <span class="n">drop_refs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># drop anode and cathode from the data</span>
+                          <span class="n">copy</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># modify in-place</span>
+                         <span class="p">)</span>
+
+<span class="n">mne</span><span class="o">.</span><span class="n">set_bipolar_reference</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">raw</span><span class="p">,</span>
+                          <span class="n">anode</span><span class="o">=</span><span class="s1">&#39;HEOG_left&#39;</span><span class="p">,</span>
+                          <span class="n">cathode</span><span class="o">=</span><span class="s1">&#39;HEOG_right&#39;</span><span class="p">,</span>
+                          <span class="n">ch_name</span><span class="o">=</span><span class="s1">&#39;HEOG&#39;</span><span class="p">,</span>  <span class="c1"># name of new channel</span>
+                          <span class="n">drop_refs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># drop anode and cathode from the data</span>
+                          <span class="n">copy</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># modify in-place</span>
+                         <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EEG channel type selected for re-referencing
+Creating RawArray with float64 data, n_channels=1, n_times=605849
+    Range : 10599 ... 616447 =     10.351 ...   601.999 secs
+Ready.
+Added the following bipolar channels:
+VEOG
+EEG channel type selected for re-referencing
+Creating RawArray with float64 data, n_channels=1, n_times=605849
+    Range : 10599 ... 616447 =     10.351 ...   601.999 secs
+Ready.
+Added the following bipolar channels:
+HEOG
+</pre></div>
+</div>
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>Unknown</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>30 EEG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>Not available</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>1024.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>512.00 Hz</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Filenames</th>
+        <td>sub-021_task-MMN_eeg.fdt</td>
+    </tr>
+
+    <tr>
+        <th>Duration</th>
+        <td>00:09:51 (HH:MM:SS)</td>
+    </tr>
+</table></div></div>
+</div>
+<br/>
+<p>now we’ll <strong>declare the created references as eog channels</strong> using the <a href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.set_channel_types" title="MNE API: .set_channel_types()">.set_channel_types()</a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">set_channel_types</span><span class="p">({</span><span class="s1">&#39;HEOG&#39;</span><span class="p">:</span> <span class="s1">&#39;eog&#39;</span><span class="p">,</span> <span class="s1">&#39;VEOG&#39;</span><span class="p">:</span> <span class="s1">&#39;eog&#39;</span><span class="p">}</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>Unknown</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>28 EEG, 2 EOG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>VEOG, HEOG</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>1024.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>512.00 Hz</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Filenames</th>
+        <td>sub-021_task-MMN_eeg.fdt</td>
+    </tr>
+
+    <tr>
+        <th>Duration</th>
+        <td>00:09:51 (HH:MM:SS)</td>
+    </tr>
+</table></div></div>
+</div>
+<br/>
+<p>A <strong>montage describes the position of eeg electrodes on the scalp in 3d space</strong>, if there is no montage included in your raw data  you’ll have to apply one yourself using the  <a href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html" title="MNE tutorial: working with sensor locations">mne.channels.make_standard_montage()</a> function.</p>
+<p>For more info on templates see <a href="https://mne.tools/dev/auto_tutorials/intro/40_sensor_locations.html" title="MNE tutorial: working with sensor locations">MNE: working with sensor locations </a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eeg_template_montage</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">make_standard_montage</span><span class="p">(</span><span class="s1">&#39;standard_1005&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">set_montage</span><span class="p">(</span><span class="n">eeg_template_montage</span><span class="p">)</span>  <span class="c1"># apply montage to raw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>Unknown</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>28 EEG, 2 EOG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>VEOG, HEOG</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>1024.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>512.00 Hz</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Filenames</th>
+        <td>sub-021_task-MMN_eeg.fdt</td>
+    </tr>
+
+    <tr>
+        <th>Duration</th>
+        <td>00:09:51 (HH:MM:SS)</td>
+    </tr>
+</table></div></div>
+</div>
+<br/>
+<p>Now we can visualize where each of our channels is located on the scalp</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">plot_sensors</span><span class="p">(</span><span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>  <span class="c1"># 2d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_39_0.png" src="../../../_images/mne_workflow_tutorial_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">plot_sensors</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">,</span> <span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>  <span class="c1"># 3d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_40_0.png" src="../../../_images/mne_workflow_tutorial_40_0.png" />
+</div>
+</div>
+<br/>
+<div class="section" id="preprocessing">
+<h2>2. Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-the-eeg-reference">
+<h3>Setting the eeg-reference<a class="headerlink" href="#setting-the-eeg-reference" title="Permalink to this headline">¶</a></h3>
+<p><strong>Reference electrodes should ideally capture signals that are non-brain related, but could influence our data nonetheless, i.e. environmental noise or interference</strong> (e.g. electrical line noise)
+The experimenters for the ERP-Core dataset have declared that the mastoid electrodes (P9, P10) were used as references in the supplemental info, so we’ll be using these from here on out.</p>
+<p>For more info on the advantages/disadvantages of different referencing methods see <a href="https://mne.tools/stable/auto_tutorials/preprocessing/55_setting_eeg_reference.html" title="MNE tutorial: setting the eeg reference"> setting the eeg reference </a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s first take a look at our raw data before applying the reference</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening raw-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_43_1.png" src="../../../_images/mne_workflow_tutorial_43_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eeg_reference</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P9&#39;</span><span class="p">,</span> <span class="s1">&#39;P10&#39;</span><span class="p">]</span>  <span class="c1"># delcare refernce electrodes as dict</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">set_eeg_reference</span><span class="p">(</span><span class="n">ref_channels</span><span class="o">=</span><span class="n">eeg_reference</span><span class="p">)</span>  <span class="c1"># apply to raw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EEG channel type selected for re-referencing
+Applying a custom (&#39;EEG&#39;,) reference.
+</pre></div>
+</div>
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>Unknown</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>28 EEG, 2 EOG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>VEOG, HEOG</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>1024.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>512.00 Hz</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Filenames</th>
+        <td>sub-021_task-MMN_eeg.fdt</td>
+    </tr>
+
+    <tr>
+        <th>Duration</th>
+        <td>00:09:51 (HH:MM:SS)</td>
+    </tr>
+</table></div></div>
+</div>
+<br/>
+<p>And let’s compare the referenced signal</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening raw-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_46_1.png" src="../../../_images/mne_workflow_tutorial_46_1.png" />
+</div>
+</div>
+<br/>
+</div>
+<div class="section" id="next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise">
+<h3>Next we’ll filter our signal to get rid of slow drifts and line noise<a class="headerlink" href="#next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise" title="Permalink to this headline">¶</a></h3>
+<p>We’ll be setting a highpass filter at 0.1hz (to get rid of slow drifts in electrode conductance over time) and a low-pass filter of 40hz (to get rid of electrical line noise)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_filtered</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mf">40.</span><span class="p">,</span>  <span class="c1"># lfreq = lower cut-off frequency; hfreq =upper cut-off frequency</span>
+                 <span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;eeg&#39;</span><span class="p">,</span> <span class="s1">&#39;eog&#39;</span><span class="p">],</span>  <span class="c1"># which channel to filter by type</span>
+                 <span class="n">filter_length</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                 <span class="n">l_trans_bandwidth</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                 <span class="n">h_trans_bandwidth</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                 <span class="n">method</span><span class="o">=</span><span class="s1">&#39;fir&#39;</span><span class="p">,</span>  <span class="c1"># finite response filter; MNE default</span>
+                 <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span>
+                 <span class="n">fir_window</span><span class="o">=</span><span class="s1">&#39;hamming&#39;</span><span class="p">,</span>  <span class="c1"># i.e. our &quot;smoothing function&quot; (MNE-default)</span>
+                 <span class="n">fir_design</span><span class="o">=</span><span class="s1">&#39;firwin&#39;</span><span class="p">,</span>
+                 <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filtering raw data in 1 contiguous segment
+Setting up band-pass filter from 0.1 - 40 Hz
+
+FIR filter parameters
+---------------------
+Designing a one-pass, zero-phase, non-causal bandpass filter:
+- Windowed time-domain design (firwin) method
+- Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
+- Lower passband edge: 0.10
+- Lower transition bandwidth: 0.10 Hz (-6 dB cutoff frequency: 0.05 Hz)
+- Upper passband edge: 40.00 Hz
+- Upper transition bandwidth: 10.00 Hz (-6 dB cutoff frequency: 45.00 Hz)
+- Filter length: 33793 samples (33.001 sec)
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>With the <a href="https://mne.tools/stable/generated/mne.viz.plot_raw_psd.html" title="MNE API: raw.plot_psd()"> raw.plot_psd() </a> function we can visualize the power spectral density (PSD, i.e. the power as µV²/HZ in dB in the frequency domain) of of our signal for each channel before and after a filter was applied.</p>
+<p>So let’s compare the filtered to the unfiltered psd</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unfiltered power spectral density (PSD)</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 2.000 (s)
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_50_1.png" src="../../../_images/mne_workflow_tutorial_50_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filtered power spectral density (PSD)</span>
+<span class="n">raw_filtered</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 2.000 (s)
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_51_1.png" src="../../../_images/mne_workflow_tutorial_51_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and let&#39;s look at our raw data again</span>
+<span class="n">raw_filtered</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening raw-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_52_1.png" src="../../../_images/mne_workflow_tutorial_52_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to free up space we can now delete the unfiltered raw data</span>
+<span class="k">del</span> <span class="n">raw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+</div>
+<div class="section" id="next-we-ll-identify-noisy-channels">
+<h3>Next  we’ll identify noisy channels<a class="headerlink" href="#next-we-ll-identify-noisy-channels" title="Permalink to this headline">¶</a></h3>
+<p>Therefore we calculate the median absolute deviation of the signal in each channel compared to the others and reject channel that exceed a certain deviation threshold.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span> <span class="o">=</span> <span class="n">raw_filtered</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">pick_types</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;ch_names&#39;</span><span class="p">]</span>  <span class="c1"># get list of eeg channel names</span>
+<span class="n">data_</span> <span class="o">=</span> <span class="n">raw_filtered</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">pick_types</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1e6</span>  <span class="c1"># * 1e6 to transform to microvolt</span>
+
+<span class="c1"># calculate median absolute deviation for each channel</span>
+<span class="n">mad_scores</span> <span class="o">=</span><span class="p">[</span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">median_abs_deviation</span><span class="p">(</span><span class="n">data_</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data_</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+
+<span class="c1"># compute z-scores for each channel</span>
+<span class="n">z_scores</span> <span class="o">=</span> <span class="mf">0.6745</span> <span class="o">*</span> <span class="p">(</span><span class="n">mad_scores</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">mad_scores</span><span class="p">))</span> <span class="o">/</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">median_abs_deviation</span><span class="p">(</span><span class="n">mad_scores</span><span class="p">,</span> 
+                                                                                                <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 1/1.4826=0.6745 (scale factor for MAD for non-normal distribution) </span>
+<span class="c1">#(check-ot https://cloudxlab.com/assessment/displayslide/6286/robust-z-score-method) for more info</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">z_scores</span><span class="p">)</span>
+<span class="c1"># get channel containing outliers </span>
+<span class="n">bad_dev</span> <span class="o">=</span> <span class="p">[</span><span class="n">channel</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z_scores</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">3.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bad_dev</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.58005334 -0.2317003   0.75274924  0.72205005  0.10069685  1.31877886
+ -0.94839356 -2.07923514  2.4927019  -0.72200792 -0.62699208 -0.3022347
+ -0.04730808  0.97145483  0.61868681 -0.32109764  0.35154143  0.04730808
+ -0.13948393  1.84008387  1.49248066  0.99984965  0.56107756 -1.37281023
+ -2.07923514 -0.74380373 -0.04888708 -0.42563546]
+[]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>Now we could add the detected bad channels to the info objects; from now on they will be automatically regarded as such for further analysis; as there are no deviant channels found for this subject consult the tutorial on artifact detection in the preprocessing chapter of this book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_filtered</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;bads&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bad_dev</span> 
+<span class="n">raw_filtered</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;bads&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_filtered</span><span class="o">.</span><span class="n">info</span>  <span class="c1"># take a lool at the &quot;Bad channels&quot; row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>Unknown</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>28 EEG, 2 EOG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>VEOG, HEOG</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>1024.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.10 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>40.00 Hz</td>
+    </tr>
+
+
+</table></div></div>
+</div>
+<br/>
+If we know which channels are problematic, we can estimate their actual signal levels given the surrounding electrodes via interpolation. As there we're no noisy channel identified given our outlier criteria, we'll skip this step.<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#raw_filtered.interpolate_bads()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#raw_filtered.plot()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+</div>
+<div class="section" id="next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking">
+<h3>Next up we’ll be dealing with artfifacts produced by eye-movement (i.e. blinking)<a class="headerlink" href="#next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking" title="Permalink to this headline">¶</a></h3>
+<p>Mne has a dedicated function for finding blinks in the eeg data see <a href="https://mne.tools/stable/generated/mne.preprocessing.create_eog_epochs.html" title="MNE API: create_eog_epochs"> create_eog_epochs() </a> and <a href="https://mne.tools/stable/generated/mne.preprocessing.find_eog_events.html" title="MNE API: find_eog_events"> find_eog_events() </a>, which we’ll use to illustrate the mean wave-form of blinks in our data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eog_epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">create_eog_epochs</span><span class="p">(</span><span class="n">raw_filtered</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">eog_epochs</span><span class="o">.</span><span class="n">plot_image</span><span class="p">(</span><span class="n">combine</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">eog_epochs</span><span class="o">.</span><span class="n">average</span><span class="p">()</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using EOG channels: VEOG, HEOG
+EOG channel index for this subject is: [28 29]
+Filtering the data to remove DC offset to help distinguish blinks from saccades
+Setting up band-pass filter from 1 - 10 Hz
+
+FIR filter parameters
+---------------------
+Designing a two-pass forward and reverse, zero-phase, non-causal bandpass filter:
+- Windowed frequency-domain design (firwin2) method
+- Hann window
+- Lower passband edge: 1.00
+- Lower transition bandwidth: 0.50 Hz (-12 dB cutoff frequency: 0.75 Hz)
+- Upper passband edge: 10.00 Hz
+- Upper transition bandwidth: 0.50 Hz (-12 dB cutoff frequency: 10.25 Hz)
+- Filter length: 10240 samples (10.000 sec)
+
+Now detecting blinks and generating corresponding events
+Found 162 significant peaks
+Number of EOG events detected: 162
+Not setting metadata
+162 matching events found
+Applying baseline correction (mode: mean)
+Using data from preloaded Raw for 162 events and 1025 original time points ...
+1 bad epochs dropped
+Not setting metadata
+161 matching events found
+No baseline correction applied
+0 projection items activated
+0 bad epochs dropped
+combining channels using &quot;mean&quot;
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_63_1.png" src="../../../_images/mne_workflow_tutorial_63_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_63_3.png" src="../../../_images/mne_workflow_tutorial_63_3.png" />
+</div>
+</div>
+<br/>
+<p><strong>We see a large change in mean amplitude in frontal regions, which slowly tapers with decreasing proximity to the eyes. Also take note of the peak amplitude ot these potentials and compare them to the amplitude of our actual evoked potentials later on.</strong></p>
+<br/>
+</div>
+<div class="section" id="ica-for-occular-artifacts">
+<h3>ICA for occular artifacts<a class="headerlink" href="#ica-for-occular-artifacts" title="Permalink to this headline">¶</a></h3>
+<p><strong>One of the most common and effetive tools for artifact detection, removal and repair is the Independent component analysis, which we’ll use to exclude our occular artifacts from the data in the next step</strong></p>
+<p>In brief:
+ICA is a technique for signal processing that separates a signal into a specified number of linearly mixed sources. For the preprocessing of EEG data this is  used to find statistically independet sources of signal variability present in our n_channel dimensional data. EEG artifacts are usually strong sources of variability as they show higher amplitude than would be expected for sources of neural activity and generally appear more consistent than fluctuating neural activity, best illustrated by occular artifacts, and can therefore be easily identified via ICA.</p>
+<p><strong>An ICA is performed in multiply steps:</strong></p>
+<ol class="simple">
+<li><p>Specify the ICA algorithm/paramertes:</p></li>
+<li><p>Fit the ICA to the data/Identify ICA components</p></li>
+<li><p>Specify which components should be removed from the data</p></li>
+<li><p>Reconstructing the Signal, i.e. apply the ICA solution with the components containing artifacts excluded to the data</p></li>
+</ol>
+<p><strong>1. Specify the ICA algorithm/paramertes:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># important to specify random seed (random_state) to reproduce the solution</span>
+<span class="n">ica</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">ICA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+                            <span class="n">random_state</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+                            <span class="n">max_iter</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> 
+                            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;infomax&#39;</span><span class="p">)</span>  <span class="c1"># set-up ICA parameters</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p><strong>2. Fit the ICA to the data/Identify ICA components</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">raw_filtered</span><span class="p">)</span>  <span class="c1"># fit the ICA to our datab</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 28 channels (please be patient, this may take a while)
+Selecting by number: 15 components
+ 
+Fitting ICA took 46.6s.
+</pre></div>
+</div>
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Method</th>
+        <td>infomax</td>
+    </tr>
+    <tr>
+        <th>Fit</th>
+        <td>500 iterations on raw data (605849 samples)</td>
+    </tr>
+
+    <tr>
+        <th>ICA components</th>
+        <td>15</td>
+    </tr>
+    <tr>
+        <th>Explained variance</th>
+        <td>95.5&nbsp;%</td>
+    </tr>
+    <tr>
+        <th>Available PCA components</th>
+        <td>28</td>
+    </tr>
+    <tr>
+        <th>Channel types</th>
+        <td>eeg</td>
+    </tr>
+    <tr>
+        <th>ICA components marked for exclusion</th>
+        <td>&mdash;</td>
+    </tr>
+
+</table></div></div>
+</div>
+<br/>
+<p><strong>3. Specify which components should be removed from the data</strong></p>
+<p>For artifact identification we plot our ica components as a topographic mapping.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">));</span>  <span class="c1"># visualize our components</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_71_0.png" src="../../../_images/mne_workflow_tutorial_71_0.png" />
+</div>
+</div>
+<br/>
+<p>We can also visualize components in source space, i.e. how the components represent latent sources over time
+see <a href="https://mne.tools/stable/generated/mne.preprocessing.ICA.html#mne.preprocessing.ICA.plot_sources" title="MNE API: plot_sources()">MNE API: plot_sources() </a> for more info.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_sources</span><span class="p">(</span><span class="n">raw_filtered</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating RawArray with float64 data, n_channels=17, n_times=605849
+    Range : 10599 ... 616447 =     10.351 ...   601.999 secs
+Ready.
+Opening ica-browser...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_30737/1459906232.py:1: RuntimeWarning: Omitted 14 annotation(s) that were outside data range.
+  ica.plot_sources(raw_filtered);
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_73_2.png" src="../../../_images/mne_workflow_tutorial_73_2.png" />
+</div>
+</div>
+<br/>
+<p><strong>We can further visualize what happens to our signal, if we were to extract certain components</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ica.plot_overlay(raw_filtered, exclude=[0, 5, 10, 11, 13, 15, 18])</span>
+<span class="n">ica</span><span class="o">.</span><span class="n">plot_overlay</span><span class="p">(</span><span class="n">raw_filtered</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
+    Transforming to ICA space (15 components)
+    Zeroing out 6 ICA components
+    Projecting back using 28 PCA components
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_75_1.png" src="../../../_images/mne_workflow_tutorial_75_1.png" />
+<img alt="../../../_images/mne_workflow_tutorial_75_2.png" src="../../../_images/mne_workflow_tutorial_75_2.png" />
+</div>
+</div>
+<br/>
+<p>Looks like we’ve gotten rid of blink artifacts, if we’d exclude the specified ICA components. So now we’ll <strong>add the components we want to exclude from our data to the ica.exlude object, create a copy of our filtered data and apply the ica solution</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># apply ica with automaticaly excluded component</span>
+<span class="n">ica</span><span class="o">.</span><span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+
+<span class="n">reconst_sig</span> <span class="o">=</span> <span class="n">raw_filtered</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">pick_types</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="s1">&#39;bads&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p><strong>4. Reconstructing the Signal</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">reconst_sig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
+    Transforming to ICA space (15 components)
+    Zeroing out 6 ICA components
+    Projecting back using 28 PCA components
+</pre></div>
+</div>
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>Unknown</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>28 EEG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>Not available</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>1024.00 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.10 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>40.00 Hz</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Filenames</th>
+        <td>sub-021_task-MMN_eeg.fdt</td>
+    </tr>
+
+    <tr>
+        <th>Duration</th>
+        <td>00:09:51 (HH:MM:SS)</td>
+    </tr>
+</table></div></div>
+</div>
+<br/>
+<p>Let’s compare our ICA reconstructed signal to the filtered data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_filtered</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening raw-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_81_1.png" src="../../../_images/mne_workflow_tutorial_81_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reconst_sig</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening raw-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_82_1.png" src="../../../_images/mne_workflow_tutorial_82_1.png" />
+</div>
+</div>
+<br/>
+<p>PO7 still look problematic so let’s exlcude it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reconst_sig</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;bads&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PO7&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+</div>
+<div class="section" id="epoching">
+<h3>Epoching<a class="headerlink" href="#epoching" title="Permalink to this headline">¶</a></h3>
+<p>To calculate evoked potentials it’s necessary to divide our continous data into segements centered around the presentation of our stimuli, so called epochs.</p>
+<ul class="simple">
+<li><p>therefore we’ll have to <strong>find our events and find out how our stimuli are encoded</strong></p></li>
+<li><p>further we’ll need to <strong>specify the time-frame of our epochs</strong>, centered around our stimuls</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s see what the event file can tell us</span>
+<span class="n">event_file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>onset</th>
+      <th>duration</th>
+      <th>sample</th>
+      <th>trial_type</th>
+      <th>stim_file</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.3506</td>
+      <td>NaN</td>
+      <td>10600</td>
+      <td>STATUS</td>
+      <td>NaN</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>13.4941</td>
+      <td>0.1</td>
+      <td>13819</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14.1328</td>
+      <td>0.1</td>
+      <td>14473</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>14.7363</td>
+      <td>0.1</td>
+      <td>15091</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15.2861</td>
+      <td>0.1</td>
+      <td>15654</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>597.5869</td>
+      <td>0.1</td>
+      <td>611930</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>598.1875</td>
+      <td>0.1</td>
+      <td>612545</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>598.7471</td>
+      <td>0.1</td>
+      <td>613118</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>599.3535</td>
+      <td>0.1</td>
+      <td>613739</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>1000</th>
+      <td>599.9307</td>
+      <td>0.1</td>
+      <td>614330</td>
+      <td>stimulus</td>
+      <td>NaN</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+</table>
+<p>1001 rows × 6 columns</p>
+</div></div></div>
+</div>
+<br/>
+<p>using the  <a href="https://mne.tools/stable/generated/mne.events_from_annotations.html" title="MNE API: mne.events_from_annotations()">mne.events_from_annotations() </a> function, we can see that the eeg data already contains the necessary information regarding events, although they are merely numerically coded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events_from_annot</span><span class="p">,</span> <span class="n">event_dict</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">events_from_annotations</span><span class="p">(</span><span class="n">reconst_sig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [&#39;180&#39;, &#39;70&#39;, &#39;80&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>the <a href="https://mne.tools/stable/generated/mne.events_from_annotations.html" title="MNE API: mne.events_from_annotations()">mne.events_from_annotations() </a> returns two variables:</p>
+<ul class="simple">
+<li><p>an np.array containing the sample at which an event occured in the first column and the identifier of the event in the last column</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events_from_annot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 13818,      0,      1],
+       [ 14472,      0,      1],
+       [ 15090,      0,      1],
+       ...,
+       [613117,      0,      3],
+       [613738,      0,      2],
+       [614329,      0,      3]])
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<ul class="simple">
+<li><p>and an dictionary containing the event code corresponding to the event identifier in the events array</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;180&#39;: 1, &#39;70&#39;: 2, &#39;80&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>with the <a href="https://mne.tools/stable/generated/mne.viz.plot_events.html" title="MNE API: plot_events()">plot_events()</a>  function we’ll visualize our events in the time domain</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_events</span><span class="p">(</span><span class="n">events_from_annot</span><span class="p">,</span> <span class="n">reconst_sig</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">],</span> <span class="n">reconst_sig</span><span class="o">.</span><span class="n">first_samp</span><span class="p">,</span>
+                    <span class="n">event_id</span><span class="o">=</span><span class="n">event_dict</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_94_0.png" src="../../../_images/mne_workflow_tutorial_94_0.png" />
+</div>
+</div>
+<br/>
+<p><strong>Given this information we can finally create our epochs object using the <a href="https://mne.tools/stable/generated/mne.Epochs.html" title="MNE API: mne.Epochs()">mne.Epochs()</a> constructor</strong>.</p>
+<p>For more info on the Epochs data structure see the <a href="https://mne.tools/stable/auto_tutorials/epochs/10_epochs_overview.html#sphx-glr-auto-tutorials-epochs-10-epochs-overview-py" title="MNE tutorial: The Epochs data structure: discontinuous data)">MNE tutorial: The Epochs data structure: discontinuous data</a>. Baseline correction will be automatically applied given the intervall between tmin (epoch start) and t = 0 (i.e. the relevant event) of specified epochs, but can be specified by adding the baseline parameter to the mne.Epochs() constructor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># would default to this, but let&#39;s be explicit</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">reconst_sig</span><span class="p">,</span>
+                    <span class="n">events_from_annot</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;eeg&#39;</span><span class="p">],</span> <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+                    <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="n">baseline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
+1000 matching events found
+Applying baseline correction (mode: mean)
+0 projection items activated
+Using data from preloaded Raw for 1000 events and 1025 original time points ...
+0 bad epochs dropped
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>  <span class="c1"># we can also visualize our epochs via the plot() function</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening epochs-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_97_1.png" src="../../../_images/mne_workflow_tutorial_97_1.png" />
+</div>
+</div>
+<br/>
+<p>Next we <strong>reject eppochs by maximum/minimum peak-to-peak signal value thresholds</strong> (exceeding 100 µV, as it’s highly unlikely that any eeg-signal may reach this amplitude, or epochs with channel with signal below 1 µV to get rid of flat channels) using the <a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.drop_bad" title="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.drop_bad">epochs.drop_bad()</a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define upper and lower threshold as dict(channel_type:criteria)</span>
+<span class="n">reject_criteria_upper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="mf">100e-6</span><span class="p">)</span>  <span class="c1"># 100 µV</span>
+<span class="n">reject_criteria_flat</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>  <span class="c1"># 1 µV</span>
+<span class="n">epochs</span><span class="o">.</span><span class="n">drop_bad</span><span class="p">(</span><span class="n">reject</span><span class="o">=</span><span class="n">reject_criteria_upper</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="n">reject_criteria_flat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;F8&#39;]
+    Rejecting  epoch based on EEG : [&#39;F8&#39;]
+    Rejecting  epoch based on EEG : [&#39;Oz&#39;]
+    Rejecting  epoch based on EEG : [&#39;Oz&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fz&#39;]
+    Rejecting  epoch based on EEG : [&#39;F8&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fz&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fz&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fz&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fz&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fz&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fz&#39;]
+12 bad epochs dropped
+</pre></div>
+</div>
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Number of events</th>
+        <td>988</td>
+    </tr>
+    <tr>
+        <th>Events</th>
+
+        <td>1: 15<br/>2: 198<br/>3: 775</td>
+
+    </tr>
+    <tr>
+        <th>Time range</th>
+        <td>-0.200 – 0.800 sec</td>
+    </tr>
+    <tr>
+        <th>Baseline</th>
+        <td>-0.200 – 0.000 sec</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize how many and based on what values in what channels epochs were dropped</span>
+<span class="n">epochs</span><span class="o">.</span><span class="n">plot_drop_log</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_100_0.png" src="../../../_images/mne_workflow_tutorial_100_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">event_dict</span>  <span class="c1"># let&#39;s recall our event codes and identfiers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;180&#39;: 1, &#39;70&#39;: 2, &#39;80&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>Using the <strong>information in the <a class="reference external" href="http://readme.md">readme.md</a> provided by the authors</strong> (and a bit of common sense) we can assign meaningful names to our events; The event id 2 appearing 200 times implies that this is our <strong>oddball</strong> (check the events plot above), while the event-id 3 appearing ~ 800 times implies that this is our <strong>standard tone</strong>. The 180 encodes the first 15 standard tones.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s write up our new event_dict</span>
+<span class="n">event_conditions_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first_15_standards&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;deviant&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;standard&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span> <span class="o">=</span> <span class="n">event_conditions_dict</span>  <span class="c1"># add our event dict to the epochs object</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;first_15_standards&#39;: 1, &#39;deviant&#39;: 2, &#39;standard&#39;: 3}
+&lt;Epochs |  988 events (all good), -0.200195 - 0.799805 sec, baseline -0.2 – 0 sec, ~216.4 MB, data loaded,
+ &#39;first_15_standards&#39;: 15
+ &#39;deviant&#39;: 198
+ &#39;standard&#39;: 775&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+Now we can access subtyes (i.e. deviant and standard) of our epochs based on these labels<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;deviant&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>  <span class="c1"># epochs centered around presentation of deviant tones</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Opening epochs-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_106_1.png" src="../../../_images/mne_workflow_tutorial_106_1.png" />
+</div>
+</div>
+<br/>
+</div>
+</div>
+<div class="section" id="calculate-evoked-potentials-mmn">
+<h2>3. Calculate evoked potentials/MMN<a class="headerlink" href="#calculate-evoked-potentials-mmn" title="Permalink to this headline">¶</a></h2>
+<p>To calculate our evoked potentials we simply <strong>average over all epochs based on the respective conditions</strong>. We’ll apply the <a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.average" title="MNE API: epochs.avergae()">epochs.avergae()</a> to the deviant and the standard tones epochs separately.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deviant_tone</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;deviant&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standard_tone</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;standard&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s see what&#39;s in the specific epoch objects</span>
+<span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;deviant&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Number of events</th>
+        <td>198</td>
+    </tr>
+    <tr>
+        <th>Events</th>
+
+        <td>deviant: 198</td>
+
+    </tr>
+    <tr>
+        <th>Time range</th>
+        <td>-0.200 – 0.800 sec</td>
+    </tr>
+    <tr>
+        <th>Baseline</th>
+        <td>-0.200 – 0.000 sec</td>
+    </tr>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;standard&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Number of events</th>
+        <td>775</td>
+    </tr>
+    <tr>
+        <th>Events</th>
+
+        <td>standard: 775</td>
+
+    </tr>
+    <tr>
+        <th>Time range</th>
+        <td>-0.200 – 0.800 sec</td>
+    </tr>
+    <tr>
+        <th>Baseline</th>
+        <td>-0.200 – 0.000 sec</td>
+    </tr>
+</table></div></div>
+</div>
+<br/>
+<p><strong>Next we can visualize the average activity in each channel with the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_joint" title="MNE API: evoked.plot_joint()">evoked.plot_joint()</a> function</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standard_tone</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_114_1.png" src="../../../_images/mne_workflow_tutorial_114_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deviant_tone</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_115_1.png" src="../../../_images/mne_workflow_tutorial_115_1.png" />
+</div>
+</div>
+<br/>
+The <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_joint" title="MNE API: evoked.plot_joint()">evoked.plot_joint()</a> function picks the most extreme events to plot as topomaps, to actually specify time-points of interest use the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_topomap" title="MNE API: evoked.plot_topomap()">evoked.plot_topomap()</a> function<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standard_tone</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="n">average</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_117_0.png" src="../../../_images/mne_workflow_tutorial_117_0.png" />
+<img alt="../../../_images/mne_workflow_tutorial_117_1.png" src="../../../_images/mne_workflow_tutorial_117_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deviant_tone</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="n">average</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_118_0.png" src="../../../_images/mne_workflow_tutorial_118_0.png" />
+<img alt="../../../_images/mne_workflow_tutorial_118_1.png" src="../../../_images/mne_workflow_tutorial_118_1.png" />
+</div>
+</div>
+<br/>
+<p>We can also <strong>visualize a selection of channels by using the picks argument</strong>. We’ll look at fronto-central electrodes as they are of interest for detection of deviant stimuli.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deviant_tone</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cz&#39;</span><span class="p">,</span> <span class="s1">&#39;FCz&#39;</span><span class="p">],</span> <span class="n">ts_args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">False</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_120_1.png" src="../../../_images/mne_workflow_tutorial_120_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standard_tone</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cz&#39;</span><span class="p">,</span> <span class="s1">&#39;FCz&#39;</span><span class="p">],</span><span class="n">ts_args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">False</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_121_1.png" src="../../../_images/mne_workflow_tutorial_121_1.png" />
+</div>
+</div>
+<br/>
+<p>We can also plot the evoked data as an image plot using the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_image" title="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_image">.plot_image()</a> function, which returns a heatmap that reflects the amplitude of the average signal for each channel in the picks parameter (which defaults to all, if not explicitly instructed otherwise) over the epoch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standard_tone</span><span class="o">.</span><span class="n">plot_image</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s1">&#39;eeg&#39;</span><span class="p">,</span>
+                  <span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># would be much more informative if sample_data followed classic nomenclature</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuOr&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_123_0.png" src="../../../_images/mne_workflow_tutorial_123_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deviant_tone</span><span class="o">.</span><span class="n">plot_image</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s1">&#39;eeg&#39;</span><span class="p">,</span>
+                  <span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># would be much more informative if sample_data followed classic nomenclature</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuOr&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_124_0.png" src="../../../_images/mne_workflow_tutorial_124_0.png" />
+</div>
+</div>
+<br/>
+<p><strong>To directly compare evoked potentials we can also use the <a href="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html" title="MNE API: evoked.plot_compare_evokeds()">evoked.plot_compare_evokeds()</a> function, which gives us a few more options to style our plots.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">deviant_tone</span><span class="o">=</span><span class="n">deviant_tone</span><span class="p">,</span>
+                                    <span class="n">standard_tone</span><span class="o">=</span><span class="n">standard_tone</span><span class="p">),</span>
+                               <span class="n">picks</span><span class="o">=</span><span class="s1">&#39;FCz&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;FCz&#39;</span><span class="p">,</span>
+                               <span class="n">ylim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_126_0.png" src="../../../_images/mne_workflow_tutorial_126_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 2 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">deviant_tone</span><span class="o">=</span><span class="n">deviant_tone</span><span class="p">,</span>
+                                    <span class="n">standard_tone</span><span class="o">=</span><span class="n">standard_tone</span><span class="p">),</span>
+                               <span class="n">picks</span><span class="o">=</span><span class="s1">&#39;Cz&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Cz&#39;</span><span class="p">,</span>
+                               <span class="n">ylim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_workflow_tutorial_127_0.png" src="../../../_images/mne_workflow_tutorial_127_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 2 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+</div>
+<div class="section" id="calculate-the-mmn">
+<h2>Calculate the MMN<a class="headerlink" href="#calculate-the-mmn" title="Permalink to this headline">¶</a></h2>
+<p>Next we calculate the MMM by <strong>substracting the evoked potential of the standard tone from the evoked potential of the deviant tone</strong> using the  <a href="https://mne.tools/stable/generated/mne.combine_evoked.html#mne.combine_evoked" title="MNE API: mne.combine_evoked.()">mne.combine_evoked.()</a> function. Subtraction is performed by setting the weights argument  = [1, -1]</p>
+<p>To recall the MMN should peak at about 100–250 ms after change onset, with at most a -5 μV maximum peak.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmn</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">combine_evoked</span><span class="p">([</span><span class="n">deviant_tone</span><span class="p">,</span> <span class="n">standard_tone</span><span class="p">],</span>
+                         <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">mmn</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cz&#39;</span><span class="p">],</span> <span class="n">titles</span><span class="o">=</span><span class="s1">&#39;Mismatch Negativity Cz&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Need more than one channel to make topography for eeg. Disabling interactivity.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_workflow_tutorial_129_1.png" src="../../../_images/mne_workflow_tutorial_129_1.png" />
+</div>
+</div>
+<br/>
+<p>Looks plausible, but given time/effort and data from more subjects (i.e. calculating a grand average MMN) would probably produce a less noisy wave-form. I’d also advise to further style the plot using <a href="https://matplotlib.org/stable/tutorials/index" title="https://matplotlib.org/stable/tutorials/index">matplotlib</a>.</p>
+<br/>
+</div>
+<div class="section" id="save-data">
+<h2>4. Save Data<a class="headerlink" href="#save-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis">
+<h3>Now we can export our epochs data in a number of ways for further analysis<a class="headerlink" href="#now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis" title="Permalink to this headline">¶</a></h3>
+<p><strong>To save it as an epochs object use the  <a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.save" title="MNE API: mne.Epochs.save()"> epochs.save() </a> function</strong></p>
+<ul class="simple">
+<li><p>we’ll be using the mne standard for eeg data, i.e. .fif format</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">sub_21_eeg_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-21_mmn_epochs.fif&#39;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_30737/725490711.py:1: RuntimeWarning: This filename (/home/michael/msc_05_eeg_workflow/sub-21/eeg/sub-21_mmn_epochs.fif) does not conform to MNE naming conventions. All epochs files should end with -epo.fif, -epo.fif.gz, _epo.fif or _epo.fif.gz
+  epochs.save(sub_21_eeg_path + str(os.sep) + &#39;sub-21_mmn_epochs.fif&#39;, overwrite=True)
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p><strong>For more complex plotting or statistical analysis, we can further export the data in long-format to a pandas DataFrame and save the created DataFrame as a tsv file</strong></p>
+<ul class="simple">
+<li><p>for more info on how to specify the structure and composition of the DataFrame see <a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.to_data_frame" title="MNE API: mne.Epochs.to_data_frame()"> epochs.to_data_frame() </a></p></li>
+<li><p>for more info on how to specify your csv/tsv see <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html" title="pandas.DataFrame.to_csv()"> pd.DataFrame.to_csv() </a></p>
+<ul>
+<li><p>be sure to keep your index or convert the index to a column</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs_df</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">.</span><span class="n">to_data_frame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;condition&#39;</span><span class="p">,</span> <span class="s1">&#39;epoch&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">sub_21_eeg_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-21_mmn_epochs.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p><strong>To save our MMN figure we can use the <a href="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.savefig.html" title="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.savefig.html"> matplotlib.plt.savefig()</a> function</strong></p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">mmn</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cz&#39;</span><span class="p">],</span> <span class="n">titles</span><span class="o">=</span><span class="s1">&#39;Mismatch Negativity Cz&#39;</span><span class="p">);</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">derivatives_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-21_mmn_cz.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="mne_erp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Evoked potentials/ERPs with MNE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../../projects.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Student projects</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1940 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evoked potentials/ERPs with MNE &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MNE Workflow tutorial" href="mne_workflow_tutorial.html" />
+    <link rel="prev" title="EEG preprocessing with MNE" href="mne_preprocessing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="morphometry.html">
+       Morphometric analyzes
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="dMRI_intro.html">
+       Diffusion MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="diffusion_imaging.html">
+         Structural connectivity and diffusion imaging
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="fmri_intro.html">
+       Functional MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nilearn.html">
+         Using Python for neuroimaging data - Nilearn
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="connectivity_intro.html">
+       Functional connectivity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="functional_connectivity.html">
+         Functional connectivity and resting state
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="eeg_introduction.html">
+       Electroencephalography
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/mne_erp.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/mne_erp.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/mne_erp.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/mne_erp.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-and-epoching">
+   1. Preprocessing and epoching
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel">
+   2. calculate the signal average over epochs based on their condition for each channel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-regions-of-interest-roi">
+   3. Define regions of interest (ROI)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-can-further-compare-the-average-activity-of-channels-for-differnent-conditions-via-the-a-href-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-title-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-compare-evokeds-a-function">
+     We can further compare the average activity of channels for differnent conditions via the
+     <a href="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html" title="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html">
+      compare_evokeds()
+     </a>
+     function.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtual-roi-channel">
+     Virtual ROI channel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grand-averages">
+     Grand averages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-export-data">
+     Save/Export data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-you-re-interested-in-more-complex-ways-to-analyse-eeg-data-you-can-check-out-the-following">
+   If you’re interested in more complex ways to analyse EEG data you can check-out the following:
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Evoked potentials/ERPs with MNE</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-and-epoching">
+   1. Preprocessing and epoching
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel">
+   2. calculate the signal average over epochs based on their condition for each channel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-regions-of-interest-roi">
+   3. Define regions of interest (ROI)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-can-further-compare-the-average-activity-of-channels-for-differnent-conditions-via-the-a-href-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-title-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-compare-evokeds-a-function">
+     We can further compare the average activity of channels for differnent conditions via the
+     <a href="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html" title="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html">
+      compare_evokeds()
+     </a>
+     function.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtual-roi-channel">
+     Virtual ROI channel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grand-averages">
+     Grand averages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-export-data">
+     Save/Export data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-you-re-interested-in-more-complex-ways-to-analyse-eeg-data-you-can-check-out-the-following">
+   If you’re interested in more complex ways to analyse EEG data you can check-out the following:
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="evoked-potentials-erps-with-mne">
+<h1>Evoked potentials/ERPs with MNE<a class="headerlink" href="#evoked-potentials-erps-with-mne" title="Permalink to this headline">¶</a></h1>
+<br/>
+Arguably one of the easiest and most common ways to analyse EEG data is to look at evoked/event-related potentials. ERPs are observed for most sensory or cognitive processes. They further may be significantly altered for people suffering from psychological disorders <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3016705/" title="ncbi: Event-related potential: An overview">(Sur & Sinha1, 2009)</a>. For an overview of different ERPs see e.g. <a href="https://www.neuroelectrics.com/blog/2014/12/18/14-event-related-potentials-erp-components-and-modalities/" title="https://www.neuroelectrics.com/blog/2014/12/18/14-event-related-potentials-erp-components-and-modalities/">Event Related Potentials (ERP) – Components and Modalities</a>. You can also follow the <a href="https://mne.tools/stable/auto_tutorials/evoked/30_eeg_erp.html" title="https://mne.tools/stable/auto_tutorials/evoked/30_eeg_erp.html">MNE tutorial: EEG processing and Event Related Potentials (ERPs)</a> and the <a href="https://mne.tools/stable/auto_tutorials/evoked/10_evoked_overview.html" title="https://mne.tools/stable/auto_tutorials/evoked/10_evoked_overview.html">MNE tutorial on the Evoked data structure</a>, which we'll use to store and manipulate our averaged EEG data.
+<p><strong>As the sample dataset provided by MNE involves the presentation of visual and auditory stimuli, we should be able to observe evoked potentials related to early sensory processing when we look at the average activity in our previously build epochs</strong>. These sensory processess should further be constrained to specific regions in the brain by their modality, therefore we should be able to distinguish between e.g. visual and auditory information processing based on defined regions of interest.</p>
+<br/>
+<p><strong>To calculate Evoked potentials/ERPs we first have to</strong></p>
+<ol class="simple">
+<li><p>clean and subsequently separate the EEG data into epochs</p></li>
+<li><p>calculate the signal average over epochs based on their condition for each channel</p></li>
+<li><p>define our regions of interest (roi) (i.e. retain only data from electrodes of interest)</p></li>
+</ol>
+<p>Although steps 2. and 3. can be used interchangably, as it’s more efficient to select only a subset of your channels based on the defined regions of interest to average over. To get a better overview of the overall channel activity we’ll look at the averaged acitivity for all channels in this chapter.</p>
+<p>Afterwards we could use common statistical tools (such as ANOVAs or t-tests) to compare evoked potentials/ERPs based on condition, peak amplitude between conditions etc.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>As in the previous chapter we’ll first import our necessary libraries and the <a href="https://mne.tools/stable/overview/datasets_index.html" title="https://mne.tools/stable/overview/datasets_index.html">sample dataset</a> provided by MNE.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import necessary libraries/functions</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+
+<span class="c1"># this allows for interactive pop-up plots</span>
+<span class="c1">#%matplotlib qt</span>
+
+<span class="c1"># allows for rendering in output-cell</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># import mne library</span>
+<span class="kn">import</span> <span class="nn">mne</span>
+<span class="kn">from</span> <span class="nn">mne_bids</span> <span class="kn">import</span> <span class="n">BIDSPath</span><span class="p">,</span> <span class="n">write_raw_bids</span><span class="p">,</span> <span class="n">print_dir_tree</span><span class="p">,</span> <span class="n">make_report</span><span class="p">,</span> <span class="n">read_raw_bids</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preprocessing-and-epoching">
+<h2>1. Preprocessing and epoching<a class="headerlink" href="#preprocessing-and-epoching" title="Permalink to this headline">¶</a></h2>
+<br/>
+<p>As we’ve already preprocessed the sample-dataset and separated the continous raw data into epochs based on stimuli modality in the previous step we’ll simply import the prepared Epochs object using the <a href="https://mne.tools/stable/generated/mne.read_epochs.html" title="https://mne.tools/stable/generated/mne.read_epochs.html">mne.read_epochs()</a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">homedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>  <span class="c1"># find home diretory</span>
+<span class="n">input_path</span> <span class="o">=</span> <span class="p">(</span><span class="n">homedir</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;msc_05_example_bids_dataset&#39;</span> <span class="o">+</span> 
+               <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-test&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;ses-001&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;meg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">read_epochs</span><span class="p">(</span><span class="n">input_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;sub-test_ses-001_sample_audiovis_eeg_data_epo.fif&quot;</span><span class="p">,</span>
+                             <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># load data into memory</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reading /home/michael/msc_05_example_bids_dataset/sub-test/ses-001/meg/sub-test_ses-001_sample_audiovis_eeg_data_epo.fif ...
+    Found the data of interest:
+        t =    -299.69 ...     699.28 ms
+        0 CTF compensation matrices available
+0 bad epochs dropped
+Not setting metadata
+264 matching events found
+No baseline correction applied
+0 projection items activated
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+Looking at the output of our .info object reveals that we've previosuly applied a filter and kept only the EEG channels to create our epochs<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Measurement date</th>
+
+        <td>December 03, 2002  19:01:10 GMT</td>
+
+    </tr>
+    <tr>
+        <th>Experimenter</th>
+
+        <td>MEG</td>
+
+    </tr>
+        <th>Participant</th>
+
+        <td>Unknown</td>
+
+    </tr>
+    <tr>
+        <th>Digitized points</th>
+
+        <td>0 points</td>
+
+    </tr>
+    <tr>
+        <th>Good channels</th>
+        <td>59 EEG</td>
+    </tr>
+    <tr>
+        <th>Bad channels</th>
+        <td>None</td>
+    </tr>
+    <tr>
+        <th>EOG channels</th>
+        <td>Not available</td>
+    </tr>
+    <tr>
+        <th>ECG channels</th>
+        <td>Not available</td>
+
+    <tr>
+        <th>Sampling frequency</th>
+        <td>600.61 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Highpass</th>
+        <td>0.10 Hz</td>
+    </tr>
+
+
+    <tr>
+        <th>Lowpass</th>
+        <td>40.00 Hz</td>
+    </tr>
+
+
+</table></div></div>
+</div>
+<br/>
+<p>The <strong>epochs.events</strong> object contains the respective <strong>starting sample of events and their numerical identifier</strong></p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 27977,      0,      2],
+       [ 28345,      0,      3],
+       [ 28771,      0,      1],
+       [ 29219,      0,      4],
+       [ 29652,      0,      2],
+       [ 30025,      0,      3],
+       [ 30450,      0,      1],
+       [ 30839,      0,      4],
+       [ 31240,      0,      2],
+       [ 31665,      0,      3],
+       [ 32101,      0,      1],
+       [ 32519,      0,      4],
+       [ 32935,      0,      2],
+       [ 33325,      0,      3],
+       [ 33712,      0,      1],
+       [ 34089,      0,      5],
+       [ 34532,      0,      2],
+       [ 34649,      0,     32],
+       [ 34956,      0,      3],
+       [ 35428,      0,      1],
+       [ 35850,      0,      4],
+       [ 36211,      0,      2],
+       [ 36576,      0,      3],
+       [ 37007,      0,      1],
+       [ 37460,      0,      4],
+       [ 37910,      0,      2],
+       [ 38326,      0,      3],
+       [ 38711,      0,      1],
+       [ 39130,      0,      4],
+       [ 39563,      0,      2],
+       [ 39926,      0,      3],
+       [ 40405,      0,      1],
+       [ 40880,      0,      4],
+       [ 41260,      0,      2],
+       [ 41646,      0,      3],
+       [ 42126,      0,      1],
+       [ 42598,      0,      5],
+       [ 42938,      0,     32],
+       [ 42960,      0,      2],
+       [ 43346,      0,      3],
+       [ 50269,      0,      1],
+       [ 50682,      0,      4],
+       [ 51046,      0,      2],
+       [ 51437,      0,      5],
+       [ 51803,      0,     32],
+       [ 51881,      0,      1],
+       [ 52252,      0,      4],
+       [ 52675,      0,      2],
+       [ 53118,      0,      3],
+       [ 53494,      0,      1],
+       [ 53912,      0,      4],
+       [ 54320,      0,      2],
+       [ 54699,      0,      3],
+       [ 55100,      0,      1],
+       [ 55463,      0,      4],
+       [ 55878,      0,      2],
+       [ 56269,      0,      3],
+       [ 56717,      0,      1],
+       [ 57183,      0,      4],
+       [ 57612,      0,      2],
+       [ 58079,      0,      3],
+       [ 58448,      0,      1],
+       [ 58913,      0,      4],
+       [ 59320,      0,      5],
+       [ 59677,      0,     32],
+       [ 59739,      0,      3],
+       [ 60129,      0,      1],
+       [ 60563,      0,      4],
+       [ 61035,      0,      2],
+       [ 61458,      0,      3],
+       [ 61868,      0,      1],
+       [ 62283,      0,      4],
+       [ 62682,      0,      2],
+       [ 63069,      0,      3],
+       [ 63532,      0,      1],
+       [ 63923,      0,      4],
+       [ 64387,      0,      2],
+       [ 64769,      0,      3],
+       [ 65181,      0,      1],
+       [ 65643,      0,      4],
+       [ 66071,      0,      2],
+       [ 66538,      0,      3],
+       [ 66964,      0,      1],
+       [ 67401,      0,      5],
+       [ 67782,      0,     32],
+       [ 67811,      0,      2],
+       [ 68198,      0,      3],
+       [ 68666,      0,      1],
+       [ 69063,      0,      4],
+       [ 69458,      0,      2],
+       [ 69859,      0,      3],
+       [ 70259,      0,      1],
+       [ 70663,      0,      4],
+       [ 71128,      0,      2],
+       [ 71608,      0,      3],
+       [ 71991,      0,      1],
+       [ 72442,      0,      4],
+       [ 72824,      0,      2],
+       [ 73258,      0,      3],
+       [ 73718,      0,      1],
+       [ 74172,      0,      4],
+       [ 74540,      0,      2],
+       [ 74919,      0,      3],
+       [ 75305,      0,      5],
+       [ 75624,      0,     32],
+       [ 75724,      0,      4],
+       [ 76086,      0,      2],
+       [ 76479,      0,      3],
+       [ 76894,      0,      1],
+       [ 77304,      0,      4],
+       [ 77682,      0,      2],
+       [ 78130,      0,      3],
+       [ 78539,      0,      1],
+       [ 78934,      0,      4],
+       [ 79361,      0,      2],
+       [ 86107,      0,      2],
+       [ 86520,      0,      3],
+       [ 86971,      0,      1],
+       [ 87354,      0,      4],
+       [ 87724,      0,      2],
+       [ 88150,      0,      3],
+       [ 88593,      0,      1],
+       [ 89024,      0,      4],
+       [ 89496,      0,      2],
+       [ 89949,      0,      3],
+       [ 90419,      0,      1],
+       [ 90813,      0,      4],
+       [ 91194,      0,      2],
+       [ 91600,      0,      3],
+       [ 92038,      0,      1],
+       [ 92414,      0,      4],
+       [ 92801,      0,      5],
+       [ 93018,      0,     32],
+       [ 93270,      0,      3],
+       [ 93669,      0,      1],
+       [ 94094,      0,      4],
+       [ 94541,      0,      2],
+       [ 94960,      0,      3],
+       [ 95435,      0,      1],
+       [ 95883,      0,      4],
+       [ 96329,      0,      2],
+       [ 96789,      0,      3],
+       [ 97234,      0,      1],
+       [ 97703,      0,      4],
+       [ 98113,      0,      2],
+       [ 98499,      0,      3],
+       [ 98903,      0,      1],
+       [ 99363,      0,      4],
+       [100620,      0,      1],
+       [101468,      0,      2],
+       [101540,      0,     32],
+       [103192,      0,      2],
+       [103588,      0,      3],
+       [104433,      0,      4],
+       [104909,      0,      2],
+       [105348,      0,      3],
+       [105760,      0,      1],
+       [106172,      0,      4],
+       [106620,      0,      2],
+       [106988,      0,      3],
+       [107355,      0,      1],
+       [107743,      0,      4],
+       [108170,      0,      2],
+       [108619,      0,      3],
+       [108975,      0,      5],
+       [109324,      0,     32],
+       [109364,      0,      4],
+       [109741,      0,      2],
+       [110209,      0,      3],
+       [110574,      0,      1],
+       [111004,      0,      4],
+       [111440,      0,      2],
+       [111839,      0,      3],
+       [112292,      0,      1],
+       [112743,      0,      4],
+       [113140,      0,      2],
+       [113589,      0,      3],
+       [113952,      0,      1],
+       [114324,      0,      4],
+       [114740,      0,      2],
+       [115160,      0,      3],
+       [122218,      0,      1],
+       [122684,      0,      4],
+       [123065,      0,      2],
+       [123451,      0,      3],
+       [123931,      0,      1],
+       [124404,      0,      4],
+       [124830,      0,      2],
+       [125300,      0,      3],
+       [125709,      0,      1],
+       [126123,      0,      5],
+       [126470,      0,     32],
+       [126546,      0,      2],
+       [126950,      0,      3],
+       [127331,      0,      1],
+       [127705,      0,      4],
+       [128075,      0,      2],
+       [128511,      0,      3],
+       [128925,      0,      1],
+       [129285,      0,      4],
+       [129732,      0,      2],
+       [130111,      0,      3],
+       [130495,      0,      1],
+       [130876,      0,      4],
+       [131253,      0,      2],
+       [131672,      0,      3],
+       [132081,      0,      1],
+       [132556,      0,      4],
+       [132974,      0,      2],
+       [133451,      0,      3],
+       [133927,      0,      5],
+       [134287,      0,     32],
+       [134316,      0,      4],
+       [134729,      0,      2],
+       [135101,      0,      3],
+       [135533,      0,      1],
+       [135916,      0,      4],
+       [136285,      0,      2],
+       [136722,      0,      3],
+       [137133,      0,      1],
+       [137576,      0,      4],
+       [137993,      0,      2],
+       [138412,      0,      3],
+       [138836,      0,      1],
+       [139306,      0,      4],
+       [139737,      0,      2],
+       [140191,      0,      3],
+       [140612,      0,      1],
+       [141085,      0,      4],
+       [141562,      0,      2],
+       [141981,      0,      3],
+       [142446,      0,      5],
+       [142815,      0,     32],
+       [142826,      0,      4],
+       [143218,      0,      2],
+       [143671,      0,      3],
+       [144071,      0,      1],
+       [144545,      0,      4],
+       [144916,      0,      2],
+       [145291,      0,      3],
+       [145666,      0,      1],
+       [146085,      0,      4],
+       [146545,      0,      2],
+       [147011,      0,      3],
+       [147458,      0,      1],
+       [147855,      0,      4],
+       [148304,      0,      2],
+       [148721,      0,      3],
+       [149162,      0,      1],
+       [149555,      0,      4],
+       [149989,      0,      2],
+       [150430,      0,      3],
+       [150872,      0,      1],
+       [151265,      0,      4],
+       [151626,      0,      2],
+       [152030,      0,      5],
+       [152336,      0,     32],
+       [152426,      0,      1],
+       [152825,      0,      4],
+       [153211,      0,      2],
+       [153681,      0,      3],
+       [154080,      0,      1],
+       [154486,      0,      4],
+       [168672,      0,     32]], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>So we can plot our epochs with the corresponding events marked again using the <strong>.plot()</strong> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">events</span><span class="o">=</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You seem to have overlapping epochs. Some event lines may be duplicated in the plot.
+Using matplotlib as 2D backend.
+Opening epochs-browser...
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_14_1.png" src="../../../_images/mne_erp_14_1.png" />
+</div>
+</div>
+<br/>
+<p>The <strong>events_id</strong> object contains our previously assigned labels</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;auditory/left&#39;: 1,
+ &#39;auditory/right&#39;: 2,
+ &#39;visual/left&#39;: 3,
+ &#39;visual/right&#39;: 4,
+ &#39;face&#39;: 5,
+ &#39;buttonpress&#39;: 32}
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+And with this we can visualize the timing of separate events using the <a href="https://mne.tools/stable/generated/mne.viz.plot_events.html" title="https://mne.tools/stable/generated/mne.viz.plot_events.html">plot_events()</a>
+function<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_events</span><span class="p">(</span><span class="n">events</span><span class="o">=</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">event_id</span><span class="o">=</span><span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_18_0.png" src="../../../_images/mne_erp_18_0.png" />
+</div>
+</div>
+<br/>
+</div>
+<div class="section" id="calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel">
+<h2>2. calculate the signal average over epochs based on their condition for each channel<a class="headerlink" href="#calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel" title="Permalink to this headline">¶</a></h2>
+<p>To construct our evoked objects we’ll use the epochs<a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.average" title="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.average">.average()</a> function. We can further <strong>specify which channels we want to include (can also be a single channel or a subset of channels), how to calculate the average (aritmethic mean or median) and, using the by_event_type parameter, if we want to average over all events or if the function should return a list of evoked objects for each event_id</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evokeds</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;eeg&#39;</span><span class="p">],</span>  <span class="c1"># eeg channel only</span>
+                         <span class="n">method</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span>  <span class="c1"># mean or median</span>
+                         <span class="n">by_event_type</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># return a list of evoked objects by event condition</span>
+
+<span class="n">evokeds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Evoked | &#39;auditory/left&#39; (average, N=58), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;,
+ &lt;Evoked | &#39;auditory/right&#39; (average, N=62), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;,
+ &lt;Evoked | &#39;visual/left&#39; (average, N=60), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;,
+ &lt;Evoked | &#39;visual/right&#39; (average, N=58), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;,
+ &lt;Evoked | &#39;face&#39; (average, N=12), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;,
+ &lt;Evoked | &#39;buttonpress&#39; (average, N=14), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+If we set the parameter by_event_type=True we can access the returned evoked objects by their list_index<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evokeds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>  <span class="c1"># first evoked object - &#39;auditory/left&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.58588210e-07,  4.14449820e-08, -4.87084335e-08, ...,
+         1.69157032e-06,  1.51644329e-06,  1.42365011e-06],
+       [ 1.67931646e-07,  1.61905496e-07,  1.93823008e-07, ...,
+         2.88958198e-06,  2.72369747e-06,  2.53020267e-06],
+       [-2.90857603e-07, -1.67109110e-07, -3.81991318e-08, ...,
+         2.33253775e-06,  2.26626562e-06,  2.20365272e-06],
+       ...,
+       [-3.87839719e-08,  4.56590159e-08,  1.28239707e-07, ...,
+        -2.05681725e-06, -2.01721058e-06, -1.95900427e-06],
+       [-8.57313651e-07, -7.74666076e-07, -6.87243417e-07, ...,
+        -1.07434462e-06, -1.02948976e-06, -9.67314412e-07],
+       [ 1.26939683e-07,  1.38093103e-07,  1.53148588e-07, ...,
+        -4.62783340e-07, -4.59852043e-07, -4.39987288e-07]])
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+and we can plot the average activity per channel for the specific evoked object via the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot" title="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot">evoked.plot()</a> function, which given no further arguments returns a **butterfly plot showing activity averaged over all epochs for the given event_id separately for each channel**. Setting the parameter **spatial_colors=True** assigns a separate color to each channel and adds a map of color-coded channel locations to the plot, so we can identify which channel corresponds to which average. 
+<p>The <strong>.plot()</strong> function here is fairly limited in terms of customization, but gives us  a good overview of our data. <strong>If we’d change the plotting function at the import libarires step above from “%matplotlib inline” to “%matplotlib qt”, this would further return an interactive pop-up plot, with additional customization options.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evokeds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_25_0.png" src="../../../_images/mne_erp_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evokeds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_26_0.png" src="../../../_images/mne_erp_26_0.png" />
+</div>
+</div>
+<br/>
+A more explicit way to create our evoked objects is to first select the epoch via the event_id label<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;auditory/right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Evoked | &#39;auditory/right&#39; (average, N=62), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+and we'll assign the evoked objects to a new variable<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_aud_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;auditory/right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">l_aud_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;auditory/left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">l_vis_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;visual/left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">r_vis_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;visual/right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">face__ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;face&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">motor_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;buttonpress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_aud_ev</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Evoked | &#39;auditory/right&#39; (average, N=62), -0.29969 – 0.69928 sec, baseline -0.299693 – 0 sec, 59 ch, ~3.2 MB&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+This way we can also select evoked objects based on subsets of events, such as evoked objects based on the presentation of just auditory or visual stimuli<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;auditory&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">vis_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;visual&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_ev</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_34_0.png" src="../../../_images/mne_erp_34_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vis_ev</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_35_0.png" src="../../../_images/mne_erp_35_0.png" />
+</div>
+</div>
+<br/>
+or evoked objects for stimuli presented on the right vs stimuli presented on the left side<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">left_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">right_ev</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">left_ev</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_38_0.png" src="../../../_images/mne_erp_38_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">right_ev</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_39_0.png" src="../../../_images/mne_erp_39_0.png" />
+</div>
+</div>
+<br/>
+<p>MNE provides additional functions to <strong>visualize evoked objects such as the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_topomap" title="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_topomap">plot_topomap()</a> function, which allows the plotting of topographic maps for specific time points of evoked data</strong>.</p>
+<p>For illustrative purposes we’ll specify some time-points we’re interested in and the time-window that the activity should be averaged over for the topomap per timepoint (0.01 = 10ms window, centered around the time-points) and switch to a diverging colormap that is less of a problem for colorblind folks. If you want to go wild with your topomaps check out the ~ 30 parameters referenced in the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_topomap" title="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_topomap">API</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_ev</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>  <span class="c1"># bit arbitrary; -200 should catch the baseline and should show no activity</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuOr&#39;</span><span class="p">,</span>
+                    <span class="c1">#show_names=True,  # don&#39;t do it unless you upsize your plot </span>
+                    <span class="n">average</span><span class="o">=</span><span class="mf">0.01</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_41_0.png" src="../../../_images/mne_erp_41_0.png" />
+</div>
+</div>
+<br/>
+<p>Combining the above butterfly and topomap plots is the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_joint" title="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_joint">plot_joint()</a> function. With no further arguments provided it will select the 3 points of greatest variability for the topomap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_ev</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_43_1.png" src="../../../_images/mne_erp_43_1.png" />
+</div>
+</div>
+<br/>
+<p>We can also <strong>plot the evoked data as an image plot</strong> using the <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_image" title="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_image">.plot_image()</a> function, which returns a heatmap that reflects the amplitude of the average signal for each channel specified in the picks parameter (which defaults to all, if not explicitly instructed otherwise) over the epoch. Check the API in the provided link for more info on how to style the image plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_ev</span><span class="o">.</span><span class="n">plot_image</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s1">&#39;eeg&#39;</span><span class="p">,</span>
+                  <span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># would be much more informative if sample_data followed classic nomenclature</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuOr&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_45_0.png" src="../../../_images/mne_erp_45_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="define-regions-of-interest-roi">
+<h2>3. Define regions of interest (ROI)<a class="headerlink" href="#define-regions-of-interest-roi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="we-can-further-compare-the-average-activity-of-channels-for-differnent-conditions-via-the-a-href-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-title-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-compare-evokeds-a-function">
+<h3>We can further compare the average activity of channels for differnent conditions via the <a href="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html" title="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html">compare_evokeds()</a> function.<a class="headerlink" href="#we-can-further-compare-the-average-activity-of-channels-for-differnent-conditions-via-the-a-href-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-title-https-mne-tools-stable-generated-mne-viz-plot-compare-evokeds-html-compare-evokeds-a-function" title="Permalink to this headline">¶</a></h3>
+<p>If a channel or a subset of channels is provided via the <strong>“picks” parameter</strong> the average activity in the specified channels for the specified evoked objects will be plotted. If no channels were specified the global field power (gfp) will be displayed (which is the the spatial variability of the signal across all channels, calculated by taking the standard deviation of each channel value for each time point. I.e a measure of elecromagnetic non-uniformity). The <strong>conditions to compare are specified as a dictionary with a label assigned to the evoked object of the form “dict(audio=aud_ev,visual=vis_ev)”</strong>. Using this we can specifiy which regions or subsets of channels we wish to visualize.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">audio</span><span class="o">=</span><span class="n">aud_ev</span><span class="p">,</span>
+                                  <span class="n">visual</span><span class="o">=</span><span class="n">vis_ev</span><span class="p">),</span>
+                                     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Global field potential: auditory vs visual stimuli&#39;</span><span class="p">,</span>
+                                     <span class="n">ylim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using &quot;gfp&quot;
+combining channels using &quot;gfp&quot;
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_48_1.png" src="../../../_images/mne_erp_48_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 1 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+Let's compare some different ERPs across different modalities and channel locations to illustrate the function.<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">audio</span><span class="o">=</span><span class="n">aud_ev</span><span class="p">,</span>
+                                  <span class="n">visual</span><span class="o">=</span><span class="n">vis_ev</span><span class="p">),</span>
+                            <span class="n">picks</span><span class="o">=</span><span class="s1">&#39;EEG 042&#39;</span><span class="p">,</span>
+                            <span class="n">title</span><span class="o">=</span><span class="s1">&#39; ~ right auditory region: auditory vs visual stimuli&#39;</span><span class="p">,</span>
+                            <span class="n">ylim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_50_0.png" src="../../../_images/mne_erp_50_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 2 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">audio</span><span class="o">=</span><span class="n">aud_ev</span><span class="p">,</span>
+                                  <span class="n">visual</span><span class="o">=</span><span class="n">vis_ev</span><span class="p">),</span>
+                             <span class="n">picks</span><span class="o">=</span><span class="s1">&#39;EEG 054&#39;</span><span class="p">,</span>
+                             <span class="n">title</span><span class="o">=</span><span class="s1">&#39; ~ occipital region: auditory vs visual stimuli&#39;</span><span class="p">,</span>
+                             <span class="n">ylim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_51_0.png" src="../../../_images/mne_erp_51_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 2 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">left_ev</span><span class="p">,</span>
+                                  <span class="n">right</span><span class="o">=</span><span class="n">right_ev</span><span class="p">),</span>
+                            <span class="n">picks</span><span class="o">=</span><span class="s1">&#39;EEG 042&#39;</span><span class="p">,</span>
+                            <span class="n">title</span><span class="o">=</span><span class="s1">&#39; ~ interhemispheric processing: left vs right stimuli&#39;</span><span class="p">,</span>
+                            <span class="n">ylim</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_52_0.png" src="../../../_images/mne_erp_52_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 2 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+To define larger regions of interest we can simply assign groups of spatially clustered channels to python list objects and use the <a href="https://mne.tools/stable/generated/mne.pick_channels.html" title="https://mne.tools/stable/generated/mne.pick_channels.html">pick_channels()</a>
+ function to find the corresponding indexes of channels.<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define roi as list of ch_names</span>
+<span class="n">picks_aud</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;EEG 025&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 026&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 023&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 024&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 034&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 035&#39;</span><span class="p">]</span>
+
+<span class="n">picks_vis</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;EEG 044&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 045&#39;</span><span class="p">,</span><span class="s1">&#39;EEG 046&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 047&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 048&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 049&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;EEG 054&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 055&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 057&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 058&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 059&#39;</span><span class="p">]</span>
+
+<span class="c1"># get index for picks</span>
+<span class="n">aud_ix</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">pick_channels</span><span class="p">(</span><span class="n">aud_ev</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;ch_names&#39;</span><span class="p">],</span> <span class="n">include</span><span class="o">=</span><span class="n">picks_aud</span><span class="p">)</span>
+<span class="n">vis_ix</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">pick_channels</span><span class="p">(</span><span class="n">vis_ev</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;ch_names&#39;</span><span class="p">],</span> <span class="n">include</span><span class="o">=</span><span class="n">picks_vis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># e.g. by side</span>
+<span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;EEG 018&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 025&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 037&#39;</span><span class="p">]</span>
+<span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;EEG 023&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 034&#39;</span><span class="p">,</span> <span class="s1">&#39;EEG 042&#39;</span><span class="p">]</span>
+<span class="n">left_ix</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">pick_channels</span><span class="p">(</span><span class="n">l_aud_ev</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;ch_names&#39;</span><span class="p">],</span> <span class="n">include</span><span class="o">=</span><span class="n">left</span><span class="p">)</span>
+<span class="n">right_ix</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">pick_channels</span><span class="p">(</span><span class="n">l_aud_ev</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;ch_names&#39;</span><span class="p">],</span> <span class="n">include</span><span class="o">=</span><span class="n">right</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+Passing the ROI list (e.g. picks_aud) as the picks argument and comparing the activity over all evoked objects (i.e. visual/right, visual/left and so on) returns the signal averaged over all specified channels in our ROi and all epochs corresponding to the different conditions we defined earlier. This might be informative but looks somewhat messy.<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="n">evokeds</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks_aud</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using &quot;mean&quot;
+combining channels using &quot;mean&quot;
+combining channels using &quot;mean&quot;
+combining channels using &quot;mean&quot;
+combining channels using &quot;mean&quot;
+combining channels using &quot;mean&quot;
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_57_1.png" src="../../../_images/mne_erp_57_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 1 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>We’ll restrict the conditions we want to compare to events that should sensibly produce activity in the specifid ROIs. For that we create a new dictionary of evoked objects by assigning labels to the previously specified variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  dict for fancier plotting; auditory evokeds by side</span>
+<span class="n">evokeds_auditory</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">left_auditory</span><span class="o">=</span><span class="n">l_aud_ev</span><span class="p">,</span> <span class="n">right_auditory</span><span class="o">=</span><span class="n">r_aud_ev</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/> 
+<p>and <strong>use the plot_compare_evokeds() function to compare e.g. auditory stimuli based on their location of presentation for channels on the right hemisphere</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="n">evokeds_auditory</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">right_ix</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using &quot;mean&quot;
+combining channels using &quot;mean&quot;
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_61_1.png" src="../../../_images/mne_erp_61_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 576x432 with 1 Axes&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>or compare auditory and visual stimuli based for channels roughly associated with auditroy processing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fancier plotting; auditory rois</span>
+<span class="n">evokeds_vis_aud</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">auditory</span><span class="o">=</span><span class="n">aud_ev</span><span class="p">,</span> <span class="n">visual</span><span class="o">=</span><span class="n">vis_ev</span><span class="p">)</span>
+<span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="n">evokeds_vis_aud</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">aud_ix</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using &quot;mean&quot;
+combining channels using &quot;mean&quot;
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_63_1.png" src="../../../_images/mne_erp_63_1.png" />
+</div>
+</div>
+<br/>
+<p>To <strong>compare the spread of evoked activity between auditory and visual conditions we can further overlay the butterfly plot on a topographical map</strong>  by setting the parameter <strong>“axes=topo”</strong>. Thereby showing the average activity of each channel dependent on the the presentation of visual or auditory stimuli.
+Again, consulte the <a href="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html#mne.viz.plot_compare_evokeds" title="https://mne.tools/stable/generated/mne.viz.plot_compare_evokeds.html#mne.viz.plot_compare_evokeds">MNE API: compare_evoked()</a> for more possibilities of styling this plot (also, looks much better in the interactive version).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span><span class="n">evokeds_vis_aud</span><span class="p">,</span> 
+                             <span class="n">picks</span><span class="o">=</span><span class="s1">&#39;eeg&#39;</span><span class="p">,</span>
+                             <span class="n">colors</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">auditory</span><span class="o">=</span><span class="s1">&#39;#FFC20A&#39;</span><span class="p">,</span> <span class="n">visual</span><span class="o">=</span><span class="s1">&#39;#005AB5&#39;</span><span class="p">),</span>  <span class="c1"># just for style</span>
+                             <span class="n">axes</span><span class="o">=</span><span class="s1">&#39;topo&#39;</span><span class="p">,</span>
+                             <span class="n">styles</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">auditory</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>  <span class="c1"># just for style</span>
+                                                      <span class="n">visual</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_65_0.png" src="../../../_images/mne_erp_65_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="virtual-roi-channel">
+<h3>Virtual ROI channel<a class="headerlink" href="#virtual-roi-channel" title="Permalink to this headline">¶</a></h3>
+<p>If we want to want to <strong>build a single “ROI-channel” for an evoked object</strong> we can use the <a href="https://mne.tools/stable/generated/mne.channels.combine_channels.html#mne.channels.combine_channels" title="https://mne.tools/stable/generated/mne.channels.combine_channels.html#mne.channels.combine_channels">mne.channels.combine_channels()</a> function, which combines a number of channels into one virtual channel. If we further specify a number of evoked objects to pass to the function a separate virtual channel will be build for each evoked object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roi_sides_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">left_roi</span><span class="o">=</span><span class="n">left_ix</span><span class="p">,</span> <span class="n">right_roi</span><span class="o">=</span><span class="n">right_ix</span><span class="p">)</span>  <span class="c1"># pass indexes of left/right roi channels to dict</span>
+<span class="n">aud_roi_evoked</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">combine_channels</span><span class="p">(</span><span class="n">aud_ev</span><span class="p">,</span>  <span class="c1"># audtiroy evokeds</span>
+                                               <span class="n">roi_sides_dict</span><span class="p">,</span>
+                                               <span class="n">method</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">aud_roi_evoked</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Evoked | &#39;&#39; (average, N=1), -0.29969 – 0.69928 sec, baseline off, 2 ch, ~17 kB&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_roi_evoked</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-3.91922531e-07, -3.69310098e-07, -3.31903742e-07, ...,
+         6.98709887e-09,  1.51504471e-08,  3.27459284e-08],
+       [-5.16721656e-08, -1.11770458e-07, -1.88717915e-07, ...,
+        -1.31025712e-07, -1.41099123e-08,  5.65105007e-08]])
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>Unfortunately the non-interactive version of the .plot() function fails us here, as there is seemingly no parameter to specify the color or name of the virtual channels. <strong>If you want to prepare your data in this way you’d therefore either have to use the interactive plot and change the color of the channels by hand or use matplotlib to create a new graph from scratch using the array returned by aud_roi_evoked.get_data()</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_roi_evoked</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/mne_erp_70_0.png" src="../../../_images/mne_erp_70_0.png" />
+</div>
+</div>
+<br/>
+<p>Another way to compare conditions is to use the <a href="https://mne.tools/stable/generated/mne.combine_evoked.html#mne.combine_evoked" title="MNE API: mne.combine_evoked.()">mne.combine_evoked()</a> function. This allows the <strong>merging of evoked data from different conditions by weighted addition or subtraction</strong>. Setting the weights argument to [1, -1] will result in substraction of the second from the first provided evoked object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># substract auditory from visual activity for stimuli presented on the left side</span>
+<span class="n">l_aud_minus_vis</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">combine_evoked</span><span class="p">([</span><span class="n">l_aud_ev</span><span class="p">,</span> <span class="n">l_vis_ev</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">l_aud_minus_vis</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_72_1.png" src="../../../_images/mne_erp_72_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># substract auditory from visual activity for stimuli presented on the right side</span>
+<span class="n">r_aud_minus_vis</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">combine_evoked</span><span class="p">([</span><span class="n">r_aud_ev</span><span class="p">,</span> <span class="n">r_vis_ev</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">r_aud_minus_vis</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_73_1.png" src="../../../_images/mne_erp_73_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#subtract auditory from visual activity</span>
+<span class="n">vis_minus_aud</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">combine_evoked</span><span class="p">([</span><span class="n">vis_ev</span><span class="p">,</span> <span class="n">aud_ev</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">vis_minus_aud</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_74_1.png" src="../../../_images/mne_erp_74_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#subtract visual from auditory activity</span>
+<span class="n">vis_minus_aud</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">combine_evoked</span><span class="p">([</span><span class="n">vis_ev</span><span class="p">,</span> <span class="n">aud_ev</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">vis_minus_aud</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
+</pre></div>
+</div>
+<img alt="../../../_images/mne_erp_75_1.png" src="../../../_images/mne_erp_75_1.png" />
+</div>
+</div>
+<br/>
+<p>For more input on how to visualize evoked data head to the <a href="https://mne.tools/stable/auto_tutorials/evoked/20_visualize_evoked.html" title="https://mne.tools/stable/auto_tutorials/evoked/20_visualize_evoked.html">MNE tutorial: Visualizing Evoked data</a>. You can also check out the blog-post <a href="https://davidmathlogic.com/colorblind/#%23005AB5-%23DC3220" title="https://davidmathlogic.com/colorblind/#%23005AB5-%23DC3220">Coloring for Colorblindness</a> on how non-inclusive choices may affect your plots and which contrasting color pairs may be more fitting.</p>
+<p>If you’re interested in how to plot statistical significance threshholds over your ERP plot you can follow this <a href="https://mne.tools/stable/auto_tutorials/stats-sensor-space/20_erp_stats.html" title="https://mne.tools/stable/auto_tutorials/stats-sensor-space/20_erp_stats.html">MNE tutorial: Visualising statistical significance thresholds on EEG data</a></p>
+</div>
+<div class="section" id="grand-averages">
+<h3>Grand averages<a class="headerlink" href="#grand-averages" title="Permalink to this headline">¶</a></h3>
+<p>For group level analysis we could further compute so called grand averages, i.e. averaging the signal of all subjects for a certain condition. As this would make no sense for the present single subject data, see “Grand averages” in the <a href="https://mne.tools/stable/auto_tutorials/evoked/30_eeg_erp.html" title="MNE tutorial: EEG processing and Event Related Potentials">MNE tutorial: EEG processing and Event Related Potentials</a> for more info.</p>
+</div>
+<div class="section" id="save-export-data">
+<h3>Save/Export data<a class="headerlink" href="#save-export-data" title="Permalink to this headline">¶</a></h3>
+<p>Let’s first get our paths in order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">homedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>  <span class="c1"># find home diretory</span>
+<span class="n">bids_folder_path</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;msc_05_example_bids_dataset&#39;</span> <span class="o">+</span> 
+               <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-test&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;ses-001&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;meg&#39;</span><span class="p">)</span>
+                         
+
+
+<span class="n">output_path</span> <span class="o">=</span> <span class="n">homedir</span> <span class="o">+</span> <span class="n">bids_folder_path</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/michael/msc_05_example_bids_dataset/sub-test/ses-001/meg
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>And to save or export evoked data we proceed in the same manner as in the previous chapters. We can either write the evoked data to a pandas DataFrame and export the DataFrame as a .tsv file</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">aud_ev</span><span class="o">.</span><span class="n">to_data_frame</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>EEG 001</th>
+      <th>EEG 002</th>
+      <th>EEG 003</th>
+      <th>EEG 004</th>
+      <th>EEG 005</th>
+      <th>EEG 006</th>
+      <th>EEG 007</th>
+      <th>EEG 008</th>
+      <th>EEG 009</th>
+      <th>...</th>
+      <th>EEG 050</th>
+      <th>EEG 051</th>
+      <th>EEG 052</th>
+      <th>EEG 054</th>
+      <th>EEG 055</th>
+      <th>EEG 056</th>
+      <th>EEG 057</th>
+      <th>EEG 058</th>
+      <th>EEG 059</th>
+      <th>EEG 060</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-300</td>
+      <td>-0.273486</td>
+      <td>-0.705960</td>
+      <td>-0.716901</td>
+      <td>0.000873</td>
+      <td>0.376220</td>
+      <td>0.046862</td>
+      <td>-0.481563</td>
+      <td>-0.065211</td>
+      <td>0.111456</td>
+      <td>...</td>
+      <td>-0.123930</td>
+      <td>-0.311101</td>
+      <td>-0.491009</td>
+      <td>0.542431</td>
+      <td>-0.473025</td>
+      <td>-0.709696</td>
+      <td>0.420646</td>
+      <td>0.116793</td>
+      <td>-0.457120</td>
+      <td>-0.270652</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-298</td>
+      <td>-0.358799</td>
+      <td>-0.656849</td>
+      <td>-0.759258</td>
+      <td>0.011594</td>
+      <td>0.443271</td>
+      <td>-0.063794</td>
+      <td>-0.598507</td>
+      <td>0.056031</td>
+      <td>-0.014147</td>
+      <td>...</td>
+      <td>-0.117610</td>
+      <td>-0.325659</td>
+      <td>-0.524114</td>
+      <td>0.628147</td>
+      <td>-0.435255</td>
+      <td>-0.704167</td>
+      <td>0.514167</td>
+      <td>0.207106</td>
+      <td>-0.386811</td>
+      <td>-0.181919</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-296</td>
+      <td>-0.421568</td>
+      <td>-0.570382</td>
+      <td>-0.803121</td>
+      <td>0.007416</td>
+      <td>0.462682</td>
+      <td>-0.192772</td>
+      <td>-0.722229</td>
+      <td>0.148973</td>
+      <td>-0.150639</td>
+      <td>...</td>
+      <td>-0.110002</td>
+      <td>-0.336857</td>
+      <td>-0.550440</td>
+      <td>0.711637</td>
+      <td>-0.396294</td>
+      <td>-0.689133</td>
+      <td>0.608688</td>
+      <td>0.297349</td>
+      <td>-0.314539</td>
+      <td>-0.085795</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-295</td>
+      <td>-0.457549</td>
+      <td>-0.456782</td>
+      <td>-0.842626</td>
+      <td>-0.008271</td>
+      <td>0.439441</td>
+      <td>-0.325556</td>
+      <td>-0.838798</td>
+      <td>0.207098</td>
+      <td>-0.276764</td>
+      <td>...</td>
+      <td>-0.102828</td>
+      <td>-0.344320</td>
+      <td>-0.570619</td>
+      <td>0.789199</td>
+      <td>-0.358065</td>
+      <td>-0.666718</td>
+      <td>0.699356</td>
+      <td>0.382951</td>
+      <td>-0.243442</td>
+      <td>0.010825</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-293</td>
+      <td>-0.465113</td>
+      <td>-0.329720</td>
+      <td>-0.868505</td>
+      <td>-0.030309</td>
+      <td>0.383933</td>
+      <td>-0.447467</td>
+      <td>-0.934531</td>
+      <td>0.229226</td>
+      <td>-0.372866</td>
+      <td>...</td>
+      <td>-0.098432</td>
+      <td>-0.348692</td>
+      <td>-0.586340</td>
+      <td>0.856297</td>
+      <td>-0.323208</td>
+      <td>-0.640448</td>
+      <td>0.780274</td>
+      <td>0.458829</td>
+      <td>-0.177358</td>
+      <td>0.100279</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>596</th>
+      <td>693</td>
+      <td>1.021945</td>
+      <td>1.389569</td>
+      <td>1.603583</td>
+      <td>0.354900</td>
+      <td>1.535488</td>
+      <td>1.175721</td>
+      <td>1.204013</td>
+      <td>-0.398187</td>
+      <td>0.979819</td>
+      <td>...</td>
+      <td>-1.035178</td>
+      <td>-1.492689</td>
+      <td>-0.526998</td>
+      <td>-1.865670</td>
+      <td>-1.116604</td>
+      <td>-0.717162</td>
+      <td>-1.807308</td>
+      <td>-1.885107</td>
+      <td>-1.537620</td>
+      <td>-0.355314</td>
+    </tr>
+    <tr>
+      <th>597</th>
+      <td>694</td>
+      <td>0.948624</td>
+      <td>1.294110</td>
+      <td>1.432409</td>
+      <td>0.377047</td>
+      <td>1.463960</td>
+      <td>1.060179</td>
+      <td>1.094829</td>
+      <td>-0.255787</td>
+      <td>0.829088</td>
+      <td>...</td>
+      <td>-0.976875</td>
+      <td>-1.429080</td>
+      <td>-0.444614</td>
+      <td>-1.737224</td>
+      <td>-0.995170</td>
+      <td>-0.623922</td>
+      <td>-1.697016</td>
+      <td>-1.763489</td>
+      <td>-1.403196</td>
+      <td>-0.248636</td>
+    </tr>
+    <tr>
+      <th>598</th>
+      <td>696</td>
+      <td>0.881483</td>
+      <td>1.197141</td>
+      <td>1.295577</td>
+      <td>0.422118</td>
+      <td>1.404105</td>
+      <td>0.971797</td>
+      <td>1.017964</td>
+      <td>-0.066488</td>
+      <td>0.696837</td>
+      <td>...</td>
+      <td>-0.929177</td>
+      <td>-1.378435</td>
+      <td>-0.375621</td>
+      <td>-1.615313</td>
+      <td>-0.881996</td>
+      <td>-0.535283</td>
+      <td>-1.592202</td>
+      <td>-1.651932</td>
+      <td>-1.272434</td>
+      <td>-0.162004</td>
+    </tr>
+    <tr>
+      <th>599</th>
+      <td>698</td>
+      <td>0.828058</td>
+      <td>1.104750</td>
+      <td>1.198133</td>
+      <td>0.483204</td>
+      <td>1.355620</td>
+      <td>0.912522</td>
+      <td>0.978644</td>
+      <td>0.142922</td>
+      <td>0.601567</td>
+      <td>...</td>
+      <td>-0.895735</td>
+      <td>-1.343722</td>
+      <td>-0.325779</td>
+      <td>-1.502037</td>
+      <td>-0.783363</td>
+      <td>-0.456373</td>
+      <td>-1.495208</td>
+      <td>-1.554227</td>
+      <td>-1.150319</td>
+      <td>-0.096405</td>
+    </tr>
+    <tr>
+      <th>600</th>
+      <td>699</td>
+      <td>0.794171</td>
+      <td>1.022128</td>
+      <td>1.139056</td>
+      <td>0.549998</td>
+      <td>1.314434</td>
+      <td>0.879571</td>
+      <td>0.975541</td>
+      <td>0.342043</td>
+      <td>0.553991</td>
+      <td>...</td>
+      <td>-0.877960</td>
+      <td>-1.325241</td>
+      <td>-0.297244</td>
+      <td>-1.399055</td>
+      <td>-0.703607</td>
+      <td>-0.390818</td>
+      <td>-1.408314</td>
+      <td>-1.472842</td>
+      <td>-1.040961</td>
+      <td>-0.051484</td>
+    </tr>
+  </tbody>
+</table>
+<p>601 rows × 60 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-test_ses-001_sample_audiovis_eeg_auditory_ave.tsv&#39;</span><span class="p">,</span> 
+          <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>or use the evoked.save() function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aud_ev</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">output_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-test_ses-001_sample_audiovis_eeg_auditory_ave.fif&#39;</span><span class="p">,</span>
+            <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+To save our previously created figures we can use the <a href="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.savefig.html" title="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.savefig.html"> matplotlib.plt.savefig()</a> function. First we'll create a folder called "derivatives" to store our graphs in.<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">homedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>  <span class="c1"># find home diretory</span>
+<span class="n">derivatives_folder_path</span> <span class="o">=</span> <span class="p">(</span><span class="n">homedir</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;msc_05_example_bids_dataset&#39;</span> <span class="o">+</span>  <span class="c1"># assemble derivatives path</span>
+               <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;sub-test&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;derivatives&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">derivatives_folder_path</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">derivatives_folder_path</span><span class="p">)</span>  <span class="c1"># make directory</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/michael/msc_05_example_bids_dataset/sub-test/derivatives
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>and use fig.savefig() to save the graph</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">vis_minus_aud</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">();</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">derivatives_folder_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;vis_minus_aud_evoked_plot.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="if-you-re-interested-in-more-complex-ways-to-analyse-eeg-data-you-can-check-out-the-following">
+<h2>If you’re interested in more complex ways to analyse EEG data you can check-out the following:<a class="headerlink" href="#if-you-re-interested-in-more-complex-ways-to-analyse-eeg-data-you-can-check-out-the-following" title="Permalink to this headline">¶</a></h2>
+<p><a href="https://mne.tools/stable/auto_examples/time_frequency/index.html" title="https://mne.tools/stable/auto_examples/time_frequency/index.html">MNE tutorial overview: Time-Frequency analysis</a></p>
+<p><a href="https://mne.tools/stable/auto_examples/decoding/index.html" title="https://mne.tools/stable/auto_examples/decoding/index.html">MNE tutorial overview: Machine Learning (Decoding, Encoding, and MVPA)</a></p>
+<p><a href="https://mne.tools/mne-connectivity/stable/auto_examples/index.html#sphx-glr-auto-examples" title="https://mne.tools/mne-connectivity/stable/auto_examples/index.html#sphx-glr-auto-examples">MNE_connectivity tutorial overview:  Connectivity analysis in Sensor and Source space</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="mne_preprocessing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EEG preprocessing with MNE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mne_workflow_tutorial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MNE Workflow tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

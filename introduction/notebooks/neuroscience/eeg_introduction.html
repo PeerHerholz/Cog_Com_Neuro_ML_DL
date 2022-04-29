@@ -1,0 +1,1244 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electroencephalography &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MNE python for EEG analysis" href="mne_introduction.html" />
+    <link rel="prev" title="Functional connectivity and resting state" href="functional_connectivity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="morphometry.html">
+       Morphometric analyzes
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="dMRI_intro.html">
+       Diffusion MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="diffusion_imaging.html">
+         Structural connectivity and diffusion imaging
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="fmri_intro.html">
+       Functional MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="image_manipulation_nilearn.html">
+         Using Python for neuroimaging data - Nilearn
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="connectivity_intro.html">
+       Functional connectivity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="functional_connectivity.html">
+         Functional connectivity and resting state
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Electroencephalography
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/neuroscience/eeg_introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/neuroscience/eeg_introduction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/neuroscience/eeg_introduction.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/neuroscience/eeg_introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Electroencephalography
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simply-put-electroencephalography-is-a-usually-non-invasive-method-for-measuring-brain-activity">
+     Simply put, Electroencephalography is a (usually) non-invasive method for measuring “brain activity”.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-overview">
+   Chapter overview:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-electroencephalography">
+   Introduction to Electroencephalography
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eeg-in-research-neuroscience">
+     1. EEG in research/neuroscience
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-s-the-use">
+       What’s the use?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-main-variables-of-interest-are-eeg-featuers-most-commonly">
+       The main variables of interest are EEG featuers, most commonly:
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#evoked-potentials">
+         Evoked potentials:
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#event-related-potentials">
+         Event-related potentials:
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#neural-oscillations">
+         Neural oscillations:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#biophysics">
+     2. Biophysics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-does-brain-activity-or-signal-mean-in-the-context-of-eeg">
+       What does “brain activity” or “signal” mean in the context of EEG?
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#a-more-complex-neuroanatomically-informed-answer-would-encompass">
+         A more complex, neuroanatomically informed answer would encompass:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-does-the-eeg-signal-originate-from">
+     Where does the EEG signal originate from?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eeg-source-localization">
+       EEG source localization
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-do-we-actually-measure-what-is-the-eeg-code">
+       What do we actually measure? What is the EEG code?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#neural-oscillations-as-an-integral-functional-mechanism-of-the-brain">
+       Neural oscillations as an integral functional mechanism of the brain
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#frequency-bands">
+       Frequency bands
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-of-frequency-bands">
+       Function of frequency bands
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implications-for-eeg-resarch">
+   3. Implications for EEG resarch
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-questions-can-we-answer-using-eeg">
+     What questions can we answer using EEG?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conducting-an-eeg-study-in-the-context-of-cognitive-neuroscience-a-loose-framework">
+     Conducting an EEG study in the context of cognitive neuroscience: a loose framework
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-planning-idea-to-hypothesis">
+       A. Planning/idea to hypothesis
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#b-study-design">
+         B. Study design
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-study-implementation">
+       C. Study implementation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#data-collection">
+         Data collection
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#math">
+         Math
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#d-making-sound-inferences">
+       D. Making sound inferences?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   4. Resources
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tools-for-eeg-analysis">
+     Tools for EEG-analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-to-obtain-eeg-data">
+     Where to obtain EEG data ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sources">
+   Sources
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Electroencephalography</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Electroencephalography
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simply-put-electroencephalography-is-a-usually-non-invasive-method-for-measuring-brain-activity">
+     Simply put, Electroencephalography is a (usually) non-invasive method for measuring “brain activity”.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-overview">
+   Chapter overview:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-electroencephalography">
+   Introduction to Electroencephalography
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eeg-in-research-neuroscience">
+     1. EEG in research/neuroscience
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-s-the-use">
+       What’s the use?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-main-variables-of-interest-are-eeg-featuers-most-commonly">
+       The main variables of interest are EEG featuers, most commonly:
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#evoked-potentials">
+         Evoked potentials:
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#event-related-potentials">
+         Event-related potentials:
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#neural-oscillations">
+         Neural oscillations:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#biophysics">
+     2. Biophysics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-does-brain-activity-or-signal-mean-in-the-context-of-eeg">
+       What does “brain activity” or “signal” mean in the context of EEG?
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#a-more-complex-neuroanatomically-informed-answer-would-encompass">
+         A more complex, neuroanatomically informed answer would encompass:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-does-the-eeg-signal-originate-from">
+     Where does the EEG signal originate from?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#eeg-source-localization">
+       EEG source localization
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-do-we-actually-measure-what-is-the-eeg-code">
+       What do we actually measure? What is the EEG code?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#neural-oscillations-as-an-integral-functional-mechanism-of-the-brain">
+       Neural oscillations as an integral functional mechanism of the brain
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#frequency-bands">
+       Frequency bands
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#function-of-frequency-bands">
+       Function of frequency bands
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implications-for-eeg-resarch">
+   3. Implications for EEG resarch
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-questions-can-we-answer-using-eeg">
+     What questions can we answer using EEG?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conducting-an-eeg-study-in-the-context-of-cognitive-neuroscience-a-loose-framework">
+     Conducting an EEG study in the context of cognitive neuroscience: a loose framework
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-planning-idea-to-hypothesis">
+       A. Planning/idea to hypothesis
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#b-study-design">
+         B. Study design
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-study-implementation">
+       C. Study implementation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#data-collection">
+         Data collection
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#math">
+         Math
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#d-making-sound-inferences">
+       D. Making sound inferences?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   4. Resources
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tools-for-eeg-analysis">
+     Tools for EEG-analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-to-obtain-eeg-data">
+     Where to obtain EEG data ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sources">
+   Sources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="electroencephalography">
+<h1>Electroencephalography<a class="headerlink" href="#electroencephalography" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="simply-put-electroencephalography-is-a-usually-non-invasive-method-for-measuring-brain-activity">
+<h2>Simply put, Electroencephalography is a (usually) non-invasive method for measuring “brain activity”.<a class="headerlink" href="#simply-put-electroencephalography-is-a-usually-non-invasive-method-for-measuring-brain-activity" title="Permalink to this headline">¶</a></h2>
+<p>It is a commonly used tool in the neurosciences to establish links between variables of interest such as behavior/cognition/sensory perception/mental processing/differences in personality or psychopathology and their underlying neural mechanims or changes in brain states/traits. An introduction into why and how this is done will be establishd in this chapter.</p>
+<p>Common non-research applications that may be of interest are:</p>
+<ul class="simple">
+<li><p>Clinical (localization of tumors, diagnosis, brain damage due to head injuries, epilepsy, encephalopathy, encephalitis, stroke, sleeping dsiorder; depth of anesthesia, and possible confirmation of brain death in coma patients)</p></li>
+<li><p>Brain-computer interfaces (BCI)</p>
+<ul>
+<li><p><a href="https://www.frontiersin.org/articles/10.3389/fnhum.2018.00014/full" title="https://www.frontiersin.org/articles/10.3389/fnhum.2018.00014/full">EEG-Based Brain–Computer Interfaces for Communication and Rehabilitation of People with Motor Impairment</a></p></li>
+<li><p>Real important stuff:</p>
+<ul>
+<li><p><a href="https://i2nk.co/mindwave-cat-ears" title="https://i2nk.co/mindwave-cat-ears">EEG Cat Ears</a></p></li>
+<li><p><a href="https://www.youtube.com/watch?v=-y8CHWx6aGY" title="https://www.youtube.com/watch?v=-y8CHWx6aGY">Mind Controlled Beer Pong </a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br/>
+If the language used is confusing head over to the
+<a href="https://link.springer.com/content/pdf/bbm%3A978-3-030-04573-9%2F1.pdf" title="https://link.springer.com/content/pdf/bbm%3A978-3-030-04573-9%2F1.pdf">EEG glossary</a>
+or for the more programming related stuff in the later chapters the
+<a href="https://mne.tools/stable/glossary.html" title="https://mne.tools/stable/glossary.html">MNE glossary </a>
+<br/>
+<br/><br/>
+</div>
+</div>
+<div class="section" id="chapter-overview">
+<h1>Chapter overview:<a class="headerlink" href="#chapter-overview" title="Permalink to this headline">¶</a></h1>
+<p><strong>1. EEG in neuroscience research</strong></p>
+<ul class="simple">
+<li><p>What’s the use?</p></li>
+<li><p>main variables of interest</p></li>
+</ul>
+<p><strong>2. Biophysics</strong></p>
+<ul class="simple">
+<li><p>What does “brain activity” or “signal” mean in the context of EEG?</p></li>
+<li><p>Where does the EEG signal originate from?</p>
+<ul>
+<li><p>EEG source localization</p></li>
+</ul>
+</li>
+<li><p>What do we actually measure? What is the EEG code?</p></li>
+<li><p>Neural oscillations as an integral functional mechanism of the brain</p></li>
+<li><p>Frequency bands</p></li>
+<li><p>Function of frequency bands</p></li>
+</ul>
+<p><strong>3. Implications for EEG resarch</strong></p>
+<ul class="simple">
+<li><p>What questions can we answer using EEG?</p></li>
+<li><p>Conducting an EEG study in the context of cognitive neuroscience: a loose framework</p>
+<ol class="simple">
+<li><p>Planning/idea to hypothesis</p></li>
+<li><p>Study design</p></li>
+<li><p>Study implementation</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>4. Resources</strong></p>
+<ul class="simple">
+<li><p>Tools for EEG-analysis</p></li>
+<li><p>Where to obtain EEG data ?</p></li>
+</ul>
+<br/></div>
+<div class="section" id="introduction-to-electroencephalography">
+<h1>Introduction to Electroencephalography<a class="headerlink" href="#introduction-to-electroencephalography" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="eeg-in-research-neuroscience">
+<h2>1. EEG in research/neuroscience<a class="headerlink" href="#eeg-in-research-neuroscience" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-s-the-use">
+<h3>What’s the use?<a class="headerlink" href="#what-s-the-use" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>main selling point of EEG compared to other methods is it’s cost-effectiveness (when compared to MEG or fMRI) and portability (limited), combined with high temporal precision</strong>.
+Allowing for sampling rates of 1024Hz (one sample every 0.001s) and above. As neocortical fast-spiking neurons (association cortex) produce action potentials at a maximal mean frequency of 338 Hz <a href="https://www.frontiersin.org/articles/10.3389/fncel.2016.00239/full" title="https://www.frontiersin.org/articles/10.3389/fncel.2016.00239/full">(Wang et al., 2016)</a>, it should accordingly be possible to map even the fastest changes in neuronaly activity using EEG.</p>
+<p>Therefore EEG allows us to obersve the time course of cognitive processes in high resolution, so that we can divide a processing stream into <strong>early components</strong> <em>(usually linked to lower level perception (i.e. evoked potentials P100 (visual), N100 (unpredictable stimulus, multiple sensory modalities, P200 (visual search, word expectancy)</em> and <strong>later components</strong> <em>(Event-related potentials; which are (usually) more  closely linked to conscious cognitive processing, such as evaluations or decision making)</em> <a href="https://link.springer.com/article/10.1007/s10484-017-9371-3" title="https://link.springer.com/article/10.1007/s10484-017-9371-3">(Beres, 2017)</a>.</p>
+<p>We are further not limited to the observation of evoked or event-related potentials (i.e. the averaged signal following a task-demand or stimuli presentation), as the high temporal precision  allows us further to <strong>identify neural oscillations</strong>, the “rhythms of the brain”, and how these relate to fluctuations of internal states or changes in external reality.</p>
+<p>Therefore we can, with little investment, capture <strong>rich, versatile data</strong> (such as event-related &amp; evoked activity, respective their source localization, changes in frequency &amp; time-frequency content, functional connectivity and synchronicity/coherence between neural populations).</p>
+</div>
+<div class="section" id="the-main-variables-of-interest-are-eeg-featuers-most-commonly">
+<h3>The main variables of interest are EEG featuers, most commonly:<a class="headerlink" href="#the-main-variables-of-interest-are-eeg-featuers-most-commonly" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="evoked-potentials">
+<h4>Evoked potentials:<a class="headerlink" href="#evoked-potentials" title="Permalink to this headline">¶</a></h4>
+<p>A wave or complex of waves in the contionously measured EEG signal “elicited by and time-locked to a physiological or nonphysiological
+stimulus or event” <a href="https://link.springer.com/content/pdf/bbm%3A978-3-030-04573-9%2F1.pdf" title="https://link.springer.com/content/pdf/bbm%3A978-3-030-04573-9%2F1.pdf">(Mecarelli, 2019)</a></p>
+<div class="figure align-default" id="markdown-fig">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://mne.tools/stable/_images/sphx_glr_20_visualize_evoked_008.png"><img alt="p100" class="bg-primary mb-1" src="https://mne.tools/stable/_images/sphx_glr_20_visualize_evoked_008.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">Evoked potential (p100) after presentation of a visual stimulus on the right side of an participants field of view <a href="https://mne.tools/stable/auto_tutorials/evoked/20_visualize_evoked.html" title="https://mne.tools/stable/auto_tutorials/evoked/20_visualize_evoked.html">(MNE tutorials, visualizing evoked potentials, 2022)</span><a class="headerlink" href="#markdown-fig" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="event-related-potentials">
+<h4>Event-related potentials:<a class="headerlink" href="#event-related-potentials" title="Permalink to this headline">¶</a></h4>
+<p>Same as evoked potentials, but usually show longer latency responses associated with events, as they are not directly thought to be related to basic sensory processing but to “higher” cognitive tasks such as decision making, response anticipation, evaluation of stimulus features (such as stimulus
+salience, template matching, novelty detection)<a href="https://link.springer.com/content/pdf/bbm%3A978-3-030-04573-9%2F1.pdf" title="https://link.springer.com/content/pdf/bbm%3A978-3-030-04573-9%2F1.pdf">(Mecarelli, 2019)</a>.</p>
+<p>For an overview of different ERPs see e.g. <a href="https://www.neuroelectrics.com/blog/2014/12/18/14-event-related-potentials-erp-components-and-modaliaties/" title="https://www.neuroelectrics.com/blog/2014/12/18/14-event-related-potentials-erp-components-and-modalities/">Event Related Potentials (ERP) – Components and Modalities</a>.</p>
+<div class="figure align-default" id="ern">
+<a class="reference internal image-reference" href="../../../_images/ERN-incongruent_flanker.png"><img alt="../../../_images/ERN-incongruent_flanker.png" src="../../../_images/ERN-incongruent_flanker.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">Event-related-potential: Event-related negativity over central electrodes ~ 50 ms (~ 4µV over FCz) following error commission in a flanker task, 0 is time-locked to a motor response (Master Thesis, Michael Ernst, 2021).</span><a class="headerlink" href="#ern" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="neural-oscillations">
+<h4>Neural oscillations:<a class="headerlink" href="#neural-oscillations" title="Permalink to this headline">¶</a></h4>
+<p>Repetitive, rhythmic patterns in the synchronous activity of neurons or neuron clusters that can be described according to their frequency, phase and amplitude. Usually divided into frequency bands alpha, beta, gamma and so on <a href="http://learn.neurotechedu.com/neural%20oscillations/" title="http://learn.neurotechedu.com/neural%20oscillations/">(NEUROTECHEDU: What are Neural Oscillations?)</a>.</p>
+<br/>
+<br/>
+<br/>
+<div class="figure align-default" id="id1">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://raphaelvallat.com/images/tutorials/bandpower/brain_waves.png"><img alt="neural oscillations in time domain" class="bg-primary mb-1" src="https://raphaelvallat.com/images/tutorials/bandpower/brain_waves.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text">Illustration of Alpha, Beta, Gamma and Delta frequency bands <br/> <a href="https://raphaelvallat.com/bandpower.html" title="https://raphaelvallat.com/bandpower.html">(Compute the average bandpower of an EEG signal; Raphael Vallat, 2018)</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<br/>
+</div>
+</div>
+</div>
+<div class="section" id="biophysics">
+<h2>2. Biophysics<a class="headerlink" href="#biophysics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-does-brain-activity-or-signal-mean-in-the-context-of-eeg">
+<h3>What does “brain activity” or “signal” mean in the context of EEG?<a class="headerlink" href="#what-does-brain-activity-or-signal-mean-in-the-context-of-eeg" title="Permalink to this headline">¶</a></h3>
+<p>A simple answer would be that we are measuring the <strong>summed activity of a number of postsynaptic potentials (i.e the exchange of electrochemical signals) at the scalp</strong>.</p>
+<p>As the activity of a single neuron or the change in potential at a singluar postynaptic site does not elicit a change in voltage strong enough to be measured at the scalp, <strong>only the summation of electrical potentials generated by number of synchronously active neurons that show similar spatial orientation</strong> (otherwise their signals cancel each other out) prodcues a signal large enough to be detected at the scalp. This is illustrated in the following graphs, taken from a great resource to understand the biophysics behind the origin of the EEG signal:  <a href="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283" title="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283">”The neurophysiological bases of EEG and EEG measurement: A review for the rest of us”; (Jackson &amp; Bolger, 2014)</a></p>
+<div class="figure align-default" id="id2">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc9nk1vEJfRgIT_jx6BdXkcR_frSq1lWxWIRgYXg3u98Kj6ydEDa8o4-Y3b5qSpH4SDGU&amp;usqp=CAU"><img alt="differences in amplitude signage" class="bg-primary mb-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc9nk1vEJfRgIT_jx6BdXkcR_frSq1lWxWIRgYXg3u98Kj6ydEDa8o4-Y3b5qSpH4SDGU&amp;usqp=CAU" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">Illustration of differences in amplitude signage at the scalp electrode, <br/> dependent ob the spatial orientation of the dipole of a neuron <a href="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283" title="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283">(Jackson &amp; Bolger, 2014)</a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://www.researchgate.net/profile/Yves-Matanga/publication/326175998/figure/fig7/AS:644582983364616&#64;1530691967168/EEG-signal-origin-from-neurons-to-electrodes-Neurons-activation-is-synchronized-and.png"><img alt="Synchronized activity of spatialy similarly oriented neural populations mesaured at the scalp electrode" class="bg-primary mb-1" src="https://www.researchgate.net/profile/Yves-Matanga/publication/326175998/figure/fig7/AS:644582983364616&#64;1530691967168/EEG-signal-origin-from-neurons-to-electrodes-Neurons-activation-is-synchronized-and.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text">Synchronized activity of spatialy similarly oriented neural populations mesaured at the scalp electrode <a href="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283" title="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283">(Jackson &amp; Bolger, 2014)</a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Synchronized activity of spatialy similarly oriented neural populations mesaured at the scalp electrode <br/> <a href="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283" title="https://onlinelibrary.wiley.com/doi/10.1111/psyp.12283">(Jackson &amp; Bolger, 2014)</a></p>
+<div class="section" id="a-more-complex-neuroanatomically-informed-answer-would-encompass">
+<h4>A more complex, neuroanatomically informed answer would encompass:<a class="headerlink" href="#a-more-complex-neuroanatomically-informed-answer-would-encompass" title="Permalink to this headline">¶</a></h4>
+<p>EEG is a method for the (continuous) measurement of spatiotemporally smoothed field potentials above a specific region of the scalp, i.e. the “extracellular currents reflecting the summed dendritic postsynaptic potentials in thousands to millions of pyramidal cells in parallel alignment” (Cf. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0166223617300243" title="https://www.sciencedirect.com/science/article/abs/pii/S0166223617300243">Cohen, 2017</a>) measured at an electrode X placed above region/coordinate Y integrated over an area of 10cm² or more (Cf. <a href="https://www.nature.com/articles/nrn3241" title="https://www.nature.com/articles/nrn3241">Buzsáki et al., 2012</a>).</p>
+</div>
+</div>
+</div>
+<div class="section" id="where-does-the-eeg-signal-originate-from">
+<h2>Where does the EEG signal originate from?<a class="headerlink" href="#where-does-the-eeg-signal-originate-from" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="eeg-source-localization">
+<h3>EEG source localization<a class="headerlink" href="#eeg-source-localization" title="Permalink to this headline">¶</a></h3>
+<p>One disadavantage of the EEG is that it is difficult to estimate where neuronal activity originates from, given only the signal measured at the scalp, as the <strong>spatial resolution of EEG is fairly limited</strong> (centimeter range).</p>
+<p>The spatial resolution of the EEG is unfortunately not only limted by the number of electrodes we can place on willing participants (commonly 32-64 channel systems for research; up to 192 channel systems exist) but <strong>dependendent on the propagation of the current flow though multiple membranes and the skull</strong>, which due to it’s low electrical conductivity and homogenous thickness leads to local changes in conductivity, as well as the skulls non-spherical (and individually varying non-uniform) shape, which results in differences in the distance between electrodes and the center of the head (or varying regions of interest) (<a href="https://www.frontiersin.org/articles/10.3389/fneur.2019.00325/full" title="https://www.frontiersin.org/articles/10.3389/fneur.2019.00325/full">Michel &amp; Brunet, 2019</a>).</p>
+<p><strong>To find out where the signal measured at an electrode originates, we therfore have to solve a number of problems.</strong></p>
+<p><strong>1.</strong> How to estimate the signal at a given electrode from a given source, which is understood as the <strong>forward problem</strong> of EEG.</p>
+<p>The forward problem can be <strong>overcome with the standardization of tools and methods of measurement</strong>. E.g. the standardized 10-20 system that not only describes electrode position and nomenclature, but includes instructions on how to measure a participant’s skulls (Skull circumference, distance preauricular to preauricular and distance Nasion to Inion) and position the EEG-cap. For estimated differences in conductivity due to varying skull thickness ideally an MRI scan of the subject would be provided.</p>
+<p>We’ll have to solve the forward problem, before turining towards what’s actually of interest when it comes to source localization of EEG features, which is the …</p>
+<p><strong>2.</strong> <strong>Inverse problem</strong>, i.e. which source in the brain produces the signal observed at a given electrode.</p>
+<p>Unfortunately the same signal measured at the scalp by a given electrode can be produced by a number of non-unique source distributions, as e.g. the activity (current) generated from different neuron pools may cancel each other out dependent on their relative positions (<a href="https://www.frontiersin.org/articles/10.3389/fneur.2019.00325/full" title="https://www.frontiersin.org/articles/10.3389/fneur.2019.00325/full">Michel &amp; Brunet, 2019</a>). <strong>Meaning that we’re dependent on mathematical models (such as LORETA (<a href="https://www.sciencedirect.com/science/article/abs/pii/016787608490014X" title="https://www.sciencedirect.com/science/article/abs/pii/016787608490014X">Pascual-Marqui et al., 1994</a>)) that include a priori assumptions on how the electrical (field) potential produced by neuronal activity propagates through different layers of tissue and bone to reach a given electrode</strong> (<a href="https://www.frontiersin.org/articles/10.3389/fneur.2019.00325/full" title="https://www.frontiersin.org/articles/10.3389/fneur.2019.00325/full">Michel &amp; Brunet, 2019</a>). This is generally done by dividing the whole brain volume into a 3d grid of volumetric solution points (voxels) and calculating how a specific pattern of current density (electric current per cross-sectional area) would have to be distributed to be producde by a given source, i.e. a voxel space.</p>
+<p>For a detailed explanation and tutorial of EEG source-estimation see the <a href="https://neuroimage.usc.edu/brainstorm/Tutorials/SourceEstimation" title="https://neuroimage.usc.edu/brainstorm/Tutorials/SourceEstimation">Brainstorm tutorial: source estimation</a></p>
+</div>
+<div class="section" id="what-do-we-actually-measure-what-is-the-eeg-code">
+<h3>What do we actually measure? What is the EEG code?<a class="headerlink" href="#what-do-we-actually-measure-what-is-the-eeg-code" title="Permalink to this headline">¶</a></h3>
+<p><strong>Now, how do we get from the summed activity of neurons to complex, measurable features that are cause or correlation of cognitive and behavioral processes</strong>?</p>
+<br/>
+Unfortunately, that is above my pay-grade to answer, honestly.<img style="float:right;;width:225px; height:165px; bottom:0px; border:none;" src="https://i.gifer.com/MHS.gif" alt="https://i.gifer.com/MHS.gif">
+<br/>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0166223617300243" title="https://www.sciencedirect.com/science/article/abs/pii/S0166223617300243">Cohen (2017)</a> describes the question of what the EEG signal is, as basically the <em><strong>“The Ultimate but Ultimately Unattainable Goal: One-to-One Mapping between EEG Feature and Microcircuit Conﬁguration”</strong></em>, but offers some insight on why we might justiﬁably  be optimistic that this seemingly unattaiable goal will eventually be achieved. Head over to the linked paper if you want to know more.</p>
+<br/>
+<img src="https://media3.giphy.com/media/pPhyAv5t9V8djyRFJH/giphy.gif?cid=790b7611594b6670cf91529ee4084ea301f013771e91dc85&rid=giphy.gif&ct=g" alt="https://media3.giphy.com/media/pPhyAv5t9V8djyRFJH/giphy.gif?cid=790b7611594b6670cf91529ee4084ea301f013771e91dc85&rid=giphy.gif&ct=g" style="float:left; margin-right:10px;width:160px;height:auto;" />
+Apparently, (on an ultimately rational level) most researches are content with observing correlations of ERPs/Evoked potentials/changes in neural oscillations and behavioural aspects/presented stimuli.
+<br/>
+<br/>
+<br/>
+<p>But the underlying implications for the EEG may on the other hand be explored when we view the EEG as not merely a tool to visualize the isolated activity of a neuron population that produces a “spike” of activity for a temporally distinct event and instead focus on the inherent rhytmic activity of the brain.</p>
+</div>
+<div class="section" id="neural-oscillations-as-an-integral-functional-mechanism-of-the-brain">
+<h3>Neural oscillations as an integral functional mechanism of the brain<a class="headerlink" href="#neural-oscillations-as-an-integral-functional-mechanism-of-the-brain" title="Permalink to this headline">¶</a></h3>
+<p><em><strong>“Brains are foretelling devices and their predictive powers emerge from the various rhythms they perpetually generate. At the same time, brain activity can be tuned to become an ideal observer of the environment, due to an organized system of rhythms. The speciﬁc physiological functions of brain rhythms vary from the obvious to the utterly impenetrable”</strong></em> (p.8, <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006)</a></p>
+<p>What we can take from this is that:</p>
+<p><strong>a.</strong> <strong>The brain is not a static organ, it’s function is not limited to the mere processing of our outside world, but instead the prediction of possible external events</strong> (see also <a href="https://pubmed.ncbi.nlm.nih.gov/22023743/" title="https://pubmed.ncbi.nlm.nih.gov/22023743/">The history of the future of the Bayesian brain</a>).</p>
+<p><strong>b.</strong> <strong>Rhythms are necessary for the predictive nature of our conscious existence</strong></p>
+<ul class="simple">
+<li><p>(such as the phase of oscillations in the alpha band that is predictive of (temporal) perceptual outcomes in visual discrimination tasks and shows significant phase shifts towards an individuals optimal phase for stimulus discrimination when presented with predictive cues about the temporal nature of a future event (<a href="https://www.pnas.org/doi/abs/10.1073/pnas.1503686112" title="https://www.pnas.org/doi/abs/10.1073/pnas.1503686112">Samaha et al., 2015</a>)</p></li>
+</ul>
+<p><strong>c.</strong> <strong>Rhythms can “tune” the brain towards different “states” of activity</strong> (e.g. when switching from attentive to relaxed to different stages of sleep)</p>
+<p>It follows that the brain can be understood as a <strong>system of functionally connected oscillators (or pattern generators) and that the perturbations of the generated rhythms due to internal or external factors are the main mechanisms that allow us to adapt to our surroundings</strong>. They are not only relevant for prediction, but also the synchronization of operations/activity between local neuron clusters and more distant regions. Functions without which we’d suffer from a plethora of “rhythm-based cognitive maladies”, such as epilepsy, Parkinson’s or sleep disorders (p.9, <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006)</a> .</p>
+<p>One of the simplest forms that an oscillator may take and therefore a good illustration for the usefulness of rhythmic activity is the <strong>central pattern generator (CGP)</strong>. Central pattern generators are used for walking, breathing and other rhythmical behavioral patterns (p.144, <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006)</a>. The article <a href="https://www.audradavidson.com/post/if-i-only-had-a-spine" title="https://www.audradavidson.com/post/if-i-only-had-a-spine">”If i only had a spine” by Audra Davidson</a>, that the illustration below is borrowed from, shows a very simplistic CGP, containing only 2 neurons at the level of the spinal cord and given a “go” signal from the brain, allows for the production of ongoing synchronized activity according to a pre-specified plan, i.e. extending and contracting a target muscle, until the brain sends further instructions.</p>
+<div class="figure align-default" id="id4">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://static.wixstatic.com/media/99c553_8518f036bd53407abf89746f757fb19a~mv2_d_2100_1500_s_2.gif"><img alt="Audra Davidson (2019) if-i-only-had-a-spine" class="bg-primary mb-1" src="https://static.wixstatic.com/media/99c553_8518f036bd53407abf89746f757fb19a~mv2_d_2100_1500_s_2.gif" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text">Illustration of a central pattern generator (<a href="https://www.pnas.org/doi/abs/10.1073/pnas.1503686112" title="https://www.pnas.org/doi/abs/10.1073/pnas.1503686112"> Audra Davidson (2019)</a>).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<br/>
+<p>If we now further complicate this pattern of synchronous exictatory activations aimed a different target sites by introducing inhibitory neurons, rather quickly non-linearity in the organized activity of cortical circuits emerges. While the fine balance between excitatory and inhibitiory activations is often accomplished by oscillations, with the introduction of non-linearity, chaos (theory) follows (p.62, <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006)</a>. The emerging perspective is that <strong>the brain constitutes a system that at most times operates in a state of “self-organized criticality”, or put differently the “border between predictable periodic behavior and unpredictable chaos”</strong> (p.145, <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006)</a>. While this may sound problematic at first glance, it is a necessary attribute of our nervous system, as <strong>such a state allows for dynamics that favor quick and flexible reactions to internal and external perturbations</strong>. Therefore this critical state poses a <em>“clear advantage for the cerebral cortex since it can respond and reorganize it’s dynamics in response to the smallest and weakest perturbations”</em> (p.145, <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006</a>).
+Once we then react to an external perturbation or direct our attention towards a certain task, we may switch to robust, predictable oscillatory activity (p.111, <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006</a>).</p>
+</div>
+<div class="section" id="frequency-bands">
+<h3>Frequency bands<a class="headerlink" href="#frequency-bands" title="Permalink to this headline">¶</a></h3>
+<p>These <strong>states of oscillatory synchrony are believed to be constrained to certain patterns or “frequency bands” that give rise to a number of different functions</strong>. In EEG literature you’ll generally come across the following frequency bands, although their exact borders are bound to slightly differ between publications, as they were originally drawn somewhat arbitrarily out of the necessity to accomodate early EEG recording technology.
+<br/></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                                    delta - 0.5–4 hertz
+                                    theta - 4–8 hertz
+                                    alpha - 8–12 hertz
+                                    beta - 12–30 hertz
+                                    gamma - &gt; 30 hertz
+</pre></div>
+</div>
+<br/>
+<p>Other definitions that are closer to practictal considerations exist, e.g. <a href="http://www.medicine.mcgill.ca/physio/vlab/biomed_signals/eeg_n.htm" title="http://www.medicine.mcgill.ca/physio/vlab/biomed_signals/eeg_n.htm">provided by the McGill Physiology Lab for Biomedical Signals Acquisition</a>, which additionally offers descriptions of commonly observed amplitude and location.</p>
+<p>Or simply head over to <a href="https://en.wikipedia.org/wiki/Electroencephalography#Comparison%20of%20EEG%20bands" title="https://en.wikipedia.org/wiki/Electroencephalography#Comparison%20of%20EEG%20bands">Wikipedia; EEG Comparison of frequency bands  </a>
+<img alt="It's_fine.gif" src="https://thumbs.gfycat.com/NarrowSafeAmericanpainthorse-size_restricted.gif" /></p>
+<br/>
+<br/>
+<p><em>In general it should be noted that it is good practice to define your frequency range of interest when searching or publishing studies, as the important info is the actual frequency band used not the potential buzzword.</em></p>
+<br/>
+</div>
+<div class="section" id="function-of-frequency-bands">
+<h3>Function of frequency bands<a class="headerlink" href="#function-of-frequency-bands" title="Permalink to this headline">¶</a></h3>
+<p>Frequency bands can be understood to define the gates of temporal processing, as each oscillatory cylce constitutes a temporary processing window, which (may) signal the beginning and ending of an encoded piece of neuronal information (p.115 <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006)</a>.</p>
+<p>The frequency of an oscillatory band determines the length of this temporal window and is in turn (partly) determined by the size of the neuronal pool that produces the frequency band. While <strong>slow oscillatons usually involve greater numbers of neurons over larger areas of the brain, fast oscillations are used for local integration requiring short time windows</strong> (p.116.<a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">Buzsáki, 2006)</a>. For example, alpha and theta rhythms are thought to bind more distant areas into functional units, thereby modulating the activity of locally more restrained clusters controlled by faster oscillatory activity (<a href="https://pubmed.ncbi.nlm.nih.gov/22384265/" title="https://pubmed.ncbi.nlm.nih.gov/22384265/">Leuchter et al., 2012</a>)</p>
+<p>As there is simply no way to write a comprehensive review of associated functions and regional differences for all commonly observed frequency bands given the format of this course, below we’ll list some sample literature on modern interpretations/research on the possible functions that the most common frequency bands are associated with.</p>
+<p><strong>Delta</strong></p>
+<ul class="simple">
+<li><p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2635577/" title="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2635577/">Sleep classification according to AASM and Rechtschaffen &amp; Kales: effects on sleep scoring parameters (Moser et al., 2009)</a></p></li>
+<li><p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0149763411001849?via%3Dihub" title="https://www.sciencedirect.com/science/article/abs/pii/S0149763411001849?via%3Dihub">EEG delta oscillations as a correlate of basic homeostatic and motivational processes (Knyazev et al., 2012)</a></p></li>
+</ul>
+<p><strong>Gamma</strong></p>
+<ul class="simple">
+<li><p>Gamma rhythms mediate feedforward communication <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2635577/" title="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2635577/">(Cortical layers, rhythms and BOLD signals (Scheeringa &amp; Fries, 2019))</a></p></li>
+</ul>
+<p><strong>Theta</strong></p>
+<ul class="simple">
+<li><p><a href="https://www.sciencedirect.com/science/article/pii/S1364661314001077?casa_token=s0m3fYGxtcAAAAAA:0HbWQYs6e-7pBUV4AvrQ0lhXGj065Pf65iy3hnIOxVlNZt4XhLx9-W1HlxgcWDowQfQ0Ez6NVBk" title="https://www.sciencedirect.com/science/article/pii/S1364661314001077?casa_token=s0m3fYGxtcAAAAAA:0HbWQYs6e-7pBUV4AvrQ0lhXGj065Pf65iy3hnIOxVlNZt4XhLx9-W1HlxgcWDowQfQ0Ez6NVBk">Frontal theta as a mechanism for cognitive control (Cavanagh &amp; Frank, 2014)</a></p></li>
+</ul>
+<p><strong>Alpha</strong></p>
+<ul class="simple">
+<li><p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ejn.13747" title="https://onlinelibrary.wiley.com/doi/abs/10.1111/ejn.13747">The many characters of visual alpha oscillations (Clayton et al., 2018)</a></p></li>
+</ul>
+<p><strong>Beta</strong></p>
+<ul class="simple">
+<li><p><a href="https://www.frontiersin.org/articles/10.3389/fnsys.2021.655886/" title="https://www.frontiersin.org/articles/10.3389/fnsys.2021.655886/">Understanding the Role of Sensorimotor Beta Oscillations (Barone &amp; Rossiter, 2012)</a></p></li>
+</ul>
+<br/>
+<p>If you want to know more about how rhythmic activity defines the neural system or how rhythms emerge, i highly advise the book <a href="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf" title="https://neurophysics.ucsd.edu/courses/physics_171/Buzsaki%20G.%20Rhythms%20of%20the%20brain.pdf">”Rhythms of the Brain” by Buzsáki (2006)</a> for further reading.</p>
+<br/></div>
+</div>
+</div>
+<div class="section" id="implications-for-eeg-resarch">
+<h1>3. Implications for EEG resarch<a class="headerlink" href="#implications-for-eeg-resarch" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-questions-can-we-answer-using-eeg">
+<h2>What questions can we answer using EEG?<a class="headerlink" href="#what-questions-can-we-answer-using-eeg" title="Permalink to this headline">¶</a></h2>
+<p><strong>How and according to which rules does the brain react to external/internal perturbations and how/why does it generate internal perturbations?</strong></p>
+<ul class="simple">
+<li><p>How <strong>encoding</strong> takes place (ERP; Change in power/coherence/phase-perturbation in a specfific frequency band; cross-frequency coupling etc.)</p></li>
+<li><p>Does an EEG component reflect a certain <strong>function</strong>? <strong>Content</strong> that the EEG feature represents? (e.g. algorithms for the integration of information, prediction, preparation of an action)</p></li>
+<li><p><strong>Timing or timeline of neural processes</strong>?</p>
+<ul>
+<li><p>How does information travel across neural populations? I.e. what’s the flow of “neural” information when e.g. a stimuli was presented?</p></li>
+</ul>
+</li>
+<li><p>In what <strong>areas</strong> does “computation” takes place? (<strong>Source localization</strong>; usually better answered with fMRI)</p></li>
+</ul>
+<p><strong>So we can</strong></p>
+<ul class="simple">
+<li><p>map brain activity to behaviour/external factors</p></li>
+<li><p>explore the (possible mathematical/methodological) laws according to which information is received, transformed or applied</p></li>
+<li><p>and find which areas are involved/responsible</p></li>
+</ul>
+<p><em>An aspect that we’ll not explore further, that is especially prominent in <strong>clinical and personality psychology</strong>: Do Indviduals differ in EEG features based on certain traits/staes (e.g. psychopathology)?</em></p>
+<p>Two approaches to answer questions of this nature are exemplified in the 2 studies below:</p>
+<p><a href="https://www.frontiersin.org/articles/10.3389/fnhum.2018.00521/full" title="https://www.frontiersin.org/articles/10.3389/fnhum.2018.00521/full">EEG Frequency Bands in Psychiatric Disorders: A Review of Resting State Studies (Newson &amp; Thiagarajan, 2019)</a></p>
+<p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/1460-6984.12535" title="https://onlinelibrary.wiley.com/doi/abs/10.1111/1460-6984.12535">Understanding event-related potentials (ERPs) in clinical and basic language and communication disorders research: a tutorial (McWeeny &amp; Norton, 2020)</a></p>
+<br/>
+</div>
+<div class="section" id="conducting-an-eeg-study-in-the-context-of-cognitive-neuroscience-a-loose-framework">
+<h2>Conducting an EEG study in the context of cognitive neuroscience: a loose framework<a class="headerlink" href="#conducting-an-eeg-study-in-the-context-of-cognitive-neuroscience-a-loose-framework" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-planning-idea-to-hypothesis">
+<h3>A. Planning/idea to hypothesis<a class="headerlink" href="#a-planning-idea-to-hypothesis" title="Permalink to this headline">¶</a></h3>
+<p>E.g. as a primer, we can use <strong><a href="http://mechanism.ucsd.edu/teaching/f18/David_Marr_Vision_A_Computational_Investigation_into_the_Human_Representation_and_Processing_of_Visual_Information.chapter1.pdf">Marr’s 3 levels for the analysis of information-processing systems (p.25; Marr, 2012)</a></strong>:</p>
+<p>To understand how a system operates (how a specific (beahvioral) goal is achieved, how a cognitive function can bes established etc.) we can formulate 3 distinct levels of analysis:</p>
+<p><strong>1. Computational level</strong>: What is the goal/purpose of the system?</p>
+<p><strong>2. Representation/Algorithm</strong>: how does the system solve this task? What are the representations of the input/output and how are these processed or manipulated (i.e. what is the algorithm according to which the goal is achieved)?</p>
+<p><strong>3. Implementation</strong>: the physiological implementation; i.e. what parts would a system need to solve it’s purpose/to allow for the algorithm to work?</p>
+<br/>
+<br/>
+<p><em><strong>Let’s try this on a simple example:</strong></em></p>
+<p>E.g. we know that humans are able to differentiate pure tones based on pitch (otherwise music would be quite boring), so there has to be a system in place that enables this process, right?</p>
+<ul>
+<li><p><strong>1.Computational level</strong>:</p>
+<p><em>goal</em> = differentiate between 2 soundwaves with different frequencies;</p>
+<p><em>purpose</em>=?</p>
+</li>
+<li><p><strong>2. Representation/algorithm:</strong></p>
+<p><em>input</em>: electric signals/neuron activation in different sensitive parts of the auditory cortex (mechanotransduction) + neural representation of time?</p>
+<p><em>output</em>:  ??? Possibly an ERP “Z”?</p>
+<p><em>algorithm</em>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                               X-Y = Z (probably a bit more complex, but you get the idea)
+</pre></div>
+</div>
+<p><em>(where activation of region A corresponding to frequency A = X; activation of region B corresponding to frequency B = Y)</em></p>
+</li>
+<li><p><strong>3. Implementation</strong> (i.e. “hardware”):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   receptor sensitive for frequency content of Soundwave (Auditory hair cells) 
+   -&gt; mechano-electrical transduction (MET) channels 
+   -&gt; ??? 
+   -&gt; action potential in the connected auditory-nerve fiber 
+   -&gt; ... 
+   -&gt; sub-regions of the auditory cortex tuned to specific tone frequencies         
+   -&gt; associative cortex?
+</pre></div>
+</div>
+</li>
+</ul>
+<p><em>(3. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5124525/">Ahveninen et al. (2012)</a>;
+<a href="https://en.wikipedia.org/wiki/Neural_encoding_of_sound">Wikipedia: Neural encoding ouf sound</a> )</em></p>
+<div class="section" id="b-study-design">
+<h4>B. Study design<a class="headerlink" href="#b-study-design" title="Permalink to this headline">¶</a></h4>
+<p>Now you ideally have not only the starting question/hypothesis but a rough understanding of which areas of your research/study need to be further explored or appear to be sufficient to answer them. Next you can ask yourself how and what data/information you’ll need to collect to fill in the gaps of your understanding.</p>
+<ul class="simple">
+<li><p>solid understanding of theory (e.g. error monitoring; auditory processing) and biophysics?; What stimuli/paradigm to use? rate of stimuli presentation?  expected time-frame of activity? etc.</p></li>
+<li><p>what data do you expect/need? (technical aspects, such as sampling frequency, how many electrodes, additional mri scans)</p></li>
+<li><p>sample size, sample composition, how many trials/blocks/conditions?</p></li>
+<li><p>priors?; justificiaton your alphas <a href="https://osf.io/h5e2q/">(Lakens et al., 2018)</a>?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="c-study-implementation">
+<h3>C. Study implementation<a class="headerlink" href="#c-study-implementation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>peregistration of methods?</p></li>
+</ul>
+<div class="section" id="data-collection">
+<h4>Data collection<a class="headerlink" href="#data-collection" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Standardization; testing-protocol; participant’s intructions</p></li>
+<li><p>Pilot-testing</p></li>
+<li><p>Post-tesing questionnaire</p></li>
+<li><p>Experiment log</p></li>
+</ul>
+</div>
+<div class="section" id="math">
+<h4>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="https://c.tenor.com/_shmV1hUlZMAAAAd/surprised-pikachu.gif"><img alt="https://c.tenor.com/_shmV1hUlZMAAAAd/surprised-pikachu.gif" src="https://c.tenor.com/_shmV1hUlZMAAAAd/surprised-pikachu.gif" style="width: 60px; height: 50px;" /></a>
+</div>
+<ul class="simple">
+<li><p>Preprocessing (see following chapters)
+-&gt; signal-to-noise ratio/power?</p>
+<ul>
+<li><p>Analytical techniques</p>
+<ul>
+<li><p><a href="https://mne.tools/stable/auto_tutorials/time-freq/20_sensors_time_frequency.html#sphx-glr-auto-tutorials-time-freq-20-sensors-time-frequency-py">MNE: Time-frequency analysis</a></p></li>
+<li><p><a href="https://mne.tools/stable/auto_tutorials/evoked/30_eeg_erp.html#sphx-glr-auto-tutorials-evoked-30-eeg-erp-py">MNE: EVP/ERP</a></p></li>
+<li><p><a href="https://mne.tools/stable/auto_tutorials/inverse/index.html">MNE: Source localization and inverses</a></p></li>
+</ul>
+</li>
+<li><p>Followed by</p>
+<ul>
+<li><p>classical statistics
+- <a href="https://mne.tools/stable/auto_tutorials/stats-sensor-space/index.html">MNE: Statistical analysis of sensor data</a></p></li>
+<li><p>machine learning</p>
+<ul>
+<li><p><a href="https://mne.tools/stable/auto_tutorials/machine-learning/50_decoding.html#sphx-glr-auto-tutorials-machine-learning-50-decoding-py">MNE: Multi-Voxel Pattern Analysis (MVPA)</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="d-making-sound-inferences">
+<h3>D. Making sound inferences?<a class="headerlink" href="#d-making-sound-inferences" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>biologically/physiologically/theoretically informed and statistically valid?</p></li>
+<li><p>does your level of certainity (presented/believed) match the degree of evidence?</p></li>
+<li><p>Generalizability of sample? <a href="https://www.apa.org/monitor/2010/05/weird">(WEIRD?)</a></p></li>
+<li><p>other considerations?</p></li>
+</ul>
+<br/>
+</div>
+</div>
+</div>
+<div class="section" id="resources">
+<h1>4. Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tools-for-eeg-analysis">
+<h2>Tools for EEG-analysis<a class="headerlink" href="#tools-for-eeg-analysis" title="Permalink to this headline">¶</a></h2>
+<p>MNE</p>
+<p>A Python based open source tool for EEG/MEG analysis, that you’ll get to know in the following chapters.</p>
+<p><a href="https://mne.tools/stable/auto_tutorials/index.html">MNE:Tutorials</a></p>
+<p><a href="https://mne.tools/stable/auto_examples/index.html">MNE:Example Gallery</a></p>
+<p><a href="https://mne.tools/stable/python_reference.html">MNE:API-refernces</a></p>
+<p>In-depth
+<a href="https://www.researchgate.net/publication/259768018_MEG_and_EEG_data_analysis_with_MNE-python">MNE: MEG and EEG data analysis with MNE-python (Gramfort et al., 2013)</a></p>
+</div>
+<div class="section" id="where-to-obtain-eeg-data">
+<h2>Where to obtain EEG data ?<a class="headerlink" href="#where-to-obtain-eeg-data" title="Permalink to this headline">¶</a></h2>
+<p>open-source datasets</p>
+<ul class="simple">
+<li><p><a href="https://openneuro.org/search/modality/eeg">Openneuro</a></p></li>
+<li><p><a href="https://sccn.ucsd.edu/~arno/fam2data/publicly_available_EEG_data.html">USCD: list of publicly available EEG datasets</a></p></li>
+<li><p><a href="https://physionet.org/content/?topic=eeg">Physionet</a></p></li>
+</ul>
+<p>simulate data? (usefull for validation/testing)</p>
+<ul class="simple">
+<li><p>examples:
+<a href="https://mne.tools/dev/auto_examples/simulation/simulate_raw_data.html">MNE tutorial: Simulate raw data</a>
+<a href="https://mne.tools/dev/auto_examples/simulation/simulate_evoked_data.htmll">MNE tutorial: Simulate evoked data</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sources">
+<h1>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h1>
+<p>Cohen, M. X. (2017). Where does EEG come from and what does it mean?. Trends in neurosciences, 40(4), 208-218.</p>
+<p>Buzsáki, G., Anastassiou, C. A., &amp; Koch, C. (2012). The origin of extracellular fields and currents—EEG, ECoG, LFP and spikes. Nature reviews neuroscience, 13(6), 407-420</p>
+<p>Marr, D. (2010). Vision: A computational investigation into the human representation and processing of visual information. MIT press.</p>
+<p>Cavanagh, J. F., &amp; Frank, M. J. (2014). Frontal theta as a mechanism for cognitive control. Trends in cognitive sciences, 18(8), 414-421.</p>
+<p>Mecarelli, O. (Ed.). (2019). Clinical electroencephalography. Springer.</p>
+<p>Wang, B., Ke, W., Guang, J., Chen, G., Yin, L., Deng, S., … &amp; Shu, Y. (2016). Firing frequency maxima of fast-spiking neurons in human, monkey, and mouse neocortex. Frontiers in cellular neuroscience, 10, 239.</p>
+<p>Beres, A. M. (2017). Time is of the essence: A review of electroencephalography (EEG) and event-related brain potentials (ERPs) in language research. Applied psychophysiology and biofeedback, 42(4), 247-255.</p>
+<p>Jackson, A. F., &amp; Bolger, D. J. (2014). The neurophysiological bases of EEG and EEG measurement: A review for the rest of us. Psychophysiology, 51(11), 1061-1071.</p>
+<p>Michel, C. M., &amp; Brunet, D. (2019). EEG source imaging: a practical review of the analysis steps. Frontiers in neurology, 10, 325.</p>
+<p>Pascual-Marqui, R. D., Michel, C. M., &amp; Lehmann, D. (1994). Low resolution electromagnetic tomography: a new method for localizing electrical activity in the brain. International Journal of psychophysiology, 18(1), 49-65.</p>
+<p>Buzsáki, G. (2006). Rhythms of the Brain. Oxford university press.</p>
+<p>Samaha, J., Bauer, P., Cimaroli, S., &amp; Postle, B. R. (2015). Top-down control of the phase of alpha-band oscillations as a mechanism for temporal prediction. Proceedings of the National Academy of Sciences, 112(27), 8439-8444.</p>
+<p>Leuchter, A. F., Cook, I. A., Hunter, A. M., Cai, C., &amp; Horvath, S. (2012). Resting-state quantitative electroencephalography reveals increased neurophysiologic connectivity in depression. PloS one, 7(2), e32508.</p>
+<p>Knyazev, G. G. (2012). EEG delta oscillations as a correlate of basic homeostatic and motivational processes. Neuroscience &amp; Biobehavioral Reviews, 36(1), 677-695.</p>
+<p>Moser, D., Anderer, P., Gruber, G., Parapatics, S., Loretz, E., Boeck, M., … &amp; Dorffner, G. (2009). Sleep classification according to AASM and Rechtschaffen &amp; Kales: effects on sleep scoring parameters. Sleep, 32(2), 139-149.</p>
+<p>Scheeringa, R., &amp; Fries, P. (2019). Cortical layers, rhythms and BOLD signals. NeuroImage, 197, 689-698.</p>
+<p>Cavanagh, J. F., &amp; Frank, M. J. (2014). Frontal theta as a mechanism for cognitive control. Trends in cognitive sciences, 18(8), 414-421.</p>
+<p>Clayton, M. S., Yeung, N., &amp; Cohen Kadosh, R. (2018). The many characters of visual alpha oscillations. European Journal of Neuroscience, 48(7), 2498-2508.</p>
+<p>Barone, J., &amp; Rossiter, H. E. (2021). Understanding the role of sensorimotor beta oscillations. Frontiers in Systems Neuroscience, 51.</p>
+<p>Newson, J. J., &amp; Thiagarajan, T. C. (2019). EEG frequency bands in psychiatric disorders: a review of resting state studies. Frontiers in human neuroscience, 12, 521.</p>
+<p>McWeeny, S., &amp; Norton, E. S. (2020). Understanding event‐related potentials (ERPs) in clinical and basic language and communication disorders research: a tutorial. International journal of language &amp; communication disorders, 55(4), 445-457.</p>
+<p>Lakens, D., Adolfi, F. G., Albers, C. J., Anvari, F., Apps, M. A., Argamon, S. E., … &amp; Zwaan, R. A. (2018). Justify your alpha. Nature Human Behaviour, 2(3), 168-171.</p>
+<p>Gramfort, A., Luessi, M., Larson, E., Engemann, D. A., Strohmeier, D., Brodbeck, C., … &amp; Hämäläinen, M. (2013). MEG and EEG data analysis with MNE-Python. Frontiers in neuroscience, 267.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks/neuroscience"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="functional_connectivity.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Functional connectivity and resting state</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mne_introduction.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MNE python for EEG analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
