@@ -10,3 +10,7 @@ tensorflow
 mne
 mne-bids
 pybids
+dipy
+window
+fury
+imageio
