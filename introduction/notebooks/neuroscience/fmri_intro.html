@@ -207,11 +207,28 @@
       </ul>
      </li>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="connectivity_intro.html">
-       Functional connectivity
+      <a class="reference internal" href="statistical_maps.html">
+       Statistical maps
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
       <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="statistical_analyses_MRI.html">
+         Nilearn GLM: statistical analyses of MRI in Python
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="connectivity_intro.html">
+       Functional connectivity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1088,7 +1105,7 @@ This figure is adapted from a tutorial from <a class="reference external" href="
 </div>
 <div class="section" id="statistical-analyses">
 <h2>Statistical analyses<a class="headerlink" href="#statistical-analyses" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Statistical</span> <span class="pre">analyzes</span></code> generally include <strong>individual analyses</strong> in which the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code> are <code class="docutils literal notranslate"><span class="pre">analyzed</span></code> separately for each of the <code class="docutils literal notranslate"><span class="pre">participants</span></code> (we analyze the <code class="docutils literal notranslate"><span class="pre">effect</span></code> of the <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">manipulations</span></code>), then <strong>group analyses</strong> (we <code class="docutils literal notranslate"><span class="pre">analyze</span></code> the <code class="docutils literal notranslate"><span class="pre">effect</span></code> at the <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">level</span></code>), where this data is combined for multiple <code class="docutils literal notranslate"><span class="pre">participants</span></code> for <code class="docutils literal notranslate"><span class="pre">analysis</span></code>. In this section we will briefly discuss the generation of <code class="docutils literal notranslate"><span class="pre">individual</span> <span class="pre">statistical</span> <span class="pre">maps</span></code>. We will come back to the <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">analyzes</span></code> and the <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">models</span></code> used in the <code class="docutils literal notranslate"><span class="pre">chapter</span></code> on <span class="xref myst">cerebral statistical maps</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Statistical</span> <span class="pre">analyzes</span></code> generally include <strong>individual analyses</strong> in which the <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">series</span></code> are <code class="docutils literal notranslate"><span class="pre">analyzed</span></code> separately for each of the <code class="docutils literal notranslate"><span class="pre">participants</span></code> (we analyze the <code class="docutils literal notranslate"><span class="pre">effect</span></code> of the <code class="docutils literal notranslate"><span class="pre">experimental</span> <span class="pre">manipulations</span></code>), then <strong>group analyses</strong> (we <code class="docutils literal notranslate"><span class="pre">analyze</span></code> the <code class="docutils literal notranslate"><span class="pre">effect</span></code> at the <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">level</span></code>), where this data is combined for multiple <code class="docutils literal notranslate"><span class="pre">participants</span></code> for <code class="docutils literal notranslate"><span class="pre">analysis</span></code>. In this section we will briefly discuss the generation of <code class="docutils literal notranslate"><span class="pre">individual</span> <span class="pre">statistical</span> <span class="pre">maps</span></code>. We will come back to the <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">analyzes</span></code> and the <code class="docutils literal notranslate"><span class="pre">statistical</span> <span class="pre">models</span></code> used in the <code class="docutils literal notranslate"><span class="pre">chapter</span></code> on <a class="reference internal" href="statistical_maps.html"><span class="doc std std-doc">cerebral statistical maps</span></a>.</p>
 <div class="section" id="fmri-task-based-experiments">
 <h3>fMRI - Task-Based Experiments<a class="headerlink" href="#fmri-task-based-experiments" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input tag_remove-output docutils container">
