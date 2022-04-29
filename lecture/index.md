@@ -18,10 +18,21 @@ Please visit these pages again in the next few weeks for further information.
 ````
 <br/>
 
+
 Hello everyone and welcome to the course page for "Cognitive & computational neuroscience: an introduction to machine/deep learning and neuro-data-science", taught within the [Psychology Master programme](https://www.goethe-university-frankfurt.de/51789866/Institute_of_Psychology?) of the [Goethe-University Frankfurt](https://www.goethe-university-frankfurt.de/en) during the spring term 2022. We're glad to see you here!
 
 <br/>
-    
+
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/index.html)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/peerherholz/mybinder_Cog_Com_Neuro_ML_DL/HEAD)
+[![Docker Hub](https://img.shields.io/docker/pulls/peerherholz/Cog_Com_Neuro_ML_DL)](https://hub.docker.com/r/peerherholz/Cog_Com_Neuro_ML_DL)
+[![GitHub size](https://github-size-badge.herokuapp.com/peerherholz/Cog_Com_Neuro_ML_DL.svg)](https://github.com/peerherholz/Cog_Com_Neuro_ML_DL/archive/master.zip)
+[![GitHub issues](https://img.shields.io/github/issues/peerherholz/Cog_Com_Neuro_ML_DL?style=plastic)](https://github.com/peerherholz/Cog_Com_Neuro_ML_DL)
+[![GitHub PR](https://img.shields.io/github/issues-pr/peerherholz/Cog_Com_Neuro_ML_DL)](https://github.com/peerherholz/Cog_Com_Neuro_ML_DL/pulls)
+[![License](https://img.shields.io/github/license/peerherholz/Cog_Com_Neuro_ML_DL)](https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL)
+
+
+
 <div style="text-align: justify"> 
 
 Within these pages, we provide all the information important to follow and conduct the course, including formal aspects, requirements, lecture materials, practicals and so on.  This [jupyter book](https://jupyterbook.org/intro.html) will include the used slides and code in a way that they can be explored in an interactive manner. You can navigate through the respective sections via the TOC on the left side and within sections via the TOC on the right side. The three symbols in the top allow to enable full screen mode, link to the underlying [Github repository]() and allow you to download the contents as a pdf or [jupyter notebook]() respectively. Some sections will additionally have a little rocket in that row which will allow you to interactively rerun certain parts of the practicals via cloud computing. Additionally, we support public reviews and comments through an [hypothes.is]() plugin with which you can interact on the right side. All of this awesomeness (talking about the infrastructure and resource) is possible through the dedicated and second to none work of the [Jupyter community](https://jupyter.org/), specifically, the [Executable/Jupyter Book](https://executablebooks.org/en/latest/) and [mybinder project](https://mybinder.org/).
