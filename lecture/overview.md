@@ -13,12 +13,12 @@ Traditionally, one way of achieving this is to familiarize students with all par
 
 Within this course we will explore basics of the intersection between neuroscience & artificial intelligence, specifically focusing on their respective fundamentals regarding theory, implementation and analyzes, as well as adjacent topics concerning neuro-data-science. To do so, we will follow a “learning by doing” approach in a tripartite manner. Starting from a basic introduction  (Block I), we will run actual experiments (Block II) planned and conducted by you, as well as analyze the resulting data and communicate/present the obtained results (Block III). Thus, we actively seek out realistic examples and workflows that mimic the lifecycle of real-world projects, trying to present you with both a respective overview and hands-on experience. 
 
-![outline](../../static/Cog_Com_Neuro_ML_DL_outline.png)
+![outline](static/Cog_Com_Neuro_ML_DL_outline.png)
 
 
 All of this following [open science principles](https://en.wikipedia.org/wiki/Open_science) as outlined in the [rainbow of open science practices](https://zenodo.org/record/1147025#.YWbeymYzblw) below and the aim to enable you to critically evaluate scientific research. Along this way we will also talk about important topics such as [#DEI](https://twitter.com/hashtag/DEI?src=hashtag_click) and systematic biases. For a rather precise outline of the course, please consult the respective section.
 
-![rainbow os](../../static/rainbow_os.png)
+![rainbow os](static/rainbow_os.png)
 
 ## The framework and setup
 
@@ -26,7 +26,7 @@ All workshop materials will be provided within the [Jupyter Book](https://jupyte
 
 ## Instructors
 
-To provide a holistic introduction into the topic of `reproducible neuroimaging` and its subcomponents, we assembled a stellar team of instructors entailing highly experience experts of both the `ReproNim` team as well as colleagues from adjacent initiatives. You can find them below and get further information via clicking on the respective names. 
+To provide a holistic introduction into the topic of `neuroscience & artificial intelligence` and its subcomponents, we assembled a stellar team of instructors entailing members of the [Neurocognitive Psychology lab @ Goethe University Frankfurt](http://www.fiebachlab.org/), i.e. the main team, as well as colleagues from other institutes. You can find the main team below and get further information via clicking on the respective names. 
 
 <table>
   <tr>
@@ -49,7 +49,7 @@ To provide a holistic introduction into the topic of `reproducible neuroimaging`
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/jbpoline">
+      <a href="https://github.com/felixkoerber">
         <img src="https://avatars.githubusercontent.com/u/16563814?v=4" width="100px;" alt=""/>
         <br /><sub><b>Felix Körber</b></sub>
       </a>
@@ -124,6 +124,10 @@ As noted above, this page serves as the syllabus for this course, with the preci
 This course furthermore has an open shared [zotero library](https://www.zotero.org/groups/4553800/cog_com_neuro_ml_dl) where we add all articles presented/discussed during class.
 
 <iframe src="https://bibbase.org/show?bib=https%3A%2F%2Fapi.zotero.org%2Fgroups%2F4553800%2Fitems%3Fkey%3DBfP7bN7FF9dJwtyiLBORewdg%26format%3Dbibtex%26limit%3D100"  frameborder="0" width="700" height="370"></iframe>
+
+</br>
+</br>
+
 
 Additional reading material might be added but will always be open & free with students being informed about any addition.
 
