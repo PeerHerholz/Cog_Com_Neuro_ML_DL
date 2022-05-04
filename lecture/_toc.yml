@@ -28,12 +28,23 @@ chapters:
       sections:
       - file: introduction/notebooks/neuroscience/functional_connectivity.ipynb      
     - file: introduction/notebooks/neuroscience/eeg_introduction.ipynb
-    - file: introduction/notebooks/neuroscience/mne_introduction.ipynb
       sections:
+      - file: introduction/notebooks/neuroscience/mne_introduction.ipynb
       - file: introduction/notebooks/neuroscience/mne_preprocessing.ipynb
       - file: introduction/notebooks/neuroscience/mne_erp.ipynb
-      - file: introduction/notebooks/neuroscience/mne_workflow_tutorial.ipynb                  
+      - file: introduction/notebooks/neuroscience/mne_workflow_tutorial.ipynb
   - file: introduction/pages/introduction_3.md
+    sections:
+    - file: introduction/pages/neurodata/replicability_open_science.md
+    - file: introduction/pages/neurodata/data_management.md
+      sections:
+      - file: introduction/notebooks/neurodata/pybids.ipynb
+    - file: introduction/pages/neurodata/version_control_general.md  
+      sections:
+      - file: introduction/notebooks/neurodata/version_control.ipynb
+      - file: introduction/notebooks/neurodata/version_control_data.ipynb
+    - file: introduction/pages/neurodata/literature.md
+    - file: introduction/pages/neurodata/project_101.md
   - file: introduction/pages/introduction_4.md
   - file: introduction/pages/introduction_5.md
   - file: introduction/pages/introduction_6.md

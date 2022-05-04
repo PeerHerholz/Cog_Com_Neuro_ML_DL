@@ -38,3 +38,5 @@ Please click on a given topic either within the table below or the `ToC` on the 
 | 17/05/2022 | Machine learning I - [basics, core concepts & definitions](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/introduction/pages/introduction_5.html) 🧑🏽‍💻🧑🏾‍💻 | | |
 | 24/05/2022 | Machine learning II - ["Shallow learning"](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/introduction/pages/introduction_5.html) 🧑🏽‍💻🧑🏾‍💻 | | |
 | tba | Machine learning III - ["Deep learning"](https://peerherholz.github.io/Cog_Com_Neuro_ML_DL/introduction/pages/introduction_5.html) 🧑🏽‍💻🧑🏾‍💻 | | |
+
+<iframe src="https://calendar.google.com/calendar/embed?src=stgli3pnv4h0muqpg6k5i7nbb8%40group.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
