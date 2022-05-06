@@ -15,10 +15,10 @@ chapters:
       sections:
       - file: introduction/notebooks/neuroscience/image_manipulation_nibabel.ipynb
     - file: introduction/notebooks/neuroscience/morphometry.ipynb
-    - file: introduction/notebooks/neuroscience/dMRI_intro.ipynb     
+    - file: introduction/notebooks/neuroscience/dMRI_intro.ipynb
       sections:
       - file: introduction/notebooks/neuroscience/diffusion_imaging.ipynb
-    - file: introduction/notebooks/neuroscience/fmri_intro.ipynb     
+    - file: introduction/notebooks/neuroscience/fmri_intro.ipynb
       sections:
       - file: introduction/notebooks/neuroscience/image_manipulation_nilearn.ipynb
     - file: introduction/notebooks/neuroscience/statistical_maps.ipynb
@@ -27,7 +27,7 @@ chapters:
     - file: introduction/notebooks/neuroscience/connectivity_intro.ipynb
       sections:
       - file: introduction/notebooks/neuroscience/functional_connectivity.ipynb      
-    - file: introduction/notebooks/neuroscience/test.ipynb
+    - file: introduction/notebooks/neuroscience/eeg_introduction.ipynb
       sections:
       - file: introduction/notebooks/neuroscience/mne_introduction.ipynb
       - file: introduction/notebooks/neuroscience/mne_preprocessing.ipynb
