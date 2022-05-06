@@ -52,6 +52,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="MNE Workflow tutorial" href="mne_workflow_tutorial.html" />
+    <link rel="prev" title="EEG preprocessing with MNE" href="mne_preprocessing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,7 +97,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../dei.html">
    Diversity, Equity and Inclusion
@@ -116,31 +118,31 @@
    Setup for the course
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../pages/introduction.html">
    Introduction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../../pages/introduction_1.html">
      Introduction I - General introduction
     </a>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../../pages/introduction_2.html">
      Introduction II - Neuroscience
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="cortical_maps.html">
        Cortical maps
@@ -236,14 +238,46 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="eeg_introduction.html">
+       Electroencephalography
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_introduction.html">
+         MNE python for EEG analysis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_preprocessing.html">
+         EEG preprocessing with MNE
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Evoked potentials/ERPs with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_workflow_tutorial.html">
+         MNE Workflow tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../pages/introduction_3.html">
      Introduction III - NeuroDataScience
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -257,8 +291,8 @@
       <a class="reference internal" href="../../pages/neurodata/data_management.html">
        Project &amp; data management
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-      <label for="toctree-checkbox-9">
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -279,8 +313,8 @@
       <a class="reference internal" href="../../pages/neurodata/version_control_general.html">
        Version control
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-      <label for="toctree-checkbox-10">
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -443,8 +477,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel">
-   2. calculate the signal average over epochs based on their condition for each channel
+  <a class="reference internal nav-link" href="#calculate-the-signal-average">
+   2. Calculate the signal average
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -514,8 +548,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel">
-   2. calculate the signal average over epochs based on their condition for each channel
+  <a class="reference internal nav-link" href="#calculate-the-signal-average">
+   2. Calculate the signal average
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1032,8 +1066,8 @@ function<div class="cell docutils container">
 </div>
 <br/>
 </div>
-<div class="section" id="calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel">
-<h2>2. calculate the signal average over epochs based on their condition for each channel<a class="headerlink" href="#calculate-the-signal-average-over-epochs-based-on-their-condition-for-each-channel" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="calculate-the-signal-average">
+<h2>2. Calculate the signal average<a class="headerlink" href="#calculate-the-signal-average" title="Permalink to this headline">¶</a></h2>
 <p>To construct our evoked objects we’ll use the epochs<a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.average" title="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs.average">.average()</a> function. We can further <strong>specify which channels we want to include (can also be a single channel or a subset of channels), how to calculate the average (aritmethic mean or median) and, using the by_event_type parameter, if we want to average over all events or if the function should return a list of evoked objects for each event_id</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1962,22 +1996,36 @@ To save our previously created figures we can use the <a href="https://matplotli
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "neuro_ai"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "neuro_ai",
             path: "./introduction/notebooks/neuroscience"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'neuro_ai'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="mne_preprocessing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EEG preprocessing with MNE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mne_workflow_tutorial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MNE Workflow tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

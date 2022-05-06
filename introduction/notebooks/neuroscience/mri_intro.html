@@ -240,14 +240,46 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="eeg_introduction.html">
+       Electroencephalography
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_introduction.html">
+         MNE python for EEG analysis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_preprocessing.html">
+         EEG preprocessing with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_erp.html">
+         Evoked potentials/ERPs with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_workflow_tutorial.html">
+         MNE Workflow tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../pages/introduction_3.html">
      Introduction III - NeuroDataScience
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -261,8 +293,8 @@
       <a class="reference internal" href="../../pages/neurodata/data_management.html">
        Project &amp; data management
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-      <label for="toctree-checkbox-9">
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -283,8 +315,8 @@
       <a class="reference internal" href="../../pages/neurodata/version_control_general.html">
        Version control
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-      <label for="toctree-checkbox-10">
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -886,7 +918,7 @@ If we’re interested in the end of the <code class="docutils literal notranslat
 <h2>Console and acquisition sequences<a class="headerlink" href="#console-and-acquisition-sequences" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="irm-console-fig">
 <a class="reference internal image-reference" href="../../../_images/mri_console.png"><img alt="../../../_images/mri_console.png" src="../../../_images/mri_console.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Connections between the console and the different parts of an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> system. Figure adapted by <span class="xref myst">P. Bellec</span>, 2021, licensed under CC-BY. The original Figure is taken from the article by <span id="id1">[<a class="reference internal" href="#id7">Gruber <em>et al.</em>, 2018</a>]</span>, licensed under CC-BY-NC.</span><a class="headerlink" href="#irm-console-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Connections between the console and the different parts of an <code class="docutils literal notranslate"><span class="pre">MRI</span></code> system. Figure adapted by <span class="xref myst">P. Bellec</span>, 2021, licensed under CC-BY. The original Figure is taken from the article by <span id="id1">[<a class="reference internal" href="#id47">Gruber <em>et al.</em>, 2018</a>]</span>, licensed under CC-BY-NC.</span><a class="headerlink" href="#irm-console-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>All elements of the <code class="docutils literal notranslate"><span class="pre">MRI</span></code> device can be controlled by the console (see <a class="reference internal" href="#irm-console-fig"><span class="std std-numref">Fig. 20</span></a>). We have seen together the key principles of <code class="docutils literal notranslate"><span class="pre">MRI</span></code>, but an actual <code class="docutils literal notranslate"><span class="pre">image</span></code> is <code class="docutils literal notranslate"><span class="pre">acquired</span></code> with a complex series of <code class="docutils literal notranslate"><span class="pre">excitations</span></code> and <code class="docutils literal notranslate"><span class="pre">measurements</span></code>, which is called an <em>acquisition sequence</em>. Once the <code class="docutils literal notranslate"><span class="pre">sequence</span></code> has been programmed, we can always modify certain <code class="docutils literal notranslate"><span class="pre">parameters</span></code> of the <code class="docutils literal notranslate"><span class="pre">sequence</span></code>, such as:</p>
 <ul class="simple">
@@ -905,7 +937,7 @@ If we’re interested in the end of the <code class="docutils literal notranslat
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="id2"><dl class="citation">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id47"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Bernhard Gruber, Martijn Froeling, Tim Leiner, and Dennis W.J. Klomp. RF coils: A practical guide for nonphysicists. <em>Journal of Magnetic Resonance Imaging</em>, 48(3):590–604, 2018. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/jmri.26187. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/jmri.26187">https://onlinelibrary.wiley.com/doi/abs/10.1002/jmri.26187</a> (visited on 2022-04-01), <a class="reference external" href="https://doi.org/10.1002/jmri.26187">doi:10.1002/jmri.26187</a>.</p>
 </dd>
 </dl>

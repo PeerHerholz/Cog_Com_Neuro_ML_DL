@@ -52,6 +52,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Introduction III - NeuroDataScience" href="../../pages/introduction_3.html" />
+    <link rel="prev" title="Evoked potentials/ERPs with MNE" href="mne_erp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,7 +97,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../dei.html">
    Diversity, Equity and Inclusion
@@ -116,31 +118,31 @@
    Setup for the course
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../pages/introduction.html">
    Introduction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../../pages/introduction_1.html">
      Introduction I - General introduction
     </a>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../../pages/introduction_2.html">
      Introduction II - Neuroscience
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="cortical_maps.html">
        Cortical maps
@@ -236,14 +238,46 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="eeg_introduction.html">
+       Electroencephalography
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_introduction.html">
+         MNE python for EEG analysis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_preprocessing.html">
+         EEG preprocessing with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_erp.html">
+         Evoked potentials/ERPs with MNE
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         MNE Workflow tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../pages/introduction_3.html">
      Introduction III - NeuroDataScience
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -257,8 +291,8 @@
       <a class="reference internal" href="../../pages/neurodata/data_management.html">
        Project &amp; data management
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-      <label for="toctree-checkbox-9">
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -279,8 +313,8 @@
       <a class="reference internal" href="../../pages/neurodata/version_control_general.html">
        Version control
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-      <label for="toctree-checkbox-10">
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -432,90 +466,88 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   MNE Workflow tutorial
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup">
-     Setup
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data?
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data">
-       Data?
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-preperation">
    1. Data Preperation
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preprocessing">
-     2. Preprocessing
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#setting-the-eeg-reference">
-       Setting the eeg-reference
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise">
-       Next we’ll filter our signal to get rid of slow drifts and line noise
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next-we-ll-identify-noisy-channels">
-       Next  we’ll identify noisy channels
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking">
-       Next up we’ll be dealing with artfifacts produced by eye-movement (i.e. blinking)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ica-for-occular-artifacts">
-       ICA for occular artifacts
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#epoching">
-       Epoching
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculate-evoked-potentials-mmn">
-     3. Calculate evoked potentials/MMN
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing">
+   2. Preprocessing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-the-eeg-reference">
+     Setting the eeg-reference
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise">
+     Next we’ll filter our signal to get rid of slow drifts and line noise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-we-ll-identify-noisy-channels">
+     Next  we’ll identify noisy channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking">
+     Next up we’ll be dealing with artfifacts produced by eye-movement (i.e. blinking)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ica-for-occular-artifacts">
+     ICA for occular artifacts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#epoching">
+     Epoching
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-evoked-potentials-mmn">
+   3. Calculate evoked potentials/MMN
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calculate-the-mmn">
      Calculate the MMN
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#save-data">
-     4. Save Data
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-data">
+   4. Save Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis">
+     Now we can export our epochs data in a number of ways for further analysis
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis">
-       Now we can export our epochs data in a number of ways for further analysis
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
  </li>
 </ul>
 
@@ -537,90 +569,88 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   MNE Workflow tutorial
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup">
-     Setup
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data?
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data">
-       Data?
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-preperation">
    1. Data Preperation
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preprocessing">
-     2. Preprocessing
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#setting-the-eeg-reference">
-       Setting the eeg-reference
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise">
-       Next we’ll filter our signal to get rid of slow drifts and line noise
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next-we-ll-identify-noisy-channels">
-       Next  we’ll identify noisy channels
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking">
-       Next up we’ll be dealing with artfifacts produced by eye-movement (i.e. blinking)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ica-for-occular-artifacts">
-       ICA for occular artifacts
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#epoching">
-       Epoching
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculate-evoked-potentials-mmn">
-     3. Calculate evoked potentials/MMN
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing">
+   2. Preprocessing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-the-eeg-reference">
+     Setting the eeg-reference
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-we-ll-filter-our-signal-to-get-rid-of-slow-drifts-and-line-noise">
+     Next we’ll filter our signal to get rid of slow drifts and line noise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-we-ll-identify-noisy-channels">
+     Next  we’ll identify noisy channels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-up-we-ll-be-dealing-with-artfifacts-produced-by-eye-movement-i-e-blinking">
+     Next up we’ll be dealing with artfifacts produced by eye-movement (i.e. blinking)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ica-for-occular-artifacts">
+     ICA for occular artifacts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#epoching">
+     Epoching
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-evoked-potentials-mmn">
+   3. Calculate evoked potentials/MMN
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calculate-the-mmn">
      Calculate the MMN
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#save-data">
-     4. Save Data
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-data">
+   4. Save Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis">
+     Now we can export our epochs data in a number of ways for further analysis
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#now-we-can-export-our-epochs-data-in-a-number-of-ways-for-further-analysis">
-       Now we can export our epochs data in a number of ways for further analysis
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
  </li>
 </ul>
 
@@ -685,13 +715,12 @@
 <br/>
 <div class="section" id="data">
 <h3>Data?<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
-<p><strong>This tutorial uses data from the ERP Core set collected by Kappenmann et al. (Kappenman et al., 2021). The ERP Core dataset contains data on a number of EEG experiments exploring different event-related and evoked potentials such as  the Error-Related Negativity (ERN (Flanker task)), the P3b (Active Visual Oddball Paradigm), or the mismatch negativity (Passive Auditory Oddball Paradigm).</strong></p>
+<p><strong>This tutorial uses data from the ERP Core set collected by Kappenmann et al. <span id="id1">[<a class="reference internal" href="#id86">Kappenman <em>et al.</em>, 2021</a>]</span>. The ERP Core dataset contains data on a number of EEG experiments exploring different event-related and evoked potentials such as  the Error-Related Negativity (ERN (Flanker task)), the P3b (Active Visual Oddball Paradigm), or the mismatch negativity (Passive Auditory Oddball Paradigm).</strong></p>
 <p>The dataset can be found on <a href="https://osf.io/thsqg/" title="ERP CORE: Contributors: Emily S. Kappenman Jaclyn Farrens Wendy Zhang Andrew X Stewart Steven J. Luck ">OSF</a>. For an explanation of the study, the EEG and ERP processing and anlysis procedures, see the <a href="https://osf.io/w3dyn/" title="OSF: ERP CORE MMN Readme.txt">Readme.txt</a> file provided by the authors.</p>
-<p><em>Kappenman, E., Farrens, J., Zhang, W., Stewart, A. X., &amp; Luck, S. J. (2021). ERP CORE: An open resource for human event-related potential research. NeuroImage 225: 117465. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2020.117465">https://doi.org/10.1016/j.neuroimage.2020.117465</a></em></p>
 <br/>
 <p><strong>We’ll be using eeg data from a single subject preforming a passive auditory oddball task.</strong>
 In this experiment subjects were presented with two tones differing in amplitude. Most of the time a “standard” tone was presented (80 dB, p = .8; ~800 trials), while a “deviant” tone was pseudo-randomly (apparently) presented some of the time (70 dB, p = .2, ~ 200 trials). In theory this violation of a learned rule (i.e. a 70 dB tone is presented in a stream of repeated 80 dB tone events) manifests in a potential called the mismatch negativity (MMN) over fronto-central electrodes, which is calculated by subtracting the response to the common (or standard) from the response to the odd (or deviant) stimuli.
-The MMN is thought to reflect “the brain’s ability to perform automatic comparisons between consecutive stimuli and provides an electrophysiological index of sensory learning and perceptual accuracy” <a href="https://www.sciencedirect.com/science/article/pii/S1388245708012686" title="ScienceDirect: The mismatch negativity: A review of underlying mechanisms">(Garrido et al. 2009; see paper for more information)</a>.</p>
+The MMN is thought to reflect “the brain’s ability to perform automatic comparisons between consecutive stimuli and provides an electrophysiological index of sensory learning and perceptual accuracy” <a href="https://www.sciencedirect.com/science/article/pii/S1388245708012686" title="ScienceDirect: The mismatch negativity: A review of underlying mechanisms">(<span id="id2">[<a class="reference internal" href="#id87">Garrido <em>et al.</em>, 2009</a>]</span>; see paper for more information)</a>.</p>
 <p><strong>Download the dataset</strong></p>
 <p><em>Now as we don’t want to download multiple GB of data for a simple tutorial we’ll have to download the Data by hand.</em></p>
 <p>First find your home_directory</p>
@@ -754,9 +783,8 @@ The MMN is thought to reflect “the brain’s ability to perform automatic comp
 <br/>
 </div>
 </div>
-</div>
 <div class="section" id="data-preperation">
-<h1>1. Data Preperation<a class="headerlink" href="#data-preperation" title="Permalink to this headline">¶</a></h1>
+<h2>1. Data Preperation<a class="headerlink" href="#data-preperation" title="Permalink to this headline">¶</a></h2>
 <p><strong>Import the raw data and event file for subject 21</strong></p>
 <p>Using  <a href="https://mne.tools/stable/generated/mne.io.read_raw.htmls" title="https://mne.tools/stable/generated/mne.io.read_raw.htmls">mne.io.read_raw_eeglab()</a> to read our data, as the EEG data ends with <strong>.set</strong>. For info on EEG file types consult the MNE Introduction chapter.</p>
 <div class="cell docutils container">
@@ -1424,6 +1452,7 @@ HEOG
 </div>
 </div>
 <br/>
+</div>
 <div class="section" id="preprocessing">
 <h2>2. Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="setting-the-eeg-reference">
@@ -2666,11 +2695,10 @@ The <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_
 </div>
 </div>
 <br/>
-</div>
 <div class="section" id="calculate-the-mmn">
-<h2>Calculate the MMN<a class="headerlink" href="#calculate-the-mmn" title="Permalink to this headline">¶</a></h2>
+<h3>Calculate the MMN<a class="headerlink" href="#calculate-the-mmn" title="Permalink to this headline">¶</a></h3>
 <p>Next we calculate the MMM by <strong>substracting the evoked potential of the standard tone from the evoked potential of the deviant tone</strong> using the  <a href="https://mne.tools/stable/generated/mne.combine_evoked.html#mne.combine_evoked" title="MNE API: mne.combine_evoked.()">mne.combine_evoked.()</a> function. Subtraction is performed by setting the weights argument  = [1, -1]</p>
-<p>To recall the MMN should peak at about 100–250 ms after change onset, with at most a -5 μV maximum peak.</p>
+<p>To recall the MMN should peak at about 100–250 ms after change onset, with at most a -5 μV maximum peak <span id="id3">[<a class="reference internal" href="#id87">Garrido <em>et al.</em>, 2009</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mmn</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">combine_evoked</span><span class="p">([</span><span class="n">deviant_tone</span><span class="p">,</span> <span class="n">standard_tone</span><span class="p">],</span>
@@ -2689,6 +2717,7 @@ The <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_
 <br/>
 <p>Looks plausible, but given time/effort and data from more subjects (i.e. calculating a grand average MMN) would probably produce a less noisy wave-form. I’d also advise to further style the plot using <a href="https://matplotlib.org/stable/tutorials/index" title="https://matplotlib.org/stable/tutorials/index">matplotlib</a>.</p>
 <br/>
+</div>
 </div>
 <div class="section" id="save-data">
 <h2>4. Save Data<a class="headerlink" href="#save-data" title="Permalink to this headline">¶</a></h2>
@@ -2747,6 +2776,18 @@ The <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_
 </div>
 </div>
 </div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id4"><dl class="citation">
+<dt class="label" id="id87"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Marta I. Garrido, James M. Kilner, Klaas E. Stephan, and Karl J. Friston. The mismatch negativity: A review of underlying mechanisms. <em>Clinical Neurophysiology</em>, 120(3):453–463, March 2009. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1388245708012686">https://linkinghub.elsevier.com/retrieve/pii/S1388245708012686</a> (visited on 2022-05-02), <a class="reference external" href="https://doi.org/10.1016/j.clinph.2008.11.029">doi:10.1016/j.clinph.2008.11.029</a>.</p>
+</dd>
+<dt class="label" id="id86"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>Emily S. Kappenman, Jaclyn L. Farrens, Wendy Zhang, Andrew X. Stewart, and Steven J. Luck. ERP CORE: An open resource for human event-related potential research. <em>NeuroImage</em>, 225:117465, January 2021. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S1053811920309502">https://linkinghub.elsevier.com/retrieve/pii/S1053811920309502</a> (visited on 2022-05-02), <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2020.117465">doi:10.1016/j.neuroimage.2020.117465</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -2758,22 +2799,36 @@ The <a href="https://mne.tools/stable/generated/mne.Evoked.html#mne.Evoked.plot_
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "neuro_ai"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "neuro_ai",
             path: "./introduction/notebooks/neuroscience"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'neuro_ai'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="mne_erp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Evoked potentials/ERPs with MNE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../pages/introduction_3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction III - NeuroDataScience</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

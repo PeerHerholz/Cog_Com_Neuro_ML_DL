@@ -52,6 +52,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Evoked potentials/ERPs with MNE" href="mne_erp.html" />
+    <link rel="prev" title="MNE python for EEG analysis" href="mne_introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,7 +97,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../dei.html">
    Diversity, Equity and Inclusion
@@ -116,31 +118,31 @@
    Setup for the course
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../pages/introduction.html">
    Introduction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../../pages/introduction_1.html">
      Introduction I - General introduction
     </a>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="../../pages/introduction_2.html">
      Introduction II - Neuroscience
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="cortical_maps.html">
        Cortical maps
@@ -236,14 +238,46 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="eeg_introduction.html">
+       Electroencephalography
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_introduction.html">
+         MNE python for EEG analysis
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         EEG preprocessing with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_erp.html">
+         Evoked potentials/ERPs with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="mne_workflow_tutorial.html">
+         MNE Workflow tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../../pages/introduction_3.html">
      Introduction III - NeuroDataScience
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -257,8 +291,8 @@
       <a class="reference internal" href="../../pages/neurodata/data_management.html">
        Project &amp; data management
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-      <label for="toctree-checkbox-9">
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -279,8 +313,8 @@
       <a class="reference internal" href="../../pages/neurodata/version_control_general.html">
        Version control
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-      <label for="toctree-checkbox-10">
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -432,76 +466,69 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   EEG preprocessing with MNE
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup">
-     Setup
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencing">
    1.Referencing
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#artifact-detection">
    2. Artifact detection
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#artifact-removal-repair">
    3. Artifact removal/repair
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filtering">
      3.1 Filtering
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpolating-bad-channels">
      3.2 Interpolating bad channels
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpolation">
      Interpolation
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#independent-component-analysis-ica">
      3.3 Independent component analysis (ICA)
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#epoching">
    4. Epoching
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#epochs">
      Epochs
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#events">
      Events
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#finding-renaming-events">
      4.1 finding/renaming events
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#rejecting-bad-epochs">
      4.2 rejecting bad epochs
     </a>
@@ -528,76 +555,69 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   EEG preprocessing with MNE
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setup">
-     Setup
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencing">
    1.Referencing
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#artifact-detection">
    2. Artifact detection
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#artifact-removal-repair">
    3. Artifact removal/repair
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filtering">
      3.1 Filtering
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpolating-bad-channels">
      3.2 Interpolating bad channels
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpolation">
      Interpolation
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#independent-component-analysis-ica">
      3.3 Independent component analysis (ICA)
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#epoching">
    4. Epoching
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#epochs">
      Epochs
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#events">
      Events
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#finding-renaming-events">
      4.1 finding/renaming events
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#rejecting-bad-epochs">
      4.2 rejecting bad epochs
     </a>
@@ -751,9 +771,8 @@ Reading 0 ... 166799  =      0.000 ...   277.714 secs...
 </div>
 <br/>
 </div>
-</div>
 <div class="section" id="referencing">
-<h1>1.Referencing<a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h1>
+<h2>1.Referencing<a class="headerlink" href="#referencing" title="Permalink to this headline">¶</a></h2>
 <p>As the EEG is a measurement of voltage fluctuations (differences in electric potential), we will have to naturally compare the signal measured at a specific electrode to that measured at another location.</p>
 <p>Therefore we’ll first define a reference channel, i.e. an electrode with which the signal of electrodes of interest can be compared. This is effecitively done by substracting the signal of the reference from our measurement electrodes. When recording EEG a specific electrode or a set of electrodes should be employed that are placed in such a way that they collect ideally all the “noise” that is also influencing our measurement electrodes at the scalp, but as little as possible of the actual neural activity of interest. Common choices for the placement of reference electrodes are the earlobes or the mastoids (the bone ridges behind the ears), although sometimes central electrodes such as Cz or FCz are chosen. If we’d be interested in the signal measuered at these sites, we would have to re-reference our data.</p>
 <p>There is a few ways to go about referencing, chek-out the <a href="https://mne.tools/stable/auto_tutorials/preprocessing/55_setting_eeg_reference.html" title="https://mne.tools/stable/auto_tutorials/preprocessing/55_setting_eeg_reference.html">MNE tutorial: Setting the EEG reference</a> for more info.</p>
@@ -866,7 +885,7 @@ Opening raw-browser...
 <br/>
 </div>
 <div class="section" id="artifact-detection">
-<h1>2. Artifact detection<a class="headerlink" href="#artifact-detection" title="Permalink to this headline">¶</a></h1>
+<h2>2. Artifact detection<a class="headerlink" href="#artifact-detection" title="Permalink to this headline">¶</a></h2>
 <p><strong>The 3 main sources of artifacts are environmental (due to power lines or electroncis), instrumentation (faulty electrodes), and biological (eye-movement, muscular activity).</strong></p>
 <p>For an extensive list see the <a href="https://mne.tools/stable/auto_tutorials/preprocessing/10_preprocessing_overview.html#sphx-glr-auto-tutorials-preprocessing-10-preprocessing-overview-py" title="https://mne.tools/stable/auto_tutorials/preprocessing/10_preprocessing_overview.html#sphx-glr-auto-tutorials-preprocessing-10-preprocessing-overview-py">MNE tutorial on artifact detection</a></p>
 <p>The easiest way to spot these artifacts is to simply plot the raw data if you know what you’re looking for.
@@ -999,12 +1018,12 @@ Does the signal captured by an electrode look significantly different in relatio
 <br/>
 </div>
 <div class="section" id="artifact-removal-repair">
-<h1>3. Artifact removal/repair<a class="headerlink" href="#artifact-removal-repair" title="Permalink to this headline">¶</a></h1>
+<h2>3. Artifact removal/repair<a class="headerlink" href="#artifact-removal-repair" title="Permalink to this headline">¶</a></h2>
 <p>Next we’ll try to eliminate and or repair the previously identified artifacts with using different methods (frequency-filtering, rejecting bad channels and Independent component analysis). It is important to note that not all artifacts are problematic or should necessarily lead to complete data rejection, so we’ll try to retain as much signal as possible by removing the contaminated signal component and estimating the true signal we’d record if the specific artifacts where not present.</p>
 <p>For a primer on how to decide which artifacts should be removed/not removed see <a href="https://www.youtube.com/watch?v=VDqwfP0mlfU" title="https://www.youtube.com/watch?v=VDqwfP0mlfU">Youtube: Signal artifacts (not) to worry about</a>.</p>
 <br/>
 <div class="section" id="filtering">
-<h2>3.1 Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h2>
+<h3>3.1 Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
 <p>Line noise and slow drifts are most easily dealt with by <strong>applying a filter to our data that artifically removes any activity above (highpass) or below (lowpass) a certain frequency</strong>. As the range of frequency that is actually relevant for our data or plausibly produced by neural activity is rather limited, we can for example get rid of the above identified line noise artifacts quite easily by setting a cut-off frequency (lowpass-filter) for our data somewhere below 60Hz.</p>
 <p>There is extensive literature on and a plethora off methods to consider when it comes to eeg-filters, but for this tutorial we’ll be using the mne standard parameters. For more info on eeg-filters see the <a href="https://mne.tools/stable/auto_tutorials/preprocessing/25_background_filtering.html" title="MNE: background on filtering">MNE: background on filtering</a> or for a visual approach <a href="https://www.youtube.com/watch?v=2tmilbi4L0o" title="Youtube: FIR Filter Design using the Window Method">Youtube: FIR Filter Design using the Window Method</a>.</p>
 <p><strong>We’ll be setting a highpass filter at 0.1hz (to get rid of slow drifts in electrode conductance over time) and a low-pass filter of 40hz (to get rid of electrical line noise).</strong></p>
@@ -1102,7 +1121,7 @@ Designing a one-pass, zero-phase, non-causal bandpass filter:
 <br/>
 </div>
 <div class="section" id="interpolating-bad-channels">
-<h2>3.2 Interpolating bad channels<a class="headerlink" href="#interpolating-bad-channels" title="Permalink to this headline">¶</a></h2>
+<h3>3.2 Interpolating bad channels<a class="headerlink" href="#interpolating-bad-channels" title="Permalink to this headline">¶</a></h3>
 <p>Let’s first take a look at the previoulsly marked bad channels for our unfiltered data again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1319,7 +1338,7 @@ taking a look at the "Bad channels" row of the .info reveals that the marked cha
 <br/>
 </div>
 <div class="section" id="interpolation">
-<h2>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h2>
+<h3>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h3>
 <p>Now that we know which channels are problematic, we can <strong>estimate their actual signal given the signal of the surrounding electrodes</strong> via the <a href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.interpolate_bads" title="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.interpolate_bads">.interpolate_bads()</a> fucntion, as with the relatively poor spatial resolution it is highly unklikey that one electrode would have picked up a signal that is not also to a to lesser degree present in the surrounding electrodes. This concept is illustrated well in the visualizatio of the topopgraphic spread of evoked potentials <a href="https://mne.tools/stable/auto_examples/visualization/topo_compare_conditions.html" title="https://mne.tools/stable/auto_examples/visualization/topo_compare_conditions.html">here</a>. See the <a href="https://mne.tools/stable/auto_examples/preprocessing/interpolate_bad_channels.html#footcite-perrinetal1989" title="MNE tutorial: interpolate bad channels"> MNE tutorial: interpolate bad channels </a> for more on the implementation and the therein cited papers for the technical information.</p>
 <p>When to interpolate or drop bad channels should be decided on an individual basis. In general, <strong>if the signal picked up is consistently bad/noisy and might influence the overall quality of the data the channel can be interpolated</strong>. If there are only single “ariftact events in” the channel it’s best to keep the channel and later on exclude the epoch containing the artifact. For automatization purposes you’ll of course have to make an a priori decison on what levels of noise e.g. you’re willing to accept.</p>
 <div class="cell docutils container">
@@ -1462,7 +1481,7 @@ Interpolating 2 sensors
 <br/>
 </div>
 <div class="section" id="independent-component-analysis-ica">
-<h2>3.3 Independent component analysis (ICA)<a class="headerlink" href="#independent-component-analysis-ica" title="Permalink to this headline">¶</a></h2>
+<h3>3.3 Independent component analysis (ICA)<a class="headerlink" href="#independent-component-analysis-ica" title="Permalink to this headline">¶</a></h3>
 <p><strong>One of the most common and effetive tools for artifact detection and removal is the Independent component analysis, which we’ll use to exclude our occular artifacts from the data in the next step</strong></p>
 <p>In brief:
 ICA is a technique for signal processing that separates a signal into a specified number of linearly mixed sources. For the preprocessing of EEG data this is  used to find statistically independet sources of signal variability present in our n_channel dimensional data. EEG artifacts are usually strong sources of variability as they show higher amplitude than would be expected for sources of neural activity and generally appear more consistent than fluctuating neural activity, best illustrated by occular artifacts, and can therefore be easily identified via ICA.</p>
@@ -1762,9 +1781,9 @@ Closing /home/michael/msc_05_example_bids_dataset/sub-test/ses-001/meg/sub-test_
 </div>
 </div>
 <div class="section" id="epoching">
-<h1>4. Epoching<a class="headerlink" href="#epoching" title="Permalink to this headline">¶</a></h1>
+<h2>4. Epoching<a class="headerlink" href="#epoching" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="epochs">
-<h2>Epochs<a class="headerlink" href="#epochs" title="Permalink to this headline">¶</a></h2>
+<h3>Epochs<a class="headerlink" href="#epochs" title="Permalink to this headline">¶</a></h3>
 <p>Epochs represent <strong>chunks of continous eeg data time-locked to certain events or periods of activity</strong> (e.g. experimental blocks). They are usually equal length and should contain enough time before an  event to allow for baseline correction and enough time after the stimulus to catch all possible activity (evoked/event-related potentials or changes in frequency band) of interest for later analysis.</p>
 <p>The mne.Epochs objects can be treated the same as the previous raw objects in a number of ways, including the .info() manipulations we</p>
 <p><strong>To create our epochs we  need two things:</strong>
@@ -1773,7 +1792,7 @@ Closing /home/michael/msc_05_example_bids_dataset/sub-test/ses-001/meg/sub-test_
 <p>For more info on the Epochs data structure see the <a href="https://mne.tools/stable/auto_tutorials/epochs/10_epochs_overview.html#sphx-glr-auto-tutorials-epochs-10-epochs-overview-py" title="MNE tutorial: The Epochs data structure: discontinuous data)">MNE tutorial: The Epochs data structure: discontinuous data</a></p>
 </div>
 <div class="section" id="events">
-<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
 <p>Events in the context of this tutorial are <strong>flags indicating that at a certain time the presentation of a stimulus or a participant’s reaction has occured</strong>. Event IDs indicate what kind of condition was recorded, usually they are stored as simple integers.</p>
 <p>Information on what kind of stimulus/reaction was recorded is in general stored in the “Stim” channels or the metadata of the raw object (check <a class="reference external" href="http://raw.info">raw.info</a>[‘events’]). Otherwise, if the Data is organized in the BIDS format, you can check the “_events.tsv” file in the subject folder and for the possible descriptions of the contained event-identifiers the “dataset_description.json” or the “README.txt”. Some systems save events in a separate annotation file (e.g. eeglab set files), for which mne provides a dedicated function to convert these files to an event array. See <a href="https://mne.tools/stable/auto_tutorials/intro/20_events_from_raw.html" title="https://mne.tools/stable/auto_tutorials/intro/20_events_from_raw.html">MNE tutorial: Parsing events from raw data</a> for more info.</p>
 <div class="cell docutils container">
@@ -1872,7 +1891,7 @@ Closing /home/michael/msc_05_example_bids_dataset/sub-test/ses-001/meg/sub-test_
 <br/>
 </div>
 <div class="section" id="finding-renaming-events">
-<h2>4.1 finding/renaming events<a class="headerlink" href="#finding-renaming-events" title="Permalink to this headline">¶</a></h2>
+<h3>4.1 finding/renaming events<a class="headerlink" href="#finding-renaming-events" title="Permalink to this headline">¶</a></h3>
 <p>To find the events in the raw file we can usually use <a href="https://mne.tools/stable/generated/mne.find_events.html">find_events()</a> function on our raw object. This function automatically checks if there are Stim channel present in the data. Stimulus channel do not collect EEG data, but the triggers associated with events that an experiment may contain.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3991,7 +4010,7 @@ Name: EEG 001, Length: 601, dtype: float64
 <br/>
 </div>
 <div class="section" id="rejecting-bad-epochs">
-<h2>4.2 rejecting bad epochs<a class="headerlink" href="#rejecting-bad-epochs" title="Permalink to this headline">¶</a></h2>
+<h3>4.2 rejecting bad epochs<a class="headerlink" href="#rejecting-bad-epochs" title="Permalink to this headline">¶</a></h3>
 <p>As discussed earlier we’ll get rid of epochs containing artifacts.</p>
 <p>This way we’ll only reject a small subset of relevant data, while the rejection of ICA components or whole channels might have lead to a greater loss of relevant data in the signal. This is one of the reasons why we collect so many trials in EEG experiments.</p>
 <p>As a point of caution, epoch rejection is best done after repairing our signal for eye-blinks, as otherwise we might lose a significant number of epochs.</p>
@@ -4667,6 +4686,7 @@ Using data from preloaded Raw for 320 events and 601 original time points ...
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -4677,22 +4697,36 @@ Using data from preloaded Raw for 320 events and 601 original time points ...
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "neuro_ai"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "neuro_ai",
             path: "./introduction/notebooks/neuroscience"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'neuro_ai'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="mne_introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">MNE python for EEG analysis</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mne_erp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Evoked potentials/ERPs with MNE</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
