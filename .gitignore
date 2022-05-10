@@ -6,3 +6,7 @@
 
 # build
 lecture/_build/*
+
+# ipynb checkponts
+lecture/introduction/notebooks/neuroscience/.ipynb_checkpoints
+lecture/introduction/notebooks/neurodata/.ipynb_checkpoints
