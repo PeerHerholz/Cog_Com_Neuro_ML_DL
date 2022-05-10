@@ -8,5 +8,10 @@
 lecture/_build/*
 
 # ipynb checkponts
+lecture/.ipynb_checkpoints
 lecture/introduction/notebooks/neuroscience/.ipynb_checkpoints
 lecture/introduction/notebooks/neurodata/.ipynb_checkpoints
+lecture/introduction/pages/.ipynb_checkpoints
+
+# caches
+lecture/introduction/notebooks/neuroscience/nilearn_cache/*
