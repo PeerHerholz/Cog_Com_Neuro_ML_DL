@@ -73,7 +73,7 @@ We discussed quite a bit of `Neuro-Data-Science` tools and resources that can he
 
 #### Objectives📍
 - connect resources/tools we have explored 
-- start demo project work based on open & reproducible science
+- start project work based on open & reproducible science
 - DMPs 
 - Ask and answer questions
 - Have a great time
