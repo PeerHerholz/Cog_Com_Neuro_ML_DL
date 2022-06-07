@@ -1,0 +1,1256 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Algebra &#8212; Spring term 2022</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cog_com_neuro_ml_dl_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Spring term 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../index.html">
+   Welcome!
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dei.html">
+   Diversity, Equity and Inclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../overview.html">
+   Course overview &amp; procedure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../outline.html">
+   General outline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../setup.html">
+   Setup for the course
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pages/introduction.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../pages/introduction_1.html">
+     Introduction I - General introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../pages/introduction_2.html">
+     Introduction II - Neuroscience
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../neuroscience/cortical_maps.html">
+       Cortical maps
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../neuroscience/mri_intro.html">
+       Magnetic Resonance Imaging (MRI)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/image_manipulation_nibabel.html">
+         Using Python for neuroimaging data - NiBabel
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../neuroscience/morphometry.html">
+       Morphometric analyzes
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../neuroscience/dMRI_intro.html">
+       Diffusion MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/diffusion_imaging.html">
+         Structural connectivity and diffusion imaging
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../neuroscience/fmri_intro.html">
+       Functional MRI
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/image_manipulation_nilearn.html">
+         Using Python for neuroimaging data - Nilearn
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../neuroscience/statistical_maps.html">
+       Statistical maps
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/statistical_analyses_MRI.html">
+         Nilearn GLM: statistical analyses of MRI in Python
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../neuroscience/connectivity_intro.html">
+       Functional connectivity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/functional_connectivity.html">
+         Functional connectivity and resting state
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../neuroscience/eeg_introduction.html">
+       Electroencephalography
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/mne_introduction.html">
+         MNE python for EEG analysis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/mne_preprocessing.html">
+         EEG preprocessing with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/mne_erp.html">
+         Evoked potentials/ERPs with MNE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neuroscience/mne_workflow_tutorial.html">
+         MNE Workflow tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../pages/introduction_3.html">
+     Introduction III - NeuroDataScience
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../pages/neurodata/replicability_open_science.html">
+       Replicability crisis, open science &amp; pre-registration
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../pages/neurodata/data_management.html">
+       Project &amp; data management
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neurodata/pybids.html">
+         Introduction to
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           pybids
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../pages/neurodata/version_control_general.html">
+       Version control
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../neurodata/version_control.html">
+         Introduction to git and github
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../pages/neurodata/literature.html">
+       Finding &amp; organizing literature
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../pages/neurodata/project_101.html">
+       Connecting the dots
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../projects.html">
+   Student projects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../break.html">
+   Yoga and/or dance break
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../questionnaires.html">
+   Questionnaire templates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CoC.html">
+   Code of Conduct
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/introduction/notebooks/linear_algebra/LinearAlgebra.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/issues/new?title=Issue%20on%20page%20%2Fintroduction/notebooks/linear_algebra/LinearAlgebra.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PeerHerholz/Cog_Com_Neuro_ML_DL/edit/main/lecture/introduction/notebooks/linear_algebra/LinearAlgebra.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/PeerHerholz/Cog_Com_Neuro_ML_DL/main?urlpath=tree/lecture/introduction/notebooks/linear_algebra/LinearAlgebra.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elements-of-linear-algebra">
+   Elements of linear algebra
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalar-vectors-matrices-tensors">
+     Scalar, Vectors, Matrices, Tensors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-in-programming">
+     Representation in programming
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numpy">
+       Numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#arrays">
+       Arrays
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transpose">
+     Transpose
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshape">
+     Reshape
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematical-operations-with-matrices">
+   Mathematical operations with matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addition">
+     Addition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiplication">
+     Multiplication
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dot-product">
+       Dot Product
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-multiplication">
+       Matrix Multiplication
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-equations">
+   Linear equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-dependence">
+     Linear dependence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-inversion">
+   Matrix Inversion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identity-matrix">
+     Identity matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-inverse">
+     Matrix inverse
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#norms">
+   Norms
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Linear Algebra</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elements-of-linear-algebra">
+   Elements of linear algebra
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalar-vectors-matrices-tensors">
+     Scalar, Vectors, Matrices, Tensors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-in-programming">
+     Representation in programming
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numpy">
+       Numpy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#arrays">
+       Arrays
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transpose">
+     Transpose
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshape">
+     Reshape
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mathematical-operations-with-matrices">
+   Mathematical operations with matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addition">
+     Addition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiplication">
+     Multiplication
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dot-product">
+       Dot Product
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrix-multiplication">
+       Matrix Multiplication
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-equations">
+   Linear equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-dependence">
+     Linear dependence
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-inversion">
+   Matrix Inversion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identity-matrix">
+     Identity matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-inverse">
+     Matrix inverse
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#norms">
+   Norms
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="linear-algebra">
+<h1>Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this headline">¶</a></h1>
+<p>We will start with the boring but very important mathematical background that you will need to better understand the machine learning models.</p>
+<p>Let’s start with the general introduction of scalars, vectors and matrices.</p>
+<div class="section" id="elements-of-linear-algebra">
+<h2>Elements of linear algebra<a class="headerlink" href="#elements-of-linear-algebra" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scalar-vectors-matrices-tensors">
+<h3>Scalar, Vectors, Matrices, Tensors<a class="headerlink" href="#scalar-vectors-matrices-tensors" title="Permalink to this headline">¶</a></h3>
+<p>The basic objects which we will use throughout this sessions are shown below:</p>
+<p><img alt="alt text" src="../../../_images/svmt_0.png" /></p>
+<ul class="simple">
+<li><p><strong>Scalar</strong>: A scalar is just a single number. Variables assigned to scalars are usually lowercase letters. When they are introduced, the space in which they live is usually also indicated, e.g., <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>. This means that <span class="math notranslate nohighlight">\(a\)</span> can take any value of the real number space.</p></li>
+<li><p><strong>Vectors</strong>: A vector is defined as an array of numbers. In standard Python you would represent a vector as a list of values. Vectors are usually defined with bold lowercase variables, e.g., <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. The order of elments in a vector matters and is defined. The first element of the vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is <span class="math notranslate nohighlight">\(x_1\)</span>. As this is a scalar, we again use simple lower case variables. The dimensions and number space also has to be defined for a vector. For example <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^n\)</span> would indicate that all values in <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> are real and the vector has <span class="math notranslate nohighlight">\(n\)</span> elements. <br>  You can think of a vector as identifying a point in a scace. Each element gives the coordinate along a different axis.</p></li>
+<li><p><strong>Matrices</strong>: Matrices are 2D-arrays of numbers. We will use bold uppercase variables to define matrices, e.g., <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>. If a matrix with only real values has <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> colums we would define it as <span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{mxn}\)</span>. In the above example both, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are two. Single elemeents within a matrix are indexed in the order of the dimensions. The first element on the upper left would be <span class="math notranslate nohighlight">\(A_{1,1}\)</span>, and the last element on the bottom right is  <span class="math notranslate nohighlight">\(A_{m,n}\)</span>.</p></li>
+<li><p><strong>Tensors</strong>: A tensor is a multidimensional object with several axes. The elements of a tensor <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> with three axes would be denoted as <span class="math notranslate nohighlight">\(A_{i, j, k}\)</span>.</p></li>
+</ul>
+<p><img alt="alt text" src="../../../_images/svmt_1.png" /></p>
+</div>
+<div class="section" id="representation-in-programming">
+<h3>Representation in programming<a class="headerlink" href="#representation-in-programming" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="numpy">
+<h4>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h4>
+<p>When computing linear algebra operations in <em>Python</em> (which is the language we are predominantly going to use), it is common to use the <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>-package. This package is used as a numerical base for many other frameworks and is implicitly imported when using other modules, such as <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>, and many other data science related libraries. <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> includes capabilities to generate linear algebra objects and complete mathematical operations with them at a faster speed than <em>Python</em> would normally allow for, since <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> operations are implemented in <em>C</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="arrays">
+<h4>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h4>
+<p>An array is a data object in which scalars, vectors, matrices and tensors are stored for calculations, following a one-size-fits-all approach. To find out what kind of object is contained in an array, it is very helpful to examine its <code class="docutils literal notranslate"><span class="pre">.shape</span></code>-property. This gives you not only the amount of axis this object spans across, but also the amount of entries per axis. The <code class="docutils literal notranslate"><span class="pre">.shape</span></code> of an object plays a vital role when performing calculations with arrays, since they will indicate whether two arrays are “compatible” with each other.</p>
+<p>In order to define arrays in <em>Numpy</em>, think of every level of rectangular brackets as opening up a new axis.</p>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>-arrays are not to be confused with the data structure <em>Array</em> used in other programming languages, such as Java and Javascript, which does not serve any specific mathematical purpose.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define arrays</span>
+<span class="c1">## Scalar</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">## Vector </span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1">## Matrix</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1">## Tensor</span>
+<span class="n">d_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">]],</span>
+                    <span class="p">[[</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">]]])</span>
+<span class="c1"># Check shapes of arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of a_array:&quot;</span><span class="p">,</span> <span class="n">a_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of b_array:&quot;</span><span class="p">,</span> <span class="n">b_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of c_array:&quot;</span><span class="p">,</span> <span class="n">c_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of d_array:&quot;</span><span class="p">,</span> <span class="n">d_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of a_array: (1,)
+Shape of b_array: (2, 1)
+Shape of c_array: (2, 2)
+Shape of d_array: (2, 2, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Try it youself:</strong></p>
+<p>Define <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>-arrays with the dimensions (3,); (1,3); (3,3,3) and print their shape to check for correctness.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Array with the dimensions (3,)</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Check the array&#39;s shape</span>
+
+<span class="c1"># Array with the dimensions (1,3)</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Check the array&#39;s shape</span>
+
+<span class="c1"># Array with the dimensions (3,3)</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Check the array&#39;s shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="transpose">
+<h3>Transpose<a class="headerlink" href="#transpose" title="Permalink to this headline">¶</a></h3>
+<p>Transpose is an important operation for matrices, as it represents the mirror image of the matrix along a diagonal line called the <strong>main diagonal</strong>. The transpose of a matrix <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> would be denoted as <span class="math notranslate nohighlight">\(\mathbf{X}^T\)</span> and is defined such that
+$<span class="math notranslate nohighlight">\((\mathbf{X}^T)_{i,j} = X_j,i \)</span>$</p>
+<p>Vectors can also be thought of as matrices that only contain one column. Hence, when a (column) vector is transposed, the result is a matrix with only one row, or a (row) vector.</p>
+<p><img alt="alt text" src="../../../_images/transpose.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define arrays</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of vector:&quot;</span><span class="p">,</span> <span class="n">a_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;Shape of matrix:&quot;</span><span class="p">,</span> <span class="n">b_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># Transpose arrays</span>
+<span class="n">a_transposed_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">a_array</span><span class="p">)</span> <span class="c1"># standard method</span>
+<span class="n">b_transposed_array</span> <span class="o">=</span> <span class="n">b_array</span><span class="o">.</span><span class="n">T</span>             <span class="c1"># shorthand method</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of vector:&quot;</span><span class="p">,</span> <span class="n">a_transposed_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;Shape of matrix:&quot;</span><span class="p">,</span> <span class="n">b_transposed_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of vector: (2, 1) Shape of matrix: (3, 2)
+Shape of vector: (1, 2) Shape of matrix: (2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reshape">
+<h3>Reshape<a class="headerlink" href="#reshape" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> allows you to rearrange the elements of an array to a different (congruent) shape, while retaining the order of the elements and length of the array. This can be a useful tool when you have data stored in an array which does not yet have the shape required to pass through a certain operation or algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define arrays</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of vector:&quot;</span><span class="p">,</span> <span class="n">a_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># Reshape array</span>
+<span class="n">a_reshaped_array</span> <span class="o">=</span> <span class="n">a_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of reshaped vector:&quot;</span><span class="p">,</span> <span class="n">a_reshaped_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># Reshape array again</span>
+<span class="n">a_reshaped2_array</span> <span class="o">=</span> <span class="n">a_reshaped_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of reshaped vector:&quot;</span><span class="p">,</span> <span class="n">a_reshaped2_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># Reshape back to original shape and check the elements&#39; order</span>
+<span class="n">a_orig_array</span> <span class="o">=</span> <span class="n">a_reshaped2_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">8</span><span class="p">,))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of reshaped vector:&quot;</span><span class="p">,</span> <span class="n">a_orig_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_orig_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of vector: (8,)
+Shape of reshaped vector: (2, 4)
+Shape of reshaped vector: (2, 2, 2)
+Shape of reshaped vector: (8,)
+[1 2 3 4 5 6 7 8]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Try it yourself:</strong></p>
+<p>Define a <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>-vector of length 12 and shape (12,) (e.g. using the <code class="docutils literal notranslate"><span class="pre">np.arange</span></code>-function -&gt; <code class="docutils literal notranslate"><span class="pre">np.arange(0,12,1)</span></code>). Then create a new vector with two axes by reshaping the original vector. Afterwards, create a third vector with three axes by reshaping the previous vector. Finally, transform the past array back to the original shape and print it to check for the correct order of elements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an array of length 12 and shape (12,)</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Check the array&#39;s shape</span>
+
+<span class="c1"># Rearange the original array to an array with two axes</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Check the array&#39;s shape</span>
+
+<span class="c1"># Rearange the previous array to an array with three axes</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Check the array&#39;s shape</span>
+
+<span class="c1"># Rearange the last array to an array with the original shape</span>
+<span class="n">d_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Check the array&#39;s shape</span>
+
+<span class="c1"># Print the array itself to check for the elements&#39; order</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mathematical-operations-with-matrices">
+<h2>Mathematical operations with matrices<a class="headerlink" href="#mathematical-operations-with-matrices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="addition">
+<h3>Addition<a class="headerlink" href="#addition" title="Permalink to this headline">¶</a></h3>
+<p>A scalar can be easily added to a matrix, just by adding the scalar to each element of the matrix: <span class="math notranslate nohighlight">\(a + X = C\)</span>, where <span class="math notranslate nohighlight">\(C_{i, j} = a + X_{i, j}\)</span>.</p>
+<p><img alt="alt text" src="../../../_images/addition_0.png" /></p>
+<p>Matrices can be easily added, as long as they have the same shape. Therefore, their corresponding elements are added: <span class="math notranslate nohighlight">\(\mathbf{X} + \mathbf{A} = \mathbf{C}\)</span>, where <span class="math notranslate nohighlight">\(C_{i, j} = X_{i, j} + A_{i, j}\)</span>.</p>
+<p><img alt="alt text" src="../../../_images/addition_1.png" /></p>
+<p>In deep learning it is also possible to add a vector to a matrix. In this case the vector is simply repeated so that it can be added to each row of the matrix: <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{X} + \mathbf{a}\)</span>, where <span class="math notranslate nohighlight">\(C_{i, j} = X_{i, j} + b_j\)</span>.  This concept is called <strong>broadcasting</strong>.</p>
+<p>Note: the subtraction of matrices is analogous to their addition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Addition of an scalar to an matrix</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="n">a_array</span> <span class="o">+</span> <span class="n">b_array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result 1:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">c_array</span><span class="p">)</span>
+
+<span class="c1"># Addition of matrices</span>
+<span class="n">d_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+<span class="n">e_array</span> <span class="o">=</span> <span class="n">a_array</span> <span class="o">+</span> <span class="n">d_array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result 2:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="n">e_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result 1:
+ [[3 4]
+ [5 6]]
+Result 2:
+ [[ 7  8]
+ [ 9 10]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiplication">
+<h3>Multiplication<a class="headerlink" href="#multiplication" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dot-product">
+<h4>Dot Product<a class="headerlink" href="#dot-product" title="Permalink to this headline">¶</a></h4>
+<p>Two vectors can be multiplied using the so called dot product between those two. This is a bit more advanced than the addition, as not each element of the vectors are multiplied with each other. It is denoted as:</p>
+<div class="math notranslate nohighlight">
+\[x^Ty = \sum_i x_iy_i\]</div>
+<p>Hence, the vectors are multiplied element-wise and in the end all results are summed. This also implies that the dot product can only be calculated if the vectors have the same length.</p>
+<p><img alt="alt text" src="../../../_images/multi_0.png" /></p>
+<p>Vector multiplications are <code class="docutils literal notranslate"><span class="pre">distributive</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[ x^T (y + z) = x^Ty + x^Tz \]</div>
+<p>And they are <code class="docutils literal notranslate"><span class="pre">commutative</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[ x^T y = y^Tx \]</div>
+<p>But the dot product is not <code class="docutils literal notranslate"><span class="pre">assocciative</span></code>, as <span class="math notranslate nohighlight">\((x^Ty)z\)</span> is the dot product between a scalar and a vector, which is not defined.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dot product of two matrices</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Print the arrays&#39; shapes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of a_array:&quot;</span><span class="p">,</span> <span class="n">a_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;; Shape of b_array:&quot;</span><span class="p">,</span> <span class="n">b_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,)</span>
+<span class="c1"># Calculate dot product by transposing </span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a_array</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">b_array</span><span class="p">)</span>
+<span class="c1"># Print the arrays&#39; shapes within the operation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of a_array:&quot;</span><span class="p">,</span> <span class="n">a_array</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;; Shape of b_array:&quot;</span><span class="p">,</span> <span class="n">b_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,)</span>
+<span class="c1"># Print out the resulting array and its shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of resulting array:&quot;</span><span class="p">,</span> <span class="n">c_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">c_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of a_array: (2, 1) ; Shape of b_array: (2, 1)
+Shape of a_array: (1, 2) ; Shape of b_array: (2, 1)
+Shape of resulting array: (1, 1)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[11]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Try it yourself:</strong></p>
+<p>If the arrays are commutative in the dot product operation, does it also not matter if the latter array is transposed instead of the former? Does the operation go through? What shape does the result have? Does it differ from the result obtained in the operation above?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dot product of two matrices</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Print the arrays&#39; shapes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of a_array:&quot;</span><span class="p">,</span> <span class="n">a_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;; Shape of b_array:&quot;</span><span class="p">,</span> <span class="n">b_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,)</span>
+<span class="c1"># Calculate dot product by transposing </span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Print the arrays&#39; shapes within the operation</span>
+
+<span class="c1"># Print out the resulting array and its shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of a_array: (2, 1) ; Shape of b_array: (2, 1)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-multiplication">
+<h4>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Permalink to this headline">¶</a></h4>
+<p>The matrix mulitplication is an operation that is performed regularly in machine or deep learning. The <strong>matrix product</strong> of two matrices (<span class="math notranslate nohighlight">\(\mathbf{X}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>) is again a matrix (<span class="math notranslate nohighlight">\(\mathbf{C}\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{C} = \mathbf{X} \mathbf{A}\]</div>
+<p>A matrix multiplication is only allowed if the shapes of the matrices to be multiplied matches. In this case, the matrix <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> needs to have the same amount of columns as the number of rows in matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. If <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> has the shape <span class="math notranslate nohighlight">\(n x m\)</span> and <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is of shape <span class="math notranslate nohighlight">\(m x p\)</span>, then the dimensions of the resulting matrix <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> are <span class="math notranslate nohighlight">\(n x p\)</span>.</p>
+<p>For each element in <span class="math notranslate nohighlight">\(\mathbf{C}\)</span>, the matrix product can be written as:</p>
+<div class="math notranslate nohighlight">
+\[ C_{i, j} = \sum_k X_{i, k}A_{k, j}\]</div>
+<p>Visually this can be represented as follows</p>
+<p><img alt="alt text" src="../../../_images/multi_1.png" /></p>
+<p>Matrix multiplications are <code class="docutils literal notranslate"><span class="pre">distributive</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{A} (\mathbf{B} + \mathbf{C}) = \mathbf{A}\mathbf{B} + \mathbf{A}\mathbf{C}\]</div>
+<p>They are also <code class="docutils literal notranslate"><span class="pre">assocciative</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{A} (\mathbf{B}\mathbf{C}) = (\mathbf{A}\mathbf{B})\mathbf{C} \]</div>
+<p>However, it is <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">commutative</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A} \]</div>
+<p>Note, that some special cases are commutative, however not generally.</p>
+<p>The transpose of a matrix product can be represented as:
+$<span class="math notranslate nohighlight">\( (\mathbf{A}\mathbf{B})^T = \mathbf{B}^T\mathbf{A}^T\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matrix multiplication</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="c1"># Check the shapes for alignment</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shapes check:&quot;</span><span class="p">,</span> <span class="n">a_array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">b_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1"># Calcualte matrix multiplication</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a_array</span><span class="p">,</span> <span class="n">b_array</span><span class="p">)</span>
+<span class="c1"># Output the resulting array and its shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resulting shape:&quot;</span><span class="p">,</span> <span class="n">c_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">c_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shapes check: (3, 2) ; (2, 3)
+Resulting shape: (3, 3)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[19, 22, 25],
+       [43, 50, 57],
+       [67, 78, 89]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Try it yourself:</strong></p>
+<p>Below find a series of arrays pairs, which are to be matrix multiplied. Check their shapes and reshape them if neccesary to make them compatible with the matrix multiplication operation. Try to predict the resulting shape.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## a)</span>
+<span class="c1"># Create two arrays</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="c1"># Check shapes for compatibility</span>
+
+<span class="c1"># Reshape if neccesary</span>
+
+<span class="c1"># Compute the matrix multiplication operation</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Output the resulting shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## b)</span>
+<span class="c1"># Create two arrays</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">4</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">7</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">8</span><span class="p">]])</span>
+<span class="c1"># Check shapes for compatibility</span>
+
+<span class="c1"># Reshape if neccesary</span>
+
+<span class="c1"># Compute the matrix multiplication operation</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Output the resulting shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## c)</span>
+<span class="c1"># Create two arrays</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span>
+                    <span class="p">[[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]],</span>
+                    <span class="p">[[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">]]])</span>
+<span class="n">b_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Check shapes for compatibility</span>
+
+<span class="c1"># Reshape if neccesary</span>
+
+<span class="c1"># Compute the matrix multiplication operation</span>
+<span class="n">c_array</span> <span class="o">=</span> <span class="o">...</span>
+<span class="c1"># Output the resulting shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="linear-equations">
+<h2>Linear equations<a class="headerlink" href="#linear-equations" title="Permalink to this headline">¶</a></h2>
+<p>Now that we know how to do matrix multiplication, we can use this to write down a simple linear equatiton. Assume we have <span class="math notranslate nohighlight">\(N\)</span> observations of variable x that has <span class="math notranslate nohighlight">\(m\)</span> features. Take as an example different features of appartments such as flat size, year it was built, and so on. We can store this information in a matrix <span class="math notranslate nohighlight">\(X\)</span> that has the dimensions (<span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(m\)</span>) i.e., <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{Nxm}\)</span>. If we now want to determine the prize for a given flat, we could use different scaling factors for each feature. Hence in an additional vector <span class="math notranslate nohighlight">\(w\)</span> we store how much each feature affects the prize. To now calculate the prize <span class="math notranslate nohighlight">\(p\)</span> we can write:
+$<span class="math notranslate nohighlight">\( \mathbf{Xw} = \mathbf{p} \)</span>$</p>
+<p>More explicitly this would mean:</p>
+<div class="math notranslate nohighlight">
+\[ X_{1, 1}w_1 + X_{1, 2}w_2 + ... + X_{1, m}w_m = b_1\]</div>
+<div class="math notranslate nohighlight">
+\[ X_{2, 1}w_1 + X_{2, 2}w_2 + ... + X_{2, m}w_m = b_2\]</div>
+<p>We can also rewrite this as:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{Xw}  = \sum_i w_i \mathbf{X_{:,i}} = \mathbf{p}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{X_{:,i}}\)</span> denotes that we perform this operation across all rows while varying the column with index <span class="math notranslate nohighlight">\(i\)</span>. This is also called a <span class="math notranslate nohighlight">\(linear combination\)</span>.</p>
+<p>This representation is especially important for deep learning including any form of linear regression.</p>
+<div class="section" id="linear-dependence">
+<h3>Linear dependence<a class="headerlink" href="#linear-dependence" title="Permalink to this headline">¶</a></h3>
+<p>A vector is linearly dependent on a set of vectors, if the vector can be represented with a linear combination of this set of vectors. On the other hand, a set of vectors are linearly independent if no vector is a linear combination of any other vectors.</p>
+</div>
+</div>
+<div class="section" id="matrix-inversion">
+<h2>Matrix Inversion<a class="headerlink" href="#matrix-inversion" title="Permalink to this headline">¶</a></h2>
+<p>It is not possible to directly divide by a matrix. However, we can utilize the concept of matrix inversion to be able to solve a linear system of equations as the one above for <span class="math notranslate nohighlight">\(w\)</span>.</p>
+<div class="section" id="identity-matrix">
+<h3>Identity matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this headline">¶</a></h3>
+<p>For matrix inversioon we first need to define the concept of the identity matrix. The identitty matrix is denoted as <span class="math notranslate nohighlight">\(\mathbf{I_n} \in \mathbb{R}^{nxn}\)</span>. This special matrix contains only ones on its diagonal. All other entries are zero.</p>
+<img src="../../../static/linear_algebra/identity.png" alt="Identity" style="width: 100px;"/>
+<p>Multiplying any vector with this matrix does not change the vector.
+$<span class="math notranslate nohighlight">\(\forall x \in \mathbb{R} ^n, \mathbf{I_n x} = \mathbf{x}\)</span>$</p>
+</div>
+<div class="section" id="matrix-inverse">
+<h3>Matrix inverse<a class="headerlink" href="#matrix-inverse" title="Permalink to this headline">¶</a></h3>
+<p>Now we can define the matrix inverse of a given matrix <span class="math notranslate nohighlight">\(X\)</span> as <span class="math notranslate nohighlight">\(X^{-1}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{X^{-1}X} = \mathbf{I_n}\]</div>
+<p>However, for <span class="math notranslate nohighlight">\(\mathbf{X^{-1}}\)</span> to exist <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> has to be a square matrix (number of rows = number of columns), all columns must be linearly independent, hence the determinant, to which we will come later, has to be non-zero.</p>
+<p>Defining the matrix inverse now also allows us to solve the above defined linear system of equations for <span class="math notranslate nohighlight">\(w\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{Xw} = \mathbf{b} \]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{X^{-1}Xw} = \mathbf{X^{-1}b} \]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{I_nw} = \mathbf{X^{-1}b} \]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{w} = \mathbf{X^{-1}b} \]</div>
+<p>Note, that calculating the inverse can often times be computatioonally inefficient and contain limited precision on a computer. Hence this representation is usually only for theoretical applications.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define array</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Calculate matrix inverse</span>
+<span class="n">a_inverse_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a_array</span><span class="p">)</span>
+<span class="n">a_inverse_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-2. ,  1. ],
+       [ 1.5, -0.5]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="norms">
+<h2>Norms<a class="headerlink" href="#norms" title="Permalink to this headline">¶</a></h2>
+<p>We can measure the size (or length) of a vector with the help of the <code class="docutils literal notranslate"><span class="pre">norm</span></code>. It measures the distance from the origin to the point defined by the vector.</p>
+<p>Generally the <span class="math notranslate nohighlight">\(L^p\)</span> norm is defined as</p>
+<div class="math notranslate nohighlight">
+\[ ||\mathbf{x}||_p = \left(\sum_i |x_i|^p\right)^{\frac{1}{p}} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define array</span>
+<span class="n">a_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Calculate matrix inverse</span>
+<span class="n">a_normed_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a_array</span><span class="p">)</span>
+<span class="n">a_normed_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.123105625617661
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction/notebooks/linear_algebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Peer Herholz<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
