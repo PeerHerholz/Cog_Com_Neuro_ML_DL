@@ -46,7 +46,12 @@ chapters:
     - file: introduction/pages/neurodata/literature.md
     - file: introduction/pages/neurodata/project_101.md
   - file: introduction/pages/introduction_4.md
+    sections:
+    - file: introduction/notebooks/linear_algebra/LinearAlgebra.ipynb
   - file: introduction/pages/introduction_5.md
+    sections:
+    - file: introduction/notebooks/artificial_intelligence/terms_definitions.ipynb
+    - file: introduction/notebooks/artificial_intelligence/ML_intro.ipynb
   - file: introduction/pages/introduction_6.md
 - file: experimentation/experimentation.md
 - file: finalization/finalization.md
