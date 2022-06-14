@@ -48,6 +48,9 @@ chapters:
   - file: introduction/pages/introduction_4.md
     sections:
     - file: introduction/notebooks/linear_algebra/LinearAlgebra.ipynb
+      sections:
+      - file: introduction/notebooks/linear_algebra/python_numpy.ipynb
+      - file: introduction/notebooks/linear_algebra/python_scipy.ipynb
   - file: introduction/pages/introduction_5.md
     sections:
     - file: introduction/notebooks/artificial_intelligence/terms_definitions.ipynb
