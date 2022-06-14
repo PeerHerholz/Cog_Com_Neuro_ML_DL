@@ -41,6 +41,7 @@ You can directly access the slides [here](https://docs.google.com/presentation/d
 
 ### Version control
 
+We all know the situation: we work on things over and over again, changing many things back and forth... in the end we have file called like "final_version_latest_update_3 (10).py" and have basically no chance on finding out what happened along the way when and why.  
 
 #### Objectives📍
 
@@ -85,3 +86,14 @@ We discussed quite a bit of `Neuro-Data-Science` tools and resources that can he
 You can directly access the slides [here](https://docs.google.com/presentation/d/1gpU751v93x9Bzj7X1jfpJaTVIg1R8bJeJWzMxrfWBug/present?usp=sharing).    
 
 ### optional/reading/further materials
+
+
+  "tags": [
+    "hide-input"
+  ]
+
+  (please click on the `+` to see the `code`)
+
+  🎯
+
+  📝
