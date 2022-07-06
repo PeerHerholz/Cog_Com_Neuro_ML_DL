@@ -59,6 +59,6 @@ Everyone is doing `machine/deep learning` these days for basically all types of 
 Why should we combine `deep learning` and `neuroscience`? Is this actually warranted and feasible? Check the amazing talk from [Dr Yoshua Bengio](https://yoshuabengio.org/) titled `Deep Learning and Neuroscience Synergy: from synapses to consciousness` to obtain first insights! 
 
 Sorry, the video won't render here because of its youtube settings. Thus, please just click on it to watch
-it on [youtube](https://www.youtube.com/embed/bBNj5h8xIrc). It's a great overview with a lot of though provoking aspects. 
+it on [youtube](https://www.youtube.com/embed/bBNj5h8xIrc). It's a great overview with a lot of thought provoking aspects. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bBNj5h8xIrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
