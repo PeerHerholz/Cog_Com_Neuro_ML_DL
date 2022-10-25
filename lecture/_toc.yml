@@ -55,7 +55,6 @@ chapters:
     sections:
     - file: introduction/notebooks/artificial_intelligence/terms_definitions.ipynb
     - file: introduction/notebooks/artificial_intelligence/ML_intro.ipynb
-    - file: introduction/notebooks/artificial_intelligence/DL_basics_architectures.ipynb
   - file: introduction/pages/introduction_6.md
 - file: experimentation/experimentation.md
 - file: finalization/finalization.md
