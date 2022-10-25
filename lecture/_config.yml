@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : "Spring term 2022"  # The title of the book. Will be placed in the left navbar.
+title                       : "Spring/Fall term 2022"  # The title of the book. Will be placed in the left navbar.
 author                      : Peer Herholz  # The author of the book
 copyright                   : "2022"  # Copyright year to be placed in the footer
 logo                        : "static/cog_com_neuro_ml_dl_logo.png"  # A path to the book logo
