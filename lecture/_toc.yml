@@ -55,6 +55,10 @@ chapters:
     sections:
     - file: introduction/notebooks/artificial_intelligence/terms_definitions.ipynb
     - file: introduction/notebooks/artificial_intelligence/ML_intro.ipynb
+    - file: introduction/notebooks/artificial_intelligence/ML_eval_cv.ipynb
+    - file: introduction/notebooks/artificial_intelligence/ML_tuning_bias.ipynb
+    - file: introduction/notebooks/artificial_intelligence/DL_basics_architectures.ipynb
+    - file: introduction/notebooks/artificial_intelligence/DL_build_train.ipynb
   - file: introduction/pages/introduction_6.md
 - file: experimentation/experimentation.md
 - file: finalization/finalization.md

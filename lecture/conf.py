@@ -101,3 +101,5 @@ myst_html_img_enable = True
 myst_deflist_enable = True
 myst_url_schemes = ("http", "https", "mailto")
 panels_add_boostrap_css = False
+
+myst_enable_extensions = ["dollarmath"]
